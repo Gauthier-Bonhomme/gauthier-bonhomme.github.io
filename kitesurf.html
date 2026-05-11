@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kite Surf — Gauthier Bonhomme</title>
+<meta name="description" content="Album Kite Surf de Gauthier Bonhomme">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0b1120;font-family:'DM Sans',sans-serif;}
+.bar{position:sticky;top:0;z-index:200;background:rgba(11,17,32,0.97);
+     backdrop-filter:blur(12px);border-bottom:1px solid rgba(96,165,250,0.2);
+     padding:12px 28px;display:flex;align-items:center;justify-content:space-between;}
+.back{display:inline-flex;align-items:center;gap:8px;color:#60a5fa;
+      background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);
+      border-radius:8px;padding:8px 16px;font-size:13px;font-weight:500;
+      cursor:pointer;font-family:inherit;text-decoration:none;transition:background 0.2s;}
+.back:hover{background:rgba(96,165,250,0.2);}
+.back svg{width:16px;height:16px;fill:currentColor;}
+.content{max-width:860px;margin:0 auto;padding:0 0 80px;}
+.cover img{width:100%;display:block;}
+.section-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+               letter-spacing:0.18em;text-transform:uppercase;color:#64748b;
+               padding:28px 8px 14px;}
+.grid{display:grid;gap:6px;width:100%;}
+.g1,.g2{grid-template-columns:1fr;}
+.g3,.g4,.gmany{grid-template-columns:1fr 1fr;}
+.gc{overflow:hidden;cursor:zoom-in;background:#111;border-radius:6px;}
+.gc-thumb{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s ease;}
+.gc:hover .gc-thumb{transform:scale(1.04);}
+.g3 .gc,.g4 .gc,.gmany .gc{height:260px;}
+.g3 .span2,.g4 .span2,.gmany .span2{grid-column:span 2;height:320px;}
+.g4 .tall,.gmany .tall{grid-row:span 2;height:526px;}
+.gmany .tall-r{grid-row:span 2;height:526px;}
+#overlay{display:none;position:fixed;inset:0;z-index:9999;
+         background:rgba(0,0,0,0.92);align-items:center;justify-content:center;
+         padding:16px;opacity:0;transition:opacity 0.25s ease;}
+#overlay.open{display:flex;}
+#overlay.visible{opacity:1;}
+#overlay img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;
+             transform:scale(0.94);transition:transform 0.25s ease;
+             box-shadow:0 8px 48px rgba(0,0,0,0.8);}
+#overlay.visible img{transform:scale(1);}
+.ov-close{position:absolute;top:16px;right:20px;background:rgba(255,255,255,0.1);
+          border:none;border-radius:50%;width:38px;height:38px;color:white;
+          font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ov-nav{position:absolute;top:50%;transform:translateY(-50%);
+        background:rgba(255,255,255,0.1);border:none;border-radius:50%;
+        width:46px;height:46px;color:white;font-size:26px;cursor:pointer;
+        display:flex;align-items:center;justify-content:center;}
+#ov-prev{left:14px;} #ov-next{right:14px;}
+.botbar{background:rgba(11,17,32,0.97);border-top:1px solid rgba(96,165,250,0.2);
+        padding:14px 32px;display:flex;justify-content:center;margin-top:20px;}
+@media(max-width:600px){
+  .g3 .gc,.g4 .gc,.gmany .gc{height:160px;}
+  .g3 .span2,.g4 .span2,.gmany .span2{height:200px;}
+  .g4 .tall,.gmany .tall,.gmany .tall-r{height:326px;}
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Retour au CV
+  </a>
+  <span style="font-size:22px;">🪁</span>
+</div>
+<div class="content">
+  <div class="cover"><img src="images/kitesurf/cover.jpg" loading="eager"></div>
+  <div class="section-title">Photos</div><div class="grid g4"><div class="gc span2" onclick="showOverlay(0)">
+        <img class="gc-thumb" src="images/kitesurf/thumb_1.jpg" loading="lazy">
+        <img class="gc-full" src="images/kitesurf/photo_1.jpg" style="display:none" loading="lazy">
+      </div><div class="gc " onclick="showOverlay(1)">
+        <img class="gc-thumb" src="images/kitesurf/thumb_2.jpg" loading="lazy">
+        <img class="gc-full" src="images/kitesurf/photo_2.jpg" style="display:none" loading="lazy">
+      </div><div class="gc " onclick="showOverlay(2)">
+        <img class="gc-thumb" src="images/kitesurf/thumb_3.jpg" loading="lazy">
+        <img class="gc-full" src="images/kitesurf/photo_3.jpg" style="display:none" loading="lazy">
+      </div><div class="gc " onclick="showOverlay(3)">
+        <img class="gc-thumb" src="images/kitesurf/thumb_4.jpg" loading="lazy">
+        <img class="gc-full" src="images/kitesurf/photo_4.jpg" style="display:none" loading="lazy">
+      </div><div class="gc span2" onclick="showOverlay(4)">
+        <img class="gc-thumb" src="images/kitesurf/thumb_5.jpg" loading="lazy">
+        <img class="gc-full" src="images/kitesurf/photo_5.jpg" style="display:none" loading="lazy">
+      </div></div>
+</div>
+<div class="botbar">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Retour au CV
+  </a>
+</div>
+<div id="overlay" onclick="if(event.target===this)closeOverlay()">
+  <button class="ov-close" onclick="closeOverlay()">✕</button>
+  <button class="ov-nav" id="ov-prev" onclick="navOverlay(-1)">&#8249;</button>
+  <img id="ov-img" src="">
+  <button class="ov-nav" id="ov-next" onclick="navOverlay(1)">&#8250;</button>
+</div>
+<script>
+const cells = Array.from(document.querySelectorAll('.gc'));
+let cur = 0;
+function showOverlay(i) {
+  cur = i;
+  loadImg(i);
+  const ov = document.getElementById('overlay');
+  ov.classList.add('open');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>ov.classList.add('visible')));
+}
+function loadImg(i) {
+  const full = cells[i].querySelector('.gc-full');
+  document.getElementById('ov-img').src = full ? full.src : cells[i].querySelector('.gc-thumb').src;
+  cur = i;
+}
+function closeOverlay() {
+  const ov = document.getElementById('overlay');
+  ov.classList.remove('visible');
+  setTimeout(()=>ov.classList.remove('open'),250);
+}
+function navOverlay(dir) {
+  cur=(cur+dir+cells.length)%cells.length; loadImg(cur);
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('overlay').classList.contains('open'))return;
+  if(e.key==='Escape')closeOverlay();
+  if(e.key==='ArrowRight')navOverlay(1);
+  if(e.key==='ArrowLeft')navOverlay(-1);
+});
+</script>
+</body></html>

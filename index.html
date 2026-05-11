@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ════ SEO ════ -->
+  <title>Gauthier Bonhomme — Élève Ingénieur Arts et Métiers</title>
+  <meta name="description" content="CV de Gauthier Bonhomme, élève ingénieur 2e année Arts et Métiers Aix-en-Provence. Spécialiste en mécanique, FAO Fusion 360, simulation Abaqus, Python.">
+  <meta name="author" content="Gauthier Bonhomme">
+  <meta name="keywords" content="Gauthier Bonhomme, ingénieur, Arts et Métiers, mécanique, FAO, Abaqus, stage">
+
+  <!-- Open Graph (partage réseaux sociaux) -->
+  <meta property="og:title" content="Gauthier Bonhomme — Élève Ingénieur">
+  <meta property="og:description" content="CV en ligne de Gauthier Bonhomme, Arts et Métiers Aix-en-Provence.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://gauthierbonhomme.github.io">
+
+  <!-- Données structurées Google (rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gauthier Bonhomme",
+    "jobTitle": "Élève Ingénieur",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Arts et Métiers ParisTech"
+    },
+    "url": "https://gauthierbonhomme.github.io",
+    "email": "gauthier.bonhomme30@gmail.com",
+    "telephone": "+33608276216",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calvisson",
+      "postalCode": "30420",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0b1120;--surface:#111827;--border:rgba(255,255,255,0.07);
+  --text:#94a3b8;--heading:#e2e8f0;
+  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.28);
+  --muted:#64748b;--tag-bg:rgba(96,165,250,0.08);--tag-text:#93c5fd;
+  --green:#34d399;--green-dim:rgba(52,211,153,0.1);--green-border:rgba(52,211,153,0.28);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
+
+/* PAGE SWITCHING */
+.page{display:none;}
+.page.active{display:block;}
+#page-cv{display:flex;}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher{display:flex;gap:5px;margin-bottom:28px;}
+.lang-btn{
+  padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;
+  letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;
+  background:none;border:1px solid var(--border);color:var(--muted);
+  font-family:'Syne',sans-serif;
+}
+.lang-btn:hover,.lang-btn.active{
+  background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);
+}
+
+/* CV LAYOUT */
+.layout{max-width:1100px;margin:0 auto;display:flex;min-height:100vh;width:100%;}
+.left{width:340px;flex-shrink:0;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:60px 20px 60px 36px;}
+.name{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--heading);line-height:1.1;letter-spacing:-0.5px;margin-bottom:6px;}
+.name span{color:var(--accent);}
+.title{font-family:'Syne',sans-serif;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:18px;}
+.tagline{font-size:14px;color:var(--text);line-height:1.6;max-width:220px;}
+.btn-download{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:9px 16px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;color:var(--accent);font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s,transform 0.2s;}
+.btn-download:hover{background:rgba(96,165,250,0.22);transform:translateY(-1px);}
+.btn-download svg{width:15px;height:15px;fill:var(--accent);flex-shrink:0;}
+.nav{margin:40px 0;display:flex;flex-direction:column;gap:4px;}
+.nav a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:6px 0;transition:color 0.2s;}
+.nav a::before{content:'';width:28px;height:1px;background:var(--muted);transition:width 0.3s,background 0.2s;}
+.nav a.active,.nav a:hover{color:var(--heading);}
+.nav a.active::before,.nav a:hover::before{width:52px;background:var(--accent);}
+.social{display:flex;gap:18px;align-items:center;}
+.social a{color:var(--muted);text-decoration:none;transition:color 0.2s,transform 0.2s;display:flex;align-items:center;}
+.social a:hover{color:var(--accent);transform:translateY(-2px);}
+.social a svg{width:20px;height:20px;fill:currentColor;}
+.right{flex:1;padding:80px 60px 120px 0;}
+section{margin-bottom:80px;scroll-margin-top:80px;}
+.section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.about-text p{margin-bottom:14px;font-size:15px;color:var(--text);}
+.about-text p:last-child{margin-bottom:0;}
+.about-text strong{color:var(--heading);font-weight:500;}
+.card{display:grid;grid-template-columns:100px 1fr;gap:0 24px;padding:18px 20px;border-radius:10px;transition:background 0.2s,border 0.2s;border:1px solid transparent;margin-bottom:4px;}
+.card:hover{background:var(--surface);border-color:var(--border);box-shadow:0 0 0 1px var(--accent-border);}
+.card:hover .card-title{color:var(--accent);}
+.card-date{font-size:12px;color:var(--muted);font-weight:400;padding-top:2px;line-height:1.4;}
+.card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.3;}
+.card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
+.card-title a:hover{color:var(--accent);}
+.ext-icon{display:inline-block;margin-left:6px;font-size:11px;opacity:0.5;vertical-align:middle;transition:opacity 0.2s;}
+.card-title a:hover .ext-icon{opacity:1;}
+.card-subtitle{font-size:13px;color:var(--accent);margin-bottom:10px;font-weight:400;}
+.card-desc{font-size:14px;color:var(--text);line-height:1.6;}
+.card-desc ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.card-desc li{display:flex;gap:10px;align-items:flex-start;}
+.card-desc li::before{content:'▸';color:var(--accent);font-size:10px;margin-top:4px;flex-shrink:0;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
+.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;transition:border-color 0.2s;}
+.skill-category:hover{border-color:var(--accent-border);}
+.skill-cat-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{background:var(--tag-bg);color:var(--tag-text);font-size:12px;font-weight:500;padding:4px 11px;border-radius:999px;border:1px solid var(--accent-border);}
+.tag.neutral{background:rgba(148,163,184,0.08);color:var(--text);border-color:var(--border);}
+.tag-link{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--accent-dim);
+  color:var(--accent);
+  border:1px solid var(--accent-border);
+  font-size:12px;font-weight:600;
+  padding:5px 13px;border-radius:999px;
+  cursor:pointer;font-family:inherit;
+  transition:background 0.2s,box-shadow 0.2s,transform 0.2s;
+  letter-spacing:0.02em;
+}
+.tag-link:hover{
+  background:rgba(96,165,250,0.22);
+  box-shadow:0 0 10px rgba(96,165,250,0.35);
+  transform:translateY(-1px);
+}
+button.tag:hover{border-color:var(--accent);color:var(--accent);}
+.lang-list{display:flex;gap:16px;flex-wrap:wrap;}
+.lang-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s;flex:1;min-width:160px;}
+.lang-item:hover{border-color:var(--accent-border);}
+.lang-flag{font-size:24px;line-height:1;}
+.lang-name{font-family:'Syne',sans-serif;font-weight:600;font-size:15px;color:var(--heading);line-height:1.2;}
+.lang-level{font-size:12px;color:var(--accent);font-weight:400;}
+.interests-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;}
+.interest-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;transition:background 0.2s,border-color 0.2s,transform 0.2s;}
+.interest-item:hover{border-color:var(--accent-border);background:var(--accent-dim);transform:translateY(-2px);}
+.interest-icon{font-size:26px;margin-bottom:8px;display:block;}
+.interest-name{font-size:12px;color:var(--text);font-weight:400;line-height:1.3;}
+.interest-detail{font-size:11px;color:var(--accent);margin-top:3px;font-weight:500;}
+.contact-grid{display:flex;flex-direction:column;gap:12px;}
+.contact-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s;text-decoration:none;color:inherit;}
+.contact-item:hover{border-color:var(--accent-border);}
+.contact-icon{width:36px;height:36px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon svg{width:16px;height:16px;fill:var(--accent);}
+.contact-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;line-height:1;margin-bottom:3px;}
+.contact-value{font-size:14px;color:var(--heading);font-weight:400;}
+.cv-footer{font-size:12px;color:var(--muted);margin-top:60px;padding-top:24px;border-top:1px solid var(--border);line-height:1.6;}
+.btn-download-inline{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;color:var(--accent);font-size:13px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s,transform 0.2s;}
+.btn-download-inline:hover{background:rgba(96,165,250,0.22);transform:translateY(-1px);}
+.btn-download-inline svg{width:16px;height:16px;fill:var(--accent);flex-shrink:0;}
+
+/* PROJECT PAGES */
+.proj-wrap{max-width:860px;margin:0 auto;padding:60px 40px 0;}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.05em;margin-bottom:40px;transition:gap 0.2s;cursor:pointer;background:none;border:none;padding:0;font-family:'DM Sans',sans-serif;}
+.back-link:hover{gap:12px;}
+.back-link svg{width:16px;height:16px;fill:currentColor;}
+.project-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:18px;}
+.project-tag.blue{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);}
+.project-tag.green{background:var(--green-dim);border:1px solid var(--green-border);color:var(--green);}
+.project-title{font-family:'Syne',sans-serif;font-size:clamp(26px,5vw,44px);font-weight:800;color:var(--heading);line-height:1.1;letter-spacing:-0.5px;margin-bottom:16px;}
+.project-title span{color:var(--accent);}
+.project-meta{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:48px;}
+.meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.meta-item svg{width:14px;height:14px;fill:var(--accent);flex-shrink:0;}
+.meta-item strong{color:var(--text);font-weight:400;}
+.proj-content{max-width:860px;margin:0 auto;padding:0 40px 100px;}
+.proj-content section{margin-bottom:56px;}
+.proj-content p{margin-bottom:14px;color:var(--text);}
+.proj-content p:last-child{margin-bottom:0;}
+.proj-content strong{color:var(--heading);font-weight:500;}
+.hero-images{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-bottom:40px;}
+.img-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color 0.2s;}
+.img-card:hover{border-color:var(--accent-border);}
+.img-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-label{padding:10px 14px;font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;border-top:1px solid var(--border);font-weight:500;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;transition:border-color 0.2s;}
+.stat-card:hover{border-color:var(--accent-border);}
+.stat-value{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent);line-height:1.1;}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.05em;}
+/* Simplified phases for usinage */
+.phase-summary{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:12px;transition:border-color 0.2s;}
+.phase-summary:hover{border-color:var(--accent-border);}
+.phase-summary-header{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.phase-badge{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:6px;padding:4px 10px;white-space:nowrap;}
+.phase-summary-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--heading);}
+.phase-ops{display:flex;flex-wrap:wrap;gap:8px;}
+.phase-op{background:rgba(148,163,184,0.08);color:var(--text);border:1px solid var(--border);font-size:12px;padding:3px 10px;border-radius:999px;}
+.bilan-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 28px;transition:border-color 0.2s;}
+.bilan-card:hover{border-color:var(--accent-border);}
+.bilan-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;}
+.bilan-row:last-child{border-bottom:none;font-weight:500;}
+.bilan-row span:first-child{color:var(--text);}
+.bilan-row span:last-child{color:var(--heading);font-family:'Syne',sans-serif;}
+.bilan-row.total span:last-child{color:var(--accent);font-size:18px;font-weight:800;}
+.tools-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.tool-tag{background:var(--green-dim);border:1px solid var(--green-border);color:var(--green);font-size:12px;padding:4px 12px;border-radius:999px;font-weight:500;font-family:'JetBrains Mono',monospace;}
+.tool-tag.neutral{background:rgba(148,163,184,0.08);color:var(--text);border-color:var(--border);font-family:'DM Sans',sans-serif;}
+.conclusion-box{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:12px;padding:24px 28px;}
+.conclusion-box p{color:var(--text);}
+.footer-nav{max-width:860px;margin:0 auto;padding:0 40px 60px;}
+.btn-back{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:10px;color:var(--accent);text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s,transform 0.2s;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-back:hover{background:rgba(96,165,250,0.18);transform:translateX(-4px);}
+.btn-back svg{width:16px;height:16px;fill:currentColor;}
+
+/* PYTHON — PIPELINE */
+.pipeline{display:flex;flex-direction:column;gap:0;}
+.pipe-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);}
+.pipe-step:last-child{border-bottom:none;}
+.pipe-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.pipe-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--heading);margin-bottom:4px;}
+.pipe-desc{font-size:13px;color:var(--text);}
+.pipe-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);padding:2px 8px;border-radius:4px;margin-top:6px;}
+
+/* PYTHON — IMPROVED DIAGRAM */
+.diagram-3panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:20px;}
+.panel{padding:18px;border-right:1px solid var(--border);position:relative;}
+.panel:last-child{border-right:none;}
+.panel-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
+.panel-src{font-size:10px;color:var(--muted);margin-bottom:12px;font-family:'JetBrains Mono',monospace;}
+.panel-viz{height:130px;border-radius:8px;background:#0d1929;position:relative;overflow:hidden;}
+.panel-viz::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(96,165,250,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,0.04) 1px,transparent 1px);background-size:20px 20px;}
+.panel-label{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4;}
+.panel-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);z-index:10;background:var(--surface);border:1px solid var(--accent-border);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:12px;font-weight:700;}
+/* Pop dots */
+.pop-zone{position:absolute;border-radius:50%;transform:translate(-50%,-50%);}
+/* Gym markers */
+.gym-dot{position:absolute;width:8px;height:8px;background:var(--accent);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 8px rgba(96,165,250,0.7);}
+/* Score heatmap zones */
+.score-zone{position:absolute;border-radius:50%;transform:translate(-50%,-50%);}
+.score-opt{position:absolute;width:12px;height:12px;background:var(--green);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 14px rgba(52,211,153,1);z-index:2;}
+.formula-box{background:#060d1a;border:1px solid var(--accent-border);border-radius:10px;padding:14px 18px;text-align:center;margin-top:12px;}
+.formula-txt{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--heading);letter-spacing:0.02em;}
+.formula-txt .f-pop{color:#93c5fd;}
+.formula-txt .f-op{color:var(--accent);}
+.formula-txt .f-pen{color:var(--green);}
+.diagram-legend{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--border);}
+.dl-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);}
+.dl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* CODE BLOCK */
+.code-block{background:#060d1a;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:20px 0;}
+.code-header{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;gap:10px;}
+.code-dots{display:flex;gap:6px;}
+.code-dot{width:10px;height:10px;border-radius:50%;}
+.code-dot:nth-child(1){background:#ff5f56;}
+.code-dot:nth-child(2){background:#ffbd2e;}
+.code-dot:nth-child(3){background:#27c93f;}
+.code-filename{font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-left:4px;}
+.code-body{padding:20px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;overflow-x:auto;}
+.kw{color:#c792ea;}.fn{color:#82aaff;}.str{color:#c3e88d;}.cm{color:#546e7a;font-style:italic;}.nb{color:#f78c6c;}.op{color:#89ddff;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.left-top{animation:fadeUp 0.6s ease both 0.1s;}
+.nav{animation:fadeUp 0.6s ease both 0.25s;}
+.social{animation:fadeUp 0.6s ease both 0.4s;}
+@keyframes pulse{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1);}50%{opacity:0.7;transform:translate(-50%,-50%) scale(1.3);}}
+.score-opt{animation:pulse 2s ease-in-out infinite;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+
+
+/* MOBILE */
+@media(max-width:768px){
+  #page-cv{flex-direction:column;}
+  .layout{flex-direction:column;min-height:auto;}
+  .left{
+    position:static;height:auto;width:100%;
+    padding:24px 16px 16px;
+    flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:0;
+    border-bottom:1px solid var(--border);
+  }
+  .left-top{width:100%;margin-bottom:12px;}
+  .lang-switcher{margin-bottom:16px;}
+  .lang-btn{padding:4px 10px;font-size:10px;}
+  .name{font-size:28px;line-height:1.1;}
+  .title{font-size:11px;margin-bottom:10px;}
+  .tagline{font-size:12px;max-width:100%;line-height:1.5;}
+  .btn-download{margin-top:12px;font-size:11px;padding:7px 12px;}
+  .nav{display:none;}
+  .social{width:100%;margin-top:12px;}
+  .right{padding:20px 16px 60px;}
+  section{margin-bottom:48px;}
+  .section-label{font-size:10px;letter-spacing:0.15em;margin-bottom:18px;}
+  .about-text p{font-size:14px;}
+  .card{grid-template-columns:1fr;gap:4px;padding:14px 12px;}
+  .card-date{font-size:11px;color:var(--accent);margin-bottom:4px;}
+  .card-title{font-size:15px;}
+  .card-subtitle{font-size:12px;margin-bottom:8px;}
+  .card-desc{font-size:13px;}
+  .skills-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .skill-category{padding:14px;}
+  .skill-cat-title{font-size:10px;margin-bottom:10px;}
+  .tag,.tag.neutral{font-size:11px;padding:3px 9px;}
+  .tag-link{font-size:11px;padding:4px 10px;}
+  .lang-list{flex-direction:column;gap:8px;}
+  .lang-item{min-width:0;width:100%;padding:12px 14px;}
+  .interests-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .interest-item{padding:10px 6px;}
+  .interest-icon{font-size:20px;margin-bottom:5px;}
+  .interest-name{font-size:10px;}
+  .interest-detail{font-size:9px;}
+  .contact-grid{gap:8px;}
+  .contact-item{padding:10px 12px;gap:10px;}
+  .contact-icon{width:30px;height:30px;}
+  .contact-label{font-size:10px;}
+  .contact-value{font-size:13px;}
+  .cv-footer{margin-top:32px;}
+  .btn-download-inline{font-size:12px;padding:8px 14px;}
+  .proj-wrap{padding:20px 16px 0;}
+  .proj-content{padding:0 16px 50px;}
+  .footer-nav{padding:0 16px 32px;}
+  .project-tag{font-size:10px;padding:4px 10px;}
+  .project-title{font-size:22px;margin-bottom:12px;}
+  .project-meta{gap:12px;margin-bottom:32px;}
+  .meta-item{font-size:12px;}
+  .hero-images{grid-template-columns:1fr;gap:10px;margin-bottom:24px;}
+  .stats{grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:24px;}
+  .stat-value{font-size:18px;}
+  .stat-label{font-size:10px;}
+  .phases{grid-template-columns:1fr;gap:10px;}
+  .phase-card{padding:16px;}
+  .phase-summary{padding:16px;}
+  .phase-summary-header{flex-wrap:wrap;gap:8px;}
+  .diagram-3panel{grid-template-columns:1fr;}
+  .panel{border-right:none;border-bottom:1px solid var(--border);}
+  .panel:last-child{border-bottom:none;}
+  .panel-viz{height:100px;}
+  .panel-arrow{display:none;}
+  .formula-box{padding:10px 12px;}
+  .formula-txt{font-size:11px;}
+  .pipeline{gap:0;}
+  .pipe-step{flex-direction:column;gap:8px;padding:14px 0;}
+  .pipe-num{margin-top:0;width:24px;height:24px;font-size:10px;}
+  .pipe-title{font-size:13px;}
+  .pipe-desc{font-size:12px;}
+  .pipe-tag{font-size:10px;}
+  .code-body{font-size:10px;padding:12px;overflow-x:auto;}
+  .code-filename{font-size:10px;}
+  .tools-grid{gap:6px;}
+  .tool-tag{font-size:11px;padding:3px 10px;}
+  .bilan-card{padding:16px 14px;}
+  .bilan-row{font-size:13px;flex-wrap:wrap;gap:2px;}
+  .results-card{padding:16px;}
+  .result-row{font-size:13px;flex-direction:column;gap:2px;}
+  .result-value{text-align:left;font-size:14px;}
+  .conclusion-box{padding:16px 18px;}
+  .conclusion-box p{font-size:13px;}
+  .back-link{font-size:12px;}
+  .btn-back{font-size:12px;padding:10px 18px;}
+}
+@media(max-width:420px){
+  .skills-grid{grid-template-columns:1fr;}
+  .interests-grid{grid-template-columns:repeat(2,1fr);}
+  .stats{grid-template-columns:1fr 1fr;}
+  .name{font-size:24px;}
+  .card-title{font-size:14px;}
+}
+
+</style>
+</head>
+<body>
+
+<div id="page-cv" class="page active">
+<div class="layout">
+<aside class="left">
+  <div class="left-top">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    </div>
+    <div class="name">Gauthier<br><span>Bonhomme</span></div>
+    <div class="title" data-i18n="job-title">Élève Ingénieur</div>
+    <p class="tagline">
+      Arts et Métiers · Aix-en-Provence<br>
+      <span data-i18n="tagline-sub">Mécanique · Simulation · Sport</span><br>
+      <span style="color:var(--accent);font-size:12px;font-weight:500;" data-i18n="seeking">Recherche un stage</span>
+    </p>
+    <a href="CV_Gauthier_BONHOMME.pdf" download class="btn-download">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+      <span data-i18n="dl-btn">Télécharger mon CV</span>
+    </a>
+  </div>
+  <nav class="nav" id="main-nav">
+    <a href="#about" class="active" data-i18n="nav-about">À propos</a>
+    <a href="#formation" data-i18n="nav-formation">Formation</a>
+    <a href="#experiences" data-i18n="nav-exp">Expériences</a>
+    <a href="#competences" data-i18n="nav-comp">Compétences</a>
+    <a href="#langues" data-i18n="nav-lang">Langues</a>
+    <a href="#interets" data-i18n="nav-int">Centres d'intérêt</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
+  </nav>
+  <div class="social">
+    <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <a href="tel:+33608276216" title="Téléphone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+    </a>
+    <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+    </a>
+  </div>
+</aside>
+
+<main class="right">
+  <section id="about">
+    <div class="section-label" data-i18n="sec-about">À propos</div>
+    <div class="about-text">
+      <p data-i18n-html="about-p1">Étudiant en 2ème année à <strong>l'École Nationale Supérieure des Arts et Métiers</strong> d'Aix-en-Provence, je suis passionné par les défis techniques et humains. Déterminé, volontaire et toujours prêt à me dépasser, je suis à la recherche d'un <strong>stage en ingénierie</strong> pour mettre mes compétences en pratique dans un environnement exigeant.</p>
+      <p data-i18n-html="about-p2">Issu d'une classe préparatoire PT au Lycée Mermoz de Montpellier, j'ai développé une rigueur scientifique solide en mécanique, simulation numérique et conception assistée par ordinateur. Ma formation m'a appris à résoudre des problèmes complexes avec méthode et créativité.</p>
+      <p data-i18n-html="about-p3">En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — une discipline qui forge le mental et le goût de l'effort. Je suis titulaire du <strong>permis B et A</strong>.</p>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="section-label" data-i18n="sec-formation">Formation</div>
+    <div class="card">
+      <div class="card-date">2024 — 2026</div>
+      <div class="card-content">
+        <div class="card-title"><a href="https://artsetmetiers.fr/fr" target="_blank" rel="noopener"><span data-i18n="form1-title">École Nationale Supérieure des Arts et Métiers</span><span class="ext-icon">↗</span></a></div>
+        <div class="card-subtitle" data-i18n="form1-sub">Aix-en-Provence · Diplôme d'ingénieur</div>
+        <div class="card-desc"><ul>
+          <li data-i18n="form1-li1">Formation d'ingénieur généraliste avec spécialisation en mécanique et procédés de fabrication</li>
+          <li data-i18n="form1-li2">Simulation numérique (Abaqus), conception 3D (CATIA V5, 3D Expérience), programmation Python</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-date">2021 — 2024</div>
+      <div class="card-content">
+        <div class="card-title"><a href="https://fr.wikipedia.org/wiki/Classe_pr%C3%A9paratoire_physique_et_technologie" target="_blank" rel="noopener"><span data-i18n="form2-title">Classe Préparatoire PT</span><span class="ext-icon">↗</span></a></div>
+        <div class="card-subtitle" data-i18n="form2-sub">Lycée Mermoz, Montpellier</div>
+        <div class="card-desc"><ul>
+          <li data-i18n="form2-li1">Mathématiques, physique, sciences de l'ingénieur — formation intensive sur 3 ans</li>
+          <li data-i18n="form2-li2">Acquisition d'une rigueur analytique et d'une capacité à travailler sous pression</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <div class="section-label" data-i18n="sec-exp">Expériences</div>
+    <div class="card">
+      <div class="card-date">Juin — Août 2025</div>
+      <div class="card-content">
+        <div class="card-title"><a href="https://www.hallb.fr/" target="_blank" rel="noopener"><span data-i18n="exp1-title">Hall b — Stage</span><span class="ext-icon">↗</span></a></div>
+        <div class="card-subtitle" data-i18n="exp1-sub">Saint-Dionisy · Lancement d'une salle de sport</div>
+        <div class="card-desc"><ul>
+          <li data-i18n="exp1-li1">Participation au lancement complet d'une salle de sport de A à Z</li>
+          <li data-i18n="exp1-li2">Gestion de projets de grande envergure et coordination des équipes</li>
+          <li data-i18n="exp1-li3">Community manager : création et animation des réseaux sociaux</li>
+          <li data-i18n="exp1-li4">Travaux d'aménagement et logistique</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-date">2020 — 2021</div>
+      <div class="card-content">
+        <div class="card-title"><a href="https://www.funride30.fr/" target="_blank" rel="noopener"><span data-i18n="exp2-title">Technicien polyvalent</span><span class="ext-icon">↗</span></a></div>
+        <div class="card-subtitle" data-i18n="exp2-sub">Langlade · Centre de loisirs pour vélo</div>
+        <div class="card-desc"><ul>
+          <li data-i18n="exp2-li1">Réparation et maintenance de vélos</li>
+          <li data-i18n="exp2-li2">Accueil et conseil clients</li>
+          <li data-i18n="exp2-li3">Divers travaux manuels et logistique</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-date">2020 — 2021</div>
+      <div class="card-content">
+        <div class="card-title"><span data-i18n="exp3-title">Saisonnier — Vendanges</span></div>
+        <div class="card-subtitle" data-i18n="exp3-sub">Travail estival</div>
+        <div class="card-desc"><ul>
+          <li data-i18n="exp3-li1">Récolte des raisins lors des vendanges</li>
+          <li data-i18n="exp3-li2">Travail d'équipe, endurance et sens de l'effort</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="section-label" data-i18n="sec-comp">Compétences</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-cad">Logiciels CAO / EF</div>
+        <div class="skill-tags">
+          <span class="tag neutral">CATIA V5</span>
+          <button class="tag-link" onclick="window.location.href='abaqus.html'">Abaqus ↗</button>
+          <span class="tag neutral">3D Expérience</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-sim">Simulation procédés</div>
+        <div class="skill-tags">
+          <button class="tag-link" onclick="window.location.href='usinage.html'">Fusion 360 — Usinage ↗</button>
+          <button class="tag-link" onclick="window.location.href='fonderie.html'">QuickCast — Fonderie ↗</button>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-prog">Programmation &amp; Data</div>
+        <div class="skill-tags">
+          <button class="tag-link" onclick="window.location.href='python.html'">Python ↗</button>
+          <span class="tag neutral">Excel / VBA</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-office">Bureautique &amp; Création</div>
+        <div class="skill-tags">
+          <span class="tag neutral">Word</span>
+          <span class="tag neutral">PowerPoint</span>
+          <span class="tag neutral">Photoshop</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-proto">Prototypage</div>
+        <div class="skill-tags">
+          <span class="tag neutral" data-i18n="sk-proto-1">Impression 3D (FDM)</span>
+          <span class="tag neutral" data-i18n="sk-proto-2">Prototypage rapide</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title" data-i18n="sk-soft">Savoir-être</div>
+        <div class="skill-tags">
+          <span class="tag neutral" data-i18n="sk-soft-1">Pédagogie</span>
+          <span class="tag neutral" data-i18n="sk-soft-2">Travail d'équipe</span>
+          <span class="tag neutral" data-i18n="sk-soft-3">Rigueur</span>
+          <span class="tag neutral" data-i18n="sk-soft-4">Adaptabilité</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="langues">
+    <div class="section-label" data-i18n="sec-lang">Langues</div>
+    <div class="lang-list">
+      <div class="lang-item">
+        <div class="lang-flag">🇫🇷</div>
+        <div><div class="lang-name" data-i18n="lang1">Français</div><div class="lang-level" data-i18n="lang1-level">Langue maternelle</div></div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-flag">🇬🇧</div>
+        <div><div class="lang-name" data-i18n="lang2">Anglais</div><div class="lang-level" data-i18n="lang2-level">Niveau C1 — Courant</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="interets">
+    <div class="section-label" data-i18n="sec-int">Centres d'intérêt</div>
+    <div class="interests-grid">
+      <div class="interest-item"><span class="interest-icon">🥋</span><div class="interest-name" data-i18n="int-judo">Judo</div><div class="interest-detail">Ceinture noire</div></div>
+      <div class="interest-item" onclick="openSport('escalade')" style="cursor:pointer;" title="Voir mon album escalade"><span class="interest-icon">🧗</span><div class="interest-name" data-i18n="int-escalade">Escalade</div><div class="interest-detail" style="color:var(--accent);">Niveau 7B · Album ↗</div></div>
+      <div class="interest-item" onclick="openSport('ski')" style="cursor:pointer;"><span class="interest-icon">⛷️</span><div class="interest-name" data-i18n="int-ski">Ski</div><div class="interest-detail" style="color:var(--accent);">Alpin & randonnée · ↗</div></div>
+      <div class="interest-item" onclick="openSport('alpinisme')" style="cursor:pointer;"><span class="interest-icon">🏔️</span><div class="interest-name" data-i18n="int-alpi">Alpinisme</div><div class="interest-detail" style="color:var(--accent);">↗</div></div>
+      <div class="interest-item" onclick="openSport('trail')" style="cursor:pointer;"><span class="interest-icon">🏃</span><div class="interest-name" data-i18n="int-trail">Ultra Trail</div><div class="interest-detail" style="color:var(--accent);">+100 km · ↗</div></div>
+      <div class="interest-item" onclick="openSport('kitesurf')" style="cursor:pointer;"><span class="interest-icon">🪁</span><div class="interest-name" data-i18n="int-kite">Kite Surf</div><div class="interest-detail" style="color:var(--accent);">↗</div></div>
+      <div class="interest-item"><span class="interest-icon">✈️</span><div class="interest-name" data-i18n="int-voyages">Voyages</div><div class="interest-detail"></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label" data-i18n="sec-contact">Contact</div>
+    <div class="contact-grid">
+      <a class="contact-item" href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div><div class="contact-label" data-i18n="c-email">Email</div><div class="contact-value">gauthier.bonhomme30@gmail.com</div></div>
+      </a>
+      <a class="contact-item" href="tel:+33608276216">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg></div>
+        <div><div class="contact-label" data-i18n="c-phone">Téléphone</div><div class="contact-value">+33 6 08 27 62 16</div></div>
+      </a>
+      <a class="contact-item" href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></div>
+        <div><div class="contact-label" data-i18n="c-loc">Localisation</div><div class="contact-value" data-i18n="c-loc-val">Calvisson, 30420 — Gard (30) ↗</div></div>
+      </a>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+        <div><div class="contact-label" data-i18n="c-permis">Permis</div><div class="contact-value" data-i18n="c-permis-val">Permis B et A (moto)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="cv-footer">
+    <div style="margin-bottom:16px;">
+      <a href="CV_Gauthier_BONHOMME.pdf" download class="btn-download-inline">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn-long">Télécharger mon CV (PDF)</span>
+      </a>
+    </div>
+    <span data-i18n="footer-txt">Conçu et développé avec soin · Gauthier Bonhomme · 2025</span>
+  </footer>
+</main>
+</div>
+</div>
+
+<div id="page-python" class="page">
+  <div class="proj-wrap">
+    <button class="back-link" onclick="goBack()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      <span data-i18n="back">Retour au CV</span>
+    </button>
+    <div class="project-tag green" data-i18n="py-tag">Projet personnel · Python</div>
+    <h1 class="project-title" data-i18n-html="py-h1">Localisation Optimale<br>d'une <span>Salle de Sport</span></h1>
+    <div class="project-meta">
+      <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg><strong>2024 — 2025</strong></div>
+      <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg><strong data-i18n="py-meta">Python · Score bi-critères · Géospatial</strong></div>
+    </div>
+  </div>
+  <div class="proj-content">
+
+    <!-- CONTEXTE -->
+    <section>
+      <div class="section-label" data-i18n="py-sec1">Contexte</div>
+      <p data-i18n-html="py-ctx1">Projet <strong>personnel</strong> développé en Python pour la salle de sport <strong>Hall b</strong> (Saint-Dionisy), où j'ai effectué mon stage. L'objectif : identifier l'emplacement géographique optimal pour leur implantation, en croisant deux sources de données publiques.</p>
+      <p data-i18n-html="py-ctx2">Le score bi-critères combine la <strong>densité de population INSEE</strong> (pondérée par noyau gaussien) et la <strong>pression concurrentielle</strong> issue des salles de sport OpenStreetMap (pénalité exponentielle).</p>
+    </section>
+
+    <!-- DEMO INTERACTIVE -->
+    <section>
+      <div class="section-label" data-i18n="py-demo-label">Démo — Tester le logiciel</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;" data-i18n="py-demo-desc">Sélectionnez une ville, ajustez les paramètres et lancez l'analyse pour voir les zones optimales s'afficher sur la carte en temps réel.</p>
+      <div style="border:1px solid var(--accent-border);border-radius:12px;overflow:hidden;background:#fff;">
+        <div style="border:1px solid var(--accent-border);border-radius:12px;overflow:hidden;">
+        <iframe id="gym-iframe" style="width:100%;height:600px;border:none;display:block;" title="GymLocator Pro"></iframe>
+      </div>
+      <script>
+      (function(){
+        const _b64 = "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImZyIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ii8+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wIi8+Cjx0aXRsZT5HeW1Mb2NhdG9yIFBybzwvdGl0bGU+CjxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC8xLjkuNC9sZWFmbGV0Lm1pbi5jc3MiLz4KPHN0eWxlPgoqe2JveC1zaXppbmc6Ym9yZGVyLWJveDttYXJnaW46MDtwYWRkaW5nOjB9CmJvZHl7Zm9udC1mYW1pbHk6J1NlZ29lIFVJJyxzeXN0ZW0tdWksc2Fucy1zZXJpZjtiYWNrZ3JvdW5kOiMwZjBmMTM7Y29sb3I6I2U4ZThmMDtoZWlnaHQ6MTAwdmg7ZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjtvdmVyZmxvdzpoaWRkZW59CiNoZHJ7aGVpZ2h0OjUycHg7YmFja2dyb3VuZDojMTYxNjFlO2JvcmRlci1ib3R0b206MXB4IHNvbGlkICMyYTJhM2E7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtwYWRkaW5nOjAgMTZweDtnYXA6MTBweDt6LWluZGV4OjEyMDA7ZmxleC1zaHJpbms6MH0KI2xvZ297Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6NzAwO2NvbG9yOiNhNzhiZmE7d2hpdGUtc3BhY2U6bm93cmFwfQojc3d7ZmxleDoxO21heC13aWR0aDozMjBweDtwb3NpdGlvbjpyZWxhdGl2ZX0KI3Npe3dpZHRoOjEwMCU7Zm9udC1zaXplOjEzcHg7cGFkZGluZzo3cHggMzJweCA3cHggMTJweDtib3JkZXI6MXB4IHNvbGlkICMyYTJhM2E7Ym9yZGVyLXJhZGl1czo4cHg7YmFja2dyb3VuZDojMWUxZTJhO2NvbG9yOiNlOGU4ZjA7b3V0bGluZTpub25lO3RyYW5zaXRpb246Ym9yZGVyLWNvbG9yIC4yc30KI3NpOmZvY3Vze2JvcmRlci1jb2xvcjojYTc4YmZhfQojc2k6OnBsYWNlaG9sZGVye2NvbG9yOiM0NDQ0NWF9CiNzYntwb3NpdGlvbjphYnNvbHV0ZTtyaWdodDo3cHg7dG9wOjUwJTt0cmFuc2Zvcm06dHJhbnNsYXRlWSgtNTAlKTt3aWR0aDoyMnB4O2hlaWdodDoyMnB4O2JhY2tncm91bmQ6IzdjM2FlZDtib3JkZXI6bm9uZTtib3JkZXItcmFkaXVzOjVweDtjb2xvcjp3aGl0ZTtjdXJzb3I6cG9pbnRlcjtmb250LXNpemU6MTNweH0KI3N1Z3N7cG9zaXRpb246YWJzb2x1dGU7dG9wOmNhbGMoMTAwJSArIDRweCk7bGVmdDowO3JpZ2h0OjA7YmFja2dyb3VuZDojMWExYTI2O2JvcmRlcjoxcHggc29saWQgIzJhMmEzYTtib3JkZXItcmFkaXVzOjhweDt6LWluZGV4OjMwMDA7ZGlzcGxheTpub25lO292ZXJmbG93OmhpZGRlbjtib3gtc2hhZG93OjAgOHB4IDMycHggcmdiYSgwLDAsMCwuNSl9Ci5zdWd7cGFkZGluZzo5cHggMTNweDtmb250LXNpemU6MTJweDtjdXJzb3I6cG9pbnRlcjtjb2xvcjojOTk5OWJiO2JvcmRlci1ib3R0b206MXB4IHNvbGlkICMyMjIyM2E7d2hpdGUtc3BhY2U6bm93cmFwO292ZXJmbG93OmhpZGRlbjt0ZXh0LW92ZXJmbG93OmVsbGlwc2lzfQouc3VnOmxhc3QtY2hpbGR7Ym9yZGVyLWJvdHRvbTpub25lfS5zdWc6aG92ZXJ7YmFja2dyb3VuZDojMjUyNTNhO2NvbG9yOiNlOGU4ZjB9CiN0b2dze2Rpc3BsYXk6ZmxleDtnYXA6NXB4O21hcmdpbi1sZWZ0OmF1dG99Ci50YnRue2ZvbnQtc2l6ZToxMXB4O3BhZGRpbmc6NXB4IDExcHg7Ym9yZGVyOjFweCBzb2xpZCAjMmEyYTNhO2JvcmRlci1yYWRpdXM6N3B4O2JhY2tncm91bmQ6IzFlMWUyYTtjb2xvcjojNzc3Nzk5O2N1cnNvcjpwb2ludGVyO3RyYW5zaXRpb246YWxsIC4xNXM7d2hpdGUtc3BhY2U6bm93cmFwfQoudGJ0bi5vbntiYWNrZ3JvdW5kOiM3YzNhZWQ7Ym9yZGVyLWNvbG9yOiM3YzNhZWQ7Y29sb3I6d2hpdGV9CiNtd3tmbGV4OjE7cG9zaXRpb246cmVsYXRpdmU7b3ZlcmZsb3c6aGlkZGVufQojbWFwe3dpZHRoOjEwMCU7aGVpZ2h0OjEwMCV9Ci5nbXt3aWR0aDoyOHB4O2hlaWdodDoyOHB4O2JhY2tncm91bmQ6IzdjM2FlZDtib3JkZXI6M3B4IHNvbGlkICNmZmY7Ym9yZGVyLXJhZGl1czo1MCU7Ym94LXNoYWRvdzowIDNweCAxMHB4IHJnYmEoMTI0LDU4LDIzNywuNik7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2ZvbnQtc2l6ZToxNHB4O2N1cnNvcjpwb2ludGVyO3RyYW5zaXRpb246dHJhbnNmb3JtIC4xMnN9Ci5nbTpob3Zlcnt0cmFuc2Zvcm06c2NhbGUoMS4zKX0KLmdwe21pbi13aWR0aDoyMDBweDtmb250LWZhbWlseTonU2Vnb2UgVUknLHN5c3RlbS11aSxzYW5zLXNlcmlmfQouZ3AtbmFtZXtmb250LXNpemU6MTNweDtmb250LXdlaWdodDo3MDA7bWFyZ2luLWJvdHRvbTo4cHg7bGluZS1oZWlnaHQ6MS40O2NvbG9yOiMxMTF9Ci5ncC1zcntkaXNwbGF5OmZsZXg7Z2FwOjlweDthbGlnbi1pdGVtczpjZW50ZXI7bWFyZ2luLWJvdHRvbTo5cHh9Ci5ncC1jaXt3aWR0aDo0NHB4O2hlaWdodDo0NHB4O2JvcmRlci1yYWRpdXM6NTAlO2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7anVzdGlmeS1jb250ZW50OmNlbnRlcjtmb250LXNpemU6MTZweDtmb250LXdlaWdodDo3MDA7Y29sb3I6d2hpdGU7ZmxleC1zaHJpbms6MH0KLmdwLW1le2ZvbnQtc2l6ZToxMXB4O2NvbG9yOiM1NTU7bGluZS1oZWlnaHQ6MS43fQouZ3AtZHZ7Ym9yZGVyLXRvcDoxcHggc29saWQgI2VlZTttYXJnaW46N3B4IDB9Ci5ncC1yb3tkaXNwbGF5OmZsZXg7Z2FwOjZweDtmb250LXNpemU6MTFweDtjb2xvcjojNDQ0O21hcmdpbi1ib3R0b206NHB4O2FsaWduLWl0ZW1zOmZsZXgtc3RhcnR9Ci5ncC1pY3t3aWR0aDoxNXB4O2ZsZXgtc2hyaW5rOjA7dGV4dC1hbGlnbjpjZW50ZXJ9CiNsZDB7cG9zaXRpb246YWJzb2x1dGU7aW5zZXQ6MDtiYWNrZ3JvdW5kOiMwZjBmMTM7ZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjthbGlnbi1pdGVtczpjZW50ZXI7anVzdGlmeS1jb250ZW50OmNlbnRlcjtnYXA6MThweDt6LWluZGV4OjIwMDB9CiNsZC10e2ZvbnQtc2l6ZToxN3B4O2ZvbnQtd2VpZ2h0OjYwMDtjb2xvcjojZThlOGYwfQojbGQtc3tmb250LXNpemU6MTJweDtjb2xvcjojNTU1NTdhO3RleHQtYWxpZ246Y2VudGVyO21heC13aWR0aDozNDBweDtsaW5lLWhlaWdodDoxLjZ9CiNwYnd7d2lkdGg6MjgwcHg7aGVpZ2h0OjRweDtiYWNrZ3JvdW5kOiMxZTFlMmE7Ym9yZGVyLXJhZGl1czoycHg7b3ZlcmZsb3c6aGlkZGVufQojcGJ7aGVpZ2h0OjEwMCU7YmFja2dyb3VuZDpsaW5lYXItZ3JhZGllbnQoOTBkZWcsIzdjM2FlZCwjYTc4YmZhKTtib3JkZXItcmFkaXVzOjJweDt3aWR0aDowJTt0cmFuc2l0aW9uOndpZHRoIC4zc30KLnNwbnt3aWR0aDozNnB4O2hlaWdodDozNnB4O2JvcmRlcjozcHggc29saWQgIzFlMWUyYTtib3JkZXItdG9wLWNvbG9yOiM3YzNhZWQ7Ym9yZGVyLXJhZGl1czo1MCU7YW5pbWF0aW9uOnJvdCAuN3MgbGluZWFyIGluZmluaXRlfQpAa2V5ZnJhbWVzIHJvdHt0b3t0cmFuc2Zvcm06cm90YXRlKDM2MGRlZyl9fQojYmFye3Bvc2l0aW9uOmFic29sdXRlO3RvcDoxMnB4O2xlZnQ6NTAlO3RyYW5zZm9ybTp0cmFuc2xhdGVYKC01MCUpO2JhY2tncm91bmQ6IzE2MTYxZWVlO2JvcmRlcjoxcHggc29saWQgIzJhMmEzYTtib3JkZXItcmFkaXVzOjIwcHg7cGFkZGluZzo3cHggMTVweDtmb250LXNpemU6MTFweDtjb2xvcjojOTk5OWJiO3otaW5kZXg6MTAwMDtkaXNwbGF5Om5vbmU7Z2FwOjlweDthbGlnbi1pdGVtczpjZW50ZXI7d2hpdGUtc3BhY2U6bm93cmFwO2JhY2tkcm9wLWZpbHRlcjpibHVyKDhweCl9Ci5ic3B7d2lkdGg6MTFweDtoZWlnaHQ6MTFweDtib3JkZXI6MS41cHggc29saWQgIzMzMzM1YTtib3JkZXItdG9wLWNvbG9yOiNhNzhiZmE7Ym9yZGVyLXJhZGl1czo1MCU7YW5pbWF0aW9uOnJvdCAuN3MgbGluZWFyIGluZmluaXRlO2ZsZXgtc2hyaW5rOjB9CiN6dGlwe3Bvc2l0aW9uOmFic29sdXRlO3RvcDoxMnB4O2xlZnQ6NTAlO3RyYW5zZm9ybTp0cmFuc2xhdGVYKC01MCUpO2JhY2tncm91bmQ6cmdiYSgxMjQsNTgsMjM3LC45KTtib3JkZXItcmFkaXVzOjIwcHg7cGFkZGluZzo3cHggMThweDtmb250LXNpemU6MTFweDtjb2xvcjp3aGl0ZTt6LWluZGV4OjkwMDtkaXNwbGF5Om5vbmU7d2hpdGUtc3BhY2U6bm93cmFwO3BvaW50ZXItZXZlbnRzOm5vbmV9CiNudGZ7cG9zaXRpb246YWJzb2x1dGU7dG9wOjEycHg7bGVmdDo1MCU7dHJhbnNmb3JtOnRyYW5zbGF0ZVgoLTUwJSk7Ym9yZGVyLXJhZGl1czoyMHB4O3BhZGRpbmc6N3B4IDE2cHg7Zm9udC1zaXplOjExcHg7ei1pbmRleDoyMTAwO2Rpc3BsYXk6bm9uZTt3aGl0ZS1zcGFjZTpub3dyYXA7cG9pbnRlci1ldmVudHM6bm9uZX0KI2djbnR7cG9zaXRpb246YWJzb2x1dGU7Ym90dG9tOjIycHg7bGVmdDoxNHB4O2JhY2tncm91bmQ6IzE2MTYxZWNjO2JvcmRlcjoxcHggc29saWQgIzJhMmEzYTtib3JkZXItcmFkaXVzOjEycHg7cGFkZGluZzo3cHggMTNweDt6LWluZGV4OjkwMDtmb250LXNpemU6MTFweDtjb2xvcjojOTk5OWJiO2Rpc3BsYXk6bm9uZTtiYWNrZHJvcC1maWx0ZXI6Ymx1cig4cHgpfQojbGVne3Bvc2l0aW9uOmFic29sdXRlO2JvdHRvbToyMnB4O3JpZ2h0OjE0cHg7YmFja2dyb3VuZDojMTYxNjFlZWU7Ym9yZGVyOjFweCBzb2xpZCAjMmEyYTNhO2JvcmRlci1yYWRpdXM6MTJweDtwYWRkaW5nOjEzcHggMTVweDt6LWluZGV4OjgwMDttaW4td2lkdGg6MTY1cHg7ZGlzcGxheTpub25lO2JhY2tkcm9wLWZpbHRlcjpibHVyKDhweCl9Ci5sdHtmb250LXNpemU6OXB4O2NvbG9yOiM1NTU1N2E7Zm9udC13ZWlnaHQ6NzAwO21hcmdpbi1ib3R0b206N3B4O3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTtsZXR0ZXItc3BhY2luZzouMDdlbX0KLmxiYXJ7aGVpZ2h0OjdweDtib3JkZXItcmFkaXVzOjRweDtiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCh0byByaWdodCwjRTI0QjRBLCNFRjlGMjcsI0M4RDk4MywjNjM5OTJBKTttYXJnaW4tYm90dG9tOjRweH0KLmxsYmx7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2ZvbnQtc2l6ZTo5cHg7Y29sb3I6IzU1NTU3YTttYXJnaW4tYm90dG9tOjhweH0KLmxzZXB7Ym9yZGVyLXRvcDoxcHggc29saWQgIzJhMmEzYTttYXJnaW46N3B4IDB9Ci5scm93e2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjdweDtmb250LXNpemU6MTBweDtjb2xvcjojOTk5OWJiO21hcmdpbi1ib3R0b206NHB4fQoubGRvdHt3aWR0aDoxMHB4O2hlaWdodDoxMHB4O2JvcmRlci1yYWRpdXM6NTAlO2ZsZXgtc2hyaW5rOjB9Ci5sc3Jje2ZvbnQtc2l6ZTo5cHg7Y29sb3I6IzMzMzM1YTttYXJnaW4tdG9wOjZweDtsaW5lLWhlaWdodDoxLjd9Ci5sZWFmbGV0LXRpbGUtcGFuZXtmaWx0ZXI6YnJpZ2h0bmVzcyguODUpIHNhdHVyYXRlKC43NSl9CgovKiBCYW5uacOocmUgbW9kZSBmaWxlOi8vICovCiNmaWxld2Fybntwb3NpdGlvbjphYnNvbHV0ZTtpbnNldDowO2JhY2tncm91bmQ6IzBmMGYxMztkaXNwbGF5Om5vbmU7ZmxleC1kaXJlY3Rpb246Y29sdW1uO2FsaWduLWl0ZW1zOmNlbnRlcjtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2dhcDoxNnB4O3otaW5kZXg6OTk5OTtwYWRkaW5nOjQwcHg7dGV4dC1hbGlnbjpjZW50ZXJ9CiNmaWxld2FybiBoMntjb2xvcjojYTc4YmZhO2ZvbnQtc2l6ZToyMHB4fQojZmlsZXdhcm4gcHtjb2xvcjojOTk5OWJiO2ZvbnQtc2l6ZToxNHB4O2xpbmUtaGVpZ2h0OjEuNzttYXgtd2lkdGg6NTAwcHh9CiNmaWxld2FybiBjb2Rle2JhY2tncm91bmQ6IzFlMWUyYTtib3JkZXI6MXB4IHNvbGlkICMyYTJhM2E7Ym9yZGVyLXJhZGl1czo2cHg7cGFkZGluZzoxMHB4IDE4cHg7Zm9udC1zaXplOjEzcHg7Y29sb3I6I2E3OGJmYTtkaXNwbGF5OmJsb2NrO21hcmdpbjo4cHggMDtmb250LWZhbWlseTptb25vc3BhY2V9CiNmaWxld2FybiAubm90ZXtmb250LXNpemU6MTJweDtjb2xvcjojNTU1NTdhfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8ZGl2IGlkPSJoZHIiPgogIDxzcGFuIGlkPSJsb2dvIj7imqEgR3ltTG9jYXRvciBQcm88L3NwYW4+CiAgPGRpdiBpZD0ic3ciPgogICAgPGlucHV0IGlkPSJzaSIgdHlwZT0idGV4dCIgcGxhY2Vob2xkZXI9IlJlY2hlcmNoZXIgdW5lIHZpbGxlLi4uIi8+CiAgICA8YnV0dG9uIGlkPSJzYiI+4oaSPC9idXR0b24+CiAgICA8ZGl2IGlkPSJzdWdzIj48L2Rpdj4KICA8L2Rpdj4KICA8ZGl2IGlkPSJ0b2dzIj4KICAgIDxidXR0b24gY2xhc3M9InRidG4gb24iIGlkPSJ0LXNjb3JlIiBvbmNsaWNrPSJnbFRvZygnc2NvcmUnKSI+U2NvcmU8L2J1dHRvbj4KICAgIDxidXR0b24gY2xhc3M9InRidG4gb24iIGlkPSJ0LWd5bXMiIG9uY2xpY2s9ImdsVG9nKCdneW1zJykiPlNhbGxlcyDwn4+L77iPPC9idXR0b24+CiAgPC9kaXY+CjwvZGl2Pgo8ZGl2IGlkPSJtdyI+CiAgPGRpdiBpZD0ibWFwIj48L2Rpdj4KICA8ZGl2IGlkPSJsZDAiPgogICAgPGRpdiBjbGFzcz0ic3BuIj48L2Rpdj4KICAgIDxkaXYgaWQ9ImxkLXQiPkNoYXJnZW1lbnQgZGUgbGEgRnJhbmNlLi4uPC9kaXY+CiAgICA8ZGl2IGlkPSJwYnciPjxkaXYgaWQ9InBiIj48L2Rpdj48L2Rpdj4KICAgIDxkaXYgaWQ9ImxkLXMiPlTDqWzDqWNoYXJnZW1lbnQgZGVzIGNvbW11bmVzIElOU0VFPC9kaXY+CiAgPC9kaXY+CiAgPGRpdiBpZD0iYmFyIj48ZGl2IGNsYXNzPSJic3AiPjwvZGl2PjxzcGFuIGlkPSJiYXItdHh0Ij5DaGFyZ2VtZW50Li4uPC9zcGFuPjwvZGl2PgogIDxkaXYgaWQ9Inp0aXAiPvCflI0gWm9vbWV6IG5pdmVhdSA5KyBwb3VyIGFmZmljaGVyIGxlcyBzYWxsZXM8L2Rpdj4KICA8ZGl2IGlkPSJudGYiPjwvZGl2PgogIDxkaXYgaWQ9ImdjbnQiPjwvZGl2PgogIDxkaXYgaWQ9ImxlZyI+CiAgICA8ZGl2IGNsYXNzPSJsdCI+U2NvcmUgZCdpbXBsYW50YXRpb248L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImxiYXIiPjwvZGl2PgogICAgPGRpdiBjbGFzcz0ibGxibCI+PHNwYW4+RMOpZmF2b3JhYmxlPC9zcGFuPjxzcGFuPklkw6lhbDwvc3Bhbj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImxzZXAiPjwvZGl2PgogICAgPGRpdiBjbGFzcz0ibHJvdyI+PGRpdiBjbGFzcz0ibGRvdCIgc3R5bGU9ImJhY2tncm91bmQ6IzdjM2FlZDtib3JkZXI6MnB4IHNvbGlkIHJnYmEoMjU1LDI1NSwyNTUsLjcpIj48L2Rpdj5TYWxsZSBleGlzdGFudGUgKGNsaWMpPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJsc2VwIj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9Imxyb3ciPjxkaXYgY2xhc3M9Imxkb3QiIHN0eWxlPSJiYWNrZ3JvdW5kOiM0QTkwRDkiPjwvZGl2PlZpbGxlICZndDsxMGsgwrcgfjFrbTwvZGl2PgogICAgPGRpdiBjbGFzcz0ibHJvdyI+PGRpdiBjbGFzcz0ibGRvdCIgc3R5bGU9ImJhY2tncm91bmQ6I0VGOUYyNyI+PC9kaXY+Qm91cmcgwrcgfjNrbTwvZGl2PgogICAgPGRpdiBjbGFzcz0ibHJvdyI+PGRpdiBjbGFzcz0ibGRvdCIgc3R5bGU9ImJhY2tncm91bmQ6IzYzOTkyQSI+PC9kaXY+VmlsbGFnZSDCtyB+OGttPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJsc2VwIj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImxzcmMiPlBvcHVsYXRpb24gOiBJTlNFRSBvZmZpY2llbDxicj5TYWxsZXMgOiBPcGVuU3RyZWV0TWFwPGJyPkNsaWMgY2FydGUgPSBzY29yZSBwcsOpY2lzPC9kaXY+CiAgPC9kaXY+CiAgPCEtLSBBZmZpY2jDqSBzaSBvdXZlcnQgZW4gZmlsZTovLyAtLT4KICA8ZGl2IGlkPSJmaWxld2FybiI+CiAgICA8aDI+4pqg77iPIFNlcnZldXIgbG9jYWwgcmVxdWlzPC9oMj4KICAgIDxwPkNlIGZpY2hpZXIgZG9pdCDDqnRyZSBzZXJ2aSB2aWEgdW4gc2VydmV1ciBIVFRQIGxvY2FsIHBvdXIgcXVlIGxlcyBzYWxsZXMgZGUgc3BvcnQgcHVpc3NlbnQgw6p0cmUgY2hhcmfDqWVzLiBPdXZyZXogdW4gdGVybWluYWwgZGFucyBjZSBkb3NzaWVyIGV0IGxhbmNleiA6PC9wPgogICAgPGNvZGU+cHl0aG9uIC1tIGh0dHAuc2VydmVyIDg3NjU8L2NvZGU+CiAgICA8cD5QdWlzIG91dnJleiB2b3RyZSBuYXZpZ2F0ZXVyIHN1ciA6PC9wPgogICAgPGNvZGU+aHR0cDovL2xvY2FsaG9zdDo4NzY1L2d5bWxvY2F0b3IuaHRtbDwvY29kZT4KICAgIDxwIGNsYXNzPSJub3RlIj5QeXRob24gZXN0IHByw6lpbnN0YWxsw6kgc3VyIE1hYyBldCBMaW51eC4gU3VyIFdpbmRvd3MsIHTDqWzDqWNoYXJnZXotbGUgc3VyIHB5dGhvbi5vcmcuPGJyPk91IGRvdWJsZS1jbGlxdWV6IHN1ciA8c3Ryb25nPmxhbmNlcl93aW5kb3dzLmJhdDwvc3Ryb25nPiBzaSB2b3VzIMOqdGVzIHN1ciBXaW5kb3dzLjwvcD4KICA8L2Rpdj4KPC9kaXY+Cgo8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC8xLjkuNC9sZWFmbGV0Lm1pbi5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQ+CihmdW5jdGlvbigpewondXNlIHN0cmljdCc7CgovLyDilIDilIAgRMOpdGVjdGlvbiBmaWxlOi8vIOKAlCBhZmZpY2hlIGxhIGJhbm5pw6hyZSBkJ2FpZGUg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmlmKGxvY2F0aW9uLnByb3RvY29sID09PSAnZmlsZTonKXsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbGQwJykuc3R5bGUuZGlzcGxheSA9ICdub25lJzsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZmlsZXdhcm4nKS5zdHlsZS5kaXNwbGF5ID0gJ2ZsZXgnOwogIC8vIE9uIGxhaXNzZSBxdWFuZCBtw6ptZSBsYSBjYXJ0ZSB0b3VybmVyIChzY29yZSBzYW5zIHNhbGxlcykKfQoKY29uc3QgRlIgID0ge3M6NDEuMywgbjo1MS4xLCB3Oi01LjIsIGU6OS42fTsKY29uc3QgR1g9ODAsIEdZPTUwOwpjb25zdCBOT00gPSAnaHR0cHM6Ly9ub21pbmF0aW0ub3BlbnN0cmVldG1hcC5vcmcnOwpjb25zdCBPVlAgPSBbCiAgJ2h0dHBzOi8vb3ZlcnBhc3MtYXBpLmRlL2FwaS9pbnRlcnByZXRlcicsCiAgJ2h0dHBzOi8vb3ZlcnBhc3Mua3VtaS5zeXN0ZW1zL2FwaS9pbnRlcnByZXRlcicsCiAgJ2h0dHBzOi8vb3ZlcnBhc3MucHJpdmF0ZS5jb2ZmZWUvYXBpL2ludGVycHJldGVyJwpdOwoKbGV0IG1hcCwgaExheWVyLCBneW1MYXllciwgY2xrTGF5ZXI7CmxldCBjb21tdW5lcz1bXSwgZ3ltcz1bXTsKbGV0IGd5bU1hcmtlcnMgPSBuZXcgTWFwKCk7CmxldCBwb3BHcmlkID0gQXJyYXkuZnJvbSh7bGVuZ3RoOkdYKkdZfSwgKCk9PltdKTsKbGV0IGd5bUdyaWQgID0gQXJyYXkuZnJvbSh7bGVuZ3RoOkdYKkdZfSwgKCk9PltdKTsKbGV0IGZldGNoZWRab25lcyA9IFtdOwpsZXQgTk1pbj0wLCBOTWF4PTEsIG5vcm1SZWFkeT1mYWxzZTsKbGV0IHNob3dTY29yZT10cnVlLCBzaG93R3ltcz10cnVlLCBmZXRjaGluZz1mYWxzZTsKbGV0IG12VCwgc3VnVCwgbnRmVCwgcGJUOwoKLy8g4pSA4pSAIFJheW9uICYgcG9pZHMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmZ1bmN0aW9uIHBvcFIocCl7IGlmKHA+MjAwMDAwKXJldHVybi4wMDc7aWYocD44MDAwMClyZXR1cm4uMDEwO2lmKHA+MzAwMDApcmV0dXJuLjAxNTtpZihwPjEwMDAwKXJldHVybi4wMjI7aWYocD4zMDAwKXJldHVybi4wMzU7aWYocD4xMDAwKXJldHVybi4wNTU7aWYocD4zMDApcmV0dXJuLjA4MDtyZXR1cm4uMTEwOyB9CmZ1bmN0aW9uIHB3KHApeyByZXR1cm4gTWF0aC5sb2cxMChNYXRoLm1heChwLDEwMCkvMTAwKzEpKjIuODsgfQoKZnVuY3Rpb24gYXRnKHAsZyl7CiAgY29uc3QgVz1GUi5lLUZSLncsSD1GUi5uLUZSLnMsbT1wLnIqMy41OwogIGNvbnN0IHgwPU1hdGgubWF4KDAsTWF0aC5mbG9vcigocC5sb24tbS1GUi53KS9XKkdYKSkseDE9TWF0aC5taW4oR1gtMSxNYXRoLmNlaWwoKHAubG9uK20tRlIudykvVypHWCkpOwogIGNvbnN0IHkwPU1hdGgubWF4KDAsTWF0aC5mbG9vcigocC5sYXQtbS1GUi5zKS9IKkdZKSkseTE9TWF0aC5taW4oR1ktMSxNYXRoLmNlaWwoKHAubGF0K20tRlIucykvSCpHWSkpOwogIGZvcihsZXQgeD14MDt4PD14MTt4KyspZm9yKGxldCB5PXkwO3k8PXkxO3krKylnW3greSpHWF0ucHVzaChwKTsKfQpmdW5jdGlvbiBnYyhsYXQsbG9uLGcpewogIHJldHVybiBnW01hdGgubWF4KDAsTWF0aC5taW4oR1gtMSxNYXRoLmZsb29yKChsb24tRlIudykvKEZSLmUtRlIudykqR1gpKSkrTWF0aC5tYXgoMCxNYXRoLm1pbihHWS0xLE1hdGguZmxvb3IoKGxhdC1GUi5zKS8oRlIubi1GUi5zKSpHWSkpKSpHWF07Cn0KCi8vIOKUgOKUgCBTY29yZSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKZnVuY3Rpb24gcmF3U2NvcmUobGF0LGxvbil7CiAgY29uc3QgY29zPU1hdGguY29zKGxhdCpNYXRoLlBJLzE4MCk7bGV0IHBvcD0wLGd5bT0wOwogIGZvcihjb25zdCBwIG9mIGdjKGxhdCxsb24scG9wR3JpZCkpe2NvbnN0IGRsPWxhdC1wLmxhdCxkYz0obG9uLXAubG9uKSpjb3MsZDI9ZGwqZGwrZGMqZGMscjI9cC5yKnAucjtpZihkMjxyMioxNClwb3ArPXAudypNYXRoLmV4cCgtZDIvKDIqcjIpKTt9CiAgZm9yKGNvbnN0IGcgb2YgZ2MobGF0LGxvbixneW1HcmlkKSl7Y29uc3QgZGw9bGF0LWcubGF0LGRjPShsb24tZy5sb24pKmNvcyxkMj1kbCpkbCtkYypkYyxyMj1nLnIqZy5yO2lmKGQyPHIyKjE0KWd5bSs9TWF0aC5leHAoLWQyLygyKnIyKSk7fQogIHJldHVybiBwb3AqTWF0aC5wb3coTWF0aC5tYXgoMCwxLWd5bSowLjc4KSwxLjUpOwp9CmZ1bmN0aW9uIGNvbXB1dGVOb3JtKCl7CiAgY29uc3Qgc2M9W107CiAgZm9yKGxldCBpPTA7aTw0MDtpKyspZm9yKGxldCBqPTA7ajw1NTtqKyspc2MucHVzaChyYXdTY29yZShGUi5zKyhpKy41KSooRlIubi1GUi5zKS80MCxGUi53KyhqKy41KSooRlIuZS1GUi53KS81NSkpOwogIHNjLnNvcnQoKGEsYik9PmEtYik7Tk1pbj1zY1tNYXRoLmZsb29yKHNjLmxlbmd0aCouMDUpXTtOTWF4PXNjW01hdGguZmxvb3Ioc2MubGVuZ3RoKi45MyldO25vcm1SZWFkeT10cnVlOwp9CmZ1bmN0aW9uIG5zKGxhdCxsb24peyBpZighbm9ybVJlYWR5fHxOTWF4PD1OTWluKXJldHVybiAwO3JldHVybiBNYXRoLm1heCgwLE1hdGgubWluKDEsKHJhd1Njb3JlKGxhdCxsb24pLU5NaW4pLyhOTWF4LU5NaW4pKSk7IH0KZnVuY3Rpb24gcmdiKHMpeyBpZihzPC4zMyl7Y29uc3QgdD1zLy4zMztyZXR1cm5bMjI2LE1hdGgucm91bmQoNzUrODQqdCksTWF0aC5yb3VuZCg3NCsyNip0KV07fWlmKHM8LjY2KXtjb25zdCB0PShzLS4zMykvLjMzO3JldHVybltNYXRoLnJvdW5kKDIyNi02MCp0KSxNYXRoLnJvdW5kKDE1OSsyKnQpLE1hdGgucm91bmQoMTAwKzUxKnQpXTt9Y29uc3QgdD0ocy0uNjYpLy4zNDtyZXR1cm5bTWF0aC5yb3VuZCgxNjYtNjcqdCksTWF0aC5yb3VuZCgxNjErMjYqdCksTWF0aC5yb3VuZCgxNTEtMTcqdCldOyB9CmZ1bmN0aW9uIHNsYmwocCl7IHJldHVybiBwPj03NT8nVHLDqHMgZmF2b3JhYmxlJzpwPj01MD8nTW9kw6lyw6knOnA+PTI1PydQZXUgZmF2b3JhYmxlJzonRMOpZmF2b3JhYmxlJzsgfQpmdW5jdGlvbiB0Uih6KXsgcmV0dXJuIHo+PTE0PzY0Ono+PTEyPzQ4Ono+PTEwPzMyOno+PTk/MjQ6MTY7IH0KCi8vIOKUgOKUgCBIZWF0bWFwIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApmdW5jdGlvbiBpbml0SGVhdCgpewogIGNvbnN0IEhMPUwuR3JpZExheWVyLmV4dGVuZCh7b3B0aW9uczp7cGFuZTonb3ZlcmxheVBhbmUnLHpJbmRleDo0MTAsdGlsZVNpemU6MjU2fSwKICAgIGNyZWF0ZVRpbGUoYyl7CiAgICAgIGNvbnN0IGN2PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpO2N2LndpZHRoPWN2LmhlaWdodD0yNTY7CiAgICAgIGlmKCFub3JtUmVhZHl8fCFzaG93U2NvcmUpcmV0dXJuIGN2OwogICAgICBjb25zdCBudz1tYXAudW5wcm9qZWN0KEwucG9pbnQoYy54KjI1NixjLnkqMjU2KSxjLnopLHNlPW1hcC51bnByb2plY3QoTC5wb2ludCgoYy54KzEpKjI1NiwoYy55KzEpKjI1NiksYy56KTsKICAgICAgaWYoc2UubGF0PkZSLm4rLjV8fG53LmxhdDxGUi5zLS41fHxudy5sbmc+RlIuZSsuNXx8c2UubG5nPEZSLnctLjUpcmV0dXJuIGN2OwogICAgICBjb25zdCBSPXRSKGMueiksb2ZmPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpO29mZi53aWR0aD1vZmYuaGVpZ2h0PVI7CiAgICAgIGNvbnN0IG9jPW9mZi5nZXRDb250ZXh0KCcyZCcpLGltZz1vYy5jcmVhdGVJbWFnZURhdGEoUixSKTtsZXQgaGFzPWZhbHNlOwogICAgICBmb3IobGV0IHk9MDt5PFI7eSsrKWZvcihsZXQgeD0wO3g8Ujt4KyspewogICAgICAgIGNvbnN0IGxhdD1udy5sYXQtKHkrLjUpKihudy5sYXQtc2UubGF0KS9SLGxvbj1udy5sbmcrKHgrLjUpKihzZS5sbmctbncubG5nKS9SOwogICAgICAgIGlmKGxhdDxGUi5zLS4yfHxsYXQ+RlIubisuMnx8bG9uPEZSLnctLjJ8fGxvbj5GUi5lKy4yKWNvbnRpbnVlOwogICAgICAgIGNvbnN0IHM9bnMobGF0LGxvbik7aWYoczwuMDE1KWNvbnRpbnVlO2hhcz10cnVlOwogICAgICAgIGNvbnN0IGE9TWF0aC5yb3VuZCgxNitzKnMqMjIyKSxbcixnLGJdPXJnYihzKSxpPSh5KlIreCkqNDsKICAgICAgICBpbWcuZGF0YVtpXT1yO2ltZy5kYXRhW2krMV09ZztpbWcuZGF0YVtpKzJdPWI7aW1nLmRhdGFbaSszXT1hOwogICAgICB9CiAgICAgIGlmKCFoYXMpcmV0dXJuIGN2O29jLnB1dEltYWdlRGF0YShpbWcsMCwwKTsKICAgICAgY29uc3QgY3R4PWN2LmdldENvbnRleHQoJzJkJyk7Y3R4LmltYWdlU21vb3RoaW5nRW5hYmxlZD10cnVlO2N0eC5pbWFnZVNtb290aGluZ1F1YWxpdHk9J2hpZ2gnO2N0eC5kcmF3SW1hZ2Uob2ZmLDAsMCwyNTYsMjU2KTtyZXR1cm4gY3Y7CiAgICB9CiAgfSk7aExheWVyPW5ldyBITCgpLmFkZFRvKG1hcCk7Cn0KCi8vIOKUgOKUgCBNYXJxdWV1cnMgcGVybWFuZW50cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKZnVuY3Rpb24gZ3ltUG9wdXAoZyl7CiAgY29uc3Qgcz1ucyhnLmxhdCxnLmxvbikscD1NYXRoLnJvdW5kKHMqMTAwKSxbcixnZyxiXT1yZ2IocyksY29sPWByZ2IoJHtyfSwke2dnfSwke2J9KWA7CiAgcmV0dXJuYDxkaXYgY2xhc3M9ImdwIj4KICAgIDxkaXYgY2xhc3M9ImdwLW5hbWUiPiR7Zy5uYW1lfTwvZGl2PgogICAgPGRpdiBjbGFzcz0iZ3Atc3IiPjxkaXYgY2xhc3M9ImdwLWNpIiBzdHlsZT0iYmFja2dyb3VuZDoke2NvbH0iPiR7cH08L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImdwLW1lIj48YiBzdHlsZT0iY29sb3I6JHtjb2x9Ij4ke3NsYmwocCl9PC9iPjxicj5TY29yZSAvMTAwPGJyPlJheW9uIH4ke01hdGgucm91bmQoZy5yKjExMSl9IGttPC9kaXY+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJncC1kdiI+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJncC1ybyI+PHNwYW4gY2xhc3M9ImdwLWljIj7wn5ONPC9zcGFuPjxzcGFuPiR7Zy5hZGRyfHxnLmxhdC50b0ZpeGVkKDQpKyfCsE4gJytnLmxvbi50b0ZpeGVkKDQpKyfCsEUnfTwvc3Bhbj48L2Rpdj4KICAgICR7Zy5waG9uZT9gPGRpdiBjbGFzcz0iZ3Atcm8iPjxzcGFuIGNsYXNzPSJncC1pYyI+8J+Tnjwvc3Bhbj48c3Bhbj4ke2cucGhvbmV9PC9zcGFuPjwvZGl2PmA6Jyd9CiAgICAke2cud2ViP2A8ZGl2IGNsYXNzPSJncC1ybyI+PHNwYW4gY2xhc3M9ImdwLWljIj7wn4yQPC9zcGFuPjxhIGhyZWY9IiR7Zy53ZWJ9IiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9ImNvbG9yOiM3YzNhZWQ7Zm9udC1zaXplOjExcHgiPiR7Zy53ZWIucmVwbGFjZSgvXmh0dHBzPzpcL1wvLywnJykuc2xpY2UoMCwzMil9PC9hPjwvZGl2PmA6Jyd9CiAgICAke2cuaG91cnM/YDxkaXYgY2xhc3M9ImdwLXJvIj48c3BhbiBjbGFzcz0iZ3AtaWMiPvCflZA8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxMHB4Ij4ke2cuaG91cnN9PC9zcGFuPjwvZGl2PmA6Jyd9CiAgICAke2cub3NtSWQ/YDxkaXYgY2xhc3M9ImdwLXJvIj48c3BhbiBjbGFzcz0iZ3AtaWMiPvCflJc8L3NwYW4+PGEgaHJlZj0iaHR0cHM6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcvJHtnLm9zbVR5cGV9LyR7Zy5vc21JZH0iIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iY29sb3I6IzdjM2FlZDtmb250LXNpemU6MTFweCI+T3BlblN0cmVldE1hcDwvYT48L2Rpdj5gOicnfQogIDwvZGl2PmA7Cn0KZnVuY3Rpb24gYWRkTWFya2VyKGcsaWR4KXsKICBpZihneW1NYXJrZXJzLmhhcyhpZHgpKXJldHVybjsKICBjb25zdCBpY289TC5kaXZJY29uKHtjbGFzc05hbWU6JycsaHRtbDonPGRpdiBjbGFzcz0iZ20iPvCfj4vvuI88L2Rpdj4nLGljb25TaXplOlsyOCwyOF0saWNvbkFuY2hvcjpbMTQsMTRdLHBvcHVwQW5jaG9yOlswLC0xNl19KTsKICBjb25zdCBtPUwubWFya2VyKFtnLmxhdCxnLmxvbl0se2ljb246aWNvLHpJbmRleE9mZnNldDoxMDAwfSk7CiAgbS5iaW5kUG9wdXAoJycse21heFdpZHRoOjI0MH0pOwogIG0ub24oJ2NsaWNrJywoKT0+bS5zZXRQb3B1cENvbnRlbnQoZ3ltUG9wdXAoZykpKTsKICBneW1NYXJrZXJzLnNldChpZHgsbSk7CiAgaWYoc2hvd0d5bXMpbS5hZGRUbyhneW1MYXllcik7Cn0KZnVuY3Rpb24gc3luY1ZpcygpeyBneW1NYXJrZXJzLmZvckVhY2gobT0+eyBpZihzaG93R3ltcyl7aWYoIWd5bUxheWVyLmhhc0xheWVyKG0pKW0uYWRkVG8oZ3ltTGF5ZXIpO31lbHNlIGlmKGd5bUxheWVyLmhhc0xheWVyKG0pKWd5bUxheWVyLnJlbW92ZUxheWVyKG0pOyB9KTsgfQpmdW5jdGlvbiB1cGRDb3VudCgpeyBjb25zdCBlbD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZ2NudCcpO2lmKGd5bXMubGVuZ3RoKXtlbC5zdHlsZS5kaXNwbGF5PSdibG9jayc7ZWwudGV4dENvbnRlbnQ9YPCfj4vvuI8gJHtneW1zLmxlbmd0aH0gc2FsbGUke2d5bXMubGVuZ3RoPjE/J3MnOicnfWA7fWVsc2UgZWwuc3R5bGUuZGlzcGxheT0nbm9uZSc7IH0KZnVuY3Rpb24gaGFzWm9uZShzLHcsbixlKXsgcmV0dXJuIGZldGNoZWRab25lcy5zb21lKHo9Pnouczw9cysuMDAyJiZ6Lnc8PXcrLjAwMiYmei5uPj1uLS4wMDImJnouZT49ZS0uMDAyKTsgfQoKLy8g4pSA4pSAIE92ZXJwYXNzIOKAlCBQT1NUIHB1aXMgR0VULCAzIHNlcnZldXJzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAphc3luYyBmdW5jdGlvbiBvdnBRdWVyeShzcnYsIHEpewogIC8vIEVzc2FpIDEgOiBQT1NUCiAgdHJ5ewogICAgY29uc3Qgcj1hd2FpdCBmZXRjaChzcnYse21ldGhvZDonUE9TVCcsaGVhZGVyczp7J0NvbnRlbnQtVHlwZSc6J2FwcGxpY2F0aW9uL3gtd3d3LWZvcm0tdXJsZW5jb2RlZCd9LGJvZHk6J2RhdGE9JytlbmNvZGVVUklDb21wb25lbnQocSl9KTsKICAgIGlmKCFyLm9rKXRocm93IG5ldyBFcnJvcignUE9TVCAnK3Iuc3RhdHVzKTsKICAgIGNvbnN0IGQ9YXdhaXQgci5qc29uKCk7aWYoZCYmZC5lbGVtZW50cylyZXR1cm4gZDsKICAgIHRocm93IG5ldyBFcnJvcignUE9TVCByw6lwb25zZSBpbnZhbGlkZScpOwogIH1jYXRjaChlMSl7CiAgICAvLyBFc3NhaSAyIDogR0VUCiAgICB0cnl7CiAgICAgIGNvbnN0IHI9YXdhaXQgZmV0Y2goc3J2Kyc/ZGF0YT0nK2VuY29kZVVSSUNvbXBvbmVudChxKSk7CiAgICAgIGlmKCFyLm9rKXRocm93IG5ldyBFcnJvcignR0VUICcrci5zdGF0dXMpOwogICAgICBjb25zdCBkPWF3YWl0IHIuanNvbigpO2lmKGQmJmQuZWxlbWVudHMpcmV0dXJuIGQ7CiAgICAgIHRocm93IG5ldyBFcnJvcignR0VUIHLDqXBvbnNlIGludmFsaWRlJyk7CiAgICB9Y2F0Y2goZTIpe3Rocm93IGUyO30KICB9Cn0KCmFzeW5jIGZ1bmN0aW9uIGZldGNoR3ltcygpewogIGlmKGZldGNoaW5nfHwhbm9ybVJlYWR5fHxtYXAuZ2V0Wm9vbSgpPDkpcmV0dXJuOwogIGlmKGxvY2F0aW9uLnByb3RvY29sPT09J2ZpbGU6JylyZXR1cm47IC8vIGJsb3F1w6kgc2FucyBzZXJ2ZXVyIGxvY2FsCiAgZmV0Y2hpbmc9dHJ1ZTsKCiAgY29uc3QgYj1tYXAuZ2V0Qm91bmRzKCk7CiAgY29uc3Qgcz1NYXRoLm1heChiLmdldFNvdXRoKCktLjAzLEZSLnMpLG49TWF0aC5taW4oYi5nZXROb3J0aCgpKy4wMyxGUi5uKTsKICBjb25zdCB3PU1hdGgubWF4KGIuZ2V0V2VzdCgpLS4wNSxGUi53KSxlPU1hdGgubWluKGIuZ2V0RWFzdCgpKy4wNSxGUi5lKTsKICBpZihoYXNab25lKHMsdyxuLGUpKXtmZXRjaGluZz1mYWxzZTtyZXR1cm47fQoKICBjb25zdCBxPWBbb3V0Ompzb25dW3RpbWVvdXQ6MjVdOygKbm9kZVtsZWlzdXJlPWZpdG5lc3NfY2VudHJlXSgke3N9LCR7d30sJHtufSwke2V9KTsKd2F5W2xlaXN1cmU9Zml0bmVzc19jZW50cmVdKCR7c30sJHt3fSwke259LCR7ZX0pOwpub2RlW2FtZW5pdHk9Z3ltXSgke3N9LCR7d30sJHtufSwke2V9KTsKd2F5W2FtZW5pdHk9Z3ltXSgke3N9LCR7d30sJHtufSwke2V9KTsKbm9kZVtzcG9ydD1maXRuZXNzXSgke3N9LCR7d30sJHtufSwke2V9KTsKd2F5W3Nwb3J0PWZpdG5lc3NdKCR7c30sJHt3fSwke259LCR7ZX0pOwopO291dCBjZW50ZXIgdGFncztgOwoKICBsZXQgZGF0YT1udWxsOwogIGZvcihsZXQgaT0wO2k8T1ZQLmxlbmd0aDtpKyspewogICAgdHJ5ewogICAgICBzZXRCYXIodHJ1ZSxgU2VydmV1ciAke2krMX0vMy4uLmApOwogICAgICBkYXRhPWF3YWl0IG92cFF1ZXJ5KE9WUFtpXSxxKTsKICAgICAgYnJlYWs7CiAgICB9Y2F0Y2goZSl7Y29uc29sZS53YXJuKGBPVlBbJHtpfV06YCxlLm1lc3NhZ2UpO2RhdGE9bnVsbDt9CiAgfQoKICBpZighZGF0YSl7CiAgICBzZXRCYXIoZmFsc2UpOwogICAgbm90aWYoJ1NlcnZldXJzIE92ZXJwYXNzIGluYWNjZXNzaWJsZXMg4oCUIHLDqWVzc2F5ZXonLCdlcnInKTsKICAgIGZldGNoaW5nPWZhbHNlO3JldHVybjsKICB9CgogIGNvbnN0IHNlZW49bmV3IFNldChneW1zLm1hcChnPT5nLmxhdC50b0ZpeGVkKDQpKycsJytnLmxvbi50b0ZpeGVkKDQpKSk7CiAgbGV0IGFkZGVkPTA7CiAgZm9yKGNvbnN0IGVsIG9mIGRhdGEuZWxlbWVudHMpewogICAgY29uc3QgbGF0PWVsLmxhdD8/ZWwuY2VudGVyPy5sYXQsbG9uPWVsLmxvbj8/ZWwuY2VudGVyPy5sb247CiAgICBpZighbGF0fHwhbG9uKWNvbnRpbnVlOwogICAgY29uc3Qgaz1sYXQudG9GaXhlZCg0KSsnLCcrbG9uLnRvRml4ZWQoNCk7CiAgICBpZihzZWVuLmhhcyhrKSljb250aW51ZTtzZWVuLmFkZChrKTsKICAgIGNvbnN0IHQ9ZWwudGFnc3x8e307CiAgICBjb25zdCBuZWFyPWdjKGxhdCxsb24scG9wR3JpZCk7CiAgICBsZXQgYmVzdD1udWxsLGJkPTFlOTsKICAgIGZvcihjb25zdCBwIG9mIG5lYXIpe2NvbnN0IGQ9KGxhdC1wLmxhdCkqKjIrKChsb24tcC5sb24pKk1hdGguY29zKGxhdCpNYXRoLlBJLzE4MCkpKioyO2lmKGQ8YmQpe2JkPWQ7YmVzdD1wO319CiAgICBjb25zdCByPWJlc3Q/YmVzdC5yKi41MjouMDE4OwogICAgY29uc3QgZz17bGF0LGxvbixyLAogICAgICBuYW1lOnQubmFtZXx8dFsnbmFtZTpmciddfHwnU2FsbGUgZGUgc3BvcnQnLAogICAgICBhZGRyOlt0WydhZGRyOmhvdXNlbnVtYmVyJ10sdFsnYWRkcjpzdHJlZXQnXSx0WydhZGRyOmNpdHknXV0uZmlsdGVyKEJvb2xlYW4pLmpvaW4oJyAnKXx8JycsCiAgICAgIHBob25lOnQucGhvbmV8fHRbJ2NvbnRhY3Q6cGhvbmUnXXx8JycsCiAgICAgIHdlYjp0LndlYnNpdGV8fHRbJ2NvbnRhY3Q6d2Vic2l0ZSddfHwnJywKICAgICAgaG91cnM6dC5vcGVuaW5nX2hvdXJzfHwnJywKICAgICAgb3NtSWQ6ZWwuaWQsb3NtVHlwZTplbC50eXBlPT09J3dheSc/J3dheSc6J25vZGUnfTsKICAgIGNvbnN0IGlkeD1neW1zLmxlbmd0aDtneW1zLnB1c2goZyk7YXRnKGcsZ3ltR3JpZCk7YWRkTWFya2VyKGcsaWR4KTthZGRlZCsrOwogIH0KCiAgZmV0Y2hlZFpvbmVzLnB1c2goe3MsdyxuLGV9KTsKICBpZihhZGRlZD4wKXtjb21wdXRlTm9ybSgpO2hMYXllci5yZWRyYXcoKTt9CiAgc2V0QmFyKGZhbHNlKTt1cGRDb3VudCgpOwogIG5vdGlmKGFkZGVkPjA/YOKckyArJHthZGRlZH0gc2FsbGUke2FkZGVkPjE/J3MnOicnfSDCtyAke2d5bXMubGVuZ3RofSBhdSB0b3RhbGA6YFpvbmUgw6Agam91ciDCtyAke2d5bXMubGVuZ3RofSBzYWxsZSR7Z3ltcy5sZW5ndGg+MT8ncyc6Jyd9ICBlbiBjYWNoZWAsJ29rJyk7CiAgZmV0Y2hpbmc9ZmFsc2U7Cn0KCi8vIOKUgOKUgCBDbGljIGNhcnRlIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApmdW5jdGlvbiBpbml0Q2xpY2soKXsKICBtYXAub24oJ2NsaWNrJyxlPT57CiAgICBpZighbm9ybVJlYWR5KXJldHVybjtjbGtMYXllci5jbGVhckxheWVycygpOwogICAgY29uc3R7bGF0LGxuZ309ZS5sYXRsbmc7CiAgICBpZihsYXQ8RlIucy0xfHxsYXQ+RlIubisxfHxsbmc8RlIudy0xfHxsbmc+RlIuZSsxKXJldHVybjsKICAgIGNvbnN0IHM9bnMobGF0LGxuZykscD1NYXRoLnJvdW5kKHMqMTAwKSxbcixnLGJdPXJnYihzKSxjb2w9YHJnYigke3J9LCR7Z30sJHtifSlgOwogICAgY29uc3Qgd2Fybj1tYXAuZ2V0Wm9vbSgpPDk/JzxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxMHB4O2NvbG9yOiNlODc7bWFyZ2luLXRvcDo1cHgiPlpvb20gOSsgcG91ciBsZXMgc2FsbGVzPC9kaXY+JzonJzsKICAgIEwuY2lyY2xlTWFya2VyKFtsYXQsbG5nXSx7cmFkaXVzOjgsY29sb3I6J3doaXRlJyxmaWxsQ29sb3I6Y29sLGZpbGxPcGFjaXR5OjEsd2VpZ2h0OjIuNX0pCiAgICAgLmFkZFRvKGNsa0xheWVyKS5iaW5kUG9wdXAoYDxkaXYgY2xhc3M9ImdwIj4KICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToyNnB4O2ZvbnQtd2VpZ2h0OjcwMDtjb2xvcjoke2NvbH07bGluZS1oZWlnaHQ6MSI+JHtwfTxzcGFuIHN0eWxlPSJmb250LXNpemU6MTNweDtjb2xvcjojYWFhO2ZvbnQtd2VpZ2h0OjQwMCI+LzEwMDwvc3Bhbj48L2Rpdj4KICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxM3B4O2ZvbnQtd2VpZ2h0OjYwMDttYXJnaW46M3B4IDAgOHB4O2NvbG9yOiR7Y29sfSI+JHtzbGJsKHApfTwvZGl2PgogICAgICAgPGRpdiBjbGFzcz0iZ3Atcm8iPjxzcGFuIGNsYXNzPSJncC1pYyI+8J+TjTwvc3Bhbj48c3Bhbj4ke2xhdC50b0ZpeGVkKDUpfcKwTiDCtyAke2xuZy50b0ZpeGVkKDUpfcKwRTwvc3Bhbj48L2Rpdj4ke3dhcm59CiAgICAgPC9kaXY+YCx7b2Zmc2V0OlswLC02XX0pLm9wZW5Qb3B1cCgpOwogIH0pOwp9CgovLyDilIDilIAgSU5TRUUg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGxvYWRGcmFuY2UoKXsKICBzdGFydFBCKCk7CiAgdHJ5ewogICAgY29uc3QgcmVzcD1hd2FpdCBmZXRjaCgnaHR0cHM6Ly9nZW8uYXBpLmdvdXYuZnIvY29tbXVuZXM/ZmllbGRzPW5vbSxjZW50cmUscG9wdWxhdGlvbiZmb3JtYXQ9anNvbiZnZW9tZXRyeT1jZW50cmUnKTsKICAgIGlmKCFyZXNwLm9rKXRocm93IG5ldyBFcnJvcignSU5TRUUgSFRUUCAnK3Jlc3Auc3RhdHVzKTsKICAgIGNvbnN0IGRhdGE9YXdhaXQgcmVzcC5qc29uKCk7CiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbGQtdCcpLnRleHRDb250ZW50PSdJbmRleGF0aW9uIHNwYXRpYWxlLi4uJzsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsZC1zJykudGV4dENvbnRlbnQ9ZGF0YS5sZW5ndGgudG9Mb2NhbGVTdHJpbmcoJ2ZyJykrJyBjb21tdW5lcyc7CiAgICBhd2FpdCBzbGVlcCgyMCk7CiAgICBmb3IoY29uc3QgYyBvZiBkYXRhKXsKICAgICAgaWYoIWMuY2VudHJlKWNvbnRpbnVlOwogICAgICBjb25zdCBsb249Yy5jZW50cmUuY29vcmRpbmF0ZXNbMF0sbGF0PWMuY2VudHJlLmNvb3JkaW5hdGVzWzFdOwogICAgICBpZihsYXQ8RlIuc3x8bGF0PkZSLm58fGxvbjxGUi53fHxsb24+RlIuZSljb250aW51ZTsKICAgICAgY29uc3QgcG9wPWMucG9wdWxhdGlvbnx8MTUwLHI9cG9wUihwb3ApLHd3PXB3KHBvcCk7CiAgICAgIGNvbnN0IGNvbT17bGF0LGxvbixwb3Ascix3Ond3fTtjb21tdW5lcy5wdXNoKGNvbSk7YXRnKGNvbSxwb3BHcmlkKTsKICAgIH0KICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsZC10JykudGV4dENvbnRlbnQ9J0NhbGN1bCDDqWNoZWxsZSBnbG9iYWxlLi4uJzsKICAgIGF3YWl0IHNsZWVwKDIwKTtjb21wdXRlTm9ybSgpO2VuZFBCKCk7YXdhaXQgc2xlZXAoMjAwKTsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsZDAnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsZWcnKS5zdHlsZS5kaXNwbGF5PSdibG9jayc7CiAgICBoTGF5ZXIucmVkcmF3KCk7dXBkWnRpcCgpOwogICAgbm90aWYoJ+KckyAnK2NvbW11bmVzLmxlbmd0aC50b0xvY2FsZVN0cmluZygnZnInKSsnIGNvbW11bmVzIMK3IFpvb21leiA5KyBwb3VyIGxlcyBzYWxsZXMnLCdvaycpOwogIH1jYXRjaChlKXsKICAgIGVuZFBCKCk7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2xkLXQnKS50ZXh0Q29udGVudD0nRXJyZXVyIGRlIGNoYXJnZW1lbnQnOwogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2xkLXMnKS50ZXh0Q29udGVudD1lLm1lc3NhZ2U7Y29uc29sZS5lcnJvcihlKTsKICB9Cn0KCi8vIOKUgOKUgCBSZWNoZXJjaGUg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGRvU2VhcmNoKHEpewogIGlmKCFxLnRyaW0oKSlyZXR1cm47CiAgdHJ5ewogICAgY29uc3Qgcj1hd2FpdCBmZXRjaChgJHtOT019L3NlYXJjaD9mb3JtYXQ9anNvbiZxPSR7ZW5jb2RlVVJJQ29tcG9uZW50KHEpfSZsaW1pdD0xJmFjY2VwdC1sYW5ndWFnZT1mcmApOwogICAgY29uc3QgZD1hd2FpdCByLmpzb24oKTtpZighZC5sZW5ndGgpe25vdGlmKCdMaWV1IGludHJvdXZhYmxlJywnZXJyJyk7cmV0dXJuO30KICAgIGNvbnN0IHA9ZFswXTtsZXQgcyx3LG4sZTsKICAgIGlmKHAuYm91bmRpbmdib3gpW3Msbix3LGVdPXAuYm91bmRpbmdib3gubWFwKE51bWJlcik7CiAgICBlbHNle2NvbnN0IGR2PS4wODtzPStwLmxhdC1kdjtuPStwLmxhdCtkdjt3PStwLmxvbi1kdioxLjU7ZT0rcC5sb24rZHYqMS41O30KICAgIGlmKG4tcz4uNCl7Y29uc3QgYz0ocytuKS8yO3M9Yy0uMTY7bj1jKy4xNjt9aWYoZS13Pi42KXtjb25zdCBjPSh3K2UpLzI7dz1jLS4yNztlPWMrLjI3O30KICAgIG1hcC5maXRCb3VuZHMoW1tzLHddLFtuLGVdXSx7bWF4Wm9vbToxM30pOwogIH1jYXRjaChlKXtub3RpZignRXJyZXVyIHLDqXNlYXUnLCdlcnInKTt9Cn0KYXN5bmMgZnVuY3Rpb24gZ2V0U3VncyhxKXsKICB0cnl7CiAgICBjb25zdCByPWF3YWl0IGZldGNoKGAke05PTX0vc2VhcmNoP2Zvcm1hdD1qc29uJnE9JHtlbmNvZGVVUklDb21wb25lbnQocSl9JmxpbWl0PTUmYWNjZXB0LWxhbmd1YWdlPWZyJmNvdW50cnljb2Rlcz1mcmApOwogICAgY29uc3QgZD1hd2FpdCByLmpzb24oKSxlbD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3VncycpOwogICAgZWwuaW5uZXJIVE1MPScnO2lmKCFkLmxlbmd0aCl7ZWwuc3R5bGUuZGlzcGxheT0nbm9uZSc7cmV0dXJuO30KICAgIGQuZm9yRWFjaChpdGVtPT57Y29uc3QgZGl2PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO2Rpdi5jbGFzc05hbWU9J3N1Zyc7ZGl2LnRleHRDb250ZW50PWl0ZW0uZGlzcGxheV9uYW1lO2Rpdi5vbmNsaWNrPSgpPT57ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NpJykudmFsdWU9aXRlbS5kaXNwbGF5X25hbWU7ZWwuc3R5bGUuZGlzcGxheT0nbm9uZSc7ZG9TZWFyY2goaXRlbS5kaXNwbGF5X25hbWUpO307ZWwuYXBwZW5kQ2hpbGQoZGl2KTt9KTsKICAgIGVsLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsKICB9Y2F0Y2goZSl7fQp9Cgp3aW5kb3cuZ2xUb2c9ZnVuY3Rpb24obCl7CiAgaWYobD09PSdzY29yZScpe3Nob3dTY29yZT0hc2hvd1Njb3JlO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0LXNjb3JlJykuY2xhc3NMaXN0LnRvZ2dsZSgnb24nLHNob3dTY29yZSk7aExheWVyLnJlZHJhdygpO30KICBpZihsPT09J2d5bXMnKXtzaG93R3ltcz0hc2hvd0d5bXM7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3QtZ3ltcycpLmNsYXNzTGlzdC50b2dnbGUoJ29uJyxzaG93R3ltcyk7c3luY1ZpcygpO30KfTsKZnVuY3Rpb24gc2V0QmFyKG9uLHR4dCl7Y29uc3QgZWw9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2JhcicpO2VsLnN0eWxlLmRpc3BsYXk9b24/J2ZsZXgnOidub25lJztpZih0eHQpZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2Jhci10eHQnKS50ZXh0Q29udGVudD10eHQ7fQpmdW5jdGlvbiB1cGRadGlwKCl7aWYoIW5vcm1SZWFkeSlyZXR1cm47ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3p0aXAnKS5zdHlsZS5kaXNwbGF5PW1hcC5nZXRab29tKCk8OT8nYmxvY2snOidub25lJzt9CmZ1bmN0aW9uIG5vdGlmKG1zZyx0eXBlKXsKICBjb25zdCBlbD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbnRmJyk7ZWwudGV4dENvbnRlbnQ9bXNnO2VsLnN0eWxlLmRpc3BsYXk9J2Jsb2NrJzsKICBjb25zdCBzdD17b2s6WycjMGQyZTFhJywnMXB4IHNvbGlkICMxYTVjMzInLCcjNGFkZTgwJ10sd2FybjpbJyMyYTI1MGQnLCcxcHggc29saWQgIzVjNGUxYScsJyNmYmJmMjQnXSxlcnI6WycjMmUwZDBkJywnMXB4IHNvbGlkICM1YzFhMWEnLCcjZjg3MTcxJ119OwogIGNvbnN0W2JnLGJkLGNvbF09KHN0W3R5cGVdfHxzdC5vayk7ZWwuc3R5bGUuYmFja2dyb3VuZD1iZztlbC5zdHlsZS5ib3JkZXI9YmQ7ZWwuc3R5bGUuY29sb3I9Y29sOwogIGNsZWFyVGltZW91dChudGZUKTtudGZUPXNldFRpbWVvdXQoKCk9PmVsLnN0eWxlLmRpc3BsYXk9J25vbmUnLDgwMDApOwp9CmZ1bmN0aW9uIHN0YXJ0UEIoKXtsZXQgcD0wO2NvbnN0IGI9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3BiJyk7cGJUPXNldEludGVydmFsKCgpPT57cD1NYXRoLm1pbihwKyhNYXRoLnJhbmRvbSgpKjMrLjQpLDg0KTtiLnN0eWxlLndpZHRoPXArJyUnO30sMTEwKTt9CmZ1bmN0aW9uIGVuZFBCKCl7Y2xlYXJJbnRlcnZhbChwYlQpO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwYicpLnN0eWxlLndpZHRoPScxMDAlJzt9CmZ1bmN0aW9uIHNsZWVwKG1zKXtyZXR1cm4gbmV3IFByb21pc2Uocj0+c2V0VGltZW91dChyLG1zKSk7fQoKZnVuY3Rpb24gaW5pdCgpewogIG1hcD1MLm1hcCgnbWFwJyx7Y2VudGVyOls0Ni44LDIuM10sem9vbTo2fSk7CiAgTC50aWxlTGF5ZXIoJ2h0dHBzOi8ve3N9LnRpbGUub3BlbnN0cmVldG1hcC5vcmcve3p9L3t4fS97eX0ucG5nJyx7YXR0cmlidXRpb246J8KpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzJyxtYXhab29tOjE5fSkuYWRkVG8obWFwKTsKICBneW1MYXllcj1MLmxheWVyR3JvdXAoKS5hZGRUbyhtYXApO2Nsa0xheWVyPUwubGF5ZXJHcm91cCgpLmFkZFRvKG1hcCk7CiAgaW5pdEhlYXQoKTtpbml0Q2xpY2soKTsKICBjb25zdCBpbnA9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NpJyksYnRuPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzYicpLHN1Z3M9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N1Z3MnKTsKICBpbnAuYWRkRXZlbnRMaXN0ZW5lcignaW5wdXQnLCgpPT57Y2xlYXJUaW1lb3V0KHN1Z1QpO2NvbnN0IHE9aW5wLnZhbHVlLnRyaW0oKTtpZihxLmxlbmd0aDwzKXtzdWdzLnN0eWxlLmRpc3BsYXk9J25vbmUnO3JldHVybjt9c3VnVD1zZXRUaW1lb3V0KCgpPT5nZXRTdWdzKHEpLDM1MCk7fSk7CiAgaW5wLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLGU9PntpZihlLmtleT09PSdFbnRlcicpe3N1Z3Muc3R5bGUuZGlzcGxheT0nbm9uZSc7ZG9TZWFyY2goaW5wLnZhbHVlLnRyaW0oKSk7fX0pOwogIGJ0bi5vbmNsaWNrPSgpPT57c3Vncy5zdHlsZS5kaXNwbGF5PSdub25lJztkb1NlYXJjaChpbnAudmFsdWUudHJpbSgpKTt9OwogIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxlPT57aWYoIWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdycpLmNvbnRhaW5zKGUudGFyZ2V0KSlzdWdzLnN0eWxlLmRpc3BsYXk9J25vbmUnO30pOwogIG1hcC5vbignbW92ZWVuZCcsKCk9PntjbGVhclRpbWVvdXQobXZUKTttdlQ9c2V0VGltZW91dCgoKT0+e3VwZFp0aXAoKTtpZihub3JtUmVhZHkmJm1hcC5nZXRab29tKCk+PTkmJiFmZXRjaGluZylmZXRjaEd5bXMoKTt9LDcwMCk7fSk7CiAgbWFwLm9uKCd6b29tZW5kJyx1cGRadGlwKTsKICBsb2FkRnJhbmNlKCk7Cn0KaW5pdCgpOwp9KSgpOwo8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg==";
+        const _bytes = Uint8Array.from(atob(_b64), c => c.charCodeAt(0));
+        const _gymHtml = new TextDecoder('utf-8').decode(_bytes);
+        const _blob = new Blob([_gymHtml], {type:'text/html'});
+        document.getElementById('gym-iframe').src = URL.createObjectURL(_blob);
+      })();
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <button class="gb-lb-btn" id="gb-lb-next" onclick="gbNav(1)">&#8250;</button>
+  <button id="gb-lb-close" onclick="gbClose()">&#215;</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+`;
+        const _blob = new Blob([_gymHtml], {type:'text/html'});
+        document.getElementById('gym-iframe').src = URL.createObjectURL(_blob);
+      })();
+      </script>
+      </div>
+    </section>
+
+    <!-- PIPELINE -->
+    <section>
+      <div class="section-label" data-i18n="py-sec2">Pipeline</div>
+      <div class="pipeline">
+        <div class="pipe-step">
+          <div class="pipe-num">1</div>
+          <div class="pipe-content">
+            <div class="pipe-title" data-i18n="pipe1-title">Collecte des données</div>
+            <div class="pipe-desc" data-i18n="pipe1-desc">Données démographiques par commune (INSEE) et extraction des salles de sport existantes via l'API Overpass d'OpenStreetMap.</div>
+            <span class="pipe-tag">pandas · overpy · insee api</span>
+          </div>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">2</div>
+          <div class="pipe-content">
+            <div class="pipe-title" data-i18n="pipe2-title">Cartographie de la concurrence</div>
+            <div class="pipe-desc" data-i18n="pipe2-desc">Calcul de la densité de concurrence autour de chaque point candidat via la formule de distance haversine.</div>
+            <span class="pipe-tag">overpy · geopy · haversine</span>
+          </div>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">3</div>
+          <div class="pipe-content">
+            <div class="pipe-title" data-i18n="pipe3-title">Calcul du score bi-critères</div>
+            <div class="pipe-desc"><code style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green)">score = pop_pondérée × pénalité_concurrence</code></div>
+            <span class="pipe-tag">numpy · gaussian kernel</span>
+          </div>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num">4</div>
+          <div class="pipe-content">
+            <div class="pipe-title" data-i18n="pipe4-title">Visualisation</div>
+            <div class="pipe-desc" data-i18n="pipe4-desc">Génération d'une carte de chaleur des scores et identification de l'emplacement optimal.</div>
+            <span class="pipe-tag">matplotlib · heatmap</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE -->
+    <section>
+      <div class="section-label" data-i18n="py-sec3">Extrait de code</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><div class="code-dot"></div><div class="code-dot"></div><div class="code-dot"></div></div>
+          <span class="code-filename">optimisation.py</span>
+        </div>
+        <div class="code-body">
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> geopy.distance <span class="kw">import</span> geodesic
+
+SIGMA_POP <span class="op">=</span> <span class="nb">1.5</span>   <span class="cm"># rayon gaussien population (km)</span>
+SIGMA_CONCUR <span class="op">=</span> <span class="nb">0.8</span> <span class="cm"># rayon pénalité concurrence (km)</span>
+
+<span class="kw">def</span> <span class="fn">population_ponderee</span>(point, communes):
+    total <span class="op">=</span> <span class="nb">0.0</span>
+    <span class="kw">for</span> c <span class="kw">in</span> communes:
+        dist <span class="op">=</span> geodesic(point, c.coords).km
+        poids <span class="op">=</span> np.<span class="fn">exp</span>(<span class="op">-</span>dist<span class="op">**</span><span class="nb">2</span> <span class="op">/</span> (<span class="nb">2</span> <span class="op">*</span> SIGMA_POP<span class="op">**</span><span class="nb">2</span>))
+        total <span class="op">+=</span> c.population <span class="op">*</span> poids
+    <span class="kw">return</span> total
+
+<span class="kw">def</span> <span class="fn">penalite_concurrence</span>(point, salles_osm):
+    pression <span class="op">=</span> <span class="nb">0.0</span>
+    <span class="kw">for</span> s <span class="kw">in</span> salles_osm:
+        dist <span class="op">=</span> geodesic(point, s.coords).km
+        pression <span class="op">+=</span> np.<span class="fn">exp</span>(<span class="op">-</span>dist<span class="op">**</span><span class="nb">2</span> <span class="op">/</span> (<span class="nb">2</span> <span class="op">*</span> SIGMA_CONCUR<span class="op">**</span><span class="nb">2</span>))
+    <span class="kw">return</span> np.<span class="fn">exp</span>(<span class="op">-</span>pression)
+
+<span class="kw">def</span> <span class="fn">score</span>(point, communes, salles_osm):
+    <span class="kw">return</span> <span class="fn">population_ponderee</span>(point, communes) <span class="op">*</span> <span class="fn">penalite_concurrence</span>(point, salles_osm)
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section>
+      <div class="section-label" data-i18n="py-sec4">Stack technique</div>
+      <div class="tools-grid">
+        <span class="tool-tag">Python 3.11</span>
+        <span class="tool-tag">NumPy</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Matplotlib</span>
+        <span class="tool-tag">Geopy</span>
+        <span class="tool-tag">Overpy</span>
+        <span class="tool-tag">Leaflet.js</span>
+        <span class="tool-tag neutral" data-i18n="tool-bi">Score bi-critères</span>
+        <span class="tool-tag neutral" data-i18n="tool-geo">Analyse géospatiale</span>
+      </div>
+    </section>
+
+    <!-- APPORTS -->
+    <section>
+      <div class="section-label" data-i18n="py-sec5">Apports</div>
+      <div class="conclusion-box">
+        <p data-i18n-html="py-conc1">Ce projet m'a permis de structurer un programme Python complet de bout en bout, de l'import des données publiques à la génération d'une carte de score exploitable.</p>
+        <p data-i18n-html="py-conc2">J'ai développé des compétences en <strong>modélisation mathématique</strong> (noyaux gaussiens, pénalité exponentielle), en manipulation de données géospatiales et en visualisation. Ce type d'approche est directement transposable à des problématiques d'ingénierie comme l'implantation d'unités de production.</p>
+      </div>
+    </section>
+
+  </div>
+
+<script>
+// ══════════════════════════════════════
+// TRANSLATIONS
+// ══════════════════════════════════════
+const T = {
+fr:{
+  'page-title':'Gauthier Bonhomme — Ingénieur','job-title':'Élève Ingénieur',
+  'tagline-sub':'Mécanique · Simulation · Sport','seeking':'Recherche un stage',
+  'dl-btn':'Télécharger mon CV','dl-btn-long':'Télécharger mon CV (PDF)',
+  'nav-about':'À propos','nav-formation':'Formation','nav-exp':'Expériences',
+  'nav-comp':'Compétences','nav-lang':'Langues','nav-int':"Centres d'intérêt",'nav-contact':'Contact',
+  'sec-about':'À propos','sec-formation':'Formation','sec-exp':'Expériences',
+  'sec-comp':'Compétences','sec-lang':'Langues','sec-int':"Centres d'intérêt",'sec-contact':'Contact',
+  'about-p1':"Étudiant en 2ème année à <strong>l'École Nationale Supérieure des Arts et Métiers</strong> d'Aix-en-Provence, je suis passionné par les défis techniques et humains. Déterminé, volontaire et toujours prêt à me dépasser, je suis à la recherche d'un <strong>stage en ingénierie</strong> pour mettre mes compétences en pratique dans un environnement exigeant.",
+  'about-p2':"Issu d'une classe préparatoire PT au Lycée Mermoz de Montpellier, j'ai développé une rigueur scientifique solide en mécanique, simulation numérique et conception assistée par ordinateur. Ma formation m'a appris à résoudre des problèmes complexes avec méthode et créativité.",
+  'about-p3':"En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — une discipline qui forge le mental et le goût de l'effort. Je suis titulaire du <strong>permis B et A</strong>.",
+  'form1-title':'École Nationale Supérieure des Arts et Métiers','form1-sub':"Aix-en-Provence · Diplôme d'ingénieur",
+  'form1-li1':"Formation d'ingénieur généraliste avec spécialisation en mécanique et procédés de fabrication",
+  'form1-li2':'Simulation numérique (Abaqus), conception 3D (CATIA V5, 3D Expérience), programmation Python',
+  'form2-title':'Classe Préparatoire PT','form2-sub':'Lycée Mermoz, Montpellier',
+  'form2-li1':"Mathématiques, physique, sciences de l'ingénieur — formation intensive sur 3 ans",
+  'form2-li2':"Acquisition d'une rigueur analytique et d'une capacité à travailler sous pression",
+  'exp1-title':'Hall b — Stage','exp1-sub':"Saint-Dionisy · Lancement d'une salle de sport",
+  'exp1-li1':"Participation au lancement complet d'une salle de sport de A à Z",
+  'exp1-li2':'Gestion de projets de grande envergure et coordination des équipes',
+  'exp1-li3':'Community manager : création et animation des réseaux sociaux',
+  'exp1-li4':"Travaux d'aménagement et logistique",
+  'exp2-title':'Technicien polyvalent','exp2-sub':'Langlade · Centre de loisirs pour vélo',
+  'exp2-li1':'Réparation et maintenance de vélos','exp2-li2':'Accueil et conseil clients','exp2-li3':'Divers travaux manuels et logistique',
+  'exp3-title':'Saisonnier — Vendanges','exp3-sub':'Travail estival',
+  'exp3-li1':'Récolte des raisins lors des vendanges','exp3-li2':"Travail d'équipe, endurance et sens de l'effort",
+  'sk-cad':'Logiciels CAO / EF','sk-sim':'Simulation procédés','sk-prog':'Programmation & Data',
+  'sk-office':'Bureautique & Création','sk-proto':'Prototypage','sk-proto-1':'Impression 3D (FDM)','sk-proto-2':'Prototypage rapide','sk-soft':'Savoir-être',
+  'sk-soft-1':'Pédagogie','sk-soft-2':"Travail d'équipe",'sk-soft-3':'Rigueur','sk-soft-4':'Adaptabilité',
+  'lang1':'Français','lang1-level':'Langue maternelle','lang2':'Anglais','lang2-level':'Niveau C1 — Courant',
+  'int-judo':'Judo','int-escalade':'Escalade','int-ski':'Ski','int-ski-detail':'Alpin & randonnée',
+  'int-alpi':'Alpinisme','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Voyages',
+  'c-email':'Email','c-phone':'Téléphone','c-loc':'Localisation','c-loc-val':'Calvisson, 30420 — Gard (30) ↗',
+  'c-permis':'Permis','c-permis-val':'Permis B et A (moto)',
+  'footer-txt':'Conçu et développé avec soin · Gauthier Bonhomme · 2025','esc-album-title':'Voir mon album escalade','esc-album-sub':'4 photos & vidéos · Google Photos · Cliquez pour ouvrir','esc-s1':'Niveau bloc','esc-s2':'Spécialité','esc-s3':'Aussi en falaise','esc-txt1':"L\'escalade est bien plus qu\'un sport pour moi — c\'est un <strong>entraînement mental autant que physique</strong>. Résoudre un bloc, lire la voie, persévérer sur un mouvement difficile : autant de compétences qui se transposent naturellement à l\'ingénierie.",'esc-txt2':"Je pratique principalement en <strong>salle de bloc</strong> mais aussi en <strong>falaise</strong>, souvent couplé avec d\'autres sports de montagne comme l\'alpinisme et le trail.",'usinage-banner':'Exemple de projet d\'usinage FAO','abaqus-banner':'Exemple de projet Abaqus','py-demo-label':'Démo — Tester le logiciel','py-demo-desc':'Sélectionnez une ville, ajustez les paramètres et lancez l\'analyse pour voir les zones optimales s\'afficher sur la carte en temps réel.',
+'fond-tag':"Projet académique · Fonderie · Arts et Métiers",'fond-h1':"Chaînon de la<br><span>Fontaine de la Rotonde</span>",
+'fond-team':"Projet de groupe · 4 étudiants",'fond-meta':"QuickCast · Simulation thermique · Moulage",
+'fond-sec0':'Contexte','fond-ctx':"Reproduction en <strong>fonte grise GG30</strong> des chaînons ornementaux de la fontaine historique de la Rotonde d\'Aix-en-Provence. L\'objectif était de maîtriser l\'ensemble du cycle de fonderie — de la simulation numérique à la coulée — en équipe de 4 étudiants.",
+'fond-s1':'Fonte utilisée','fond-s2':'Configs simulées','fond-s3':'Chaînons / grappe','fond-s4':'Remplissage simulé','fond-banner':'Exemple de projet de fonderie','fond-gallery':"Extraits du projet",'fond-photo1':"Simulations QuickCast — localisation des retassures",'fond-photo2':"CAO — Solution de moulage n°2 avec masselottes",'fond-photo3':"CAO — Système de remplissage dimensionné",'fond-photo4':"Atelier — Noyaux en sable & machine à presse",'fond-photo5':"Coulée finale & chaînons démoulés",
+'fond-sec1':'Démarche',
+'fond-p1t':'Simulation thermique QuickCast','fond-p1d':"Comparaison de deux orientations pour localiser les retassures. Module thermique obtenu : 0,0104 m. Choix de la configuration avec la pièce couchée, plus favorable à la série.",
+'fond-p2t':'Choix et conception du moulage','fond-p2d':"Deux solutions étudiées. Retenue : moulage en sable à vert recyclable, 10 parties de moule, masselottes cylindro-sphériques à talon.",
+'fond-p3t':'Dimensionnement masselottes & remplissage','fond-p3d':"Application des trois règles — <strong>modules</strong>, <strong>rayons d\'action</strong> et <strong>retraits</strong> — pour dimensionner deux masselottes (D = 46/45 mm). Descente Ø 17,76 mm, tr = 10 s. Simulation finale validée sur QuickCast.",
+'fond-p4t':'Réalisation manuelle & coulée','fond-p4d':"8 demi-noyaux en sable à prise chimique, moule en sable à vert, graphite comme agent de démoulage. Charge hydrostatique : 90 kg. Coulée GG30 à 100 °C de surchauffe.",
+'fond-sec2':'Résultats clés',
+'fond-r1t':'Dimensionnement masselottes','fond-r1a':'Module thermique PC1','fond-r1b':'Module thermique PC2','fond-r1c':'Masselotte 1 (D × H)','fond-r1d':'Masselotte 2 (D × H)',
+'fond-r2t':'Système de remplissage','fond-r2a':'Ø descente','fond-r2b':'Temps de remplissage','fond-r2c':'Surchauffe résiduelle','fond-r2d':'Retassures dans la pièce','fond-r2d-val':'Aucune ✓',
+'fond-sec3':'Outils & matériaux','fond-t1':'Sable à vert','fond-t2':'Sable à prise chimique','fond-t3':'Moulage en grappe',
+'fond-sec4':'Bilan & enseignements',
+'fond-c1':"Le dimensionnement théorique a été validé par simulation — <strong>aucune retassure dans la pièce</strong>. Cette méthode est adaptée à la production en série de plus de 300 chaînons.",
+'fond-c2':"La confrontation avec l\'atelier — outillage sans masselottes — a illustré <strong>l\'écart entre simulation et production</strong>. Les défauts observés étaient acceptables pour une pièce artistique, mais pas pour une pièce mécanique.",
+'fond-c3':"Ce projet m\'a permis de maîtriser <strong>l\'ensemble du cycle de fonderie</strong> : simulation thermique, règles de dimensionnement, conception CAO et travail d\'atelier.",
+
+  'back':'Retour au CV',
+  'usinage-tag':'Projet académique · Arts et Métiers','usinage-h1':'Usinage d\'un<br><span>Vilebrequin</span>',
+  'usinage-meta':'FAO · Simulation · Fabrication','usinage-img1':'Plan technique — Vilebrequin monocylindre','usinage-img2':'Modèle 3D CATIA',
+  'usinage-sec1':'Contexte','usinage-ctx1':'Ce projet porte sur la <strong>fabrication complète d\'un vilebrequin</strong> de moteur monocylindre. En amont, la pièce avait été modélisée et simulée sous <strong>Abaqus</strong> (résistance mécanique, fatigue). L\'objectif était de passer de la simulation numérique à la fabrication réelle, en pilotant l\'ensemble du processus de FAO sous <strong>Fusion 360</strong>.',
+  'usinage-ctx2':'La gamme de fabrication a été exécutée sur une machine à commande numérique <strong>CTX Gamma 1250 TC (11 axes)</strong>, avec simulation préalable de chaque opération.',
+  'usinage-stat1':'Brut (mm)','usinage-stat2':'Opérations','usinage-stat3':'Temps usiné','usinage-stat4':'Coût estimé',
+  'usinage-sec2':'Déroulement',
+  'phase1-badge':'Phase 1 — Tournage','phase1-title':'Mise en forme de la pièce',
+  'ph1-op1':'Dressage','ph1-op2':'Chariotage ébauche','ph1-op3':'Chariotage finition','ph1-op4':'Gorge annulaire','ph1-op5':'Filetage M8','ph1-op6':'Rainure de clavette',
+  'phase2-badge':'Phase 2 — Fraisage','phase2-title':'Usinage du maneton',
+  'ph2-op1':'Fraisage ébauche','ph2-op2':'Fraisage finition','ph2-op3':'Perçage Ø14 mm',
+  'usinage-sec3':'Outils utilisés','tool-steel':'Acier C35 H9',
+  'usinage-sec4':'Bilan financier',
+  'usinage-bilan-note':"Ce bilan financier permet de prendre conscience du coût réel d'un usinage en atelier — une donnée clé pour tout ingénieur impliqué dans des décisions de fabrication.",'bilan1':'Temps d\'usinage (majoré +20%)','bilan2':'Coût horaire machine + main d\'œuvre','bilan3':'Matière première','bilan4':'Coût total estimé',
+  'usinage-sec5':'Enseignements',
+  'usinage-conc3':"Ce projet m'a permis de consolider mes bases en usinage : lecture de plan, choix des paramètres de coupe, gamme d'usinage et gestion des tolérances — des fondamentaux directement applicables en bureau d'études ou en atelier.",'usinage-conc1':'Ce projet a mis en évidence l\'écart entre <strong>simulation numérique et réalité atelier</strong> : des ajustements ont été nécessaires sur la machine pour gérer les vibrations et les contraintes mécaniques imprévues.',
+  'usinage-conc2':'L\'expérience m\'a renforcé dans la <strong>maîtrise complète de la FAO</strong> — de la définition du brut à la génération des trajectoires d\'outil — et m\'a sensibilisé à la gestion des coûts et des délais de production.',
+  'py-tag':'Projet personnel · Python','py-h1':'Localisation Optimale<br>d\'une <span>Salle de Sport</span>',
+  'py-meta':'Python · Score bi-critères · Géospatial',
+  'diag-p1-title':'① Population','diag-p2-title':'② Concurrence','diag-p3-title':'③ Score final','diag-p3-src':'pop × pénalité',
+  'diag-p1-label':'Population par commune pondérée par noyau gaussien (σ = 1.5 km)',
+  'diag-p2-label':'Salles existantes avec pénalité exponentielle décroissante (σ = 0.8 km)',
+  'diag-p3-label':'Point au score maximal = zone la plus peuplée et la moins concurrencée',
+  'legend-pop':'Densité de population (INSEE)','legend-gym':'Salles existantes (OpenStreetMap)','legend-opt':'Emplacement recommandé',
+  'py-sec1':'Contexte',
+  'py-ctx1':'Projet <strong>personnel</strong> développé en Python pour la salle de sport <strong>Hall b</strong> (Saint-Dionisy), où j\'ai effectué mon stage. Objectif : identifier l\'emplacement géographique optimal pour leur implantation.',
+  'py-ctx2':'Le score bi-critères combine la <strong>densité de population INSEE</strong> (pondérée par noyau gaussien) et la <strong>pression concurrentielle</strong> issue des salles de sport OpenStreetMap (pénalité exponentielle).',
+  'py-app-label':'Tester le logiciel','py-app-desc':'Interface interactive — entrez une ville et visualisez la zone de score optimal.','py-app-note':'⚠ Certaines fonctionnalités nécessitent une connexion (API OpenStreetMap & INSEE).','py-stat1':'Langage','py-stat2':'Critères','py-stat3':'Population','py-stat4':'Concurrence',
+  'py-sec2':'Pipeline',
+  'pipe1-title':'Collecte des données','pipe1-desc':'Données démographiques par commune (INSEE) et extraction des salles de sport existantes via l\'API Overpass d\'OpenStreetMap.',
+  'pipe2-title':'Cartographie de la concurrence','pipe2-desc':'Calcul de la densité de concurrence autour de chaque point candidat via la formule de distance haversine.',
+  'pipe3-title':'Calcul du score bi-critères','pipe4-title':'Visualisation',
+  'pipe4-desc':'Génération d\'une carte de chaleur des scores et identification de l\'emplacement optimal.',
+  'py-sec3':'Extrait de code','py-sec4':'Stack technique',
+  'tool-bi':'Score bi-critères','tool-geo':'Analyse géospatiale',
+  'py-sec5':'Apports',
+  'py-conc1':'Ce projet m\'a permis de structurer un programme Python complet de bout en bout, de l\'import des données publiques à la génération d\'une carte de score exploitable.',
+  'py-conc2':'J\'ai développé des compétences en <strong>modélisation mathématique</strong> (noyaux gaussiens, pénalité exponentielle), en manipulation de données géospatiales et en visualisation. Ce type d\'approche est directement transposable à des problématiques d\'ingénierie comme l\'implantation d\'unités de production.',
+},
+en:{
+  'page-title':'Gauthier Bonhomme — Engineer','job-title':'Engineering Student',
+  'tagline-sub':'Mechanics · Simulation · Sport','seeking':'Seeking an internship',
+  'dl-btn':'Download my CV','dl-btn-long':'Download my CV (PDF)',
+  'nav-about':'About','nav-formation':'Education','nav-exp':'Experience',
+  'nav-comp':'Skills','nav-lang':'Languages','nav-int':'Interests','nav-contact':'Contact',
+  'sec-about':'About','sec-formation':'Education','sec-exp':'Experience',
+  'sec-comp':'Skills','sec-lang':'Languages','sec-int':'Interests','sec-contact':'Contact',
+  'about-p1':"Second-year student at the <strong>École Nationale Supérieure des Arts et Métiers</strong> in Aix-en-Provence, I am passionate about technical and human challenges. Determined, motivated and always ready to push myself further, I am looking for an <strong>engineering internship</strong> to apply my skills in a demanding environment.",
+  'about-p2':"Having completed a preparatory class (PT) at Lycée Mermoz in Montpellier, I developed solid scientific rigour in mechanics, numerical simulation and computer-aided design. My training taught me to solve complex problems with method and creativity.",
+  'about-p3':"Outside of studies, I dedicate my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — disciplines that build mental strength and a drive for effort. I hold a B and A driving licence.",
+  'form1-title':'École Nationale Supérieure des Arts et Métiers','form1-sub':'Aix-en-Provence · Engineering Degree',
+  'form1-li1':'General engineering programme specialising in mechanics and manufacturing processes',
+  'form1-li2':'Numerical simulation (Abaqus), 3D design (CATIA V5, 3D Experience), Python',
+  'form2-title':'Preparatory Class PT','form2-sub':'Lycée Mermoz, Montpellier',
+  'form2-li1':'Mathematics, physics, engineering sciences — intensive 3-year programme',
+  'form2-li2':'Development of analytical rigour and ability to work under pressure',
+  'exp1-title':'Hall b — Internship','exp1-sub':'Saint-Dionisy · Sports facility launch',
+  'exp1-li1':'Full involvement in launching a sports facility from scratch',
+  'exp1-li2':'Large-scale project management and team coordination',
+  'exp1-li3':'Community manager: creation and management of social media',
+  'exp1-li4':'Fit-out works and logistics',
+  'exp2-title':'Maintenance Technician','exp2-sub':'Langlade · Bike leisure centre',
+  'exp2-li1':'Bicycle repair and maintenance','exp2-li2':'Customer welcome and advice','exp2-li3':'Various manual tasks and logistics',
+  'exp3-title':'Seasonal Worker — Harvest','exp3-sub':'Summer job',
+  'exp3-li1':'Grape harvesting during the vendanges','exp3-li2':'Teamwork, endurance and work ethic',
+  'sk-cad':'CAD / FEA Software','sk-sim':'Process Simulation','sk-prog':'Programming & Data',
+  'sk-office':'Office & Creative','sk-proto':'Prototyping','sk-proto-1':'3D Printing (FDM)','sk-proto-2':'Rapid prototyping','sk-soft':'Soft Skills',
+  'sk-soft-1':'Teaching','sk-soft-2':'Teamwork','sk-soft-3':'Rigour','sk-soft-4':'Adaptability',
+  'lang1':'French','lang1-level':'Native language','lang2':'English','lang2-level':'C1 Level — Fluent',
+  'int-judo':'Judo','int-escalade':'Climbing','int-ski':'Skiing','int-ski-detail':'Alpine & touring',
+  'int-alpi':'Mountaineering','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Travel',
+  'c-email':'Email','c-phone':'Phone','c-loc':'Location','c-loc-val':'Calvisson, 30420 — Gard, France ↗',
+  'c-permis':'Driving licence','c-permis-val':'Category B and A (motorcycle)',
+  'footer-txt':'Designed and developed with care · Gauthier Bonhomme · 2025','esc-album-title':'View my climbing album','esc-album-sub':'4 photos & videos · Google Photos · Click to open','esc-s1':'Bouldering level','esc-s2':'Specialty','esc-s3':'Also outdoor','esc-txt1':"Climbing is far more than a sport to me — it\'s <strong>mental training as much as physical</strong>. Reading a route, problem-solving on a difficult move, persisting: skills that translate naturally to engineering.",'esc-txt2':"I train mainly in <strong>bouldering gyms</strong> but also climb <strong>outdoors</strong>, often combined with other mountain sports like mountaineering and trail running.",'usinage-banner':'Machining FAO project example','abaqus-banner':'Abaqus project example','py-demo-label':'Demo — Try the software','py-demo-desc':'Select a city, adjust parameters and run the analysis to see optimal zones appear on the map in real time.',
+'fond-tag':"Academic Project · Foundry · Arts et Métiers",'fond-h1':"Chain Link for the<br><span>Rotonde Fountain</span>",
+'fond-team':"Group project · 4 students",'fond-meta':"QuickCast · Thermal Simulation · Moulding",
+'fond-sec0':'Context','fond-ctx':"Reproduction in <strong>grey cast iron GG30</strong> of the ornamental chain links of the historic Rotonde fountain in Aix-en-Provence. Goal: mastering the full foundry cycle — from numerical simulation to casting — as a team of 4 students.",
+'fond-s1':'Cast iron used','fond-s2':'Configs simulated','fond-s3':'Links per cluster','fond-s4':'Simulated fill time','fond-banner':'Foundry project example','fond-gallery':"Project extracts",'fond-photo1':"QuickCast simulations — shrinkage porosity location",'fond-photo2':"CAD — Moulding solution 2 with risers",'fond-photo3':"CAD — Dimensioned filling system",'fond-photo4':"Workshop — Sand cores & press machine",'fond-photo5':"Final casting & demoulded chain links",
+'fond-sec1':'Approach',
+'fond-p1t':'QuickCast thermal simulation','fond-p1d':"Comparison of two part orientations to locate shrinkage porosity. Thermal modulus: 0.0104 m. Chosen configuration: part lying flat, more suitable for series production.",
+'fond-p2t':'Mould design','fond-p2d':"Two solutions analysed. Chosen: green sand moulding (recyclable), 10 mould parts, cylindro-spherical heel risers.",
+'fond-p3t':'Riser & filling system sizing','fond-p3d':"Applied the three fundamental rules — <strong>modulus</strong>, <strong>action radius</strong> and <strong>shrinkage</strong> — to size two risers (D = 46/45 mm). Sprue Ø 17.76 mm, fill time 10 s. Final simulation validated in QuickCast.",
+'fond-p4t':'Manual production & casting','fond-p4d':"8 half-cores in chemically bonded sand, green sand mould, graphite as release agent. Hydrostatic load: 90 kg. GG30 cast iron poured at 100 °C superheat.",
+'fond-sec2':'Key results',
+'fond-r1t':'Riser sizing','fond-r1a':'Thermal modulus HP1','fond-r1b':'Thermal modulus HP2','fond-r1c':'Riser 1 (D × H)','fond-r1d':'Riser 2 (D × H)',
+'fond-r2t':'Filling system','fond-r2a':'Sprue Ø','fond-r2b':'Fill time','fond-r2c':'Residual superheat','fond-r2d':'Porosity in part','fond-r2d-val':'None ✓',
+'fond-sec3':'Tools & materials','fond-t1':'Green sand','fond-t2':'Chemically bonded sand','fond-t3':'Cluster casting',
+'fond-sec4':'Takeaways',
+'fond-c1':"The theoretical design was validated by simulation — <strong>no porosity in the part</strong>. This approach is scalable to series production of 300+ links.",
+'fond-c2':"Confronting workshop constraints — tooling without risers — concretely illustrated <strong>the gap between simulation and production</strong>. Defects were acceptable for an artistic part, but not for a mechanical one.",
+'fond-c3':"This project gave me full command of the <strong>complete foundry cycle</strong>: thermal simulation, sizing rules, CAD design and hands-on workshop practice.",
+
+  'back':'Back to CV',
+  'usinage-tag':'Academic Project · Arts et Métiers','usinage-h1':'Machining a<br><span>Crankshaft</span>',
+  'usinage-meta':'CAM · Simulation · Manufacturing','usinage-img1':'Technical drawing — Single-cylinder crankshaft','usinage-img2':'3D model CATIA',
+  'usinage-sec1':'Context','usinage-ctx1':'This project covers the <strong>complete machining of a crankshaft</strong> for a single-cylinder engine. The part had previously been modelled and simulated in <strong>Abaqus</strong> (mechanical strength, fatigue). The goal was to move from numerical simulation to real manufacturing using <strong>Fusion 360</strong> CAM.',
+  'usinage-ctx2':'The full manufacturing programme was executed on a <strong>CTX Gamma 1250 TC CNC machine (11 axes)</strong>, with pre-simulation of each operation.',
+  'usinage-stat1':'Stock (mm)','usinage-stat2':'Operations','usinage-stat3':'Machining time','usinage-stat4':'Estimated cost',
+  'usinage-sec2':'Process',
+  'phase1-badge':'Phase 1 — Turning','phase1-title':'Part shaping',
+  'ph1-op1':'Facing','ph1-op2':'Rough turning','ph1-op3':'Finish turning','ph1-op4':'Groove','ph1-op5':'M8 threading','ph1-op6':'Keyway',
+  'phase2-badge':'Phase 2 — Milling','phase2-title':'Crankpin machining',
+  'ph2-op1':'Rough milling','ph2-op2':'Finish milling','ph2-op3':'Drilling Ø14 mm',
+  'usinage-sec3':'Tools used','tool-steel':'Steel C35 H9',
+  'usinage-sec4':'Cost breakdown',
+  'usinage-bilan-note':"This cost breakdown illustrates the real price of workshop machining — a key figure for any engineer involved in manufacturing decisions.",'bilan1':'Machining time (incl. +20% margin)','bilan2':'Hourly rate (machine + labour)','bilan3':'Raw material','bilan4':'Total estimated cost',
+  'usinage-sec5':'Key learnings',
+  'usinage-conc3':"This project allowed me to consolidate my machining fundamentals: technical drawing reading, cutting parameter selection, process planning and tolerance management — skills directly applicable in design offices or on the shop floor.",'usinage-conc1':'The project highlighted the gap between <strong>numerical simulation and workshop reality</strong>: adjustments were needed on the machine to handle vibrations and unexpected mechanical constraints.',
+  'usinage-conc2':'This experience deepened my <strong>end-to-end CAM expertise</strong> — from stock selection to toolpath generation — and raised my awareness of production cost and lead time management.',
+  'py-tag':'Personal project · Python','py-h1':'Optimal Location<br>for a <span>Gym</span>',
+  'py-meta':'Python · Bi-criteria Score · Geospatial',
+  'diag-p1-title':'① Population','diag-p2-title':'② Competition','diag-p3-title':'③ Final Score','diag-p3-src':'pop × penalty',
+  'diag-p1-label':'Population per municipality weighted by Gaussian kernel (σ = 1.5 km)',
+  'diag-p2-label':'Existing gyms with exponential decreasing penalty (σ = 0.8 km)',
+  'diag-p3-label':'Highest-score point = most populated and least competed area',
+  'legend-pop':'Population density (INSEE)','legend-gym':'Existing gyms (OpenStreetMap)','legend-opt':'Recommended location',
+  'py-sec1':'Context',
+  'py-ctx1':'Personal project developed in Python for the <strong>Hall b</strong> gym (Saint-Dionisy, France), where I completed my internship. Goal: identify the optimal location using two open data sources.',
+  'py-ctx2':'The bi-criteria score combines <strong>INSEE population density</strong> (Gaussian-weighted) and <strong>competitive pressure</strong> from existing gyms on OpenStreetMap (exponential penalty).',
+  'py-app-label':'Try the app','py-app-desc':'Interactive interface — enter a city and visualize the optimal score zone.','py-app-note':'⚠ Some features require an internet connection (OpenStreetMap & INSEE APIs).','py-stat1':'Language','py-stat2':'Criteria','py-stat3':'Population','py-stat4':'Competition',
+  'py-sec2':'Pipeline',
+  'pipe1-title':'Data collection','pipe1-desc':'Demographic data by municipality (INSEE) and extraction of existing gyms via the OpenStreetMap Overpass API.',
+  'pipe2-title':'Competition mapping','pipe2-desc':'Calculation of competitive density around each candidate point using the Haversine distance formula.',
+  'pipe3-title':'Bi-criteria score calculation','pipe4-title':'Visualisation',
+  'pipe4-desc':'Generation of a score heatmap and identification of the optimal location.',
+  'py-sec3':'Code extract','py-sec4':'Tech stack',
+  'tool-bi':'Bi-criteria score','tool-geo':'Geospatial analysis',
+  'py-sec5':'Key takeaways',
+  'py-conc1':'This project allowed me to structure a complete Python programme from end to end, from importing public data to generating an actionable score map.',
+  'py-conc2':'I developed skills in <strong>mathematical modelling</strong> (Gaussian kernels, exponential penalty), geospatial data handling and data visualisation — directly applicable to industrial engineering problems.',
+},
+de:{
+  'page-title':'Gauthier Bonhomme — Ingenieur','job-title':'Ingenieurstudent',
+  'tagline-sub':'Mechanik · Simulation · Sport','seeking':'Suche ein Praktikum',
+  'dl-btn':'Lebenslauf herunterladen','dl-btn-long':'Lebenslauf herunterladen (PDF)',
+  'nav-about':'Über mich','nav-formation':'Ausbildung','nav-exp':'Erfahrungen',
+  'nav-comp':'Kompetenzen','nav-lang':'Sprachen','nav-int':'Interessen','nav-contact':'Kontakt',
+  'sec-about':'Über mich','sec-formation':'Ausbildung','sec-exp':'Erfahrungen',
+  'sec-comp':'Kompetenzen','sec-lang':'Sprachen','sec-int':'Interessen','sec-contact':'Kontakt',
+  'about-p1':"Student im zweiten Jahr an der <strong>École Nationale Supérieure des Arts et Métiers</strong> in Aix-en-Provence. Ich begeistere mich für technische und menschliche Herausforderungen. Entschlossen, motiviert und stets bereit, meine Grenzen zu überwinden, suche ich ein <strong>Ingenieurpraktikum</strong>, um meine Fähigkeiten in einem anspruchsvollen Umfeld einzusetzen.",
+  'about-p2':"Nach dem Besuch einer Vorbereitungsklasse (PT) am Lycée Mermoz in Montpellier habe ich eine solide wissenschaftliche Strenge in Mechanik, numerischer Simulation und CAD entwickelt. Meine Ausbildung hat mir gelehrt, komplexe Probleme methodisch und kreativ zu lösen.",
+  'about-p3':"Neben dem Studium widme ich meine Zeit Ausdauer- und Bergsportarten — <strong>Ultra Trail (+100 km), Alpinismus, Klettern (7B)</strong> — Disziplinen, die mentale Stärke und Leistungsbereitschaft fördern. Ich besitze den Führerschein B und A.",
+  'form1-title':'École Nationale Supérieure des Arts et Métiers','form1-sub':'Aix-en-Provence · Ingenieursabschluss',
+  'form1-li1':'Allgemeines Ingenieurstudium mit Schwerpunkt Mechanik und Fertigungsverfahren',
+  'form1-li2':'Numerische Simulation (Abaqus), 3D-Konstruktion (CATIA V5, 3D Experience), Python',
+  'form2-title':'Vorbereitungsklasse PT','form2-sub':'Lycée Mermoz, Montpellier',
+  'form2-li1':'Mathematik, Physik, Ingenieurwissenschaften — 3-jähriges Intensivprogramm',
+  'form2-li2':'Entwicklung analytischer Präzision und Fähigkeit unter Druck zu arbeiten',
+  'exp1-title':'Hall b — Praktikum','exp1-sub':'Saint-Dionisy · Eröffnung eines Fitnessstudios',
+  'exp1-li1':'Vollständige Beteiligung an der Eröffnung eines Fitnessstudios von A bis Z',
+  'exp1-li2':'Grosses Projektmanagement und Teamkoordination',
+  'exp1-li3':'Community Manager: Erstellung und Pflege der sozialen Medien',
+  'exp1-li4':'Ausbauarbeiten und Logistik',
+  'exp2-title':'Allround-Techniker','exp2-sub':'Langlade · Fahrrad-Freizeitzentrum',
+  'exp2-li1':'Fahrradreparatur und -wartung','exp2-li2':'Kundenempfang und -beratung','exp2-li3':'Verschiedene manuelle Arbeiten und Logistik',
+  'exp3-title':'Saisonarbeiter — Weinlese','exp3-sub':'Sommerjob',
+  'exp3-li1':'Traubenernte während der Weinlese','exp3-li2':'Teamarbeit, Ausdauer und Leistungsbereitschaft',
+  'sk-cad':'CAD / FEM Software','sk-sim':'Prozesssimulation','sk-prog':'Programmierung & Daten',
+  'sk-office':'Büro & Kreation','sk-proto':'Prototyping','sk-proto-1':'3D-Druck (FDM)','sk-proto-2':'Rapid Prototyping','sk-soft':'Soziale Kompetenzen',
+  'sk-soft-1':'Pädagogik','sk-soft-2':'Teamarbeit','sk-soft-3':'Genauigkeit','sk-soft-4':'Anpassungsfähigkeit',
+  'lang1':'Französisch','lang1-level':'Muttersprache','lang2':'Englisch','lang2-level':'Niveau C1 — Fließend',
+  'int-judo':'Judo','int-escalade':'Klettern','int-ski':'Ski','int-ski-detail':'Alpin & Skitouren',
+  'int-alpi':'Alpinismus','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Reisen',
+  'c-email':'E-Mail','c-phone':'Telefon','c-loc':'Standort','c-loc-val':'Calvisson, 30420 — Gard, Frankreich ↗',
+  'c-permis':'Führerschein','c-permis-val':'Klasse B und A (Motorrad)',
+  'footer-txt':'Sorgfältig gestaltet · Gauthier Bonhomme · 2025','esc-album-title':'Mein Kletteralbum ansehen','esc-album-sub':'4 Fotos & Videos · Google Photos · Zum Öffnen klicken','esc-s1':'Boulder-Niveau','esc-s2':'Schwerpunkt','esc-s3':'Auch am Fels','esc-txt1':"Klettern ist für mich viel mehr als ein Sport — es ist <strong>mentales Training ebenso wie körperliches</strong>. Einen Boulder lesen, an einer schwierigen Bewegung dranbleiben: Fähigkeiten, die sich direkt auf das Ingenieurwesen übertragen.",'esc-txt2':"Ich trainiere hauptsächlich in <strong>Boulderhallen</strong>, klettere aber auch <strong>am Fels</strong>, oft kombiniert mit Alpinismus und Trailrunning.",'usinage-banner':'FAO-Zerspanungsprojekt Beispiel','abaqus-banner':'Abaqus-Projektbeispiel','py-demo-label':'Demo — Software testen','py-demo-desc':'Stadt auswählen, Parameter anpassen und Analyse starten, um optimale Zonen auf der Karte zu sehen.',
+'fond-tag':"Akademisches Projekt · Gießerei · Arts et Métiers",'fond-h1':"Kettenglied des<br><span>Rotonde-Brunnens</span>",
+'fond-team':"Gruppenprojekt · 4 Studierende",'fond-meta':"QuickCast · Thermische Simulation · Formguss",
+'fond-sec0':'Kontext','fond-ctx':"Reproduktion von Zierkettengliedern des historischen Rotonde-Brunnens in Aix-en-Provence aus <strong>Grauguss GG30</strong>. Ziel: Beherrschung des gesamten Gießereizyklus — von der numerischen Simulation bis zum Abguss — im 4er-Team.",
+'fond-s1':'Verwendetes Gussmaterial','fond-s2':'Simulierte Konfigurationen','fond-s3':'Glieder je Traube','fond-s4':'Simulierte Füllzeit','fond-banner':'Gießerei-Projektbeispiel','fond-gallery':"Projektauszüge",'fond-photo1':"QuickCast-Simulationen — Lunkerlokalisation",'fond-photo2':"CAD — Formkonzept 2 mit Speisern",'fond-photo3':"CAD — Dimensioniertes Fülldystem",'fond-photo4':"Werkstatt — Sandkerne & Pressmaschine",'fond-photo5':"Abguss & entformte Kettenglieder",
+'fond-sec1':'Vorgehensweise',
+'fond-p1t':'Thermische Simulation QuickCast','fond-p1d':"Vergleich zweier Bauteilorientierungen zur Lokalisierung von Lunkern. Thermisches Modul: 0,0104 m. Gewählte Konfiguration: liegendes Bauteil, günstiger für die Serienproduktion.",
+'fond-p2t':'Formkonzept','fond-p2d':"Zwei Lösungen analysiert. Gewählt: Grünsandformguss (recycelbar), 10 Formteile, zylindrisch-sphärische Speiser mit Talon.",
+'fond-p3t':'Speiser- und Fülldimensionierung','fond-p3d':"Anwendung der drei Grundregeln — <strong>Modul</strong>, <strong>Wirkungsradius</strong> und <strong>Schwindung</strong> — zur Dimensionierung von zwei Speisern (D = 46/45 mm). Angusskegel Ø 17,76 mm, Füllzeit 10 s. Abschlusssimulation in QuickCast validiert.",
+'fond-p4t':'Manuelle Herstellung & Abguss','fond-p4d':"8 Halbkerne aus chemisch gebundenem Sand, Grünsandform, Graphit als Trennmittel. Hydrostatische Last: 90 kg. GG30-Abguss mit 100 °C Überhitzung.",
+'fond-sec2':'Kernergebnisse',
+'fond-r1t':'Speiserdimensionierung','fond-r1a':'Thermisches Modul HP1','fond-r1b':'Thermisches Modul HP2','fond-r1c':'Speiser 1 (D × H)','fond-r1d':'Speiser 2 (D × H)',
+'fond-r2t':'Fülldimensionierung','fond-r2a':'Angusskegel Ø','fond-r2b':'Füllzeit','fond-r2c':'Restüberhitzung','fond-r2d':'Lunker im Bauteil','fond-r2d-val':'Keine ✓',
+'fond-sec3':'Tools & Materialien','fond-t1':'Grünsand','fond-t2':'Chemisch gebundener Sand','fond-t3':'Traubenformguss',
+'fond-sec4':'Erkenntnisse',
+'fond-c1':"Die theoretische Auslegung wurde per Simulation validiert — <strong>keine Lunker im Bauteil</strong>. Diese Methode ist für die Serienproduktion von 300+ Gliedern geeignet.",
+'fond-c2':"Die Konfrontation mit den Werkstattbedingungen — Werkzeug ohne Speiser — verdeutlichte <strong>die Lücke zwischen Simulation und Produktion</strong>. Defekte waren für ein Kunstobjekt akzeptabel, nicht für ein Maschinenteil.",
+'fond-c3':"Dieses Projekt ermöglichte mir die vollständige Beherrschung des <strong>Gießereizyklus</strong>: thermische Simulation, Dimensionierungsregeln, CAD-Konstruktion und praktische Werkstattarbeit.",
+
+  'back':'Zurück zum Lebenslauf',
+  'usinage-tag':'Akademisches Projekt · Arts et Métiers','usinage-h1':'Zerspanung einer<br><span>Kurbelwelle</span>',
+  'usinage-meta':'CAM · Simulation · Fertigung','usinage-img1':'Technische Zeichnung — Einzylinder-Kurbelwelle','usinage-img2':'3D-Modell CATIA',
+  'usinage-sec1':'Kontext','usinage-ctx1':'Dieses Projekt umfasst die <strong>vollständige Zerspanung einer Kurbelwelle</strong> für einen Einzylindermotor. Das Bauteil wurde zuvor in <strong>Abaqus</strong> modelliert und simuliert (Festigkeit, Ermüdung). Ziel war es, von der numerischen Simulation zur realen Fertigung überzugehen, mit <strong>Fusion 360</strong> als CAM-Software.',
+  'usinage-ctx2':'Das Fertigungsprogramm wurde auf einer CNC-Maschine <strong>CTX Gamma 1250 TC (11 Achsen)</strong> ausgeführt, mit vorheriger Simulation jedes Bearbeitungsschritts.',
+  'usinage-stat1':'Rohteil (mm)','usinage-stat2':'Operationen','usinage-stat3':'Bearbeitungszeit','usinage-stat4':'Geschätzte Kosten',
+  'usinage-sec2':'Ablauf',
+  'phase1-badge':'Phase 1 — Drehen','phase1-title':'Formgebung des Bauteils',
+  'ph1-op1':'Plandrehen','ph1-op2':'Schruppdrehen','ph1-op3':'Schlichtdrehen','ph1-op4':'Ringnut','ph1-op5':'Gewindedrehen M8','ph1-op6':'Keilnut',
+  'phase2-badge':'Phase 2 — Fräsen','phase2-title':'Bearbeitung des Hubzapfens',
+  'ph2-op1':'Schruppfräsen','ph2-op2':'Schlichtfräsen','ph2-op3':'Bohren Ø14 mm',
+  'usinage-sec3':'Verwendete Tools','tool-steel':'Stahl C35 H9',
+  'usinage-sec4':'Kostenbilanz',
+  'usinage-bilan-note':"Diese Kostenbilanz verdeutlicht die echten Kosten der Werkstattbearbeitung — eine Schlüsselgröße für jeden Ingenieur in Fertigungsentscheidungen.",'bilan1':'Bearbeitungszeit (+20% Reserve)','bilan2':'Stundensatz (Maschine + Lohn)','bilan3':'Rohmaterial','bilan4':'Gesamtkosten geschätzt',
+  'usinage-sec5':'Erkenntnisse',
+  'usinage-conc3':"Dieses Projekt ermöglichte mir, meine Zerspanungsgrundlagen zu festigen: Zeichnungslesen, Schnittparameterauswahl, Fertigungsplanung und Toleranzmanagement — direkt anwendbare Kompetenzen in Konstruktionsbüros oder in der Werkstatt.",'usinage-conc1':'Das Projekt verdeutlichte die Lücke zwischen <strong>numerischer Simulation und Werkstattrealität</strong>: Anpassungen an der Maschine waren nötig, um Schwingungen und unerwartete Kräfte zu beherrschen.',
+  'usinage-conc2':'Die Erfahrung hat meine <strong>vollständige CAM-Kompetenz</strong> gestärkt — von der Rohteilwahl bis zur Werkzeugbahn — und mein Bewusstsein für Fertigungskosten und -zeiten geschärft.',
+  'py-tag':'Persönliches Projekt · Python','py-h1':'Optimaler Standort<br>für ein <span>Fitnessstudio</span>',
+  'py-meta':'Python · Zwei-Kriterien-Score · Geoanalyse',
+  'diag-p1-title':'① Bevölkerung','diag-p2-title':'② Konkurrenz','diag-p3-title':'③ Endergebnis','diag-p3-src':'Bev. × Strafe',
+  'diag-p1-label':'Bevölkerung je Gemeinde, gewichtet per Gaußkern (σ = 1,5 km)',
+  'diag-p2-label':'Bestehende Studios mit exponentiell abnehmender Strafe (σ = 0,8 km)',
+  'diag-p3-label':'Punkt mit höchstem Score = bevölkerungsreichste und wettbewerbsärmste Zone',
+  'legend-pop':'Bevölkerungsdichte (INSEE)','legend-gym':'Bestehende Studios (OpenStreetMap)','legend-opt':'Empfohlener Standort',
+  'py-sec1':'Kontext',
+  'py-ctx1':'Entwicklung eines <strong>Entscheidungsunterstützungs-Tools</strong> in Python zur Identifikation des optimalen Standorts für ein neues Fitnessstudio durch Kombination zweier offener Datenquellen.',
+  'py-ctx2':'Der Zwei-Kriterien-Score kombiniert die <strong>INSEE-Bevölkerungsdichte</strong> (Gaußgewichtet) und den <strong>Wettbewerbsdruck</strong> bestehender Studios aus OpenStreetMap (Exponentialstrafe).',
+  'py-app-label':'App testen','py-app-desc':'Interaktive Oberfläche — Stadt eingeben und optimale Scoring-Zone visualisieren.','py-app-note':'⚠ Einige Funktionen erfordern eine Internetverbindung (OpenStreetMap & INSEE APIs).','py-stat1':'Sprache','py-stat2':'Kriterien','py-stat3':'Bevölkerung','py-stat4':'Konkurrenz',
+  'py-sec2':'Pipeline',
+  'pipe1-title':'Datenerhebung','pipe1-desc':'Demografische Daten je Gemeinde (INSEE) und Extraktion bestehender Studios über die OpenStreetMap Overpass API.',
+  'pipe2-title':'Konkurrenz-Kartierung','pipe2-desc':'Berechnung der Konkurrenzdichte um jeden Kandidatenpunkt mit der Haversine-Distanzformel.',
+  'pipe3-title':'Zwei-Kriterien-Score-Berechnung','pipe4-title':'Visualisierung',
+  'pipe4-desc':'Erstellung einer Score-Heatmap und Identifikation des optimalen Standorts.',
+  'py-sec3':'Code-Auszug','py-sec4':'Tech-Stack',
+  'tool-bi':'Zwei-Kriterien-Score','tool-geo':'Geoanalyse',
+  'py-sec5':'Kompetenzen',
+  'py-conc1':'Dieses Projekt ermöglichte mir, ein vollständiges Python-Programm von A bis Z zu strukturieren — vom Import öffentlicher Daten bis zur Erstellung einer Scorekarte.',
+  'py-conc2':'Ich entwickelte Kompetenzen in <strong>mathematischer Modellierung</strong> (Gaußkerne, Exponentialstrafe), Geodatenverarbeitung und Visualisierung — direkt übertragbar auf ingenieurtechnische Fragestellungen.',
+},
+it:{
+  'page-title':'Gauthier Bonhomme — Ingegnere','job-title':'Studente Ingegnere',
+  'tagline-sub':'Meccanica · Simulazione · Sport','seeking':'In cerca di uno stage',
+  'dl-btn':'Scarica il mio CV','dl-btn-long':'Scarica il mio CV (PDF)',
+  'nav-about':'Chi sono','nav-formation':'Formazione','nav-exp':'Esperienze',
+  'nav-comp':'Competenze','nav-lang':'Lingue','nav-int':'Interessi','nav-contact':'Contatto',
+  'sec-about':'Chi sono','sec-formation':'Formazione','sec-exp':'Esperienze',
+  'sec-comp':'Competenze','sec-lang':'Lingue','sec-int':'Interessi','sec-contact':'Contatto',
+  'about-p1':"Studente al secondo anno dell'<strong>École Nationale Supérieure des Arts et Métiers</strong> di Aix-en-Provence, sono appassionato di sfide tecniche e umane. Determinato, volenteroso e sempre pronto a superarmi, sono alla ricerca di uno <strong>stage in ingegneria</strong> per mettere in pratica le mie competenze in un ambiente esigente.",
+  'about-p2':"Provenendo da una classe preparatoria PT al Lycée Mermoz di Montpellier, ho sviluppato un solido rigore scientifico in meccanica, simulazione numerica e progettazione CAD. La mia formazione mi ha insegnato a risolvere problemi complessi con metodo e creatività.",
+  'about-p3':"Al di fuori degli studi, dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — discipline che forgiano la mente e il gusto per lo sforzo. Sono titolare della patente B e A.",
+  'form1-title':'École Nationale Supérieure des Arts et Métiers','form1-sub':'Aix-en-Provence · Laurea in Ingegneria',
+  'form1-li1':'Corso di ingegneria generalista con specializzazione in meccanica e processi di fabbricazione',
+  'form1-li2':'Simulazione numerica (Abaqus), progettazione 3D (CATIA V5, 3D Experience), Python',
+  'form2-title':'Classe Preparatoria PT','form2-sub':'Lycée Mermoz, Montpellier',
+  'form2-li1':'Matematica, fisica, scienze ingegneristiche — programma intensivo di 3 anni',
+  'form2-li2':'Sviluppo del rigore analitico e della capacità di lavorare sotto pressione',
+  'exp1-title':'Hall b — Stage','exp1-sub':'Saint-Dionisy · Lancio di una palestra',
+  'exp1-li1':'Partecipazione al lancio completo di una palestra da zero',
+  'exp1-li2':'Gestione di progetti di ampia portata e coordinamento dei team',
+  'exp1-li3':'Community manager: creazione e gestione dei social media',
+  'exp1-li4':'Lavori di allestimento e logistica',
+  'exp2-title':'Tecnico Polivalente','exp2-sub':'Langlade · Centro di svago per biciclette',
+  'exp2-li1':'Riparazione e manutenzione di biciclette','exp2-li2':'Accoglienza e consulenza clienti','exp2-li3':'Vari lavori manuali e logistica',
+  'exp3-title':'Stagionale — Vendemmia','exp3-sub':'Lavoro estivo',
+  'exp3-li1':'Raccolta delle uve durante la vendemmia','exp3-li2':'Lavoro di squadra, resistenza e senso dello sforzo',
+  'sk-cad':'Software CAD / EF','sk-sim':'Simulazione processi','sk-prog':'Programmazione & Dati',
+  'sk-office':'Ufficio & Creatività','sk-proto':'Prototipazione','sk-proto-1':'Stampa 3D (FDM)','sk-proto-2':'Prototipazione rapida','sk-soft':'Competenze trasversali',
+  'sk-soft-1':'Pedagogia','sk-soft-2':'Lavoro di squadra','sk-soft-3':'Rigore','sk-soft-4':'Adattabilità',
+  'lang1':'Francese','lang1-level':'Lingua madre','lang2':'Inglese','lang2-level':'Livello C1 — Corrente',
+  'int-judo':'Judo','int-escalade':'Arrampicata','int-ski':'Sci','int-ski-detail':'Alpino & fondo',
+  'int-alpi':'Alpinismo','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Viaggi',
+  'c-email':'Email','c-phone':'Telefono','c-loc':'Posizione','c-loc-val':'Calvisson, 30420 — Gard, Francia ↗',
+  'c-permis':'Patente','c-permis-val':'Patente B e A (moto)',
+  'footer-txt':'Progettato con cura · Gauthier Bonhomme · 2025','esc-album-title':'Vedi il mio album di arrampicata','esc-album-sub':'4 foto & video · Google Photos · Clicca per aprire','esc-s1':'Livello boulder','esc-s2':'Specialità','esc-s3':'Anche in falesia','esc-txt1':"L\'arrampicata è molto più di uno sport per me — è un <strong>allenamento mentale oltre che fisico</strong>. Leggere un boulder, persistere su un movimento difficile: competenze che si trasferiscono naturalmente all\'ingegneria.",'esc-txt2':"Mi alleno principalmente in <strong>palestre di boulder</strong> ma arrampico anche <strong>in falesia</strong>, spesso abbinato ad alpinismo e trail.",'usinage-banner':'Esempio di progetto di lavorazione FAO','abaqus-banner':'Esempio di progetto Abaqus','py-demo-label':'Demo — Provare il software','py-demo-desc':'Seleziona una città, regola i parametri e avvia l\'analisi per vedere le zone ottimali sulla mappa.',
+'fond-tag':"Progetto Accademico · Fonderia · Arts et Métiers",'fond-h1':"Maglie della<br><span>Fontana della Rotonde</span>",
+'fond-team':"Progetto di gruppo · 4 studenti",'fond-meta':"QuickCast · Simulazione termica · Fusione",
+'fond-sec0':'Contesto','fond-ctx':"Riproduzione in <strong>ghisa grigia GG30</strong> delle maglie ornamentali della fontana storica della Rotonde di Aix-en-Provence. Obiettivo: padronanza dell\'intero ciclo di fonderia — dalla simulazione numerica alla colata — in un team di 4 studenti.",
+'fond-s1':'Ghisa utilizzata','fond-s2':'Config. simulate','fond-s3':'Maglie / grappolo','fond-s4':'Tempo di riempimento simulato','fond-banner':'Esempio di progetto di fonderia','fond-gallery':"Estratti del progetto",'fond-photo1':"Simulazioni QuickCast — localizzazione dei ritiri",'fond-photo2':"CAD — Soluzione di formatura 2 con alimentatori",'fond-photo3':"CAD — Sistema di riempimento dimensionato",'fond-photo4':"Officina — Anime in sabbia & pressa",'fond-photo5':"Colata finale & maglie sformate",
+'fond-sec1':'Approccio',
+'fond-p1t':'Simulazione termica QuickCast','fond-p1d':"Confronto tra due orientazioni del pezzo per localizzare le ritiri. Modulo termico: 0,0104 m. Configurazione scelta: pezzo coricato, più favorevole alla produzione in serie.",
+'fond-p2t':'Progetto dello stampo','fond-p2d':"Due soluzioni analizzate. Scelta: formatura in sabbia verde (riciclabile), 10 parti di stampo, alimentatori cilindro-sferici a tallone.",
+'fond-p3t':'Dimensionamento alimentatori & sistema di riempimento','fond-p3d':"Applicazione delle tre regole fondamentali — <strong>modulo</strong>, <strong>raggio d\'azione</strong> e <strong>ritiro</strong> — per dimensionare due alimentatori (D = 46/45 mm). Colata Ø 17,76 mm, tempo di riempimento 10 s. Simulazione finale validata in QuickCast.",
+'fond-p4t':'Realizzazione manuale & colata','fond-p4d':"8 semi-anime in sabbia a presa chimica, stampo in sabbia verde, grafite come agente distaccante. Carico idrostatico: 90 kg. Colata GG30 con 100 °C di surriscaldamento.",
+'fond-sec2':'Risultati chiave',
+'fond-r1t':'Dimensionamento alimentatori','fond-r1a':'Modulo termico PC1','fond-r1b':'Modulo termico PC2','fond-r1c':'Alimentatore 1 (D × H)','fond-r1d':'Alimentatore 2 (D × H)',
+'fond-r2t':'Sistema di riempimento','fond-r2a':'Ø colata','fond-r2b':'Tempo di riempimento','fond-r2c':'Surriscaldamento residuo','fond-r2d':'Ritiri nel pezzo','fond-r2d-val':'Nessuno ✓',
+'fond-sec3':'Strumenti & materiali','fond-t1':'Sabbia verde','fond-t2':'Sabbia a presa chimica','fond-t3':'Colata a grappolo',
+'fond-sec4':'Bilancio',
+'fond-c1':"Il dimensionamento teorico è stato validato per simulazione — <strong>nessun ritiro nel pezzo</strong>. Questo approccio è adatto alla produzione in serie di oltre 300 maglie.",
+'fond-c2':"Il confronto con le condizioni di officina — utensile senza alimentatori — ha illustrato concretamente <strong>il divario tra simulazione e produzione</strong>.",
+'fond-c3':"Questo progetto mi ha permesso di padroneggiare <strong>l\'intero ciclo di fonderia</strong>: simulazione termica, regole di dimensionamento, progettazione CAD e lavoro pratico in officina.",
+
+  'back':'Torna al CV',
+  'usinage-tag':'Progetto Accademico · Arts et Métiers','usinage-h1':'Lavorazione di un<br><span>Albero Motore</span>',
+  'usinage-meta':'CAM · Simulazione · Fabbricazione','usinage-img1':'Disegno tecnico — Albero motore monocilindro','usinage-img2':'Modello 3D CATIA',
+  'usinage-sec1':'Contesto','usinage-ctx1':'Questo progetto riguarda la <strong>lavorazione completa di un albero motore</strong> per motore monocilindro. Il componente era stato in precedenza modellato e simulato in <strong>Abaqus</strong> (resistenza meccanica, fatica). L\'obiettivo era passare dalla simulazione numerica alla fabbricazione reale tramite <strong>Fusion 360</strong>.',
+  'usinage-ctx2':'Il programma di lavorazione è stato eseguito su un centro di lavoro CNC <strong>CTX Gamma 1250 TC (11 assi)</strong>, con simulazione preliminare di ogni operazione.',
+  'usinage-stat1':'Grezzo (mm)','usinage-stat2':'Operazioni','usinage-stat3':'Tempo lavorazione','usinage-stat4':'Costo stimato',
+  'usinage-sec2':'Svolgimento',
+  'phase1-badge':'Fase 1 — Tornitura','phase1-title':'Formatura del pezzo',
+  'ph1-op1':'Sfacciatura','ph1-op2':'Sgrossatura','ph1-op3':'Finitura','ph1-op4':'Gola annulare','ph1-op5':'Filettatura M8','ph1-op6':'Sede per linguetta',
+  'phase2-badge':'Fase 2 — Fresatura','phase2-title':'Lavorazione del perno di biella',
+  'ph2-op1':'Fresatura sgrossatura','ph2-op2':'Fresatura finitura','ph2-op3':'Foratura Ø14 mm',
+  'usinage-sec3':'Strumenti utilizzati','tool-steel':'Acciaio C35 H9',
+  'usinage-sec4':'Bilancio economico',
+  'usinage-bilan-note':"Questo bilancio evidenzia il costo reale della lavorazione in officina — un dato chiave per ogni ingegnere coinvolto in decisioni produttive.",'bilan1':'Tempo lavorazione (+20% margine)','bilan2':'Costo orario (macchina + manodopera)','bilan3':'Materia prima','bilan4':'Costo totale stimato',
+  'usinage-sec5':'Insegnamenti',
+  'usinage-conc3':"Questo progetto mi ha permesso di consolidare le basi della lavorazione: lettura del disegno tecnico, scelta dei parametri di taglio, gamme di lavorazione e gestione delle tolleranze.",'usinage-conc1':'Il progetto ha evidenziato il divario tra <strong>simulazione numerica e realtà in officina</strong>: adattamenti sulla macchina si sono resi necessari per gestire vibrazioni e sollecitazioni impreviste.',
+  'usinage-conc2':'L\'esperienza ha rafforzato la mia <strong>padronanza completa della CAM</strong> — dalla scelta del grezzo alla generazione delle traiettorie utensile — e mi ha sensibilizzato alla gestione dei costi e dei tempi di produzione.',
+  'py-tag':'Progetto personale · Python','py-h1':'Localizzazione Ottimale<br>di una <span>Palestra</span>',
+  'py-meta':'Python · Punteggio bi-criterio · Geospaziale',
+  'diag-p1-title':'① Popolazione','diag-p2-title':'② Concorrenza','diag-p3-title':'③ Punteggio finale','diag-p3-src':'pop × penalità',
+  'diag-p1-label':'Popolazione per comune ponderata con kernel gaussiano (σ = 1,5 km)',
+  'diag-p2-label':'Palestre esistenti con penalità esponenziale decrescente (σ = 0,8 km)',
+  'diag-p3-label':'Punto con punteggio massimo = zona più popolata e meno concorrenziale',
+  'legend-pop':'Densità di popolazione (INSEE)','legend-gym':'Palestre esistenti (OpenStreetMap)','legend-opt':'Posizione raccomandata',
+  'py-sec1':'Contesto',
+  'py-ctx1':'Sviluppo di uno <strong>strumento di supporto decisionale</strong> in Python per identificare la posizione geografica ottimale per una nuova palestra, incrociando due fonti di dati pubbliche.',
+  'py-ctx2':'Il punteggio bi-criterio combina la <strong>densità di popolazione INSEE</strong> (ponderata con kernel gaussiano) e la <strong>pressione concorrenziale</strong> delle palestre esistenti su OpenStreetMap (penalità esponenziale).',
+  'py-app-label':'Testare il software','py-app-desc':'Interfaccia interattiva — inserisci una città e visualizza la zona di punteggio ottimale.','py-app-note':'⚠ Alcune funzionalità richiedono una connessione (API OpenStreetMap & INSEE).','py-stat1':'Linguaggio','py-stat2':'Criteri','py-stat3':'Popolazione','py-stat4':'Concorrenza',
+  'py-sec2':'Pipeline',
+  'pipe1-title':'Raccolta dati','pipe1-desc':'Dati demografici per comune (INSEE) ed estrazione delle palestre esistenti tramite l\'API Overpass di OpenStreetMap.',
+  'pipe2-title':'Mappatura della concorrenza','pipe2-desc':'Calcolo della densità concorrenziale attorno a ogni punto candidato tramite la formula della distanza haversine.',
+  'pipe3-title':'Calcolo del punteggio bi-criterio','pipe4-title':'Visualizzazione',
+  'pipe4-desc':'Generazione di una heatmap dei punteggi e identificazione della posizione ottimale.',
+  'py-sec3':'Estratto di codice','py-sec4':'Stack tecnico',
+  'tool-bi':'Punteggio bi-criterio','tool-geo':'Analisi geospaziale',
+  'py-sec5':'Competenze acquisite',
+  'py-conc1':'Questo progetto mi ha permesso di strutturare un programma Python completo dall\'inizio alla fine, dall\'importazione dei dati pubblici alla generazione di una mappa di punteggi operativa.',
+  'py-conc2':'Ho sviluppato competenze in <strong>modellazione matematica</strong> (kernel gaussiani, penalità esponenziale), gestione di dati geospaziali e visualizzazione — direttamente applicabili a problemi ingegneristici.',
+}
+};
+
+let currentLang = 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    if(b.textContent.toLowerCase() === lang) b.classList.add('active');
+  });
+  const t = T[lang];
+  // textContent elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  // innerHTML elements
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if(t[key] !== undefined) el.innerHTML = t[key];
+  });
+  // Page title
+  if(t['page-title']) document.title = t['page-title'];
+}
+
+// PAGE SWITCHING
+let _savedScroll = 0;
+function showPage(id) {
+  if (true) {
+    _savedScroll = window.scrollY;
+  }
+  document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+  const target = document.getElementById(id);
+  target.style.display = id === 'page-cv' ? 'flex' : 'block';
+  target.classList.add('active');
+  if (id === 'page-cv') {
+    requestAnimationFrame(() => window.scrollTo({top: _savedScroll, behavior: 'instant'}));
+  } else {
+    window.scrollTo({top:0});
+    // Populate deferred media src attributes
+    target.querySelectorAll('img[data-src], video[data-src]').forEach(el => {
+      if (!el.src || el.src === window.location.href) {
+        el.src = el.getAttribute('data-src');
+      }
+    });
+  }
+}
+function goBack() { showPage('page-cv'); }
+function showPageBack() { showPage('page-cv'); }
+
+
+
+
+
+
+
+
+
+
+// SPORT: handled by separate HTML files
+
+function openSport(act) {
+  window.location.href = act + '.html';
+}
+
+// CV NAV ACTIVE ON SCROLL
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#main-nav a');
+function updateNav() {
+  let current = '';
+  sections.forEach(s => { if(s.getBoundingClientRect().top <= 120) current = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+updateNav();
+</script>
+
+</body>
+</html>

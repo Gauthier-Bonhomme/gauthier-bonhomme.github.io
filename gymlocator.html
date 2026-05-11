@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GymLocator Pro</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f0f13;color:#e8e8f0;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+#hdr{height:52px;background:#16161e;border-bottom:1px solid #2a2a3a;display:flex;align-items:center;padding:0 16px;gap:10px;z-index:1200;flex-shrink:0}
+#logo{font-size:14px;font-weight:700;color:#a78bfa;white-space:nowrap}
+#sw{flex:1;max-width:320px;position:relative}
+#si{width:100%;font-size:13px;padding:7px 32px 7px 12px;border:1px solid #2a2a3a;border-radius:8px;background:#1e1e2a;color:#e8e8f0;outline:none;transition:border-color .2s}
+#si:focus{border-color:#a78bfa}
+#si::placeholder{color:#44445a}
+#sb{position:absolute;right:7px;top:50%;transform:translateY(-50%);width:22px;height:22px;background:#7c3aed;border:none;border-radius:5px;color:white;cursor:pointer;font-size:13px}
+#sugs{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#1a1a26;border:1px solid #2a2a3a;border-radius:8px;z-index:3000;display:none;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.sug{padding:9px 13px;font-size:12px;cursor:pointer;color:#9999bb;border-bottom:1px solid #22223a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sug:last-child{border-bottom:none}.sug:hover{background:#25253a;color:#e8e8f0}
+#togs{display:flex;gap:5px;margin-left:auto}
+.tbtn{font-size:11px;padding:5px 11px;border:1px solid #2a2a3a;border-radius:7px;background:#1e1e2a;color:#777799;cursor:pointer;transition:all .15s;white-space:nowrap}
+.tbtn.on{background:#7c3aed;border-color:#7c3aed;color:white}
+#mw{flex:1;position:relative;overflow:hidden}
+#map{width:100%;height:100%}
+.gm{width:28px;height:28px;background:#7c3aed;border:3px solid #fff;border-radius:50%;box-shadow:0 3px 10px rgba(124,58,237,.6);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;transition:transform .12s}
+.gm:hover{transform:scale(1.3)}
+.gp{min-width:200px;font-family:'Segoe UI',system-ui,sans-serif}
+.gp-name{font-size:13px;font-weight:700;margin-bottom:8px;line-height:1.4;color:#111}
+.gp-sr{display:flex;gap:9px;align-items:center;margin-bottom:9px}
+.gp-ci{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:white;flex-shrink:0}
+.gp-me{font-size:11px;color:#555;line-height:1.7}
+.gp-dv{border-top:1px solid #eee;margin:7px 0}
+.gp-ro{display:flex;gap:6px;font-size:11px;color:#444;margin-bottom:4px;align-items:flex-start}
+.gp-ic{width:15px;flex-shrink:0;text-align:center}
+#ld0{position:absolute;inset:0;background:#0f0f13;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:2000}
+#ld-t{font-size:17px;font-weight:600;color:#e8e8f0}
+#ld-s{font-size:12px;color:#55557a;text-align:center;max-width:340px;line-height:1.6}
+#pbw{width:280px;height:4px;background:#1e1e2a;border-radius:2px;overflow:hidden}
+#pb{height:100%;background:linear-gradient(90deg,#7c3aed,#a78bfa);border-radius:2px;width:0%;transition:width .3s}
+.spn{width:36px;height:36px;border:3px solid #1e1e2a;border-top-color:#7c3aed;border-radius:50%;animation:rot .7s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+#bar{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#16161eee;border:1px solid #2a2a3a;border-radius:20px;padding:7px 15px;font-size:11px;color:#9999bb;z-index:1000;display:none;gap:9px;align-items:center;white-space:nowrap;backdrop-filter:blur(8px)}
+.bsp{width:11px;height:11px;border:1.5px solid #33335a;border-top-color:#a78bfa;border-radius:50%;animation:rot .7s linear infinite;flex-shrink:0}
+#ztip{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(124,58,237,.9);border-radius:20px;padding:7px 18px;font-size:11px;color:white;z-index:900;display:none;white-space:nowrap;pointer-events:none}
+#ntf{position:absolute;top:12px;left:50%;transform:translateX(-50%);border-radius:20px;padding:7px 16px;font-size:11px;z-index:2100;display:none;white-space:nowrap;pointer-events:none}
+#gcnt{position:absolute;bottom:22px;left:14px;background:#16161ecc;border:1px solid #2a2a3a;border-radius:12px;padding:7px 13px;z-index:900;font-size:11px;color:#9999bb;display:none;backdrop-filter:blur(8px)}
+#leg{position:absolute;bottom:22px;right:14px;background:#16161eee;border:1px solid #2a2a3a;border-radius:12px;padding:13px 15px;z-index:800;min-width:165px;display:none;backdrop-filter:blur(8px)}
+.lt{font-size:9px;color:#55557a;font-weight:700;margin-bottom:7px;text-transform:uppercase;letter-spacing:.07em}
+.lbar{height:7px;border-radius:4px;background:linear-gradient(to right,#E24B4A,#EF9F27,#C8D983,#63992A);margin-bottom:4px}
+.llbl{display:flex;justify-content:space-between;font-size:9px;color:#55557a;margin-bottom:8px}
+.lsep{border-top:1px solid #2a2a3a;margin:7px 0}
+.lrow{display:flex;align-items:center;gap:7px;font-size:10px;color:#9999bb;margin-bottom:4px}
+.ldot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.lsrc{font-size:9px;color:#33335a;margin-top:6px;line-height:1.7}
+.leaflet-tile-pane{filter:brightness(.85) saturate(.75)}
+
+/* Bannière mode file:// */
+#filewarn{position:absolute;inset:0;background:#0f0f13;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:9999;padding:40px;text-align:center}
+#filewarn h2{color:#a78bfa;font-size:20px}
+#filewarn p{color:#9999bb;font-size:14px;line-height:1.7;max-width:500px}
+#filewarn code{background:#1e1e2a;border:1px solid #2a2a3a;border-radius:6px;padding:10px 18px;font-size:13px;color:#a78bfa;display:block;margin:8px 0;font-family:monospace}
+#filewarn .note{font-size:12px;color:#55557a}
+</style>
+</head>
+<body>
+<div id="hdr">
+  <span id="logo">⚡ GymLocator Pro</span>
+  <div id="sw">
+    <input id="si" type="text" placeholder="Rechercher une ville..."/>
+    <button id="sb">→</button>
+    <div id="sugs"></div>
+  </div>
+  <div id="togs">
+    <button class="tbtn on" id="t-score" onclick="glTog('score')">Score</button>
+    <button class="tbtn on" id="t-gyms" onclick="glTog('gyms')">Salles 🏋️</button>
+  </div>
+</div>
+<div id="mw">
+  <div id="map"></div>
+  <div id="ld0">
+    <div class="spn"></div>
+    <div id="ld-t">Chargement de la France...</div>
+    <div id="pbw"><div id="pb"></div></div>
+    <div id="ld-s">Téléchargement des communes INSEE</div>
+  </div>
+  <div id="bar"><div class="bsp"></div><span id="bar-txt">Chargement...</span></div>
+  <div id="ztip">🔍 Zoomez niveau 9+ pour afficher les salles</div>
+  <div id="ntf"></div>
+  <div id="gcnt"></div>
+  <div id="leg">
+    <div class="lt">Score d'implantation</div>
+    <div class="lbar"></div>
+    <div class="llbl"><span>Défavorable</span><span>Idéal</span></div>
+    <div class="lsep"></div>
+    <div class="lrow"><div class="ldot" style="background:#7c3aed;border:2px solid rgba(255,255,255,.7)"></div>Salle existante (clic)</div>
+    <div class="lsep"></div>
+    <div class="lrow"><div class="ldot" style="background:#4A90D9"></div>Ville &gt;10k · ~1km</div>
+    <div class="lrow"><div class="ldot" style="background:#EF9F27"></div>Bourg · ~3km</div>
+    <div class="lrow"><div class="ldot" style="background:#63992A"></div>Village · ~8km</div>
+    <div class="lsep"></div>
+    <div class="lsrc">Population : INSEE officiel<br>Salles : OpenStreetMap<br>Clic carte = score précis</div>
+  </div>
+  <!-- Affiché si ouvert en file:// -->
+  <div id="filewarn">
+    <h2>⚠️ Serveur local requis</h2>
+    <p>Ce fichier doit être servi via un serveur HTTP local pour que les salles de sport puissent être chargées. Ouvrez un terminal dans ce dossier et lancez :</p>
+    <code>python -m http.server 8765</code>
+    <p>Puis ouvrez votre navigateur sur :</p>
+    <code>http://localhost:8765/gymlocator.html</code>
+    <p class="note">Python est préinstallé sur Mac et Linux. Sur Windows, téléchargez-le sur python.org.<br>Ou double-cliquez sur <strong>lancer_windows.bat</strong> si vous êtes sur Windows.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+// ── Détection file:// — affiche la bannière d'aide ────────────────────────────
+if(location.protocol === 'file:'){
+  document.getElementById('ld0').style.display = 'none';
+  document.getElementById('filewarn').style.display = 'flex';
+  // On laisse quand même la carte tourner (score sans salles)
+}
+
+const FR  = {s:41.3, n:51.1, w:-5.2, e:9.6};
+const GX=80, GY=50;
+const NOM = 'https://nominatim.openstreetmap.org';
+const OVP = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter'
+];
+
+let map, hLayer, gymLayer, clkLayer;
+let communes=[], gyms=[];
+let gymMarkers = new Map();
+let popGrid = Array.from({length:GX*GY}, ()=>[]);
+let gymGrid  = Array.from({length:GX*GY}, ()=>[]);
+let fetchedZones = [];
+let NMin=0, NMax=1, normReady=false;
+let showScore=true, showGyms=true, fetching=false;
+let mvT, sugT, ntfT, pbT;
+
+// ── Rayon & poids ─────────────────────────────────────────────────────────────
+function popR(p){ if(p>200000)return.007;if(p>80000)return.010;if(p>30000)return.015;if(p>10000)return.022;if(p>3000)return.035;if(p>1000)return.055;if(p>300)return.080;return.110; }
+function pw(p){ return Math.log10(Math.max(p,100)/100+1)*2.8; }
+
+function atg(p,g){
+  const W=FR.e-FR.w,H=FR.n-FR.s,m=p.r*3.5;
+  const x0=Math.max(0,Math.floor((p.lon-m-FR.w)/W*GX)),x1=Math.min(GX-1,Math.ceil((p.lon+m-FR.w)/W*GX));
+  const y0=Math.max(0,Math.floor((p.lat-m-FR.s)/H*GY)),y1=Math.min(GY-1,Math.ceil((p.lat+m-FR.s)/H*GY));
+  for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++)g[x+y*GX].push(p);
+}
+function gc(lat,lon,g){
+  return g[Math.max(0,Math.min(GX-1,Math.floor((lon-FR.w)/(FR.e-FR.w)*GX)))+Math.max(0,Math.min(GY-1,Math.floor((lat-FR.s)/(FR.n-FR.s)*GY)))*GX];
+}
+
+// ── Score ─────────────────────────────────────────────────────────────────────
+function rawScore(lat,lon){
+  const cos=Math.cos(lat*Math.PI/180);let pop=0,gym=0;
+  for(const p of gc(lat,lon,popGrid)){const dl=lat-p.lat,dc=(lon-p.lon)*cos,d2=dl*dl+dc*dc,r2=p.r*p.r;if(d2<r2*14)pop+=p.w*Math.exp(-d2/(2*r2));}
+  for(const g of gc(lat,lon,gymGrid)){const dl=lat-g.lat,dc=(lon-g.lon)*cos,d2=dl*dl+dc*dc,r2=g.r*g.r;if(d2<r2*14)gym+=Math.exp(-d2/(2*r2));}
+  return pop*Math.pow(Math.max(0,1-gym*0.78),1.5);
+}
+function computeNorm(){
+  const sc=[];
+  for(let i=0;i<40;i++)for(let j=0;j<55;j++)sc.push(rawScore(FR.s+(i+.5)*(FR.n-FR.s)/40,FR.w+(j+.5)*(FR.e-FR.w)/55));
+  sc.sort((a,b)=>a-b);NMin=sc[Math.floor(sc.length*.05)];NMax=sc[Math.floor(sc.length*.93)];normReady=true;
+}
+function ns(lat,lon){ if(!normReady||NMax<=NMin)return 0;return Math.max(0,Math.min(1,(rawScore(lat,lon)-NMin)/(NMax-NMin))); }
+function rgb(s){ if(s<.33){const t=s/.33;return[226,Math.round(75+84*t),Math.round(74+26*t)];}if(s<.66){const t=(s-.33)/.33;return[Math.round(226-60*t),Math.round(159+2*t),Math.round(100+51*t)];}const t=(s-.66)/.34;return[Math.round(166-67*t),Math.round(161+26*t),Math.round(151-17*t)]; }
+function slbl(p){ return p>=75?'Très favorable':p>=50?'Modéré':p>=25?'Peu favorable':'Défavorable'; }
+function tR(z){ return z>=14?64:z>=12?48:z>=10?32:z>=9?24:16; }
+
+// ── Heatmap ───────────────────────────────────────────────────────────────────
+function initHeat(){
+  const HL=L.GridLayer.extend({options:{pane:'overlayPane',zIndex:410,tileSize:256},
+    createTile(c){
+      const cv=document.createElement('canvas');cv.width=cv.height=256;
+      if(!normReady||!showScore)return cv;
+      const nw=map.unproject(L.point(c.x*256,c.y*256),c.z),se=map.unproject(L.point((c.x+1)*256,(c.y+1)*256),c.z);
+      if(se.lat>FR.n+.5||nw.lat<FR.s-.5||nw.lng>FR.e+.5||se.lng<FR.w-.5)return cv;
+      const R=tR(c.z),off=document.createElement('canvas');off.width=off.height=R;
+      const oc=off.getContext('2d'),img=oc.createImageData(R,R);let has=false;
+      for(let y=0;y<R;y++)for(let x=0;x<R;x++){
+        const lat=nw.lat-(y+.5)*(nw.lat-se.lat)/R,lon=nw.lng+(x+.5)*(se.lng-nw.lng)/R;
+        if(lat<FR.s-.2||lat>FR.n+.2||lon<FR.w-.2||lon>FR.e+.2)continue;
+        const s=ns(lat,lon);if(s<.015)continue;has=true;
+        const a=Math.round(16+s*s*222),[r,g,b]=rgb(s),i=(y*R+x)*4;
+        img.data[i]=r;img.data[i+1]=g;img.data[i+2]=b;img.data[i+3]=a;
+      }
+      if(!has)return cv;oc.putImageData(img,0,0);
+      const ctx=cv.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(off,0,0,256,256);return cv;
+    }
+  });hLayer=new HL().addTo(map);
+}
+
+// ── Marqueurs permanents ──────────────────────────────────────────────────────
+function gymPopup(g){
+  const s=ns(g.lat,g.lon),p=Math.round(s*100),[r,gg,b]=rgb(s),col=`rgb(${r},${gg},${b})`;
+  return`<div class="gp">
+    <div class="gp-name">${g.name}</div>
+    <div class="gp-sr"><div class="gp-ci" style="background:${col}">${p}</div>
+    <div class="gp-me"><b style="color:${col}">${slbl(p)}</b><br>Score /100<br>Rayon ~${Math.round(g.r*111)} km</div></div>
+    <div class="gp-dv"></div>
+    <div class="gp-ro"><span class="gp-ic">📍</span><span>${g.addr||g.lat.toFixed(4)+'°N '+g.lon.toFixed(4)+'°E'}</span></div>
+    ${g.phone?`<div class="gp-ro"><span class="gp-ic">📞</span><span>${g.phone}</span></div>`:''}
+    ${g.web?`<div class="gp-ro"><span class="gp-ic">🌐</span><a href="${g.web}" target="_blank" style="color:#7c3aed;font-size:11px">${g.web.replace(/^https?:\/\//,'').slice(0,32)}</a></div>`:''}
+    ${g.hours?`<div class="gp-ro"><span class="gp-ic">🕐</span><span style="font-size:10px">${g.hours}</span></div>`:''}
+    ${g.osmId?`<div class="gp-ro"><span class="gp-ic">🔗</span><a href="https://www.openstreetmap.org/${g.osmType}/${g.osmId}" target="_blank" style="color:#7c3aed;font-size:11px">OpenStreetMap</a></div>`:''}
+  </div>`;
+}
+function addMarker(g,idx){
+  if(gymMarkers.has(idx))return;
+  const ico=L.divIcon({className:'',html:'<div class="gm">🏋️</div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-16]});
+  const m=L.marker([g.lat,g.lon],{icon:ico,zIndexOffset:1000});
+  m.bindPopup('',{maxWidth:240});
+  m.on('click',()=>m.setPopupContent(gymPopup(g)));
+  gymMarkers.set(idx,m);
+  if(showGyms)m.addTo(gymLayer);
+}
+function syncVis(){ gymMarkers.forEach(m=>{ if(showGyms){if(!gymLayer.hasLayer(m))m.addTo(gymLayer);}else if(gymLayer.hasLayer(m))gymLayer.removeLayer(m); }); }
+function updCount(){ const el=document.getElementById('gcnt');if(gyms.length){el.style.display='block';el.textContent=`🏋️ ${gyms.length} salle${gyms.length>1?'s':''}`;}else el.style.display='none'; }
+function hasZone(s,w,n,e){ return fetchedZones.some(z=>z.s<=s+.002&&z.w<=w+.002&&z.n>=n-.002&&z.e>=e-.002); }
+
+// ── Overpass — POST puis GET, 3 serveurs ──────────────────────────────────────
+async function ovpQuery(srv, q){
+  // Essai 1 : POST
+  try{
+    const r=await fetch(srv,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'data='+encodeURIComponent(q)});
+    if(!r.ok)throw new Error('POST '+r.status);
+    const d=await r.json();if(d&&d.elements)return d;
+    throw new Error('POST réponse invalide');
+  }catch(e1){
+    // Essai 2 : GET
+    try{
+      const r=await fetch(srv+'?data='+encodeURIComponent(q));
+      if(!r.ok)throw new Error('GET '+r.status);
+      const d=await r.json();if(d&&d.elements)return d;
+      throw new Error('GET réponse invalide');
+    }catch(e2){throw e2;}
+  }
+}
+
+async function fetchGyms(){
+  if(fetching||!normReady||map.getZoom()<9)return;
+  if(location.protocol==='file:')return; // bloqué sans serveur local
+  fetching=true;
+
+  const b=map.getBounds();
+  const s=Math.max(b.getSouth()-.03,FR.s),n=Math.min(b.getNorth()+.03,FR.n);
+  const w=Math.max(b.getWest()-.05,FR.w),e=Math.min(b.getEast()+.05,FR.e);
+  if(hasZone(s,w,n,e)){fetching=false;return;}
+
+  const q=`[out:json][timeout:25];(
+node[leisure=fitness_centre](${s},${w},${n},${e});
+way[leisure=fitness_centre](${s},${w},${n},${e});
+node[amenity=gym](${s},${w},${n},${e});
+way[amenity=gym](${s},${w},${n},${e});
+node[sport=fitness](${s},${w},${n},${e});
+way[sport=fitness](${s},${w},${n},${e});
+);out center tags;`;
+
+  let data=null;
+  for(let i=0;i<OVP.length;i++){
+    try{
+      setBar(true,`Serveur ${i+1}/3...`);
+      data=await ovpQuery(OVP[i],q);
+      break;
+    }catch(e){console.warn(`OVP[${i}]:`,e.message);data=null;}
+  }
+
+  if(!data){
+    setBar(false);
+    notif('Serveurs Overpass inaccessibles — réessayez','err');
+    fetching=false;return;
+  }
+
+  const seen=new Set(gyms.map(g=>g.lat.toFixed(4)+','+g.lon.toFixed(4)));
+  let added=0;
+  for(const el of data.elements){
+    const lat=el.lat??el.center?.lat,lon=el.lon??el.center?.lon;
+    if(!lat||!lon)continue;
+    const k=lat.toFixed(4)+','+lon.toFixed(4);
+    if(seen.has(k))continue;seen.add(k);
+    const t=el.tags||{};
+    const near=gc(lat,lon,popGrid);
+    let best=null,bd=1e9;
+    for(const p of near){const d=(lat-p.lat)**2+((lon-p.lon)*Math.cos(lat*Math.PI/180))**2;if(d<bd){bd=d;best=p;}}
+    const r=best?best.r*.52:.018;
+    const g={lat,lon,r,
+      name:t.name||t['name:fr']||'Salle de sport',
+      addr:[t['addr:housenumber'],t['addr:street'],t['addr:city']].filter(Boolean).join(' ')||'',
+      phone:t.phone||t['contact:phone']||'',
+      web:t.website||t['contact:website']||'',
+      hours:t.opening_hours||'',
+      osmId:el.id,osmType:el.type==='way'?'way':'node'};
+    const idx=gyms.length;gyms.push(g);atg(g,gymGrid);addMarker(g,idx);added++;
+  }
+
+  fetchedZones.push({s,w,n,e});
+  if(added>0){computeNorm();hLayer.redraw();}
+  setBar(false);updCount();
+  notif(added>0?`✓ +${added} salle${added>1?'s':''} · ${gyms.length} au total`:`Zone à jour · ${gyms.length} salle${gyms.length>1?'s':''}  en cache`,'ok');
+  fetching=false;
+}
+
+// ── Clic carte ────────────────────────────────────────────────────────────────
+function initClick(){
+  map.on('click',e=>{
+    if(!normReady)return;clkLayer.clearLayers();
+    const{lat,lng}=e.latlng;
+    if(lat<FR.s-1||lat>FR.n+1||lng<FR.w-1||lng>FR.e+1)return;
+    const s=ns(lat,lng),p=Math.round(s*100),[r,g,b]=rgb(s),col=`rgb(${r},${g},${b})`;
+    const warn=map.getZoom()<9?'<div style="font-size:10px;color:#e87;margin-top:5px">Zoom 9+ pour les salles</div>':'';
+    L.circleMarker([lat,lng],{radius:8,color:'white',fillColor:col,fillOpacity:1,weight:2.5})
+     .addTo(clkLayer).bindPopup(`<div class="gp">
+       <div style="font-size:26px;font-weight:700;color:${col};line-height:1">${p}<span style="font-size:13px;color:#aaa;font-weight:400">/100</span></div>
+       <div style="font-size:13px;font-weight:600;margin:3px 0 8px;color:${col}">${slbl(p)}</div>
+       <div class="gp-ro"><span class="gp-ic">📍</span><span>${lat.toFixed(5)}°N · ${lng.toFixed(5)}°E</span></div>${warn}
+     </div>`,{offset:[0,-6]}).openPopup();
+  });
+}
+
+// ── INSEE ─────────────────────────────────────────────────────────────────────
+async function loadFrance(){
+  startPB();
+  try{
+    const resp=await fetch('https://geo.api.gouv.fr/communes?fields=nom,centre,population&format=json&geometry=centre');
+    if(!resp.ok)throw new Error('INSEE HTTP '+resp.status);
+    const data=await resp.json();
+    document.getElementById('ld-t').textContent='Indexation spatiale...';
+    document.getElementById('ld-s').textContent=data.length.toLocaleString('fr')+' communes';
+    await sleep(20);
+    for(const c of data){
+      if(!c.centre)continue;
+      const lon=c.centre.coordinates[0],lat=c.centre.coordinates[1];
+      if(lat<FR.s||lat>FR.n||lon<FR.w||lon>FR.e)continue;
+      const pop=c.population||150,r=popR(pop),ww=pw(pop);
+      const com={lat,lon,pop,r,w:ww};communes.push(com);atg(com,popGrid);
+    }
+    document.getElementById('ld-t').textContent='Calcul échelle globale...';
+    await sleep(20);computeNorm();endPB();await sleep(200);
+    document.getElementById('ld0').style.display='none';
+    document.getElementById('leg').style.display='block';
+    hLayer.redraw();updZtip();
+    notif('✓ '+communes.length.toLocaleString('fr')+' communes · Zoomez 9+ pour les salles','ok');
+  }catch(e){
+    endPB();document.getElementById('ld-t').textContent='Erreur de chargement';
+    document.getElementById('ld-s').textContent=e.message;console.error(e);
+  }
+}
+
+// ── Recherche ─────────────────────────────────────────────────────────────────
+async function doSearch(q){
+  if(!q.trim())return;
+  try{
+    const r=await fetch(`${NOM}/search?format=json&q=${encodeURIComponent(q)}&limit=1&accept-language=fr`);
+    const d=await r.json();if(!d.length){notif('Lieu introuvable','err');return;}
+    const p=d[0];let s,w,n,e;
+    if(p.boundingbox)[s,n,w,e]=p.boundingbox.map(Number);
+    else{const dv=.08;s=+p.lat-dv;n=+p.lat+dv;w=+p.lon-dv*1.5;e=+p.lon+dv*1.5;}
+    if(n-s>.4){const c=(s+n)/2;s=c-.16;n=c+.16;}if(e-w>.6){const c=(w+e)/2;w=c-.27;e=c+.27;}
+    map.fitBounds([[s,w],[n,e]],{maxZoom:13});
+  }catch(e){notif('Erreur réseau','err');}
+}
+async function getSugs(q){
+  try{
+    const r=await fetch(`${NOM}/search?format=json&q=${encodeURIComponent(q)}&limit=5&accept-language=fr&countrycodes=fr`);
+    const d=await r.json(),el=document.getElementById('sugs');
+    el.innerHTML='';if(!d.length){el.style.display='none';return;}
+    d.forEach(item=>{const div=document.createElement('div');div.className='sug';div.textContent=item.display_name;div.onclick=()=>{document.getElementById('si').value=item.display_name;el.style.display='none';doSearch(item.display_name);};el.appendChild(div);});
+    el.style.display='block';
+  }catch(e){}
+}
+
+window.glTog=function(l){
+  if(l==='score'){showScore=!showScore;document.getElementById('t-score').classList.toggle('on',showScore);hLayer.redraw();}
+  if(l==='gyms'){showGyms=!showGyms;document.getElementById('t-gyms').classList.toggle('on',showGyms);syncVis();}
+};
+function setBar(on,txt){const el=document.getElementById('bar');el.style.display=on?'flex':'none';if(txt)document.getElementById('bar-txt').textContent=txt;}
+function updZtip(){if(!normReady)return;document.getElementById('ztip').style.display=map.getZoom()<9?'block':'none';}
+function notif(msg,type){
+  const el=document.getElementById('ntf');el.textContent=msg;el.style.display='block';
+  const st={ok:['#0d2e1a','1px solid #1a5c32','#4ade80'],warn:['#2a250d','1px solid #5c4e1a','#fbbf24'],err:['#2e0d0d','1px solid #5c1a1a','#f87171']};
+  const[bg,bd,col]=(st[type]||st.ok);el.style.background=bg;el.style.border=bd;el.style.color=col;
+  clearTimeout(ntfT);ntfT=setTimeout(()=>el.style.display='none',8000);
+}
+function startPB(){let p=0;const b=document.getElementById('pb');pbT=setInterval(()=>{p=Math.min(p+(Math.random()*3+.4),84);b.style.width=p+'%';},110);}
+function endPB(){clearInterval(pbT);document.getElementById('pb').style.width='100%';}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+function init(){
+  map=L.map('map',{center:[46.8,2.3],zoom:6});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  gymLayer=L.layerGroup().addTo(map);clkLayer=L.layerGroup().addTo(map);
+  initHeat();initClick();
+  const inp=document.getElementById('si'),btn=document.getElementById('sb'),sugs=document.getElementById('sugs');
+  inp.addEventListener('input',()=>{clearTimeout(sugT);const q=inp.value.trim();if(q.length<3){sugs.style.display='none';return;}sugT=setTimeout(()=>getSugs(q),350);});
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'){sugs.style.display='none';doSearch(inp.value.trim());}});
+  btn.onclick=()=>{sugs.style.display='none';doSearch(inp.value.trim());};
+  document.addEventListener('click',e=>{if(!document.getElementById('sw').contains(e.target))sugs.style.display='none';});
+  map.on('moveend',()=>{clearTimeout(mvT);mvT=setTimeout(()=>{updZtip();if(normReady&&map.getZoom()>=9&&!fetching)fetchGyms();},700);});
+  map.on('zoomend',updZtip);
+  loadFrance();
+}
+init();
+})();
+</script>
+</body>
+</html>
