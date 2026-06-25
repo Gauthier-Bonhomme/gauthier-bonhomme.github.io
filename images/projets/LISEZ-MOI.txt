@@ -1,0 +1,14 @@
+Dépose ici les photos des projets personnels affichées sur le CV.
+
+Noms exacts attendus (sinon l'image ne s'affichera pas) :
+
+  - statue.jpg       -> photo de la statue (ou rendu 3D de l'aigle)
+  - gymlocator.jpg   -> capture d'écran de GymLocator (la carte de score)
+
+Conseils :
+  - Format paysage de préférence (les vignettes font 170 px de haut).
+  - Pour la statue : un rendu de l'aigle SEUL (sans l'interface Blender)
+    ou une photo de la statue coulée rend mieux qu'une capture d'écran.
+
+Une fois les fichiers déposés ici, ils apparaîtront automatiquement
+dans les cartes de la section « Projets personnels ».

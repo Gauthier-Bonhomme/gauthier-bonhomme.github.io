@@ -61,11 +61,13 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 /* LANGUAGE SWITCHER */
 .lang-switcher{display:flex;gap:5px;margin-bottom:28px;}
 .lang-btn{
-  padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;
   letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;
   background:none;border:1px solid var(--border);color:var(--muted);
   font-family:'Syne',sans-serif;
 }
+.lang-btn .flag{height:14px;width:auto;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.12);}
 .lang-btn:hover,.lang-btn.active{
   background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);
 }
@@ -380,10 +382,10 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 <aside class="left">
   <div class="left-top">
     <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('de')">DE</button>
-      <button class="lang-btn" onclick="setLang('it')">IT</button>
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
+      <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
     </div>
     <div class="name">Gauthier<br><span>Bonhomme</span></div>
     <div class="title" data-i18n="job-title">Élève Ingénieur</div>
@@ -401,6 +403,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
     <a href="#about" class="active" data-i18n="nav-about">À propos</a>
     <a href="#formation" data-i18n="nav-formation">Formation</a>
     <a href="#experiences" data-i18n="nav-exp">Expériences</a>
+    <a href="#projets" data-i18n="nav-projets">Projets</a>
     <a href="#competences" data-i18n="nav-comp">Compétences</a>
     <a href="#langues" data-i18n="nav-lang">Langues</a>
     <a href="#interets" data-i18n="nav-int">Centres d'intérêt</a>
@@ -491,6 +494,33 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
           <li data-i18n="exp3-li1">Récolte des raisins lors des vendanges</li>
           <li data-i18n="exp3-li2">Travail d'équipe, endurance et sens de l'effort</li>
         </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="section-label" data-i18n="sec-projets">Projets personnels</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <img src="images/projets/statue.jpg" alt="Statue en fonderie" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj1-title">Statue commémorative en fonderie</div>
+        <div class="card-desc" data-i18n="proj1-desc">Conception et réalisation d'une statue commémorative en métal, de la modélisation 3D au moulage. J'ai combiné l'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj1-tag1">Fonderie</span>
+          <span class="tag neutral" data-i18n="proj1-tag2">Impression 3D</span>
+          <span class="tag neutral" data-i18n="proj1-tag3">Métallurgie</span>
+        </div>
+      </div>
+      <div class="skill-category" onclick="window.location.href='python.html'" style="cursor:pointer;">
+        <img src="images/projets/gymlocator.jpg" alt="GymLocator" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj2-title">GymLocator — Localisation optimale</div>
+        <div class="card-desc" data-i18n="proj2-desc">Programme Python qui identifie l'emplacement optimal d'une salle de sport en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral">Python</span>
+          <span class="tag neutral" data-i18n="proj2-tag2">Géospatial</span>
+          <span class="tag neutral" data-i18n="proj2-tag3">Data</span>
+        </div>
+        <button class="tag-link" style="margin-top:14px;" onclick="event.stopPropagation();window.location.href='python.html'" data-i18n="proj-view">Voir le projet ↗</button>
       </div>
     </div>
   </section>
@@ -895,6 +925,13 @@ fr:{
   'py-sec5':'Apports',
   'py-conc1':'Ce projet m\'a permis de structurer un programme Python complet de bout en bout, de l\'import des données publiques à la génération d\'une carte de score exploitable.',
   'py-conc2':'J\'ai développé des compétences en <strong>modélisation mathématique</strong> (noyaux gaussiens, pénalité exponentielle), en manipulation de données géospatiales et en visualisation. Ce type d\'approche est directement transposable à des problématiques d\'ingénierie comme l\'implantation d\'unités de production.',
+  'nav-projets':'Projets','sec-projets':'Projets personnels',
+  'proj1-title':'Statue commémorative en fonderie',
+  'proj1-desc':'Conception et réalisation d\'une statue commémorative en métal, de la modélisation 3D au moulage. J\'ai combiné l\'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.',
+  'proj1-tag1':'Fonderie','proj1-tag2':'Impression 3D','proj1-tag3':'Métallurgie',
+  'proj2-title':'GymLocator — Localisation optimale',
+  'proj2-desc':'Programme Python qui identifie l\'emplacement optimal d\'une salle de sport en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.',
+  'proj2-tag2':'Géospatial','proj2-tag3':'Data','proj-view':'Voir le projet ↗',
 },
 en:{
   'page-title':'Gauthier Bonhomme — Engineer','job-title':'Engineering Student',
@@ -987,6 +1024,13 @@ en:{
   'py-sec5':'Key takeaways',
   'py-conc1':'This project allowed me to structure a complete Python programme from end to end, from importing public data to generating an actionable score map.',
   'py-conc2':'I developed skills in <strong>mathematical modelling</strong> (Gaussian kernels, exponential penalty), geospatial data handling and data visualisation — directly applicable to industrial engineering problems.',
+  'nav-projets':'Projects','sec-projets':'Personal Projects',
+  'proj1-title':'Commemorative Cast Statue',
+  'proj1-desc':'Design and creation of a commemorative metal statue, from 3D modelling to casting. I combined 3D printing for the pattern with home foundry casting — a project blending metallurgy, thermal transformation of materials and hands-on craftsmanship.',
+  'proj1-tag1':'Foundry','proj1-tag2':'3D Printing','proj1-tag3':'Metallurgy',
+  'proj2-title':'GymLocator — Optimal Location',
+  'proj2-desc':'Python program identifying the optimal location for a gym by combining population density (INSEE) with existing competition (OpenStreetMap), through a two-criteria score and a heatmap.',
+  'proj2-tag2':'Geospatial','proj2-tag3':'Data','proj-view':'View project ↗',
 },
 de:{
   'page-title':'Gauthier Bonhomme — Ingenieur','job-title':'Ingenieurstudent',
@@ -1079,6 +1123,13 @@ de:{
   'py-sec5':'Kompetenzen',
   'py-conc1':'Dieses Projekt ermöglichte mir, ein vollständiges Python-Programm von A bis Z zu strukturieren — vom Import öffentlicher Daten bis zur Erstellung einer Scorekarte.',
   'py-conc2':'Ich entwickelte Kompetenzen in <strong>mathematischer Modellierung</strong> (Gaußkerne, Exponentialstrafe), Geodatenverarbeitung und Visualisierung — direkt übertragbar auf ingenieurtechnische Fragestellungen.',
+  'nav-projets':'Projekte','sec-projets':'Persönliche Projekte',
+  'proj1-title':'Gegossene Gedenkstatue',
+  'proj1-desc':'Entwurf und Herstellung einer gegossenen Gedenkstatue aus Metall, vom 3D-Modell bis zum Guss. Ich kombinierte 3D-Druck für das Modell mit eigenem Gießen — ein Projekt rund um Metallurgie, thermische Materialumwandlung und handwerkliche Fertigung.',
+  'proj1-tag1':'Gießerei','proj1-tag2':'3D-Druck','proj1-tag3':'Metallurgie',
+  'proj2-title':'GymLocator — Optimaler Standort',
+  'proj2-desc':'Python-Programm zur Bestimmung des optimalen Standorts für ein Fitnessstudio durch Kombination von Bevölkerungsdichte (INSEE) und bestehender Konkurrenz (OpenStreetMap) über eine Zwei-Kriterien-Bewertung und eine Heatmap.',
+  'proj2-tag2':'Geodaten','proj2-tag3':'Daten','proj-view':'Projekt ansehen ↗',
 },
 it:{
   'page-title':'Gauthier Bonhomme — Ingegnere','job-title':'Studente Ingegnere',
@@ -1171,6 +1222,13 @@ it:{
   'py-sec5':'Competenze acquisite',
   'py-conc1':'Questo progetto mi ha permesso di strutturare un programma Python completo dall\'inizio alla fine, dall\'importazione dei dati pubblici alla generazione di una mappa di punteggi operativa.',
   'py-conc2':'Ho sviluppato competenze in <strong>modellazione matematica</strong> (kernel gaussiani, penalità esponenziale), gestione di dati geospaziali e visualizzazione — direttamente applicabili a problemi ingegneristici.',
+  'nav-projets':'Progetti','sec-projets':'Progetti personali',
+  'proj1-title':'Statua commemorativa in fonderia',
+  'proj1-desc':'Progettazione e realizzazione di una statua commemorativa in metallo, dalla modellazione 3D alla colata. Ho unito la stampa 3D per il modello e la fonderia artigianale per la colata — un progetto che combina metallurgia, trasformazioni termiche della materia e fabbricazione artigianale.',
+  'proj1-tag1':'Fonderia','proj1-tag2':'Stampa 3D','proj1-tag3':'Metallurgia',
+  'proj2-title':'GymLocator — Posizione ottimale',
+  'proj2-desc':'Programma Python che individua la posizione ottimale per una palestra combinando densità di popolazione (INSEE) e concorrenza esistente (OpenStreetMap), tramite un punteggio bi-criterio e una mappa di calore.',
+  'proj2-tag2':'Geospaziale','proj2-tag3':'Dati','proj-view':'Vedi il progetto ↗',
 }
 };
 
@@ -1180,7 +1238,7 @@ function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.lang-btn').forEach(b => {
-    if(b.textContent.toLowerCase() === lang) b.classList.add('active');
+    if(b.getAttribute('data-lang') === lang) b.classList.add('active');
   });
   const t = T[lang];
   // textContent elements
