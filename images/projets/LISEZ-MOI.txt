@@ -1,0 +1,20 @@
+Dépose ici les photos des projets personnels affichées sur le CV.
+
+Noms EXACTS attendus (sinon l'image ne s'affiche pas) :
+
+  - statue.jpg                 -> statue en fonderie (rendu 3D de l'aigle ou photo de la statue)
+  - gymlocator.jpg             -> capture d'écran de GymLocator (la carte de score)
+  - trail100k.jpg              -> photo du 100 km trail (coureur sous la pluie / Ceven'Trail)
+  - esp32.jpg                  -> photo du montage ESP32
+  - vilebrequin.jpg            -> photo du vilebrequin usiné (A VENIR - la carte s'affiche sans image en attendant)
+  - utmb.jpg                   -> carte / visuel de l'UTMB (projet EN COURS)
+  - reconnaissance-faciale.jpg -> visuel reconnaissance faciale (projet EN COURS)
+
+Remarque : le projet "Site Hall B" n'utilise pas d'image (bouton vers hallb.fr).
+
+Conseils :
+  - Format paysage de préférence (les vignettes font 170 px de haut).
+  - Tant qu'un fichier est absent, sa carte s'affiche simplement sans image (aucune erreur).
+
+Une fois les fichiers déposés ici, ils apparaissent automatiquement
+dans les cartes de la section « Projets personnels ».

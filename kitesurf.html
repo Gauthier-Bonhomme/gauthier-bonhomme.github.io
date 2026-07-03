@@ -7,31 +7,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0b1120;font-family:'DM Sans',sans-serif;}
-.bar{position:sticky;top:0;z-index:200;background:rgba(11,17,32,0.97);
-     backdrop-filter:blur(12px);border-bottom:1px solid rgba(96,165,250,0.2);
-     padding:12px 28px;display:flex;align-items:center;justify-content:space-between;}
-.back{display:inline-flex;align-items:center;gap:8px;color:#60a5fa;
-      background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);
-      border-radius:8px;padding:10px 18px;font-size:16px;font-weight:500;
-      cursor:pointer;font-family:inherit;text-decoration:none;transition:background 0.2s;}
-.back:hover{background:rgba(96,165,250,0.2);}
+:root{
+  --bg:#0a0f1e;--surface:#111827;--border:rgba(255,255,255,0.08);
+  --text:#9fb0c7;--heading:#eef2f8;--muted:#64748b;
+  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.3);
+  --radius:14px;
+}
+body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);
+     background-image:radial-gradient(1100px 500px at 85% -5%,rgba(96,165,250,0.07),transparent 60%),radial-gradient(800px 450px at -10% 25%,rgba(52,211,153,0.04),transparent 60%);
+     background-attachment:fixed;}
+.bar{position:sticky;top:0;z-index:200;background:rgba(10,15,30,0.82);
+     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+     border-bottom:1px solid var(--border);
+     padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.bar-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.16em;
+           text-transform:uppercase;color:var(--heading);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+.bar-title .emo{font-size:20px;}
+.back{display:inline-flex;align-items:center;gap:8px;color:var(--accent);
+      background:var(--accent-dim);border:1px solid var(--accent-border);
+      border-radius:10px;padding:9px 16px;font-size:14px;font-weight:500;
+      cursor:pointer;font-family:inherit;text-decoration:none;transition:background 0.2s,transform 0.2s;}
+.back:hover{background:rgba(96,165,250,0.2);transform:translateY(-1px);}
 .back svg{width:16px;height:16px;fill:currentColor;}
-.content{max-width:860px;margin:0 auto;padding:0 0 80px;}
-.cover img{width:100%;display:block;}
-.section-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;
-               letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;
-               padding:28px 16px 14px;}
-.grid{display:grid;gap:6px;width:100%;}
+.content{max-width:880px;margin:0 auto;padding:0 0 60px;}
+.intro{max-width:720px;margin:28px auto 8px;padding:26px 28px;background:var(--surface);
+       border:1px solid var(--border);border-radius:var(--radius);}
+.intro-h{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.16em;
+         text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
+.intro-p{color:var(--text);font-size:16px;line-height:1.75;margin:0 0 22px;}
+.intro-p.last{margin:0;}
+.section-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+               letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);
+               padding:32px 16px 16px;display:flex;align-items:center;gap:14px;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.grid{display:grid;gap:8px;width:100%;padding:0 12px;}
 .g1,.g2{grid-template-columns:1fr;}
 .g3,.g4,.gmany{grid-template-columns:1fr 1fr;}
-.gc{overflow:hidden;cursor:zoom-in;background:#111;border-radius:6px;}
+.gc{overflow:hidden;cursor:zoom-in;background:#111;border-radius:10px;}
 .gc-thumb{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s ease;}
 .gc:hover .gc-thumb{transform:scale(1.04);}
 .g3 .gc,.g4 .gc,.gmany .gc{height:260px;}
 .g3 .span2,.g4 .span2,.gmany .span2{grid-column:span 2;height:320px;}
-.g4 .tall,.gmany .tall{grid-row:span 2;height:526px;}
-.gmany .tall-r{grid-row:span 2;height:526px;}
+.g4 .tall,.gmany .tall{grid-row:span 2;height:528px;}
+.gmany .tall-r{grid-row:span 2;height:528px;}
 #overlay{display:none;position:fixed;inset:0;z-index:9999;
          background:rgba(0,0,0,0.92);align-items:center;justify-content:center;
          padding:16px;opacity:0;transition:opacity 0.25s ease;}
@@ -49,28 +67,37 @@ body{background:#0b1120;font-family:'DM Sans',sans-serif;}
         width:46px;height:46px;color:white;font-size:26px;cursor:pointer;
         display:flex;align-items:center;justify-content:center;}
 #ov-prev{left:14px;} #ov-next{right:14px;}
-.botbar{background:rgba(11,17,32,0.97);border-top:1px solid rgba(96,165,250,0.2);
-        padding:14px 32px;display:flex;justify-content:center;margin-top:20px;}
+.botbar{border-top:1px solid var(--border);padding:20px 32px;display:flex;justify-content:center;margin-top:32px;}
 @media(max-width:600px){
   .g3 .gc,.g4 .gc,.gmany .gc{height:160px;}
   .g3 .span2,.g4 .span2,.gmany .span2{height:200px;}
-  .g4 .tall,.gmany .tall,.gmany .tall-r{height:326px;}
-  .section-title{font-size:15px;padding:20px 12px 12px;}
-  .back{font-size:14px;padding:8px 14px;}
-  .bar{padding:10px 16px;}
+  .g4 .tall,.gmany .tall,.gmany .tall-r{height:328px;}
+  .section-title{font-size:11px;padding:24px 12px 12px;}
+  .back{font-size:13px;padding:8px 13px;}
+  .bar{padding:10px 14px;}
+  .bar-title{font-size:11px;}
+  .intro{margin:18px 12px 4px;padding:20px 18px;}
+  .intro-p{font-size:14.5px;}
+  .grid{padding:0 8px;gap:6px;}
 }
 </style>
 </head>
 <body>
 <div class="bar">
-  <a class="back" href="index.html">
+  <a class="back" href="index.html" onclick="return goBackCV()">
     <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
     Retour au CV
   </a>
-  <span style="font-size:22px;">🪁</span>
+  <div class="bar-title"><span class="emo">🪁</span>Kite Surf</div>
 </div>
 <div class="content">
-  <div class="cover"><img src="images/kitesurf/cover.jpg" loading="eager"></div>
+  
+  <div class="intro">
+    <h2 class="intro-h">Pourquoi ce sport ?</h2>
+    <p class="intro-p">Pour les sensations : la glisse y est d'une fluidité grisante. C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et réaliser des sauts.</p>
+    <h2 class="intro-h">Ce que ça m'a apporté</h2>
+    <p class="intro-p last">Le plaisir de dompter une force naturelle et de progresser techniquement, le tout face à des paysages magnifiques et avec une liberté folle.</p>
+  </div>
   <div class="section-title">Photos</div><div class="grid g4"><div class="gc span2" onclick="showOverlay(0)">
         <img class="gc-thumb" src="images/kitesurf/thumb_1.jpg" loading="lazy">
         <img class="gc-full" src="images/kitesurf/photo_1.jpg" style="display:none" loading="lazy">
@@ -89,7 +116,7 @@ body{background:#0b1120;font-family:'DM Sans',sans-serif;}
       </div></div>
 </div>
 <div class="botbar">
-  <a class="back" href="index.html">
+  <a class="back" href="index.html" onclick="return goBackCV()">
     <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
     Retour au CV
   </a>
@@ -101,6 +128,12 @@ body{background:#0b1120;font-family:'DM Sans',sans-serif;}
   <button class="ov-nav" id="ov-next" onclick="navOverlay(1)">&#8250;</button>
 </div>
 <script>
+function goBackCV(){
+  try{
+    if(history.length>1 && document.referrer && new URL(document.referrer).host===location.host){history.back();return false;}
+  }catch(e){}
+  return true;
+}
 const cells = Array.from(document.querySelectorAll('.gc'));
 let cur = 0;
 function showOverlay(i) {
