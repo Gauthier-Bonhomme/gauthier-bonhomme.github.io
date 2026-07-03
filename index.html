@@ -14,7 +14,7 @@
   <meta property="og:title" content="Gauthier Bonhomme — Élève Ingénieur">
   <meta property="og:description" content="CV en ligne de Gauthier Bonhomme, Arts et Métiers Aix-en-Provence.">
   <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://gauthier-bonhomme.github.io/gauthierbonhomme.github.io/">
+  <meta property="og:url" content="https://gauthierbonhomme.github.io">
 
   <!-- Données structurées Google (rich results) -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
       "@type": "EducationalOrganization",
       "name": "Arts et Métiers ParisTech"
     },
-    "url": "https://gauthier-bonhomme.github.io/gauthierbonhomme.github.io/",
+    "url": "https://gauthierbonhomme.github.io",
     "email": "gauthier.bonhomme30@gmail.com",
     "telephone": "+33608276216",
     "address": {
@@ -44,107 +44,84 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --cv-zoom:1; /* zoom global — piloté par JS (initFillZoom) pour remplir la largeur des grands écrans */
-  --bg:#0a0f1e;--surface:#111827;--border:rgba(255,255,255,0.08);
-  --text:#9fb0c7;--heading:#eef2f8;
-  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.3);
+  --cv-zoom:1; /* zoom global du CV — piloté dynamiquement par JS (initFillZoom) pour remplir la largeur de l'écran */
+  --bg:#0b1120;--surface:#111827;--border:rgba(255,255,255,0.07);
+  --text:#94a3b8;--heading:#e2e8f0;
+  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.28);
   --muted:#64748b;--tag-bg:rgba(96,165,250,0.08);--tag-text:#93c5fd;
   --green:#34d399;--green-dim:rgba(52,211,153,0.1);--green-border:rgba(52,211,153,0.28);
-  --radius:14px;
 }
 html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;min-height:100vh;
-  background-image:radial-gradient(1100px 500px at 85% -5%,rgba(96,165,250,0.07),transparent 60%),radial-gradient(800px 450px at -10% 25%,rgba(52,211,153,0.04),transparent 60%);
-  background-attachment:fixed;
-}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
 
 /* PAGE SWITCHING */
-.page{display:none;zoom:var(--cv-zoom);}
+.page{display:none;}
 .page.active{display:block;}
+#page-cv{display:flex;}
 
 /* LANGUAGE SWITCHER */
-.lang-switcher{display:flex;gap:4px;flex-shrink:0;}
+.lang-switcher{display:flex;gap:5px;margin-bottom:28px;}
 .lang-btn{
-  display:flex;align-items:center;gap:6px;
-  padding:6px 9px;border-radius:8px;font-size:10.5px;font-weight:700;
-  letter-spacing:0.08em;cursor:pointer;transition:all 0.2s;
-  background:none;border:1px solid transparent;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;
+  letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;
+  background:none;border:1px solid var(--border);color:var(--muted);
   font-family:'Syne',sans-serif;
 }
-.lang-btn .flag{height:12px;width:auto;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.12);}
+.lang-btn .flag{height:14px;width:auto;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.12);}
 .lang-btn:hover,.lang-btn.active{
   background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);
 }
 
-/* ═══ TOPBAR — navigation sticky (desktop + mobile) ═══ */
-.topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:18px;padding:10px 24px;background:rgba(10,15,30,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--heading);text-decoration:none;white-space:nowrap;letter-spacing:0.03em;line-height:1;}
-.brand span{color:var(--accent);}
-.topnav{display:flex;gap:2px;flex:1;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
-.topnav::-webkit-scrollbar{display:none;}
-.topnav a{flex-shrink:0;text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0.06em;padding:7px 12px;border-radius:999px;transition:color 0.2s,background 0.2s;white-space:nowrap;}
-.topnav a:hover{color:var(--heading);}
-.topnav a.active{color:var(--accent);background:var(--accent-dim);}
-
-/* ═══ HERO ═══ */
-.hero{padding:76px 0 8px;}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);background:var(--green-dim);border:1px solid var(--green-border);border-radius:999px;padding:7px 16px;margin-bottom:26px;}
-.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 1.6s ease-in-out infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
-.name{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,76px);font-weight:700;color:var(--heading);line-height:1.02;letter-spacing:0.01em;margin-bottom:14px;}
+/* CV LAYOUT */
+.layout{max-width:1100px;margin:0 auto;display:flex;min-height:100vh;width:100%;zoom:var(--cv-zoom);}
+.left{width:340px;flex-shrink:0;position:sticky;top:0;height:calc(100vh / var(--cv-zoom));overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;justify-content:flex-start;padding:60px 20px 60px 36px;}
+.left::-webkit-scrollbar{width:0;height:0;display:none;}
+.name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--heading);line-height:1.05;letter-spacing:0.04em;margin-bottom:6px;}
 .name span{color:var(--accent);}
-.title{font-family:'Syne',sans-serif;font-size:clamp(13px,1.4vw,16px);font-weight:600;color:var(--accent);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:16px;}
-.tagline{font-size:clamp(15px,1.5vw,17px);color:var(--text);line-height:1.7;max-width:600px;}
-.tagline strong{color:var(--heading);font-weight:500;}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px;}
-.btn-download{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:var(--accent);border:1px solid var(--accent);border-radius:12px;color:#0a0f1e;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:filter 0.2s,transform 0.2s,box-shadow 0.2s;}
-.btn-download:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(96,165,250,0.35);}
-.btn-download svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
-.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:transparent;border:1px solid var(--border);border-radius:12px;color:var(--heading);font-size:14px;font-weight:500;text-decoration:none;transition:border-color 0.2s,background 0.2s,transform 0.2s;}
-.btn-ghost:hover{border-color:var(--accent-border);background:var(--accent-dim);transform:translateY(-2px);}
-.social{display:flex;gap:8px;align-items:center;margin-left:6px;}
-.social a{color:var(--muted);text-decoration:none;transition:color 0.2s,transform 0.2s,border-color 0.2s;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--border);border-radius:12px;}
-.social a:hover{color:var(--accent);border-color:var(--accent-border);transform:translateY(-2px);}
-.social a svg{width:19px;height:19px;fill:currentColor;}
-
-/* ═══ CONTENU ═══ */
-.layout{max-width:1160px;margin:0 auto;width:100%;padding:0 28px;}
-.right{padding:20px 0 100px;}
-section{margin-bottom:96px;scroll-margin-top:86px;}
-.section-label{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:34px;display:flex;align-items:center;gap:14px;}
+.title{font-family:'Syne',sans-serif;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:18px;}
+.tagline{font-size:14px;color:var(--text);line-height:1.6;max-width:220px;}
+.btn-download{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:9px 16px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;color:var(--accent);font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s,transform 0.2s;}
+.btn-download:hover{background:rgba(96,165,250,0.22);transform:translateY(-1px);}
+.btn-download svg{width:15px;height:15px;fill:var(--accent);flex-shrink:0;}
+.nav{margin:40px 0;display:flex;flex-direction:column;gap:4px;}
+.nav a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:6px 0;transition:color 0.2s;}
+.nav a::before{content:'';width:28px;height:1px;background:var(--muted);transition:width 0.3s,background 0.2s;}
+.nav a.active,.nav a:hover{color:var(--heading);}
+.nav a.active::before,.nav a:hover::before{width:52px;background:var(--accent);}
+.social{display:flex;gap:18px;align-items:center;margin-top:auto;}
+.social a{color:var(--muted);text-decoration:none;transition:color 0.2s,transform 0.2s;display:flex;align-items:center;}
+.social a:hover{color:var(--accent);transform:translateY(-2px);}
+.social a svg{width:20px;height:20px;fill:currentColor;}
+.right{flex:1;min-width:0;padding:80px 60px 120px 0;}
+section{margin-bottom:80px;scroll-margin-top:80px;}
+.section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
 .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
-.about-text p{margin-bottom:16px;font-size:16px;color:var(--text);max-width:75ch;}
+.about-text p{margin-bottom:14px;font-size:15px;color:var(--text);}
 .about-text p:last-child{margin-bottom:0;}
 .about-text strong{color:var(--heading);font-weight:500;}
-.card{display:grid;grid-template-columns:110px 1fr;gap:0 26px;padding:22px 24px;border-radius:var(--radius);transition:border-color 0.2s,transform 0.2s;border:1px solid var(--border);background:var(--surface);margin-bottom:12px;}
-.card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.card{display:grid;grid-template-columns:100px 1fr;gap:0 24px;padding:18px 20px;border-radius:10px;transition:background 0.2s,border 0.2s;border:1px solid transparent;margin-bottom:4px;}
+.card:hover{background:var(--surface);border-color:var(--border);box-shadow:0 0 0 1px var(--accent-border);}
 .card:hover .card-title{color:var(--accent);}
-.card-date{font-size:13px;color:var(--muted);font-weight:400;padding-top:3px;line-height:1.4;}
-.card-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.35;}
+.card-date{font-size:12px;color:var(--muted);font-weight:400;padding-top:2px;line-height:1.4;}
+.card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.3;}
 .card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
 .card-title a:hover{color:var(--accent);}
 .ext-icon{display:inline-block;margin-left:6px;font-size:11px;opacity:0.5;vertical-align:middle;transition:opacity 0.2s;}
 .card-title a:hover .ext-icon{opacity:1;}
-.card-subtitle{font-size:14px;color:var(--accent);margin-bottom:10px;font-weight:400;}
-.card-desc{font-size:15px;color:var(--text);line-height:1.65;}
+.card-subtitle{font-size:13px;color:var(--accent);margin-bottom:10px;font-weight:400;}
+.card-desc{font-size:14px;color:var(--text);line-height:1.6;}
 .card-desc ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .card-desc li{display:flex;gap:10px;align-items:flex-start;}
 .card-desc li::before{content:'▸';color:var(--accent);font-size:10px;margin-top:4px;flex-shrink:0;}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
-.projects-wrap{position:relative;}
 .projects-scroll{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--accent-border) transparent;}
-.projects-scroll > .skill-category{flex:0 0 300px;scroll-snap-align:start;display:flex;flex-direction:column;}
-.projects-scroll > .skill-category .skill-tags{margin-top:auto!important;padding-top:14px;}
+.projects-scroll > .skill-category{flex:0 0 280px;scroll-snap-align:start;}
 .projects-scroll::-webkit-scrollbar{height:8px;}
 .projects-scroll::-webkit-scrollbar-thumb{background:var(--accent-border);border-radius:999px;}
 .projects-scroll::-webkit-scrollbar-thumb:hover{background:var(--accent);}
 .projects-scroll::-webkit-scrollbar-track{background:transparent;}
-.proj-arrow{position:absolute;top:calc(50% - 30px);z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--accent-border);background:rgba(13,20,38,0.92);color:var(--accent);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-bottom:3px;transition:background 0.2s,transform 0.2s;backdrop-filter:blur(6px);}
-.proj-arrow:hover{background:var(--accent-dim);transform:scale(1.08);}
-.proj-arrow.prev{left:-14px;}
-.proj-arrow.next{right:-14px;}
-.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:border-color 0.2s;}
+.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;transition:border-color 0.2s;}
 .skill-category:hover{border-color:var(--accent-border);}
 .skill-category.proj-wip{border-style:dashed;border-color:var(--accent-border);}
 .badge-wip{display:inline-block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:3px 11px;margin-bottom:10px;}
@@ -181,8 +158,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 .interest-icon{font-size:26px;margin-bottom:8px;display:block;}
 .interest-name{font-size:12px;color:var(--text);font-weight:400;line-height:1.3;}
 .interest-detail{font-size:11px;color:var(--accent);margin-top:3px;font-weight:500;}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}
-.contact-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:border-color 0.2s;text-decoration:none;color:inherit;}
+.contact-grid{display:flex;flex-direction:column;gap:12px;}
+.contact-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s;text-decoration:none;color:inherit;}
 .contact-item:hover{border-color:var(--accent-border);}
 .contact-icon{width:36px;height:36px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .contact-icon svg{width:16px;height:16px;fill:var(--accent);}
@@ -296,10 +273,9 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero-badge{animation:fadeUp 0.5s ease both 0.05s;}
-.name{animation:fadeUp 0.6s ease both 0.12s;}
-.title,.tagline{animation:fadeUp 0.6s ease both 0.22s;}
-.cta-row{animation:fadeUp 0.6s ease both 0.34s;}
+.left-top{animation:fadeUp 0.6s ease both 0.1s;}
+.nav{animation:fadeUp 0.6s ease both 0.25s;}
+.social{animation:fadeUp 0.6s ease both 0.4s;}
 @keyframes pulse{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1);}50%{opacity:0.7;transform:translate(-50%,-50%) scale(1.3);}}
 .score-opt{animation:pulse 2s ease-in-out infinite;}
 
@@ -312,22 +288,25 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 /* MOBILE */
 @media(max-width:768px){
-  .topbar{flex-wrap:wrap;gap:8px 12px;padding:10px 14px;}
-  .brand{font-size:19px;}
-  .lang-switcher{margin-left:auto;}
-  .lang-btn{padding:5px 7px;font-size:10px;}
-  .topnav{order:3;width:100%;flex:none;justify-content:flex-start;margin:0 -14px;padding:0 14px;}
-  .topnav a{font-size:11.5px;padding:6px 10px;}
-  .layout{padding:0 18px;}
-  .hero{padding:40px 0 4px;}
-  .hero-badge{font-size:10.5px;padding:6px 12px;margin-bottom:18px;}
-  .tagline{font-size:14.5px;}
-  .cta-row{margin-top:22px;gap:10px;}
-  .btn-download,.btn-ghost{padding:12px 16px;font-size:13px;flex:1;justify-content:center;}
-  .social{margin-left:0;width:100%;margin-top:2px;}
-  .proj-arrow{display:none;}
-  .right{padding:8px 0 60px;}
-  section{margin-bottom:56px;scroll-margin-top:110px;}
+  #page-cv{flex-direction:column;}
+  .layout{flex-direction:column;min-height:auto;}
+  .left{
+    position:static;height:auto;width:100%;
+    padding:24px 16px 16px;
+    flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:0;
+    border-bottom:1px solid var(--border);
+  }
+  .left-top{width:100%;margin-bottom:12px;}
+  .lang-switcher{margin-bottom:16px;}
+  .lang-btn{padding:4px 10px;font-size:10px;}
+  .name{font-size:30px;line-height:1.05;}
+  .title{font-size:11px;margin-bottom:10px;}
+  .tagline{font-size:12px;max-width:100%;line-height:1.5;}
+  .btn-download{margin-top:12px;font-size:11px;padding:7px 12px;}
+  .nav{display:none;}
+  .social{width:100%;margin-top:12px;}
+  .right{padding:20px 16px 60px;}
+  section{margin-bottom:48px;}
   .section-label{font-size:10px;letter-spacing:0.15em;margin-bottom:18px;}
   .about-text p{font-size:14px;}
   .card{grid-template-columns:1fr;gap:4px;padding:14px 12px;}
@@ -400,8 +379,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .skills-grid{grid-template-columns:1fr;}
   .interests-grid{grid-template-columns:repeat(2,1fr);}
   .stats{grid-template-columns:1fr 1fr;}
-  .name{font-size:40px;}
-  .card-title{font-size:15px;}
+  .name{font-size:24px;}
+  .card-title{font-size:14px;}
 }
 
 </style>
@@ -409,9 +388,28 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 <body>
 
 <div id="page-cv" class="page active">
-<header class="topbar">
-  <a class="brand" href="#top">Gauthier <span>Bonhomme</span></a>
-  <nav class="topnav" id="main-nav">
+<div class="layout">
+<aside class="left">
+  <div class="left-top">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
+      <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
+    </div>
+    <div class="name">Gauthier<br><span>Bonhomme</span></div>
+    <div class="title" data-i18n="job-title">Élève Ingénieur</div>
+    <p class="tagline">
+      Arts et Métiers · Aix-en-Provence<br>
+      <span data-i18n="tagline-sub">Mécanique · Simulation · Sport</span><br>
+      <span style="color:var(--accent);font-size:12px;font-weight:500;" data-i18n="seeking">Recherche un stage</span>
+    </p>
+    <a href="CV_Gauthier_Bonhomme2.pdf" download class="btn-download">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+      <span data-i18n="dl-btn">Télécharger mon CV</span>
+    </a>
+  </div>
+  <nav class="nav" id="main-nav">
     <a href="#about" class="active" data-i18n="nav-about">À propos</a>
     <a href="#formation" data-i18n="nav-formation">Formation</a>
     <a href="#experiences" data-i18n="nav-exp">Expériences</a>
@@ -421,41 +419,20 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
     <a href="#interets" data-i18n="nav-int">Centres d'intérêt</a>
     <a href="#contact" data-i18n="nav-contact">Contact</a>
   </nav>
-  <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
-    <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
-    <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
+  <div class="social">
+    <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <a href="tel:+33608276216" title="Téléphone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+    </a>
+    <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+    </a>
   </div>
-</header>
+</aside>
 
-<div class="layout">
 <main class="right">
-
-  <section class="hero" id="top">
-    <div class="hero-badge" data-i18n="seeking">Recherche un stage</div>
-    <h1 class="name">Gauthier <span>Bonhomme</span></h1>
-    <div class="title" data-i18n="job-title">Élève Ingénieur</div>
-    <p class="tagline"><strong>Arts et Métiers</strong> · Aix-en-Provence — <span data-i18n="tagline-sub">Mécanique · Simulation · Sport</span></p>
-    <div class="cta-row">
-      <a href="CV_Gauthier_Bonhomme2.pdf" download class="btn-download">
-        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
-        <span data-i18n="dl-btn">Télécharger mon CV</span>
-      </a>
-      <a href="#contact" class="btn-ghost" data-i18n="nav-contact">Contact</a>
-      <div class="social">
-        <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-        <a href="tel:+33608276216" title="Téléphone">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-        </a>
-        <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
   <section id="about">
     <div class="section-label" data-i18n="sec-about">À propos</div>
     <div class="about-text">
@@ -533,9 +510,6 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
   <section id="projets">
     <div class="section-label" data-i18n="sec-projets">Projets personnels</div>
-    <div class="projects-wrap">
-    <button class="proj-arrow prev" onclick="projScroll(-1)" aria-label="Projet précédent">‹</button>
-    <button class="proj-arrow next" onclick="projScroll(1)" aria-label="Projet suivant">›</button>
     <div class="projects-scroll">
       <div class="skill-category">
         <img src="images/projets/statue.jpg" alt="Statue en fonderie" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
@@ -621,7 +595,6 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
           <span class="tag neutral" data-i18n="proj8-tag3">Hardware</span>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -1435,12 +1408,12 @@ function setLang(lang) {
 // PAGE SWITCHING
 let _savedScroll = 0;
 function showPage(id) {
-  if (id !== 'page-cv') {
-    _savedScroll = window.scrollY; // mémorise la position du CV uniquement quand on le quitte
+  if (true) {
+    _savedScroll = window.scrollY;
   }
   document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
   const target = document.getElementById(id);
-  target.style.display = 'block';
+  target.style.display = id === 'page-cv' ? 'flex' : 'block';
   target.classList.add('active');
   if (id === 'page-cv') {
     requestAnimationFrame(() => window.scrollTo({top: _savedScroll, behavior: 'instant'}));
@@ -1475,58 +1448,43 @@ function openSport(act) {
 // CV NAV ACTIVE ON SCROLL
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('#main-nav a');
-let _lastNavActive = null;
 function updateNav() {
   let current = '';
   sections.forEach(s => { if(s.getBoundingClientRect().top <= 120) current = s.id; });
-  // tout en bas de page, la dernière section ne peut pas atteindre le haut de l'écran : forcer son activation
-  if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) current = sections[sections.length - 1].id;
   navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
-  // garde l'onglet actif visible quand le sommaire déborde (mobile) : centre-le horizontalement
-  if(current !== _lastNavActive){
-    _lastNavActive = current;
-    const nav = document.getElementById('main-nav');
-    const act = nav.querySelector('a.active');
-    if(act && nav.scrollWidth > nav.clientWidth + 4){
-      nav.scrollTo({left: act.offsetLeft - (nav.clientWidth - act.offsetWidth) / 2, behavior: 'smooth'});
-    }
-  }
 }
 window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
 
-// ZOOM DYNAMIQUE : agrandit le CV sur grand écran (le texte grossit avec, les lignes ne s'allongent pas)
+// ZOOM DYNAMIQUE : agrandit le CV pour remplir la largeur de l'écran (le texte grossit avec, les lignes ne s'allongent pas)
 (function initFillZoom(){
   const root = document.documentElement;
-  const BASE = 1160;   // largeur de référence (max-width de .layout)
-  const FILL = 0.96;   // proportion de la largeur d'écran à occuper
-  const ZMAX = 1.3;    // agrandissement maximal (évite un texte démesuré)
-  const MINW = 1280;   // en dessous : pas de zoom (le layout fluide suffit)
+  const left = document.querySelector('.left');
+  const BASE = 1100;   // largeur de référence du CV (max-width de .layout)
+  const FILL = 0.97;   // proportion de la largeur d'écran à occuper (0.97 = ~3% de marge totale) — baisse pour plus de marge
+  const ZMAX = 1.5;    // agrandissement maximal (évite un texte démesuré sur très grand écran)
+  const MINW = 1000;   // en dessous de cette largeur : pas de zoom (tablette / mobile)
+  // Mets true pour brider le zoom afin que la colonne gauche (nom/menu/réseaux) reste TOUJOURS entièrement visible
+  // sans défilement (au prix de marges un peu plus grandes sur les écrans peu hauts). false = remplissage maximal.
+  const KEEP_SIDEBAR_VISIBLE = false;
   function apply(){
-    const w = window.innerWidth;
+    const w = window.innerWidth, h = window.innerHeight;
     let z = 1;
-    if(w >= MINW) z = Math.max(1, Math.min((w * FILL) / BASE, ZMAX));
+    if(w >= MINW){
+      z = (w * FILL) / BASE;
+      if(KEEP_SIDEBAR_VISIBLE && left){
+        root.style.setProperty('--cv-zoom', '1');          // mesure la hauteur naturelle sans zoom
+        const prevH = left.style.height; left.style.height = 'auto';
+        const need = left.offsetHeight;
+        left.style.height = prevH;
+        if(need > 0) z = Math.min(z, (h * 0.985) / need);  // ne dépasse pas la hauteur d'écran
+      }
+      z = Math.max(1, Math.min(z, ZMAX));
+    }
     root.style.setProperty('--cv-zoom', z.toFixed(3));
   }
   apply();
   window.addEventListener('resize', apply, {passive:true});
-})();
-
-// RETOUR DEPUIS UNE SOUS-PAGE : restaure la position de lecture (le navigateur ne le fait pas toujours seul)
-(function initScrollRestore(){
-  window.addEventListener('pagehide', () => {
-    try{ sessionStorage.setItem('cvScrollY', String(window.scrollY)); }catch(e){}
-  });
-  let navType = '';
-  try{ navType = performance.getEntriesByType('navigation')[0].type; }catch(e){}
-  if(navType === 'back_forward'){
-    const y = parseInt(sessionStorage.getItem('cvScrollY') || '0', 10);
-    if(y > 0){
-      const restore = () => window.scrollTo({top: y, behavior: 'instant'});
-      restore();               // le script est en fin de body : la mise en page est déjà disponible
-      setTimeout(restore, 60); // seconde passe après stabilisation de la mise en page
-    }
-  }
 })();
 
 // PROJETS : défilement automatique (carrousel) toutes les 3 s
@@ -1556,15 +1514,6 @@ updateNav();
       resumeT = setTimeout(() => { paused = false; }, 6000);
     }, {passive:true})
   );
-  // flèches ‹ › (boutons .proj-arrow)
-  window.projScroll = function(dir){
-    const cards = track.querySelectorAll('.skill-category');
-    const stride = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 316;
-    track.scrollBy({left: dir * stride, behavior: 'smooth'});
-    paused = true;
-    clearTimeout(resumeT);
-    resumeT = setTimeout(() => { paused = false; }, 6000);
-  };
 })();
 </script>
 
