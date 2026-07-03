@@ -14,7 +14,7 @@
   <meta property="og:title" content="Gauthier Bonhomme — Élève Ingénieur">
   <meta property="og:description" content="CV en ligne de Gauthier Bonhomme, Arts et Métiers Aix-en-Provence.">
   <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://gauthierbonhomme.github.io">
+  <meta property="og:url" content="https://gauthier-bonhomme.github.io/gauthierbonhomme.github.io/">
 
   <!-- Données structurées Google (rich results) -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
       "@type": "EducationalOrganization",
       "name": "Arts et Métiers ParisTech"
     },
-    "url": "https://gauthierbonhomme.github.io",
+    "url": "https://gauthier-bonhomme.github.io/gauthierbonhomme.github.io/",
     "email": "gauthier.bonhomme30@gmail.com",
     "telephone": "+33608276216",
     "address": {
@@ -44,77 +44,110 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#0b1120;--surface:#111827;--border:rgba(255,255,255,0.07);
-  --text:#94a3b8;--heading:#e2e8f0;
-  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.28);
+  --cv-zoom:1; /* zoom global — piloté par JS (initFillZoom) pour remplir la largeur des grands écrans */
+  --bg:#0a0f1e;--surface:#111827;--border:rgba(255,255,255,0.08);
+  --text:#9fb0c7;--heading:#eef2f8;
+  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.3);
   --muted:#64748b;--tag-bg:rgba(96,165,250,0.08);--tag-text:#93c5fd;
   --green:#34d399;--green-dim:rgba(52,211,153,0.1);--green-border:rgba(52,211,153,0.28);
+  --radius:14px;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
+body{
+  background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;min-height:100vh;
+  background-image:radial-gradient(1100px 500px at 85% -5%,rgba(96,165,250,0.07),transparent 60%),radial-gradient(800px 450px at -10% 25%,rgba(52,211,153,0.04),transparent 60%);
+  background-attachment:fixed;
+}
 
 /* PAGE SWITCHING */
-.page{display:none;}
+.page{display:none;zoom:var(--cv-zoom);}
 .page.active{display:block;}
-#page-cv{display:flex;}
 
 /* LANGUAGE SWITCHER */
-.lang-switcher{display:flex;gap:5px;margin-bottom:28px;}
+.lang-switcher{display:flex;gap:4px;flex-shrink:0;}
 .lang-btn{
-  display:flex;flex-direction:column;align-items:center;gap:3px;
-  padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;
-  letter-spacing:0.1em;cursor:pointer;transition:all 0.2s;
-  background:none;border:1px solid var(--border);color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+  padding:6px 9px;border-radius:8px;font-size:10.5px;font-weight:700;
+  letter-spacing:0.08em;cursor:pointer;transition:all 0.2s;
+  background:none;border:1px solid transparent;color:var(--muted);
   font-family:'Syne',sans-serif;
 }
-.lang-btn .flag{height:14px;width:auto;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.12);}
+.lang-btn .flag{height:12px;width:auto;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.12);}
 .lang-btn:hover,.lang-btn.active{
   background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);
 }
 
-/* CV LAYOUT */
-.layout{max-width:1100px;margin:0 auto;display:flex;min-height:100vh;width:100%;}
-.left{width:340px;flex-shrink:0;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:60px 20px 60px 36px;}
-.name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--heading);line-height:1.05;letter-spacing:0.04em;margin-bottom:6px;}
+/* ═══ TOPBAR — navigation sticky (desktop + mobile) ═══ */
+.topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:18px;padding:10px 24px;background:rgba(10,15,30,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--heading);text-decoration:none;white-space:nowrap;letter-spacing:0.03em;line-height:1;}
+.brand span{color:var(--accent);}
+.topnav{display:flex;gap:2px;flex:1;min-width:0;justify-content:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.topnav::-webkit-scrollbar{display:none;}
+.topnav a{flex-shrink:0;text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0.06em;padding:7px 12px;border-radius:999px;transition:color 0.2s,background 0.2s;white-space:nowrap;}
+.topnav a:hover{color:var(--heading);}
+.topnav a.active{color:var(--accent);background:var(--accent-dim);}
+
+/* ═══ HERO ═══ */
+.hero{padding:76px 0 8px;}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);background:var(--green-dim);border:1px solid var(--green-border);border-radius:999px;padding:7px 16px;margin-bottom:26px;}
+.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 1.6s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
+.name{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,76px);font-weight:700;color:var(--heading);line-height:1.02;letter-spacing:0.01em;margin-bottom:14px;}
 .name span{color:var(--accent);}
-.title{font-family:'Syne',sans-serif;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:18px;}
-.tagline{font-size:14px;color:var(--text);line-height:1.6;max-width:220px;}
-.btn-download{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:9px 16px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;color:var(--accent);font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:background 0.2s,transform 0.2s;}
-.btn-download:hover{background:rgba(96,165,250,0.22);transform:translateY(-1px);}
-.btn-download svg{width:15px;height:15px;fill:var(--accent);flex-shrink:0;}
-.nav{margin:40px 0;display:flex;flex-direction:column;gap:4px;}
-.nav a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:6px 0;transition:color 0.2s;}
-.nav a::before{content:'';width:28px;height:1px;background:var(--muted);transition:width 0.3s,background 0.2s;}
-.nav a.active,.nav a:hover{color:var(--heading);}
-.nav a.active::before,.nav a:hover::before{width:52px;background:var(--accent);}
-.social{display:flex;gap:18px;align-items:center;}
-.social a{color:var(--muted);text-decoration:none;transition:color 0.2s,transform 0.2s;display:flex;align-items:center;}
-.social a:hover{color:var(--accent);transform:translateY(-2px);}
-.social a svg{width:20px;height:20px;fill:currentColor;}
-.right{flex:1;padding:80px 60px 120px 0;}
-section{margin-bottom:80px;scroll-margin-top:80px;}
-.section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;display:flex;align-items:center;gap:12px;}
+.title{font-family:'Syne',sans-serif;font-size:clamp(13px,1.4vw,16px);font-weight:600;color:var(--accent);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:16px;}
+.tagline{font-size:clamp(15px,1.5vw,17px);color:var(--text);line-height:1.7;max-width:600px;}
+.tagline strong{color:var(--heading);font-weight:500;}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px;}
+.btn-download{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:var(--accent);border:1px solid var(--accent);border-radius:12px;color:#0a0f1e;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:filter 0.2s,transform 0.2s,box-shadow 0.2s;}
+.btn-download:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(96,165,250,0.35);}
+.btn-download svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:transparent;border:1px solid var(--border);border-radius:12px;color:var(--heading);font-size:14px;font-weight:500;text-decoration:none;transition:border-color 0.2s,background 0.2s,transform 0.2s;}
+.btn-ghost:hover{border-color:var(--accent-border);background:var(--accent-dim);transform:translateY(-2px);}
+.social{display:flex;gap:8px;align-items:center;margin-left:6px;}
+.social a{color:var(--muted);text-decoration:none;transition:color 0.2s,transform 0.2s,border-color 0.2s;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--border);border-radius:12px;}
+.social a:hover{color:var(--accent);border-color:var(--accent-border);transform:translateY(-2px);}
+.social a svg{width:19px;height:19px;fill:currentColor;}
+
+/* ═══ CONTENU ═══ */
+.layout{max-width:1160px;margin:0 auto;width:100%;padding:0 28px;}
+.right{padding:20px 0 100px;}
+section{margin-bottom:96px;scroll-margin-top:86px;}
+.section-label{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:34px;display:flex;align-items:center;gap:14px;}
 .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
-.about-text p{margin-bottom:14px;font-size:15px;color:var(--text);}
+.about-text p{margin-bottom:16px;font-size:16px;color:var(--text);max-width:75ch;}
 .about-text p:last-child{margin-bottom:0;}
 .about-text strong{color:var(--heading);font-weight:500;}
-.card{display:grid;grid-template-columns:100px 1fr;gap:0 24px;padding:18px 20px;border-radius:10px;transition:background 0.2s,border 0.2s;border:1px solid transparent;margin-bottom:4px;}
-.card:hover{background:var(--surface);border-color:var(--border);box-shadow:0 0 0 1px var(--accent-border);}
+.card{display:grid;grid-template-columns:110px 1fr;gap:0 26px;padding:22px 24px;border-radius:var(--radius);transition:border-color 0.2s,transform 0.2s;border:1px solid var(--border);background:var(--surface);margin-bottom:12px;}
+.card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
 .card:hover .card-title{color:var(--accent);}
-.card-date{font-size:12px;color:var(--muted);font-weight:400;padding-top:2px;line-height:1.4;}
-.card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.3;}
+.card-date{font-size:13px;color:var(--muted);font-weight:400;padding-top:3px;line-height:1.4;}
+.card-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.35;}
 .card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
 .card-title a:hover{color:var(--accent);}
 .ext-icon{display:inline-block;margin-left:6px;font-size:11px;opacity:0.5;vertical-align:middle;transition:opacity 0.2s;}
 .card-title a:hover .ext-icon{opacity:1;}
-.card-subtitle{font-size:13px;color:var(--accent);margin-bottom:10px;font-weight:400;}
-.card-desc{font-size:14px;color:var(--text);line-height:1.6;}
+.card-subtitle{font-size:14px;color:var(--accent);margin-bottom:10px;font-weight:400;}
+.card-desc{font-size:15px;color:var(--text);line-height:1.65;}
 .card-desc ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .card-desc li{display:flex;gap:10px;align-items:flex-start;}
 .card-desc li::before{content:'▸';color:var(--accent);font-size:10px;margin-top:4px;flex-shrink:0;}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
-.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;transition:border-color 0.2s;}
+.projects-wrap{position:relative;}
+.projects-scroll{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--accent-border) transparent;}
+.projects-scroll > .skill-category{flex:0 0 300px;scroll-snap-align:start;display:flex;flex-direction:column;}
+.projects-scroll > .skill-category .skill-tags{margin-top:auto!important;padding-top:14px;}
+.projects-scroll::-webkit-scrollbar{height:8px;}
+.projects-scroll::-webkit-scrollbar-thumb{background:var(--accent-border);border-radius:999px;}
+.projects-scroll::-webkit-scrollbar-thumb:hover{background:var(--accent);}
+.projects-scroll::-webkit-scrollbar-track{background:transparent;}
+.proj-arrow{position:absolute;top:calc(50% - 30px);z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--accent-border);background:rgba(13,20,38,0.92);color:var(--accent);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-bottom:3px;transition:background 0.2s,transform 0.2s;backdrop-filter:blur(6px);}
+.proj-arrow:hover{background:var(--accent-dim);transform:scale(1.08);}
+.proj-arrow.prev{left:-14px;}
+.proj-arrow.next{right:-14px;}
+.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:border-color 0.2s;}
 .skill-category:hover{border-color:var(--accent-border);}
+.skill-category.proj-wip{border-style:dashed;border-color:var(--accent-border);}
+.badge-wip{display:inline-block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:3px 11px;margin-bottom:10px;}
 .skill-cat-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .tag{background:var(--tag-bg);color:var(--tag-text);font-size:12px;font-weight:500;padding:4px 11px;border-radius:999px;border:1px solid var(--accent-border);}
@@ -148,8 +181,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 .interest-icon{font-size:26px;margin-bottom:8px;display:block;}
 .interest-name{font-size:12px;color:var(--text);font-weight:400;line-height:1.3;}
 .interest-detail{font-size:11px;color:var(--accent);margin-top:3px;font-weight:500;}
-.contact-grid{display:flex;flex-direction:column;gap:12px;}
-.contact-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s;text-decoration:none;color:inherit;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}
+.contact-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:border-color 0.2s;text-decoration:none;color:inherit;}
 .contact-item:hover{border-color:var(--accent-border);}
 .contact-icon{width:36px;height:36px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .contact-icon svg{width:16px;height:16px;fill:var(--accent);}
@@ -263,9 +296,10 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.left-top{animation:fadeUp 0.6s ease both 0.1s;}
-.nav{animation:fadeUp 0.6s ease both 0.25s;}
-.social{animation:fadeUp 0.6s ease both 0.4s;}
+.hero-badge{animation:fadeUp 0.5s ease both 0.05s;}
+.name{animation:fadeUp 0.6s ease both 0.12s;}
+.title,.tagline{animation:fadeUp 0.6s ease both 0.22s;}
+.cta-row{animation:fadeUp 0.6s ease both 0.34s;}
 @keyframes pulse{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1);}50%{opacity:0.7;transform:translate(-50%,-50%) scale(1.3);}}
 .score-opt{animation:pulse 2s ease-in-out infinite;}
 
@@ -278,25 +312,22 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 /* MOBILE */
 @media(max-width:768px){
-  #page-cv{flex-direction:column;}
-  .layout{flex-direction:column;min-height:auto;}
-  .left{
-    position:static;height:auto;width:100%;
-    padding:24px 16px 16px;
-    flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:0;
-    border-bottom:1px solid var(--border);
-  }
-  .left-top{width:100%;margin-bottom:12px;}
-  .lang-switcher{margin-bottom:16px;}
-  .lang-btn{padding:4px 10px;font-size:10px;}
-  .name{font-size:30px;line-height:1.05;}
-  .title{font-size:11px;margin-bottom:10px;}
-  .tagline{font-size:12px;max-width:100%;line-height:1.5;}
-  .btn-download{margin-top:12px;font-size:11px;padding:7px 12px;}
-  .nav{display:none;}
-  .social{width:100%;margin-top:12px;}
-  .right{padding:20px 16px 60px;}
-  section{margin-bottom:48px;}
+  .topbar{flex-wrap:wrap;gap:8px 12px;padding:10px 14px;}
+  .brand{font-size:19px;}
+  .lang-switcher{margin-left:auto;}
+  .lang-btn{padding:5px 7px;font-size:10px;}
+  .topnav{order:3;width:100%;flex:none;justify-content:flex-start;margin:0 -14px;padding:0 14px;}
+  .topnav a{font-size:11.5px;padding:6px 10px;}
+  .layout{padding:0 18px;}
+  .hero{padding:40px 0 4px;}
+  .hero-badge{font-size:10.5px;padding:6px 12px;margin-bottom:18px;}
+  .tagline{font-size:14.5px;}
+  .cta-row{margin-top:22px;gap:10px;}
+  .btn-download,.btn-ghost{padding:12px 16px;font-size:13px;flex:1;justify-content:center;}
+  .social{margin-left:0;width:100%;margin-top:2px;}
+  .proj-arrow{display:none;}
+  .right{padding:8px 0 60px;}
+  section{margin-bottom:56px;scroll-margin-top:110px;}
   .section-label{font-size:10px;letter-spacing:0.15em;margin-bottom:18px;}
   .about-text p{font-size:14px;}
   .card{grid-template-columns:1fr;gap:4px;padding:14px 12px;}
@@ -369,8 +400,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .skills-grid{grid-template-columns:1fr;}
   .interests-grid{grid-template-columns:repeat(2,1fr);}
   .stats{grid-template-columns:1fr 1fr;}
-  .name{font-size:24px;}
-  .card-title{font-size:14px;}
+  .name{font-size:40px;}
+  .card-title{font-size:15px;}
 }
 
 </style>
@@ -378,28 +409,9 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 <body>
 
 <div id="page-cv" class="page active">
-<div class="layout">
-<aside class="left">
-  <div class="left-top">
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
-      <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
-      <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
-    </div>
-    <div class="name">Gauthier<br><span>Bonhomme</span></div>
-    <div class="title" data-i18n="job-title">Élève Ingénieur</div>
-    <p class="tagline">
-      Arts et Métiers · Aix-en-Provence<br>
-      <span data-i18n="tagline-sub">Mécanique · Simulation · Sport</span><br>
-      <span style="color:var(--accent);font-size:12px;font-weight:500;" data-i18n="seeking">Recherche un stage</span>
-    </p>
-    <a href="CV_Gauthier_Bonhomme2.pdf" download class="btn-download">
-      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
-      <span data-i18n="dl-btn">Télécharger mon CV</span>
-    </a>
-  </div>
-  <nav class="nav" id="main-nav">
+<header class="topbar">
+  <a class="brand" href="#top">Gauthier <span>Bonhomme</span></a>
+  <nav class="topnav" id="main-nav">
     <a href="#about" class="active" data-i18n="nav-about">À propos</a>
     <a href="#formation" data-i18n="nav-formation">Formation</a>
     <a href="#experiences" data-i18n="nav-exp">Expériences</a>
@@ -409,20 +421,41 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
     <a href="#interets" data-i18n="nav-int">Centres d'intérêt</a>
     <a href="#contact" data-i18n="nav-contact">Contact</a>
   </nav>
-  <div class="social">
-    <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
-    <a href="tel:+33608276216" title="Téléphone">
-      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-    </a>
-    <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
-    </a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
+    <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
   </div>
-</aside>
+</header>
 
+<div class="layout">
 <main class="right">
+
+  <section class="hero" id="top">
+    <div class="hero-badge" data-i18n="seeking">Recherche un stage</div>
+    <h1 class="name">Gauthier <span>Bonhomme</span></h1>
+    <div class="title" data-i18n="job-title">Élève Ingénieur</div>
+    <p class="tagline"><strong>Arts et Métiers</strong> · Aix-en-Provence — <span data-i18n="tagline-sub">Mécanique · Simulation · Sport</span></p>
+    <div class="cta-row">
+      <a href="CV_Gauthier_Bonhomme2.pdf" download class="btn-download">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn">Télécharger mon CV</span>
+      </a>
+      <a href="#contact" class="btn-ghost" data-i18n="nav-contact">Contact</a>
+      <div class="social">
+        <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="tel:+33608276216" title="Téléphone">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        </a>
+        <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
   <section id="about">
     <div class="section-label" data-i18n="sec-about">À propos</div>
     <div class="about-text">
@@ -500,7 +533,10 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
   <section id="projets">
     <div class="section-label" data-i18n="sec-projets">Projets personnels</div>
-    <div class="skills-grid">
+    <div class="projects-wrap">
+    <button class="proj-arrow prev" onclick="projScroll(-1)" aria-label="Projet précédent">‹</button>
+    <button class="proj-arrow next" onclick="projScroll(1)" aria-label="Projet suivant">›</button>
+    <div class="projects-scroll">
       <div class="skill-category">
         <img src="images/projets/statue.jpg" alt="Statue en fonderie" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
         <div class="card-title" data-i18n="proj1-title">Statue commémorative en fonderie</div>
@@ -514,7 +550,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
       <div class="skill-category" onclick="window.location.href='python.html'" style="cursor:pointer;">
         <img src="images/projets/gymlocator.jpg" alt="GymLocator" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
         <div class="card-title" data-i18n="proj2-title">GymLocator — Localisation optimale</div>
-        <div class="card-desc" data-i18n="proj2-desc">Programme Python qui identifie l'emplacement optimal d'une salle de sport en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.</div>
+        <div class="card-desc" data-i18n="proj2-desc">Logiciel commandé et rémunéré par une salle de sport : identifier l'emplacement optimal d'une nouvelle salle en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.</div>
         <div class="skill-tags" style="margin-top:14px;">
           <span class="tag neutral">Python</span>
           <span class="tag neutral" data-i18n="proj2-tag2">Géospatial</span>
@@ -522,6 +558,70 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
         </div>
         <button class="tag-link" style="margin-top:14px;" onclick="event.stopPropagation();window.location.href='python.html'" data-i18n="proj-view">Voir le projet ↗</button>
       </div>
+      <div class="skill-category">
+        <img src="images/projets/trail100k.jpg" alt="100 km trail" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj3-title">100 km — Défi ultra trail</div>
+        <div class="card-desc" data-i18n="proj3-desc">Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif. Il a fallu m'entraîner chaque semaine avec assiduité, planifier ma progression et gérer l'effort sur la durée. Objectif atteint — course parfaitement déroulée.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj3-tag1">100 km · 5 000 m D+</span>
+          <span class="tag neutral" data-i18n="proj3-tag2">Endurance</span>
+          <span class="tag neutral" data-i18n="proj3-tag3">Discipline</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <img src="images/projets/esp32.jpg" alt="Projet ESP32" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj4-title">Prototypage électronique sur ESP32</div>
+        <div class="card-desc" data-i18n="proj4-desc">Réalisation d'un projet autour de la carte programmable ESP32, qui m'a permis d'en comprendre le fonctionnement et d'élargir mes compétences en prototypage. J'ai intégré différents composants électroniques ainsi que des pièces conçues en impression 3D.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj4-tag1">ESP32</span>
+          <span class="tag neutral" data-i18n="proj4-tag2">Électronique</span>
+          <span class="tag neutral" data-i18n="proj4-tag3">Impression 3D</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <img src="images/projets/vilebrequin.jpg" alt="Usinage vilebrequin RC" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj5-title">Usinage d'un vilebrequin de voiture RC</div>
+        <div class="card-desc" data-i18n="proj5-desc">Usinage du vilebrequin d'une voiture radiocommandée sur les machines-outils de mon école. J'ai d'abord simulé l'intégralité des opérations sur Fusion 360, puis fait valider le programme par mes professeurs avant de lancer l'usinage. Un projet très formateur en FAO, modélisation 3D et prototypage.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj5-tag1">FAO</span>
+          <span class="tag neutral" data-i18n="proj5-tag2">Fusion 360</span>
+          <span class="tag neutral" data-i18n="proj5-tag3">Usinage</span>
+        </div>
+      </div>
+      <div class="skill-category" onclick="window.open('https://www.hallb.fr/','_blank','noopener')" style="cursor:pointer;">
+        <img src="images/projets/hallb.jpg" alt="Site Hall B" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <div class="card-title" data-i18n="proj6-title">Refonte du site Hall B</div>
+        <div class="card-desc" data-i18n="proj6-desc">Amélioration du site web d'une salle de sport. Un vrai défi : je ne maîtrisais quasiment aucun des langages concernés au départ. Je me suis formé en autonomie pour livrer une version améliorée du site.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj6-tag1">Développement web</span>
+          <span class="tag neutral" data-i18n="proj6-tag2">HTML / CSS</span>
+          <span class="tag neutral" data-i18n="proj6-tag3">Autoformation</span>
+        </div>
+        <a class="tag-link" style="margin-top:14px;display:inline-block;" href="https://www.hallb.fr/" target="_blank" rel="noopener" onclick="event.stopPropagation();" data-i18n="proj-view">Voir le projet ↗</a>
+      </div>
+      <div class="skill-category proj-wip">
+        <img src="images/projets/utmb.jpg" alt="UTMB" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <span class="badge-wip" data-i18n="proj-wip">En cours</span>
+        <div class="card-title" data-i18n="proj7-title">UTMB — Ultra-Trail du Mont-Blanc</div>
+        <div class="card-desc" data-i18n="proj7-desc">Après les 100 km, je prépare actuellement l'UTMB : 170 km et 10 000 m de dénivelé positif. Je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj7-tag1">170 km · 10 000 m D+</span>
+          <span class="tag neutral" data-i18n="proj7-tag2">Ultra trail</span>
+          <span class="tag neutral" data-i18n="proj7-tag3">Running stones</span>
+        </div>
+      </div>
+      <div class="skill-category proj-wip">
+        <img src="images/projets/reconnaissance-faciale.jpg" alt="Reconnaissance faciale" onerror="this.style.display='none'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">
+        <span class="badge-wip" data-i18n="proj-wip">En cours</span>
+        <div class="card-title" data-i18n="proj8-title">Reconnaissance faciale anti-fraude</div>
+        <div class="card-desc" data-i18n="proj8-desc">Second logiciel commandé par la même salle de sport : un système de reconnaissance faciale pour détecter les fraudes à l'entrée. Un projet passionnant qui renforce mes compétences en intelligence artificielle et m'amène à mettre en œuvre tout le matériel nécessaire (carte graphique, caméra numérique, etc.).</div>
+        <div class="skill-tags" style="margin-top:14px;">
+          <span class="tag neutral" data-i18n="proj8-tag1">Intelligence artificielle</span>
+          <span class="tag neutral" data-i18n="proj8-tag2">Vision par ordinateur</span>
+          <span class="tag neutral" data-i18n="proj8-tag3">Hardware</span>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -601,6 +701,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
       <div class="interest-item" onclick="openSport('trail')" style="cursor:pointer;"><span class="interest-icon">🏃</span><div class="interest-name" data-i18n="int-trail">Ultra Trail</div><div class="interest-detail" style="color:var(--accent);">+100 km · ↗</div></div>
       <div class="interest-item" onclick="openSport('kitesurf')" style="cursor:pointer;"><span class="interest-icon">🪁</span><div class="interest-name" data-i18n="int-kite">Kite Surf</div><div class="interest-detail" style="color:var(--accent);">↗</div></div>
       <div class="interest-item"><span class="interest-icon">✈️</span><div class="interest-name" data-i18n="int-voyages">Voyages</div><div class="interest-detail"></div></div>
+      <div class="interest-item"><span class="interest-icon">💻</span><div class="interest-name" data-i18n="int-vibecoding">Vibecoding</div><div class="interest-detail"></div></div>
     </div>
   </section>
 
@@ -628,7 +729,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
   <footer class="cv-footer">
     <div style="margin-bottom:16px;">
-      <a href="CV_Gauthier_BONHOMME.pdf" download class="btn-download-inline">
+      <a href="CV_Gauthier_Bonhomme2.pdf" download class="btn-download-inline">
         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
         <span data-i18n="dl-btn-long">Télécharger mon CV (PDF)</span>
       </a>
@@ -865,7 +966,7 @@ fr:{
   'sk-soft-1':'Pédagogie','sk-soft-2':"Travail d'équipe",'sk-soft-3':'Rigueur','sk-soft-4':'Adaptabilité',
   'lang1':'Français','lang1-level':'Langue maternelle','lang2':'Anglais','lang2-level':'Niveau C1 — Courant',
   'int-judo':'Judo','int-escalade':'Escalade','int-ski':'Ski','int-ski-detail':'Alpin & randonnée',
-  'int-alpi':'Alpinisme','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Voyages',
+  'int-alpi':'Alpinisme','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Voyages','int-vibecoding':'Vibecoding',
   'c-email':'Email','c-phone':'Téléphone','c-loc':'Localisation','c-loc-val':'Calvisson, 30420 — Gard (30) ↗',
   'c-permis':'Permis','c-permis-val':'Permis B et A (moto)',
   'footer-txt':'Conçu et développé avec soin · Gauthier Bonhomme · 2025','esc-album-title':'Voir mon album escalade','esc-album-sub':'4 photos & vidéos · Google Photos · Cliquez pour ouvrir','esc-s1':'Niveau bloc','esc-s2':'Spécialité','esc-s3':'Aussi en falaise','esc-txt1':"L\'escalade est bien plus qu\'un sport pour moi — c\'est un <strong>entraînement mental autant que physique</strong>. Résoudre un bloc, lire la voie, persévérer sur un mouvement difficile : autant de compétences qui se transposent naturellement à l\'ingénierie.",'esc-txt2':"Je pratique principalement en <strong>salle de bloc</strong> mais aussi en <strong>falaise</strong>, souvent couplé avec d\'autres sports de montagne comme l\'alpinisme et le trail.",'usinage-banner':'Exemple de projet d\'usinage FAO','abaqus-banner':'Exemple de projet Abaqus','py-demo-label':'Démo — Tester le logiciel','py-demo-desc':'Sélectionnez une ville, ajustez les paramètres et lancez l\'analyse pour voir les zones optimales s\'afficher sur la carte en temps réel.',
@@ -930,8 +1031,27 @@ fr:{
   'proj1-desc':'Conception et réalisation d\'une statue commémorative en métal, de la modélisation 3D au moulage. J\'ai combiné l\'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.',
   'proj1-tag1':'Fonderie','proj1-tag2':'Impression 3D','proj1-tag3':'Métallurgie',
   'proj2-title':'GymLocator — Localisation optimale',
-  'proj2-desc':'Programme Python qui identifie l\'emplacement optimal d\'une salle de sport en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.',
+  'proj2-desc':'Logiciel commandé et rémunéré par une salle de sport : identifier l\'emplacement optimal d\'une nouvelle salle en croisant la densité de population (INSEE) et la concurrence existante (OpenStreetMap), via un score bi-critères et une carte de chaleur.',
   'proj2-tag2':'Géospatial','proj2-tag3':'Data','proj-view':'Voir le projet ↗',
+  'proj-wip':'En cours',
+  'proj3-title':'100 km — Défi ultra trail',
+  'proj3-desc':'Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif. Il a fallu m\'entraîner chaque semaine avec assiduité, planifier ma progression et gérer l\'effort sur la durée. Objectif atteint — course parfaitement déroulée.',
+  'proj3-tag1':'100 km · 5 000 m D+','proj3-tag2':'Endurance','proj3-tag3':'Discipline',
+  'proj4-title':'Prototypage électronique sur ESP32',
+  'proj4-desc':'Réalisation d\'un projet autour de la carte programmable ESP32, qui m\'a permis d\'en comprendre le fonctionnement et d\'élargir mes compétences en prototypage. J\'ai intégré différents composants électroniques ainsi que des pièces conçues en impression 3D.',
+  'proj4-tag1':'ESP32','proj4-tag2':'Électronique','proj4-tag3':'Impression 3D',
+  'proj5-title':'Usinage d\'un vilebrequin de voiture RC',
+  'proj5-desc':'Usinage du vilebrequin d\'une voiture radiocommandée sur les machines-outils de mon école. J\'ai d\'abord simulé l\'intégralité des opérations sur Fusion 360, puis fait valider le programme par mes professeurs avant de lancer l\'usinage. Un projet très formateur en FAO, modélisation 3D et prototypage.',
+  'proj5-tag1':'FAO','proj5-tag2':'Fusion 360','proj5-tag3':'Usinage',
+  'proj6-title':'Refonte du site Hall B',
+  'proj6-desc':'Amélioration du site web d\'une salle de sport. Un vrai défi : je ne maîtrisais quasiment aucun des langages concernés au départ. Je me suis formé en autonomie pour livrer une version améliorée du site.',
+  'proj6-tag1':'Développement web','proj6-tag2':'HTML / CSS','proj6-tag3':'Autoformation',
+  'proj7-title':'UTMB — Ultra-Trail du Mont-Blanc',
+  'proj7-desc':'Après les 100 km, je prépare actuellement l\'UTMB : 170 km et 10 000 m de dénivelé positif. Je m\'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.',
+  'proj7-tag1':'170 km · 10 000 m D+','proj7-tag2':'Ultra trail','proj7-tag3':'Running stones',
+  'proj8-title':'Reconnaissance faciale anti-fraude',
+  'proj8-desc':'Second logiciel commandé par la même salle de sport : un système de reconnaissance faciale pour détecter les fraudes à l\'entrée. Un projet passionnant qui renforce mes compétences en intelligence artificielle et m\'amène à mettre en œuvre tout le matériel nécessaire (carte graphique, caméra numérique, etc.).',
+  'proj8-tag1':'Intelligence artificielle','proj8-tag2':'Vision par ordinateur','proj8-tag3':'Hardware',
 },
 en:{
   'page-title':'Gauthier Bonhomme — Engineer','job-title':'Engineering Student',
@@ -964,7 +1084,7 @@ en:{
   'sk-soft-1':'Teaching','sk-soft-2':'Teamwork','sk-soft-3':'Rigour','sk-soft-4':'Adaptability',
   'lang1':'French','lang1-level':'Native language','lang2':'English','lang2-level':'C1 Level — Fluent',
   'int-judo':'Judo','int-escalade':'Climbing','int-ski':'Skiing','int-ski-detail':'Alpine & touring',
-  'int-alpi':'Mountaineering','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Travel',
+  'int-alpi':'Mountaineering','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Travel','int-vibecoding':'Vibecoding',
   'c-email':'Email','c-phone':'Phone','c-loc':'Location','c-loc-val':'Calvisson, 30420 — Gard, France ↗',
   'c-permis':'Driving licence','c-permis-val':'Category B and A (motorcycle)',
   'footer-txt':'Designed and developed with care · Gauthier Bonhomme · 2025','esc-album-title':'View my climbing album','esc-album-sub':'4 photos & videos · Google Photos · Click to open','esc-s1':'Bouldering level','esc-s2':'Specialty','esc-s3':'Also outdoor','esc-txt1':"Climbing is far more than a sport to me — it\'s <strong>mental training as much as physical</strong>. Reading a route, problem-solving on a difficult move, persisting: skills that translate naturally to engineering.",'esc-txt2':"I train mainly in <strong>bouldering gyms</strong> but also climb <strong>outdoors</strong>, often combined with other mountain sports like mountaineering and trail running.",'usinage-banner':'Machining FAO project example','abaqus-banner':'Abaqus project example','py-demo-label':'Demo — Try the software','py-demo-desc':'Select a city, adjust parameters and run the analysis to see optimal zones appear on the map in real time.',
@@ -1029,8 +1149,27 @@ en:{
   'proj1-desc':'Design and creation of a commemorative metal statue, from 3D modelling to casting. I combined 3D printing for the pattern with home foundry casting — a project blending metallurgy, thermal transformation of materials and hands-on craftsmanship.',
   'proj1-tag1':'Foundry','proj1-tag2':'3D Printing','proj1-tag3':'Metallurgy',
   'proj2-title':'GymLocator — Optimal Location',
-  'proj2-desc':'Python program identifying the optimal location for a gym by combining population density (INSEE) with existing competition (OpenStreetMap), through a two-criteria score and a heatmap.',
+  'proj2-desc':'Software commissioned and paid for by a gym: identifying the optimal location for a new gym by combining population density (INSEE) with existing competition (OpenStreetMap), through a two-criteria score and a heatmap.',
   'proj2-tag2':'Geospatial','proj2-tag3':'Data','proj-view':'View project ↗',
+  'proj-wip':'In progress',
+  'proj3-title':'100 km — Ultra trail challenge',
+  'proj3-desc':'A goal built over several years: completing a 100 km race with 5,000 m of elevation gain. It took consistent weekly training, careful progression planning and managing effort over the long haul. Goal achieved — the race went perfectly.',
+  'proj3-tag1':'100 km · 5,000 m D+','proj3-tag2':'Endurance','proj3-tag3':'Discipline',
+  'proj4-title':'Electronics prototyping on ESP32',
+  'proj4-desc':'A project built around the ESP32 programmable board, which helped me understand how it works and broaden my prototyping skills. I integrated various electronic components together with 3D-printed parts.',
+  'proj4-tag1':'ESP32','proj4-tag2':'Electronics','proj4-tag3':'3D Printing',
+  'proj5-title':'Machining an RC car crankshaft',
+  'proj5-desc':'Machining the crankshaft of a radio-controlled car on my school\'s machine tools. I first simulated the entire set of operations in Fusion 360, then had the program validated by my teachers before machining. A very formative project in CAM, 3D modelling and prototyping.',
+  'proj5-tag1':'CAM','proj5-tag2':'Fusion 360','proj5-tag3':'Machining',
+  'proj6-title':'Hall B website revamp',
+  'proj6-desc':'Improving the website of a gym. A real challenge: I knew almost none of the languages involved at the start. I taught myself in order to deliver an improved version of the site.',
+  'proj6-tag1':'Web development','proj6-tag2':'HTML / CSS','proj6-tag3':'Self-taught',
+  'proj7-title':'UTMB — Ultra-Trail du Mont-Blanc',
+  'proj7-desc':'After the 100 km, I am currently preparing for the UTMB: 170 km and 10,000 m of elevation gain. I train accordingly and am collecting the running stones needed to qualify.',
+  'proj7-tag1':'170 km · 10,000 m D+','proj7-tag2':'Ultra trail','proj7-tag3':'Running stones',
+  'proj8-title':'Anti-fraud facial recognition',
+  'proj8-desc':'A second piece of software commissioned by the same gym: a facial recognition system to detect fraud at the entrance. A fascinating project that strengthens my AI skills and involves setting up all the required hardware (graphics card, digital camera, etc.).',
+  'proj8-tag1':'Artificial intelligence','proj8-tag2':'Computer vision','proj8-tag3':'Hardware',
 },
 de:{
   'page-title':'Gauthier Bonhomme — Ingenieur','job-title':'Ingenieurstudent',
@@ -1063,7 +1202,7 @@ de:{
   'sk-soft-1':'Pädagogik','sk-soft-2':'Teamarbeit','sk-soft-3':'Genauigkeit','sk-soft-4':'Anpassungsfähigkeit',
   'lang1':'Französisch','lang1-level':'Muttersprache','lang2':'Englisch','lang2-level':'Niveau C1 — Fließend',
   'int-judo':'Judo','int-escalade':'Klettern','int-ski':'Ski','int-ski-detail':'Alpin & Skitouren',
-  'int-alpi':'Alpinismus','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Reisen',
+  'int-alpi':'Alpinismus','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Reisen','int-vibecoding':'Vibecoding',
   'c-email':'E-Mail','c-phone':'Telefon','c-loc':'Standort','c-loc-val':'Calvisson, 30420 — Gard, Frankreich ↗',
   'c-permis':'Führerschein','c-permis-val':'Klasse B und A (Motorrad)',
   'footer-txt':'Sorgfältig gestaltet · Gauthier Bonhomme · 2025','esc-album-title':'Mein Kletteralbum ansehen','esc-album-sub':'4 Fotos & Videos · Google Photos · Zum Öffnen klicken','esc-s1':'Boulder-Niveau','esc-s2':'Schwerpunkt','esc-s3':'Auch am Fels','esc-txt1':"Klettern ist für mich viel mehr als ein Sport — es ist <strong>mentales Training ebenso wie körperliches</strong>. Einen Boulder lesen, an einer schwierigen Bewegung dranbleiben: Fähigkeiten, die sich direkt auf das Ingenieurwesen übertragen.",'esc-txt2':"Ich trainiere hauptsächlich in <strong>Boulderhallen</strong>, klettere aber auch <strong>am Fels</strong>, oft kombiniert mit Alpinismus und Trailrunning.",'usinage-banner':'FAO-Zerspanungsprojekt Beispiel','abaqus-banner':'Abaqus-Projektbeispiel','py-demo-label':'Demo — Software testen','py-demo-desc':'Stadt auswählen, Parameter anpassen und Analyse starten, um optimale Zonen auf der Karte zu sehen.',
@@ -1128,8 +1267,27 @@ de:{
   'proj1-desc':'Entwurf und Herstellung einer gegossenen Gedenkstatue aus Metall, vom 3D-Modell bis zum Guss. Ich kombinierte 3D-Druck für das Modell mit eigenem Gießen — ein Projekt rund um Metallurgie, thermische Materialumwandlung und handwerkliche Fertigung.',
   'proj1-tag1':'Gießerei','proj1-tag2':'3D-Druck','proj1-tag3':'Metallurgie',
   'proj2-title':'GymLocator — Optimaler Standort',
-  'proj2-desc':'Python-Programm zur Bestimmung des optimalen Standorts für ein Fitnessstudio durch Kombination von Bevölkerungsdichte (INSEE) und bestehender Konkurrenz (OpenStreetMap) über eine Zwei-Kriterien-Bewertung und eine Heatmap.',
+  'proj2-desc':'Von einem Fitnessstudio in Auftrag gegebene und bezahlte Software: Bestimmung des optimalen Standorts für ein neues Studio durch Kombination von Bevölkerungsdichte (INSEE) und bestehender Konkurrenz (OpenStreetMap) über eine Zwei-Kriterien-Bewertung und eine Heatmap.',
   'proj2-tag2':'Geodaten','proj2-tag3':'Daten','proj-view':'Projekt ansehen ↗',
+  'proj-wip':'In Arbeit',
+  'proj3-title':'100 km — Ultra-Trail-Herausforderung',
+  'proj3-desc':'Ein über mehrere Jahre aufgebautes Ziel: einen Lauf über 100 km mit 5.000 Höhenmetern zu bewältigen. Das erforderte konsequentes wöchentliches Training, sorgfältige Planung der Steigerung und Kräfteeinteilung über die Distanz. Ziel erreicht — der Lauf verlief perfekt.',
+  'proj3-tag1':'100 km · 5.000 m D+','proj3-tag2':'Ausdauer','proj3-tag3':'Disziplin',
+  'proj4-title':'Elektronik-Prototyping mit ESP32',
+  'proj4-desc':'Ein Projekt rund um das programmierbare ESP32-Board, das mir half, seine Funktionsweise zu verstehen und meine Prototyping-Kenntnisse zu erweitern. Ich habe verschiedene elektronische Bauteile mit 3D-gedruckten Teilen kombiniert.',
+  'proj4-tag1':'ESP32','proj4-tag2':'Elektronik','proj4-tag3':'3D-Druck',
+  'proj5-title':'Fräsen einer RC-Auto-Kurbelwelle',
+  'proj5-desc':'Bearbeitung der Kurbelwelle eines ferngesteuerten Autos an den Werkzeugmaschinen meiner Hochschule. Zunächst habe ich sämtliche Arbeitsgänge in Fusion 360 simuliert und das Programm von meinen Lehrern freigeben lassen, bevor ich mit der Bearbeitung begann. Ein sehr lehrreiches Projekt in CAM, 3D-Modellierung und Prototyping.',
+  'proj5-tag1':'CAM','proj5-tag2':'Fusion 360','proj5-tag3':'Zerspanung',
+  'proj6-title':'Überarbeitung der Hall-B-Website',
+  'proj6-desc':'Verbesserung der Website eines Fitnessstudios. Eine echte Herausforderung: Anfangs beherrschte ich kaum eine der betroffenen Sprachen. Ich habe mir alles selbst beigebracht, um eine verbesserte Version der Website zu liefern.',
+  'proj6-tag1':'Webentwicklung','proj6-tag2':'HTML / CSS','proj6-tag3':'Autodidaktik',
+  'proj7-title':'UTMB — Ultra-Trail du Mont-Blanc',
+  'proj7-desc':'Nach den 100 km bereite ich mich derzeit auf den UTMB vor: 170 km und 10.000 Höhenmeter. Ich trainiere entsprechend und sammle die nötigen Running Stones, um mich zu qualifizieren.',
+  'proj7-tag1':'170 km · 10.000 m D+','proj7-tag2':'Ultra-Trail','proj7-tag3':'Running Stones',
+  'proj8-title':'Gesichtserkennung gegen Betrug',
+  'proj8-desc':'Eine zweite Software im Auftrag desselben Fitnessstudios: ein Gesichtserkennungssystem zur Betrugserkennung am Eingang. Ein faszinierendes Projekt, das meine KI-Kenntnisse stärkt und die Einrichtung der gesamten erforderlichen Hardware umfasst (Grafikkarte, Digitalkamera usw.).',
+  'proj8-tag1':'Künstliche Intelligenz','proj8-tag2':'Computer Vision','proj8-tag3':'Hardware',
 },
 it:{
   'page-title':'Gauthier Bonhomme — Ingegnere','job-title':'Studente Ingegnere',
@@ -1162,7 +1320,7 @@ it:{
   'sk-soft-1':'Pedagogia','sk-soft-2':'Lavoro di squadra','sk-soft-3':'Rigore','sk-soft-4':'Adattabilità',
   'lang1':'Francese','lang1-level':'Lingua madre','lang2':'Inglese','lang2-level':'Livello C1 — Corrente',
   'int-judo':'Judo','int-escalade':'Arrampicata','int-ski':'Sci','int-ski-detail':'Alpino & fondo',
-  'int-alpi':'Alpinismo','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Viaggi',
+  'int-alpi':'Alpinismo','int-trail':'Ultra Trail','int-kite':'Kite Surf','int-voyages':'Viaggi','int-vibecoding':'Vibecoding',
   'c-email':'Email','c-phone':'Telefono','c-loc':'Posizione','c-loc-val':'Calvisson, 30420 — Gard, Francia ↗',
   'c-permis':'Patente','c-permis-val':'Patente B e A (moto)',
   'footer-txt':'Progettato con cura · Gauthier Bonhomme · 2025','esc-album-title':'Vedi il mio album di arrampicata','esc-album-sub':'4 foto & video · Google Photos · Clicca per aprire','esc-s1':'Livello boulder','esc-s2':'Specialità','esc-s3':'Anche in falesia','esc-txt1':"L\'arrampicata è molto più di uno sport per me — è un <strong>allenamento mentale oltre che fisico</strong>. Leggere un boulder, persistere su un movimento difficile: competenze che si trasferiscono naturalmente all\'ingegneria.",'esc-txt2':"Mi alleno principalmente in <strong>palestre di boulder</strong> ma arrampico anche <strong>in falesia</strong>, spesso abbinato ad alpinismo e trail.",'usinage-banner':'Esempio di progetto di lavorazione FAO','abaqus-banner':'Esempio di progetto Abaqus','py-demo-label':'Demo — Provare il software','py-demo-desc':'Seleziona una città, regola i parametri e avvia l\'analisi per vedere le zone ottimali sulla mappa.',
@@ -1227,8 +1385,27 @@ it:{
   'proj1-desc':'Progettazione e realizzazione di una statua commemorativa in metallo, dalla modellazione 3D alla colata. Ho unito la stampa 3D per il modello e la fonderia artigianale per la colata — un progetto che combina metallurgia, trasformazioni termiche della materia e fabbricazione artigianale.',
   'proj1-tag1':'Fonderia','proj1-tag2':'Stampa 3D','proj1-tag3':'Metallurgia',
   'proj2-title':'GymLocator — Posizione ottimale',
-  'proj2-desc':'Programma Python che individua la posizione ottimale per una palestra combinando densità di popolazione (INSEE) e concorrenza esistente (OpenStreetMap), tramite un punteggio bi-criterio e una mappa di calore.',
+  'proj2-desc':'Software commissionato e retribuito da una palestra: individuare la posizione ottimale per una nuova palestra combinando densità di popolazione (INSEE) e concorrenza esistente (OpenStreetMap), tramite un punteggio bi-criterio e una mappa di calore.',
   'proj2-tag2':'Geospaziale','proj2-tag3':'Dati','proj-view':'Vedi il progetto ↗',
+  'proj-wip':'In corso',
+  'proj3-title':'100 km — Sfida ultra trail',
+  'proj3-desc':'Un obiettivo costruito in diversi anni: completare una gara di 100 km con 5.000 m di dislivello positivo. Ha richiesto un allenamento settimanale costante, una pianificazione attenta della progressione e la gestione dello sforzo sulla lunga distanza. Obiettivo raggiunto — gara andata alla perfezione.',
+  'proj3-tag1':'100 km · 5.000 m D+','proj3-tag2':'Resistenza','proj3-tag3':'Disciplina',
+  'proj4-title':'Prototipazione elettronica su ESP32',
+  'proj4-desc':'Un progetto realizzato attorno alla scheda programmabile ESP32, che mi ha permesso di capirne il funzionamento e ampliare le mie competenze in prototipazione. Ho integrato diversi componenti elettronici insieme a parti realizzate con la stampa 3D.',
+  'proj4-tag1':'ESP32','proj4-tag2':'Elettronica','proj4-tag3':'Stampa 3D',
+  'proj5-title':'Lavorazione di un albero motore per auto RC',
+  'proj5-desc':'Lavorazione dell\'albero motore di un\'automobile radiocomandata sulle macchine utensili della mia scuola. Ho prima simulato tutte le operazioni in Fusion 360, poi ho fatto validare il programma dai miei professori prima di eseguire la lavorazione. Un progetto molto formativo in CAM, modellazione 3D e prototipazione.',
+  'proj5-tag1':'CAM','proj5-tag2':'Fusion 360','proj5-tag3':'Lavorazione',
+  'proj6-title':'Rinnovo del sito Hall B',
+  'proj6-desc':'Miglioramento del sito web di una palestra. Una vera sfida: all\'inizio non conoscevo quasi nessuno dei linguaggi coinvolti. Ho imparato da autodidatta per consegnare una versione migliorata del sito.',
+  'proj6-tag1':'Sviluppo web','proj6-tag2':'HTML / CSS','proj6-tag3':'Autodidatta',
+  'proj7-title':'UTMB — Ultra-Trail du Mont-Blanc',
+  'proj7-desc':'Dopo i 100 km, sto attualmente preparando l\'UTMB: 170 km e 10.000 m di dislivello positivo. Mi alleno di conseguenza e sto raccogliendo le running stones necessarie per qualificarmi.',
+  'proj7-tag1':'170 km · 10.000 m D+','proj7-tag2':'Ultra trail','proj7-tag3':'Running stones',
+  'proj8-title':'Riconoscimento facciale anti-frode',
+  'proj8-desc':'Un secondo software commissionato dalla stessa palestra: un sistema di riconoscimento facciale per rilevare le frodi all\'ingresso. Un progetto affascinante che rafforza le mie competenze in IA e mi porta a mettere in opera tutto l\'hardware necessario (scheda grafica, telecamera digitale, ecc.).',
+  'proj8-tag1':'Intelligenza artificiale','proj8-tag2':'Visione artificiale','proj8-tag3':'Hardware',
 }
 };
 
@@ -1258,12 +1435,12 @@ function setLang(lang) {
 // PAGE SWITCHING
 let _savedScroll = 0;
 function showPage(id) {
-  if (true) {
-    _savedScroll = window.scrollY;
+  if (id !== 'page-cv') {
+    _savedScroll = window.scrollY; // mémorise la position du CV uniquement quand on le quitte
   }
   document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
   const target = document.getElementById(id);
-  target.style.display = id === 'page-cv' ? 'flex' : 'block';
+  target.style.display = 'block';
   target.classList.add('active');
   if (id === 'page-cv') {
     requestAnimationFrame(() => window.scrollTo({top: _savedScroll, behavior: 'instant'}));
@@ -1298,13 +1475,97 @@ function openSport(act) {
 // CV NAV ACTIVE ON SCROLL
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('#main-nav a');
+let _lastNavActive = null;
 function updateNav() {
   let current = '';
   sections.forEach(s => { if(s.getBoundingClientRect().top <= 120) current = s.id; });
+  // tout en bas de page, la dernière section ne peut pas atteindre le haut de l'écran : forcer son activation
+  if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) current = sections[sections.length - 1].id;
   navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  // garde l'onglet actif visible quand le sommaire déborde (mobile) : centre-le horizontalement
+  if(current !== _lastNavActive){
+    _lastNavActive = current;
+    const nav = document.getElementById('main-nav');
+    const act = nav.querySelector('a.active');
+    if(act && nav.scrollWidth > nav.clientWidth + 4){
+      nav.scrollTo({left: act.offsetLeft - (nav.clientWidth - act.offsetWidth) / 2, behavior: 'smooth'});
+    }
+  }
 }
 window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
+
+// ZOOM DYNAMIQUE : agrandit le CV sur grand écran (le texte grossit avec, les lignes ne s'allongent pas)
+(function initFillZoom(){
+  const root = document.documentElement;
+  const BASE = 1160;   // largeur de référence (max-width de .layout)
+  const FILL = 0.96;   // proportion de la largeur d'écran à occuper
+  const ZMAX = 1.3;    // agrandissement maximal (évite un texte démesuré)
+  const MINW = 1280;   // en dessous : pas de zoom (le layout fluide suffit)
+  function apply(){
+    const w = window.innerWidth;
+    let z = 1;
+    if(w >= MINW) z = Math.max(1, Math.min((w * FILL) / BASE, ZMAX));
+    root.style.setProperty('--cv-zoom', z.toFixed(3));
+  }
+  apply();
+  window.addEventListener('resize', apply, {passive:true});
+})();
+
+// RETOUR DEPUIS UNE SOUS-PAGE : restaure la position de lecture (le navigateur ne le fait pas toujours seul)
+(function initScrollRestore(){
+  window.addEventListener('pagehide', () => {
+    try{ sessionStorage.setItem('cvScrollY', String(window.scrollY)); }catch(e){}
+  });
+  let navType = '';
+  try{ navType = performance.getEntriesByType('navigation')[0].type; }catch(e){}
+  if(navType === 'back_forward'){
+    const y = parseInt(sessionStorage.getItem('cvScrollY') || '0', 10);
+    if(y > 0){
+      const restore = () => window.scrollTo({top: y, behavior: 'instant'});
+      restore();               // le script est en fin de body : la mise en page est déjà disponible
+      setTimeout(restore, 60); // seconde passe après stabilisation de la mise en page
+    }
+  }
+})();
+
+// PROJETS : défilement automatique (carrousel) toutes les 3 s
+(function initProjectsCarousel(){
+  const track = document.querySelector('#projets .projects-scroll');
+  if(!track) return;
+  let paused = false, resumeT = null;
+  function nextStep(){
+    if(paused || document.hidden) return;
+    const cards = track.querySelectorAll('.skill-category');
+    if(cards.length < 2) return;
+    const stride = cards[1].offsetLeft - cards[0].offsetLeft; // largeur carte + gap (unités locales = compatibles scrollLeft, même sous zoom)
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    let next = track.scrollLeft + stride;
+    if(next >= maxScroll - 2) next = 0;                       // retour au début en boucle
+    track.scrollTo({left: next, behavior: 'smooth'});
+  }
+  setInterval(nextStep, 3000);
+  // pause au survol, reprise en quittant
+  track.addEventListener('mouseenter', () => { paused = true; });
+  track.addEventListener('mouseleave', () => { paused = false; });
+  // pause temporaire quand l'utilisateur fait défiler manuellement
+  ['pointerdown','touchstart','wheel'].forEach(ev =>
+    track.addEventListener(ev, () => {
+      paused = true;
+      clearTimeout(resumeT);
+      resumeT = setTimeout(() => { paused = false; }, 6000);
+    }, {passive:true})
+  );
+  // flèches ‹ › (boutons .proj-arrow)
+  window.projScroll = function(dir){
+    const cards = track.querySelectorAll('.skill-category');
+    const stride = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 316;
+    track.scrollBy({left: dir * stride, behavior: 'smooth'});
+    paused = true;
+    clearTimeout(resumeT);
+    resumeT = setTimeout(() => { paused = false; }, 6000);
+  };
+})();
 </script>
 
 </body>
