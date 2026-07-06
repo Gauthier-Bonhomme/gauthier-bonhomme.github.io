@@ -88,32 +88,12 @@ body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);
     <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
     Retour au CV
   </a>
-  <div class="bar-title"><span class="emo">🪁</span>Kite Surf</div>
+  <div class="bar-title" id="bar-title"></div>
 </div>
 <div class="content">
   
-  <div class="intro">
-    <h2 class="intro-h">Pourquoi ce sport ?</h2>
-    <p class="intro-p">Pour les sensations : la glisse y est d'une fluidité grisante. C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et réaliser des sauts.</p>
-    <h2 class="intro-h">Ce que ça m'a apporté</h2>
-    <p class="intro-p last">Le plaisir de dompter une force naturelle et de progresser techniquement, le tout face à des paysages magnifiques et avec une liberté folle.</p>
-  </div>
-  <div class="section-title">Photos</div><div class="grid g4"><div class="gc span2" onclick="showOverlay(0)">
-        <img class="gc-thumb" src="images/kitesurf/thumb_1.jpg" loading="lazy">
-        <img class="gc-full" src="images/kitesurf/photo_1.jpg" style="display:none" loading="lazy">
-      </div><div class="gc " onclick="showOverlay(1)">
-        <img class="gc-thumb" src="images/kitesurf/thumb_2.jpg" loading="lazy">
-        <img class="gc-full" src="images/kitesurf/photo_2.jpg" style="display:none" loading="lazy">
-      </div><div class="gc " onclick="showOverlay(2)">
-        <img class="gc-thumb" src="images/kitesurf/thumb_3.jpg" loading="lazy">
-        <img class="gc-full" src="images/kitesurf/photo_3.jpg" style="display:none" loading="lazy">
-      </div><div class="gc " onclick="showOverlay(3)">
-        <img class="gc-thumb" src="images/kitesurf/thumb_4.jpg" loading="lazy">
-        <img class="gc-full" src="images/kitesurf/photo_4.jpg" style="display:none" loading="lazy">
-      </div><div class="gc span2" onclick="showOverlay(4)">
-        <img class="gc-thumb" src="images/kitesurf/thumb_5.jpg" loading="lazy">
-        <img class="gc-full" src="images/kitesurf/photo_5.jpg" style="display:none" loading="lazy">
-      </div></div>
+  <div class="intro" id="intro"></div>
+  <div class="section-title">Photos</div><div class="grid" id="gallery"></div>
 </div>
 <div class="botbar">
   <a class="back" href="index.html" onclick="return goBackCV()">
@@ -134,7 +114,27 @@ function goBackCV(){
   }catch(e){}
   return true;
 }
-const cells = Array.from(document.querySelectorAll('.gc'));
+let cells = [];
+const SPORT = location.pathname.split('/').pop().replace('.html', '');
+fetch('content.json').then(r => r.json()).then(c => {
+  const s = c.sports[SPORT];
+  if (!s) { console.error('sport inconnu dans content.json :', SPORT); return; }
+  document.title = s.title + ' — Gauthier Bonhomme';
+  document.getElementById('bar-title').innerHTML = '<span class="emo">' + s.emoji + '</span>' + s.title;
+  document.getElementById('intro').innerHTML =
+    '<h2 class="intro-h">Pourquoi ce sport ?</h2>' +
+    '<p class="intro-p">' + s.why + '</p>' +
+    '<h2 class="intro-h">Ce que ça m\'a apporté</h2>' +
+    '<p class="intro-p last">' + s.gained + '</p>';
+  const g = document.getElementById('gallery');
+  g.className = 'grid ' + (s.grid || 'g4');
+  g.innerHTML = s.photos.map((p, i) =>
+    '<div class="gc ' + (p.cls || '') + '" onclick="showOverlay(' + i + ')">' +
+    '<img class="gc-thumb" src="' + p.thumb + '" loading="lazy">' +
+    '<img class="gc-full" src="' + p.full + '" style="display:none" loading="lazy">' +
+    '</div>').join('');
+  cells = Array.from(document.querySelectorAll('.gc'));
+}).catch(e => console.error('Chargement de content.json impossible :', e));
 let cur = 0;
 function showOverlay(i) {
   cur = i;

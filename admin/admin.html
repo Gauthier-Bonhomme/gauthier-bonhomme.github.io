@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — CV Gauthier Bonhomme</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0a0f1e;--surface:#111827;--surface2:#0d1526;--border:rgba(255,255,255,0.1);
+  --text:#9fb0c7;--heading:#eef2f8;--accent:#60a5fa;--accent-dim:rgba(96,165,250,0.12);
+  --green:#34d399;--red:#f87171;--radius:10px;
+}
+body{background:var(--bg);color:var(--text);font-family:system-ui,'Segoe UI',sans-serif;font-size:14px;line-height:1.5;}
+/* barre du haut */
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 16px;
+  background:rgba(10,15,30,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);}
+.topbar h1{font-size:15px;color:var(--heading);margin-right:auto;font-weight:600;}
+.topbar h1 small{color:var(--text);font-weight:400;}
+button,.btn{background:var(--accent-dim);border:1px solid var(--accent);color:var(--accent);border-radius:8px;
+  padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block;}
+button:hover,.btn:hover{background:rgba(96,165,250,0.25);}
+button.primary{background:var(--accent);color:#0a0f1e;}
+button.danger{border-color:var(--red);color:var(--red);background:rgba(248,113,113,0.08);}
+button.small{padding:3px 9px;font-size:12px;font-weight:500;}
+#save-state{font-size:12px;min-width:110px;text-align:right;}
+#save-state.dirty{color:#fbbf24;}
+#save-state.ok{color:var(--green);}
+/* langue éditée */
+.lang-picker{display:flex;gap:2px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:2px;}
+.lang-picker button{border:none;background:none;color:var(--text);padding:5px 10px;font-weight:600;border-radius:6px;}
+.lang-picker button.active{background:var(--accent);color:#0a0f1e;}
+/* disposition */
+.wrap{display:flex;min-height:calc(100vh - 53px);}
+nav{width:220px;flex-shrink:0;border-right:1px solid var(--border);padding:14px 8px;position:sticky;top:53px;height:calc(100vh - 53px);overflow-y:auto;}
+nav a{display:block;padding:8px 12px;border-radius:8px;color:var(--text);text-decoration:none;font-size:13px;margin-bottom:2px;cursor:pointer;}
+nav a:hover{color:var(--heading);background:var(--surface);}
+nav a.active{background:var(--accent-dim);color:var(--accent);font-weight:600;}
+main{flex:1;min-width:0;padding:22px;max-width:900px;}
+/* formulaires */
+h2{font-size:17px;color:var(--heading);margin-bottom:4px;}
+.hint{font-size:12.5px;color:var(--text);opacity:0.8;margin-bottom:18px;}
+label{display:block;font-size:12px;font-weight:600;color:var(--heading);margin:12px 0 4px;letter-spacing:0.03em;}
+label .ml{color:var(--accent);font-weight:500;}
+input[type=text],textarea,select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  color:var(--heading);padding:8px 10px;font-size:13.5px;font-family:inherit;}
+textarea{min-height:74px;resize:vertical;line-height:1.55;}
+textarea.big{min-height:150px;font-family:Consolas,monospace;font-size:12.5px;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);vertical-align:middle;}
+.row{display:flex;gap:12px;}
+.row > *{flex:1;min-width:0;}
+/* cartes d'éléments de liste */
+.item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;}
+.item-head{display:flex;align-items:center;gap:8px;}
+.item-head .t{font-weight:600;color:var(--heading);margin-right:auto;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sub{border-left:2px solid var(--border);padding-left:12px;margin-top:8px;}
+.addbar{margin:6px 0 26px;}
+.imgprev{height:60px;border-radius:6px;border:1px solid var(--border);display:block;margin-top:6px;}
+.log{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;
+  font-family:Consolas,monospace;font-size:12px;white-space:pre-wrap;margin-top:12px;max-height:260px;overflow:auto;}
+.ok{color:var(--green);} .err{color:var(--red);}
+.pill{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:2px 10px;font-size:12px;margin:2px;}
+@media(max-width:760px){ nav{display:none;} main{padding:14px;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Admin du CV <small>— modifie, enregistre, publie</small></h1>
+  <div class="lang-picker" id="lang-picker" title="Langue en cours d'édition (les champs traduits vides affichent le français sur le site)"></div>
+  <span id="save-state"></span>
+  <button onclick="save()" class="primary">💾 Enregistrer</button>
+  <a class="btn" href="/" target="_blank" onclick="return openSite()">👁 Voir le site</a>
+  <button onclick="publish()">🚀 Publier en ligne</button>
+</div>
+
+<div class="wrap">
+  <nav id="nav"></nav>
+  <main id="main">Chargement…</main>
+</div>
+
+<script>
+'use strict';
+let C = null;            // contenu (content.json)
+let LANG = 'fr';         // langue éditée
+let SECTION = 'general';
+let DIRTY = false;
+
+const $ = s => document.querySelector(s);
+const LANGS = ['fr', 'en', 'de', 'it'];
+const SPORT_PAGES = ['', 'escalade', 'ski', 'alpinisme', 'trail', 'kitesurf'];
+
+const SECTIONS = [
+  ['general',    '🏠 Accueil & À propos'],
+  ['formations', '🎓 Formations'],
+  ['experiences','💼 Expériences'],
+  ['projects',   '🛠 Projets personnels'],
+  ['skills',     '⚡ Compétences'],
+  ['languages',  '🌍 Langues'],
+  ['interests',  '⭐ Centres d\'intérêt'],
+  ['contacts',   '✉️ Contacts'],
+  ['sports',     '🏔 Pages sport'],
+  ['pdf',        '📄 CV téléchargeable'],
+  ['labels',     '🔤 Libellés de l\'interface'],
+  ['advanced',   '🧰 Avancé (fichiers)'],
+];
+
+// ───────── outils dom ─────────
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'onclick' || k === 'oninput' || k === 'onchange') e[k] = v;
+    else if (k === 'checked') e.checked = v;
+    else if (k === 'value') e.value = v;
+    else e.setAttribute(k, v);
+  }
+  for (const c of children) if (c != null) e.append(c);
+  return e;
+}
+function markDirty() {
+  DIRTY = true;
+  const st = $('#save-state'); st.textContent = 'Modifications non enregistrées'; st.className = 'dirty';
+}
+window.addEventListener('beforeunload', e => { if (DIRTY) { e.preventDefault(); e.returnValue = ''; } });
+
+// champ multilingue : édite obj[LANG] ; hors FR, le placeholder montre le texte français
+function mlField(labelTxt, obj, { area = false, html = false } = {}) {
+  const wrap = document.createDocumentFragment();
+  const lab = el('label', {}, labelTxt + ' ');
+  lab.append(el('span', { class: 'ml' }, LANG !== 'fr' ? '(' + LANG.toUpperCase() + (obj[LANG] ? '' : ' — vide : le français sera affiché') + ')' : (html ? '(HTML autorisé : <strong>…</strong>)' : '')));
+  const inp = el(area ? 'textarea' : 'input', {
+    type: 'text', value: obj[LANG] || '',
+    placeholder: LANG !== 'fr' ? (obj.fr || '') : '',
+    oninput: e => { obj[LANG] = e.target.value; markDirty(); },
+  });
+  wrap.append(lab, inp);
+  return wrap;
+}
+function txtField(labelTxt, obj, key, placeholder = '') {
+  const wrap = document.createDocumentFragment();
+  wrap.append(el('label', {}, labelTxt));
+  wrap.append(el('input', { type: 'text', value: obj[key] || '', placeholder, oninput: e => { obj[key] = e.target.value; markDirty(); } }));
+  return wrap;
+}
+function selField(labelTxt, obj, key, options) {
+  const wrap = document.createDocumentFragment();
+  wrap.append(el('label', {}, labelTxt));
+  const sel = el('select', { onchange: e => { obj[key] = e.target.value; markDirty(); } });
+  for (const [v, t] of options) sel.append(el('option', { value: v, ...(obj[key] === v ? { selected: '' } : {}) }, t));
+  wrap.append(sel);
+  return wrap;
+}
+function newML(fr = '') { return { fr, en: '', de: '', it: '' }; }
+
+// éditeur de liste générique (monter/descendre/supprimer/ajouter)
+function listEditor(host, arr, itemTitle, buildItem, createNew, addLabel) {
+  const box = el('div');
+  function redraw() {
+    box.innerHTML = '';
+    arr.forEach((item, i) => {
+      const head = el('div', { class: 'item-head' },
+        el('span', { class: 't' }, (i + 1) + '. ' + itemTitle(item)),
+        el('button', { class: 'small', title: 'Monter', onclick: () => { if (i > 0) { [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]]; markDirty(); redraw(); } } }, '↑'),
+        el('button', { class: 'small', title: 'Descendre', onclick: () => { if (i < arr.length - 1) { [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]]; markDirty(); redraw(); } } }, '↓'),
+        el('button', { class: 'small danger', title: 'Supprimer', onclick: () => { if (confirm('Supprimer « ' + itemTitle(item) + ' » ?')) { arr.splice(i, 1); markDirty(); redraw(); } } }, '✕'));
+      const body = el('div');
+      buildItem(body, item, redraw);
+      box.append(el('div', { class: 'item' }, head, body));
+    });
+  }
+  redraw();
+  host.append(box, el('div', { class: 'addbar' },
+    el('button', { onclick: () => { arr.push(createNew()); markDirty(); renderSection(); } }, '+ ' + addLabel)));
+}
+
+// upload de fichier -> chemin serveur ; onDone(chemin)
+function uploadField(host, labelTxt, targetDir, onDone, accept) {
+  host.append(el('label', {}, labelTxt));
+  const inp = el('input', { type: 'file', accept: accept || 'image/*' });
+  inp.onchange = async () => {
+    const f = inp.files[0];
+    if (!f) return;
+    const clean = f.name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-');
+    const rel = targetDir ? targetDir + '/' + clean : clean;
+    const r = await fetch('/api/upload?path=' + encodeURIComponent(rel), { method: 'POST', body: f });
+    const j = await r.json();
+    if (j.ok) { onDone(rel); markDirty(); renderSection(); }
+    else alert('Échec de l\'upload : ' + (j.error || ''));
+  };
+  host.append(inp);
+}
+
+// ───────── sections ─────────
+const RENDER = {
+
+general(m) {
+  m.append(el('h2', {}, 'Accueil & À propos'),
+    el('div', { class: 'hint' }, 'Le haut de la page d\'accueil et les paragraphes « À propos ». Chaque champ existe dans les 4 langues (sélecteur en haut).'));
+  m.append(mlField('Badge vert (disponibilité)', C.hero.badge));
+  m.append(mlField('Titre sous le nom', C.hero.title));
+  m.append(mlField('Phrase d\'accroche', C.hero.tagline, { area: true, html: true }));
+  m.append(el('h2', { style: 'margin-top:26px' }, 'Paragraphes « À propos »'));
+  listEditor(m, C.about, p => (p.fr || '').replace(/<[^>]+>/g, '').slice(0, 60) + '…',
+    (body, p) => body.append(mlField('Texte', p, { area: true, html: true })),
+    () => newML('Nouveau paragraphe'), 'Ajouter un paragraphe');
+},
+
+formations(m) {
+  m.append(el('h2', {}, 'Formations'), el('div', { class: 'hint' }, 'Cartes de la section Formation (la première est affichée en haut).'));
+  listEditor(m, C.formations, f => f.title.fr,
+    (body, f, redraw) => {
+      const r = el('div', { class: 'row' });
+      r.append(el('div', {}, txtField('Dates (texte libre)', f, 'date', '2024 — 2027')), el('div', {}, txtField('Lien (optionnel)', f, 'link', 'https://…')));
+      body.append(r, mlField('Titre', f.title), mlField('Sous-titre', f.subtitle));
+      body.append(el('label', {}, 'Points (liste à puces)'));
+      const sub = el('div', { class: 'sub' });
+      listEditor(sub, f.items, li => (li.fr || '').slice(0, 50), (b, li) => b.append(mlField('Texte du point', li, { area: true })), () => newML('Nouveau point'), 'Ajouter un point');
+      body.append(sub);
+    },
+    () => ({ date: '', link: '', title: newML('Nouvelle formation'), subtitle: newML(''), items: [newML('')] }),
+    'Ajouter une formation');
+},
+
+experiences(m) {
+  m.append(el('h2', {}, 'Expériences'), el('div', { class: 'hint' }, 'Mêmes règles que les formations.'));
+  listEditor(m, C.experiences, f => f.title.fr,
+    (body, f) => {
+      const r = el('div', { class: 'row' });
+      r.append(el('div', {}, txtField('Dates', f, 'date')), el('div', {}, txtField('Lien (optionnel)', f, 'link')));
+      body.append(r, mlField('Titre', f.title), mlField('Sous-titre', f.subtitle));
+      body.append(el('label', {}, 'Points'));
+      const sub = el('div', { class: 'sub' });
+      listEditor(sub, f.items, li => (li.fr || '').slice(0, 50), (b, li) => b.append(mlField('Texte du point', li, { area: true })), () => newML(''), 'Ajouter un point');
+      body.append(sub);
+    },
+    () => ({ date: '', link: '', title: newML('Nouvelle expérience'), subtitle: newML(''), items: [newML('')] }),
+    'Ajouter une expérience');
+},
+
+projects(m) {
+  m.append(el('h2', {}, 'Projets personnels'), el('div', { class: 'hint' }, 'Cartes du carrousel. « En cours » ajoute le badge vert et la bordure pointillée. Le lien peut être une page du site (python.html) ou une URL externe (https://…).'));
+  listEditor(m, C.projects, p => p.title.fr,
+    (body, p) => {
+      body.append(mlField('Titre', p.title), mlField('Description', p.desc, { area: true }));
+      const r = el('div', { class: 'row' });
+      r.append(el('div', {}, txtField('Lien « Voir le projet » (vide = pas de bouton)', p, 'link', 'python.html ou https://…')));
+      const wipWrap = el('div', {});
+      wipWrap.append(el('label', {}, 'Statut'));
+      const cb = el('input', { type: 'checkbox', checked: !!p.wip, onchange: e => { p.wip = e.target.checked; markDirty(); } });
+      wipWrap.append(el('span', {}, ' '), cb, el('span', {}, ' Projet en cours'));
+      r.append(wipWrap);
+      body.append(r);
+      body.append(el('label', {}, 'Image de la carte'));
+      if (p.img) body.append(el('img', { src: '/' + p.img, class: 'imgprev', onerror: "this.style.display='none'" }));
+      const imgRow = el('div', { class: 'row' });
+      const d1 = el('div', {}); d1.append(txtField('Chemin de l\'image', p, 'img', 'images/projets/…')); imgRow.append(d1);
+      const d2 = el('div', {}); uploadField(d2, 'Remplacer / téléverser', 'images/projets', rel => { p.img = rel; }); imgRow.append(d2);
+      body.append(imgRow);
+      body.append(el('label', {}, 'Étiquettes (tags)'));
+      const sub = el('div', { class: 'sub' });
+      listEditor(sub, p.tags, t => t.fr || '', (b, t) => b.append(mlField('Tag', t)), () => newML('Tag'), 'Ajouter un tag');
+      body.append(sub);
+    },
+    () => ({ img: '', title: newML('Nouveau projet'), desc: newML(''), tags: [newML('Tag')], link: '', wip: false }),
+    'Ajouter un projet');
+},
+
+skills(m) {
+  m.append(el('h2', {}, 'Compétences'), el('div', { class: 'hint' }, 'Catégories et leurs étiquettes. Une étiquette avec un lien devient un bouton cliquable (ex. abaqus.html).'));
+  listEditor(m, C.skills, c => c.title.fr,
+    (body, cat) => {
+      body.append(mlField('Nom de la catégorie', cat.title));
+      body.append(el('label', {}, 'Étiquettes'));
+      const sub = el('div', { class: 'sub' });
+      listEditor(sub, cat.tags, t => t.label.fr || '',
+        (b, t) => { b.append(mlField('Libellé', t.label)); b.append(txtField('Lien (optionnel — page du site)', t, 'link', 'abaqus.html')); },
+        () => ({ label: newML('Compétence') }), 'Ajouter une étiquette');
+      body.append(sub);
+    },
+    () => ({ title: newML('Nouvelle catégorie'), tags: [{ label: newML('Compétence') }] }),
+    'Ajouter une catégorie');
+},
+
+languages(m) {
+  m.append(el('h2', {}, 'Langues parlées'), el('div', { class: 'hint' }, 'L\'icône est un emoji (🇫🇷, 🇬🇧, 🇪🇸…).'));
+  listEditor(m, C.languages, l => l.name.fr,
+    (body, l) => {
+      body.append(txtField('Emoji / drapeau', l, 'icon'));
+      body.append(mlField('Langue', l.name), mlField('Niveau', l.level));
+    },
+    () => ({ icon: '🌍', name: newML('Langue'), level: newML('Niveau') }),
+    'Ajouter une langue');
+},
+
+interests(m) {
+  m.append(el('h2', {}, 'Centres d\'intérêt'), el('div', { class: 'hint' }, '« Page liée » ouvre l\'album sport correspondant au clic.'));
+  listEditor(m, C.interests, i => i.name.fr,
+    (body, it) => {
+      const r = el('div', { class: 'row' });
+      r.append(el('div', {}, txtField('Emoji', it, 'icon')));
+      r.append(el('div', {}, selField('Page liée', it, 'page', SPORT_PAGES.map(p => [p, p || '(aucune)']))));
+      body.append(r, mlField('Nom', it.name), mlField('Détail (petite ligne)', it.detail));
+    },
+    () => ({ icon: '✨', name: newML('Nouveau'), detail: newML(''), page: '' }),
+    'Ajouter un centre d\'intérêt');
+},
+
+contacts(m) {
+  m.append(el('h2', {}, 'Contacts'), el('div', { class: 'hint' }, 'L\'icône est choisie parmi 4 pictogrammes. Le lien rend la carte cliquable (mailto:, tel:, https:…).'));
+  listEditor(m, C.contacts, c => c.label.fr,
+    (body, c) => {
+      const r = el('div', { class: 'row' });
+      r.append(el('div', {}, selField('Icône', c, 'icon', [['email', '✉ Email'], ['phone', '📞 Téléphone'], ['pin', '📍 Lieu'], ['car', '🚗 Permis / véhicule']])));
+      r.append(el('div', {}, txtField('Lien (optionnel)', c, 'href', 'mailto:… / tel:… / https://…')));
+      body.append(r, mlField('Libellé (petite ligne)', c.label), mlField('Valeur affichée', c.value));
+    },
+    () => ({ icon: 'email', label: newML('Libellé'), value: newML(''), href: '' }),
+    'Ajouter un contact');
+},
+
+sports(m) {
+  m.append(el('h2', {}, 'Pages sport (albums)'), el('div', { class: 'hint' }, 'Textes et photos de chaque page. Les tailles spéciales : « span2 » = pleine largeur, « tall » = double hauteur.'));
+  for (const [key, s] of Object.entries(C.sports)) {
+    const body = el('div');
+    const r = el('div', { class: 'row' });
+    r.append(el('div', {}, txtField('Emoji', s, 'emoji')), el('div', {}, txtField('Titre', s, 'title')),
+      el('div', {}, selField('Grille', s, 'grid', [['g1', '1 colonne'], ['g2', 'grandes photos'], ['g3', '2 colonnes'], ['g4', '2 colonnes + variées'], ['gmany', 'mosaïque']])));
+    body.append(r);
+    body.append(el('label', {}, 'Pourquoi ce sport ?'));
+    body.append(el('textarea', { value: s.why, oninput: e => { s.why = e.target.value; markDirty(); } }));
+    body.append(el('label', {}, 'Ce que ça m\'a apporté'));
+    body.append(el('textarea', { value: s.gained, oninput: e => { s.gained = e.target.value; markDirty(); } }));
+    body.append(el('label', {}, 'Photos'));
+    const sub = el('div', { class: 'sub' });
+    listEditor(sub, s.photos, p => p.full.split('/').pop(),
+      (b, p) => {
+        b.append(el('img', { src: '/' + p.thumb, class: 'imgprev', onerror: "this.style.display='none'" }));
+        const rr = el('div', { class: 'row' });
+        rr.append(el('div', {}, txtField('Vignette', p, 'thumb')), el('div', {}, txtField('Photo pleine taille', p, 'full')),
+          el('div', {}, selField('Taille', p, 'cls', [['', 'normale'], ['span2', 'pleine largeur'], ['tall', 'double hauteur'], ['tall-r', 'double hauteur (droite)']])));
+        b.append(rr);
+      },
+      () => ({ thumb: 'images/' + key + '/', full: 'images/' + key + '/', cls: '' }), 'Ajouter une photo (chemins manuels)');
+    body.append(sub);
+    const up = el('div', {});
+    uploadField(up, 'Téléverser une nouvelle photo (ajoutée à la fin)', 'images/' + key,
+      rel => { s.photos.push({ thumb: rel, full: rel, cls: '' }); });
+    body.append(up);
+    m.append(el('div', { class: 'item' }, el('div', { class: 'item-head' }, el('span', { class: 't' }, s.emoji + ' ' + s.title + ' (' + key + '.html)')), body));
+  }
+},
+
+pdf(m) {
+  m.append(el('h2', {}, 'CV téléchargeable'),
+    el('div', { class: 'hint' }, 'Le fichier PDF proposé par les boutons « Télécharger mon CV ».'));
+  m.append(el('p', {}, 'Fichier actuel : '), el('span', { class: 'pill' }, C.pdf), el('a', { class: 'btn', style: 'margin-left:10px', href: '/' + C.pdf, target: '_blank' }, 'Ouvrir'));
+  const up = el('div', {});
+  uploadField(up, 'Remplacer par un nouveau PDF', '', rel => { C.pdf = rel; }, 'application/pdf');
+  m.append(up);
+  m.append(el('div', { class: 'hint', style: 'margin-top:10px' }, 'Astuce : garde le même nom de fichier pour remplacer sans changer les liens, ou téléverse sous un nouveau nom (le site pointera automatiquement dessus).'));
+},
+
+labels(m) {
+  m.append(el('h2', {}, 'Libellés de l\'interface'), el('div', { class: 'hint' }, 'Titres du sommaire, des sections et des boutons.'));
+  const lb = C.labels;
+  m.append(el('h2', { style: 'font-size:14px;margin-top:14px' }, 'Onglet du navigateur'));
+  m.append(mlField('Titre de l\'onglet', lb.pageTitle));
+  m.append(el('h2', { style: 'font-size:14px;margin-top:18px' }, 'Sommaire (menu du haut)'));
+  for (const k of Object.keys(lb.nav)) m.append(mlField('Menu — ' + k, lb.nav[k]));
+  m.append(el('h2', { style: 'font-size:14px;margin-top:18px' }, 'Titres de sections'));
+  for (const k of Object.keys(lb.sections)) m.append(mlField('Section — ' + k, lb.sections[k]));
+  m.append(el('h2', { style: 'font-size:14px;margin-top:18px' }, 'Boutons & divers'));
+  m.append(mlField('Bouton CV (haut)', lb.dlBtn), mlField('Bouton CV (bas)', lb.dlBtnLong),
+    mlField('Bouton « Voir le projet »', lb.projView), mlField('Badge « En cours »', lb.projWip),
+    mlField('Texte du pied de page', lb.footer));
+},
+
+advanced(m) {
+  m.append(el('h2', {}, 'Avancé — édition directe des fichiers'),
+    el('div', { class: 'hint' }, 'Pour les pages spéciales (python.html, abaqus.html, usinage.html, fonderie.html…). Modifie le HTML brut — une copie .bak est gardée à chaque enregistrement. À manier avec précaution.'));
+  const sel = el('select', { style: 'max-width:320px' });
+  const ta = el('textarea', { class: 'big', placeholder: 'Choisis un fichier…' });
+  const saveBtn = el('button', { class: 'primary', style: 'margin-top:10px', onclick: async () => {
+    if (!sel.value) return;
+    const r = await fetch('/api/file?path=' + encodeURIComponent(sel.value), { method: 'PUT', body: ta.value });
+    const j = await r.json();
+    alert(j.ok ? 'Fichier enregistré (copie de secours : ' + sel.value + '.bak)' : 'Erreur : ' + (j.error || ''));
+  } }, '💾 Enregistrer ce fichier');
+  sel.onchange = async () => {
+    if (!sel.value) { ta.value = ''; return; }
+    const j = await (await fetch('/api/file?path=' + encodeURIComponent(sel.value))).json();
+    ta.value = j.content || '';
+  };
+  fetch('/api/files').then(r => r.json()).then(j => {
+    sel.append(el('option', { value: '' }, '— choisir un fichier —'));
+    for (const f of j.files) sel.append(el('option', { value: f }, f));
+  });
+  m.append(el('label', {}, 'Fichier'), sel, el('label', {}, 'Contenu'), ta, el('div', {}, saveBtn));
+},
+};
+
+// ───────── rendu / navigation ─────────
+function renderNav() {
+  const n = $('#nav'); n.innerHTML = '';
+  for (const [id, label] of SECTIONS)
+    n.append(el('a', { class: id === SECTION ? 'active' : '', onclick: () => { SECTION = id; renderNav(); renderSection(); } }, label));
+}
+function renderSection() {
+  const m = $('#main'); m.innerHTML = '';
+  RENDER[SECTION](m);
+}
+function renderLangPicker() {
+  const p = $('#lang-picker'); p.innerHTML = '';
+  for (const l of LANGS)
+    p.append(el('button', { class: l === LANG ? 'active' : '', onclick: () => { LANG = l; renderLangPicker(); renderSection(); } }, l.toUpperCase()));
+}
+
+// ───────── actions ─────────
+async function save() {
+  const r = await fetch('/api/content', { method: 'PUT', body: JSON.stringify(C) });
+  const j = await r.json();
+  const st = $('#save-state');
+  if (j.ok) { DIRTY = false; st.textContent = 'Enregistré ✓'; st.className = 'ok'; }
+  else { st.textContent = 'Erreur !'; st.className = 'err'; alert('Enregistrement impossible : ' + (j.error || '')); }
+  return j.ok;
+}
+function openSite() {
+  if (DIRTY) save().then(() => window.open('/', '_blank'));
+  else window.open('/', '_blank');
+  return false;
+}
+async function publish() {
+  if (DIRTY && !(await save())) return;
+  const msg = prompt('Message décrivant la modification (laisser vide pour un message standard) :', '');
+  if (msg === null) return;
+  const st = $('#save-state'); st.textContent = 'Publication…'; st.className = '';
+  const r = await fetch('/api/publish', { method: 'POST', body: JSON.stringify(msg ? { message: msg } : {}) });
+  const j = await r.json();
+  st.textContent = j.ok ? (j.nothing ? 'Déjà à jour' : 'Publié ✓') : 'Échec publication';
+  st.className = j.ok ? 'ok' : 'err';
+  const m = $('#main');
+  const log = el('div', { class: 'log' }, (j.log || []).join('\n') + (j.info ? '\n\n' + j.info : ''));
+  m.prepend(log);
+}
+
+// ───────── démarrage ─────────
+fetch('/api/content').then(r => r.json()).then(c => {
+  C = c;
+  renderNav(); renderLangPicker(); renderSection();
+  const st = $('#save-state'); st.textContent = 'À jour'; st.className = 'ok';
+}).catch(e => { $('#main').textContent = 'Impossible de charger content.json : ' + e; });
+</script>
+</body>
+</html>

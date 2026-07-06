@@ -1,3 +1,6 @@
 # Fichiers locaux Claude Code
 .claude/
 **/.claude/
+
+# Copies de secours de l'admin local
+*.bak
