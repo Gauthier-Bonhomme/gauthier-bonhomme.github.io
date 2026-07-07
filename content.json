@@ -174,9 +174,9 @@
   },
   {
    "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — J’aime passer du temps dehors et faire un efforts physiques en extérieur . Je suis titulaire du <strong>permis B et A</strong>.",
-   "en": "Outside of studies, I dedicate my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — disciplines that build mental strength and a drive for effort. I hold a B and A driving licence.",
-   "de": "Neben dem Studium widme ich meine Zeit Ausdauer- und Bergsportarten — <strong>Ultra Trail (+100 km), Alpinismus, Klettern (7B)</strong> — Disziplinen, die mentale Stärke und Leistungsbereitschaft fördern. Ich besitze den Führerschein B und A.",
-   "it": "Al di fuori degli studi, dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — discipline che forgiano la mente e il gusto per lo sforzo. Sono titolare della patente B e A."
+   "en": "Outside my studies, I devote my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — I love being outdoors and pushing myself physically in the open air. I hold both <strong>car and motorcycle licences (B and A)</strong>.",
+   "de": "Neben dem Studium widme ich meine Zeit dem Ausdauer- und Bergsport — <strong>Ultra-Trail (+100 km), Alpinismus, Klettern (7B)</strong> — ich bin gern draußen und fordere mich körperlich im Freien. Ich besitze den <strong>Führerschein B und A</strong>.",
+   "it": "Al di fuori degli studi dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — amo stare all'aria aperta e impegnarmi fisicamente all'esterno. Ho la <strong>patente B e A</strong>."
   }
  ],
  "formations": [
@@ -198,15 +198,15 @@
    "items": [
     {
      "fr": "Formation généraliste mais accès sur l'industrie du futur / innovation ",
-     "en": "Automatic control: state-space modelling, discrete-time control, RST synthesis, Smith predictor",
-     "de": "Regelungstechnik: Zustandsraum, zeitdiskrete Regelung, RST-Synthese, Smith-Prädiktor",
-     "it": "Controlli automatici: spazio di stato, controllo a tempo discreto, sintesi RST, predittore di Smith"
+     "en": "Generalist engineering programme focused on the industry of the future and innovation",
+     "de": "Generalistisches Ingenieurstudium mit Ausrichtung auf die Industrie der Zukunft und Innovation",
+     "it": "Formazione ingegneristica generalista orientata all'industria del futuro e all'innovazione"
     },
     {
      "fr": "Conception mécanique, robotique, systèmes industriels avancés, traitement du signal, éléments finis, procédés de fabrication, modélisation, automatisation, programmation et analyse de données.",
-     "en": "Electric drives (field-oriented control), signal processing, finite-element analysis, manufacturing processes",
-     "de": "Elektrische Antriebe (feldorientierte Regelung), Signalverarbeitung, FEM, Fertigungsverfahren",
-     "it": "Azionamenti elettrici (controllo a orientamento di campo), elaborazione dei segnali, elementi finiti, processi di fabbricazione"
+     "en": "Mechanical design, robotics, advanced industrial systems, signal processing, finite elements, manufacturing processes, modelling, automation, programming and data analysis.",
+     "de": "Mechanische Konstruktion, Robotik, fortgeschrittene Industriesysteme, Signalverarbeitung, Finite Elemente, Fertigungsverfahren, Modellierung, Automatisierung, Programmierung und Datenanalyse.",
+     "it": "Progettazione meccanica, robotica, sistemi industriali avanzati, elaborazione dei segnali, elementi finiti, processi di fabbricazione, modellazione, automazione, programmazione e analisi dei dati."
     }
    ]
   },
@@ -266,9 +266,9 @@
     },
     {
      "fr": "Création de l’outil GymLocator, développé sur mesure pour détecter les emplacements propices à l’implantation d’une nouvelle salle de sport.",
-     "en": "Site selection with GymLocator, the tool built in-house",
-     "de": "Standortwahl mit GymLocator, dem maßgeschneiderten Tool",
-     "it": "Scelta della posizione con GymLocator, lo strumento sviluppato su misura"
+     "en": "Built GymLocator, a custom-made tool to identify the best locations for opening a new gym",
+     "de": "Entwicklung von GymLocator, einem maßgeschneiderten Tool zur Ermittlung der besten Standorte für ein neues Fitnessstudio",
+     "it": "Creazione di GymLocator, uno strumento su misura per individuare le posizioni migliori dove aprire una nuova palestra"
     },
     {
      "fr": "Mise en place de la vidéosurveillance et du site web hallb.fr",
@@ -278,9 +278,9 @@
     },
     {
      "fr": "Mise en place des réseaux sociaux, aménagement et logistique",
-     "en": "Social-media channels built from zero, fit-out and logistics",
-     "de": "Social-Media-Kanäle von null aufgebaut, Ausbau und Logistik",
-     "it": "Canali social creati da zero, allestimento e logistica"
+     "en": "Set-up of the social-media channels, fit-out and logistics",
+     "de": "Aufbau der Social-Media-Kanäle, Einrichtung und Logistik",
+     "it": "Creazione dei canali social, allestimento e logistica"
     }
    ]
   },
@@ -308,9 +308,9 @@
     },
     {
      "fr": "Près de 4 000 € récoltés au profit d’œuvres caritatives.",
-     "en": "",
-     "de": "",
-     "it": ""
+     "en": "Nearly €4,000 raised for charity.",
+     "de": "Fast 4.000 € für wohltätige Zwecke gesammelt.",
+     "it": "Quasi 4.000 € raccolti a favore di opere benefiche."
     }
    ]
   },
@@ -379,28 +379,28 @@
    "link": "https://www.royalcanin.com/fr/dogs/puppy/puppy-training-and-play?gclsrc=aw.ds&gad_source=1&gad_campaignid=22850546321&gbraid=0AAAABBeyDcrBFq9hjKnMnWBAKGUfm6rCb&gclid=CjwKCAjwx7LSBhB3EiwAjcodxPCapVTITeVwgfVzXV7KN9HEEIDYJWxsbPsZo84A6tchogicYz6PwhoCPhQQAvD_BwE",
    "title": {
     "fr": "Royal Canin  — Stage",
-    "en": "",
-    "de": "",
-    "it": ""
+    "en": "Royal Canin — Internship",
+    "de": "Royal Canin — Praktikum",
+    "it": "Royal Canin — Tirocinio"
    },
    "subtitle": {
     "fr": "Aimargue · stage d'été à l'usine ",
-    "en": "",
-    "de": "",
-    "it": ""
+    "en": "Aimargues · summer internship at the factory",
+    "de": "Aimargues · Sommerpraktikum im Werk",
+    "it": "Aimargues · tirocinio estivo in fabbrica"
    },
    "items": [
     {
      "fr": "Contribution à l’amélioration du logiciel de maintenance existant",
-     "en": "",
-     "de": "",
-     "it": ""
+     "en": "Contributed to improving the existing maintenance software",
+     "de": "Mitarbeit an der Verbesserung der bestehenden Wartungssoftware",
+     "it": "Contributo al miglioramento del software di manutenzione esistente"
     },
     {
      "fr": "A permis d’accompagner les équipes de maintenance.",
-     "en": "",
-     "de": "",
-     "it": ""
+     "en": "Worked alongside and supported the maintenance teams",
+     "de": "Begleitung und Unterstützung der Wartungsteams",
+     "it": "Affiancamento e supporto alle squadre di manutenzione"
     }
    ]
   }
@@ -441,9 +441,9 @@
     },
     {
      "fr": "Moulage sable ",
-     "en": "",
-     "de": "",
-     "it": ""
+     "en": "Sand casting",
+     "de": "Sandguss",
+     "it": "Fusione in sabbia"
     }
    ],
    "link": "",
@@ -459,9 +459,9 @@
    },
    "desc": {
     "fr": "Logiciel commandé et rémunéré par une salle de sport — Il est actuellement utilisé pour déterminer le prochain site. La v2 calcule un modèle d'accessibilité E2SFCA ( Le même modèle que pour les déserts médicaux. ) sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
-    "en": "Software commissioned and paid for by a gym — it was used to choose its actual location. v2 computes an E2SFCA accessibility model on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo online.",
-    "de": "Von einem Fitnessstudio beauftragte und bezahlte Software — sie diente der Wahl des realen Standorts. v2 berechnet ein E2SFCA-Erreichbarkeitsmodell auf dem 1-km-INSEE-Raster und kreuzt lokale Nachfrage mit 12.500 Studios (SIRENE, Data ES), um unterversorgte Gebiete zu kartieren. Live-Demo online.",
-    "it": "Software commissionato e retribuito da una palestra — è servito a scegliere la sua posizione reale. La v2 calcola un modello di accessibilità E2SFCA sulla griglia INSEE di 1 km e incrocia la domanda locale con 12.500 palestre (SIRENE, Data ES) per mappare le zone sotto-servite. Demo online."
+    "en": "Software commissioned and paid for by a gym — currently used to choose their next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo online.",
+    "de": "Von einem Fitnessstudio in Auftrag gegebene und bezahlte Software — derzeit im Einsatz, um den nächsten Standort zu bestimmen. Version 2 berechnet ein E2SFCA-Erreichbarkeitsmodell (dasselbe Modell wie für medizinische Versorgungslücken) auf dem 1-km-INSEE-Raster und kreuzt die lokale Nachfrage mit 12 500 Studios (SIRENE, Data ES), um unterversorgte Gebiete zu kartieren. Live-Demo online.",
+    "it": "Software commissionato e retribuito da una palestra — attualmente utilizzato per scegliere il prossimo sito. La v2 calcola un modello di accessibilità E2SFCA (lo stesso modello usato per i deserti sanitari) sulla griglia INSEE di 1 km e incrocia la domanda locale con 12 500 palestre (SIRENE, Data ES) per mappare le zone sotto-servite. Demo online."
    },
    "tags": [
     {
@@ -564,9 +564,9 @@
    "img": "images/projets/vilbrequin.jpg",
    "title": {
     "fr": "Usinage d'un vilebrequin",
-    "en": "Machining an RC car crankshaft",
-    "de": "Fräsen einer RC-Auto-Kurbelwelle",
-    "it": "Lavorazione di un albero motore per auto RC"
+    "en": "Machining a crankshaft",
+    "de": "Zerspanung einer Kurbelwelle",
+    "it": "Lavorazione di un albero motore"
    },
    "desc": {
     "fr": "Gamme complète programmée en FAO sur Fusion 360 (tournage, fraisage, filetage), validée par mes professeurs puis produite sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC — en adaptant les programmes aux contraintes réelles de la machine (vibrations, limites d'axes).",
