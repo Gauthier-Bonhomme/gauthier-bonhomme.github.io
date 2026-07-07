@@ -173,7 +173,7 @@
    "it": "Dopo la classe preparatoria PT al Lycée Mermoz (Montpellier), amo i progetti che vanno dal modello al campo: per una palestra ho realizzato una <strong>pipeline di videoanalisi in tempo reale</strong> (Frigate, InsightFace) e uno <strong>strumento geospaziale di scelta del sito</strong> (GymLocator) — entrambi commissionati e in produzione."
   },
   {
-   "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — une discipline qui forge le mental et le goût de l'effort. Je suis titulaire du <strong>permis B et A</strong>.",
+   "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — J’aime passer du temps dehors et faire un efforts physiques en extérieur . Je suis titulaire du <strong>permis B et A</strong>.",
    "en": "Outside of studies, I dedicate my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — disciplines that build mental strength and a drive for effort. I hold a B and A driving licence.",
    "de": "Neben dem Studium widme ich meine Zeit Ausdauer- und Bergsportarten — <strong>Ultra Trail (+100 km), Alpinismus, Klettern (7B)</strong> — Disziplinen, die mentale Stärke und Leistungsbereitschaft fördern. Ich besitze den Führerschein B und A.",
    "it": "Al di fuori degli studi, dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — discipline che forgiano la mente e il gusto per lo sforzo. Sono titolare della patente B e A."
@@ -197,13 +197,13 @@
    },
    "items": [
     {
-     "fr": "Contrôle-commande : représentation d'état, commande discrète, synthèse RST, prédicteur de Smith",
+     "fr": "Formation généraliste mais accès sur l'industrie du futur / innovation ",
      "en": "Automatic control: state-space modelling, discrete-time control, RST synthesis, Smith predictor",
      "de": "Regelungstechnik: Zustandsraum, zeitdiskrete Regelung, RST-Synthese, Smith-Prädiktor",
      "it": "Controlli automatici: spazio di stato, controllo a tempo discreto, sintesi RST, predittore di Smith"
     },
     {
-     "fr": "Machines électriques (commande vectorielle), traitement du signal, éléments finis, procédés de fabrication",
+     "fr": "Conception mécanique, robotique, systèmes industriels avancés, traitement du signal, éléments finis, procédés de fabrication, modélisation, automatisation, programmation et analyse de données.",
      "en": "Electric drives (field-oriented control), signal processing, finite-element analysis, manufacturing processes",
      "de": "Elektrische Antriebe (feldorientierte Regelung), Signalverarbeitung, FEM, Fertigungsverfahren",
      "it": "Azionamenti elettrici (controllo a orientamento di campo), elaborazione dei segnali, elementi finiti, processi di fabbricazione"
@@ -265,7 +265,7 @@
      "it": "Lancio completo di una palestra da zero"
     },
     {
-     "fr": "Choix de l'emplacement avec GymLocator, l'outil développé sur mesure",
+     "fr": "Création de l’outil GymLocator, développé sur mesure pour détecter les emplacements propices à l’implantation d’une nouvelle salle de sport.",
      "en": "Site selection with GymLocator, the tool built in-house",
      "de": "Standortwahl mit GymLocator, dem maßgeschneiderten Tool",
      "it": "Scelta della posizione con GymLocator, lo strumento sviluppato su misura"
@@ -277,7 +277,7 @@
      "it": "Messa in opera di videosorveglianza e sito web (hallb.fr)"
     },
     {
-     "fr": "Réseaux sociaux créés de zéro, aménagement et logistique",
+     "fr": "Mise en place des réseaux sociaux, aménagement et logistique",
      "en": "Social-media channels built from zero, fit-out and logistics",
      "de": "Social-Media-Kanäle von null aufgebaut, Ausbau und Logistik",
      "it": "Canali social creati da zero, allestimento e logistica"
@@ -286,7 +286,7 @@
   },
   {
    "date": "2025 — 2026",
-   "link": "",
+   "link": "https://europraid.fr/",
    "title": {
     "fr": "ÉPOPÉE GADZ — Association étudiante",
     "en": "ÉPOPÉE GADZ — Student association",
@@ -305,6 +305,12 @@
      "en": "Budget and sponsorship for an 8,000-km humanitarian road trip across Europe",
      "de": "Budget und Sponsoring eines humanitären Roadtrips über 8.000 km durch Europa",
      "it": "Budget e sponsorizzazioni di un raid umanitario di 8.000 km attraverso l'Europa"
+    },
+    {
+     "fr": "Près de 4 000 € récoltés au profit d’œuvres caritatives.",
+     "en": "",
+     "de": "",
+     "it": ""
     }
    ]
   },
@@ -365,12 +371,36 @@
      "en": "Grape harvesting during the vendanges",
      "de": "Traubenernte während der Weinlese",
      "it": "Raccolta delle uve durante la vendemmia"
+    }
+   ]
+  },
+  {
+   "date": "Juin — Août 2026",
+   "link": "https://www.royalcanin.com/fr/dogs/puppy/puppy-training-and-play?gclsrc=aw.ds&gad_source=1&gad_campaignid=22850546321&gbraid=0AAAABBeyDcrBFq9hjKnMnWBAKGUfm6rCb&gclid=CjwKCAjwx7LSBhB3EiwAjcodxPCapVTITeVwgfVzXV7KN9HEEIDYJWxsbPsZo84A6tchogicYz6PwhoCPhQQAvD_BwE",
+   "title": {
+    "fr": "Royal Canin  — Stage",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Aimargue · stage d'été à l'usine ",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Contribution à l’amélioration du logiciel de maintenance existant",
+     "en": "",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Travail d'équipe, endurance et sens de l'effort",
-     "en": "Teamwork, endurance and work ethic",
-     "de": "Teamarbeit, Ausdauer und Leistungsbereitschaft",
-     "it": "Lavoro di squadra, resistenza e senso dello sforzo"
+     "fr": "A permis d’accompagner les équipes de maintenance.",
+     "en": "",
+     "de": "",
+     "it": ""
     }
    ]
   }
@@ -408,6 +438,12 @@
      "en": "Metallurgy",
      "de": "Metallurgie",
      "it": "Metallurgia"
+    },
+    {
+     "fr": "Moulage sable ",
+     "en": "",
+     "de": "",
+     "it": ""
     }
    ],
    "link": "",
@@ -422,7 +458,7 @@
     "it": "GymLocator — Posizione ottimale"
    },
    "desc": {
-    "fr": "Logiciel commandé et rémunéré par une salle de sport — il a servi à choisir son emplacement réel. La v2 calcule un modèle d'accessibilité E2SFCA sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
+    "fr": "Logiciel commandé et rémunéré par une salle de sport — Il est actuellement utilisé pour déterminer le prochain site. La v2 calcule un modèle d'accessibilité E2SFCA ( Le même modèle que pour les déserts médicaux. ) sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
     "en": "Software commissioned and paid for by a gym — it was used to choose its actual location. v2 computes an E2SFCA accessibility model on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo online.",
     "de": "Von einem Fitnessstudio beauftragte und bezahlte Software — sie diente der Wahl des realen Standorts. v2 berechnet ein E2SFCA-Erreichbarkeitsmodell auf dem 1-km-INSEE-Raster und kreuzt lokale Nachfrage mit 12.500 Studios (SIRENE, Data ES), um unterversorgte Gebiete zu kartieren. Live-Demo online.",
     "it": "Software commissionato e retribuito da una palestra — è servito a scegliere la sua posizione reale. La v2 calcola un modello di accessibilità E2SFCA sulla griglia INSEE di 1 km e incrocia la domanda locale con 12.500 palestre (SIRENE, Data ES) per mappare le zone sotto-servite. Demo online."
@@ -484,7 +520,7 @@
      "it": "Disciplina"
     }
    ],
-   "link": "",
+   "link": "https://www.strava.com/activities/17640352418",
    "wip": false
   },
   {
@@ -521,13 +557,13 @@
      "it": "Stampa 3D"
     }
    ],
-   "link": "",
+   "link": "https://github.com/EmenstaNougat/ESP32-BlueJammer",
    "wip": false
   },
   {
-   "img": "images/projets/vilebrequin.jpg",
+   "img": "images/projets/vilbrequin.jpg",
    "title": {
-    "fr": "Usinage d'un vilebrequin de voiture RC",
+    "fr": "Usinage d'un vilebrequin",
     "en": "Machining an RC car crankshaft",
     "de": "Fräsen einer RC-Auto-Kurbelwelle",
     "it": "Lavorazione di un albero motore per auto RC"
@@ -562,44 +598,7 @@
    "wip": false
   },
   {
-   "img": "images/projets/abaqus.jpg",
-   "title": {
-    "fr": "Simulation EF — mécanique de la rupture",
-    "en": "FEA — fracture mechanics",
-    "de": "FEM — Bruchmechanik",
-    "it": "FEM — meccanica della frattura"
-   },
-   "desc": {
-    "fr": "Étude Abaqus de mécanique de la rupture : résultats à moins de 1 % des valeurs analytiques de la norme ASTM E399-90. Rapport complet en ligne.",
-    "en": "Abaqus fracture-mechanics study matching ASTM E399-90 analytical values within 1%. Full report online.",
-    "de": "Abaqus-Bruchmechanikstudie: Ergebnisse innerhalb von 1 % der analytischen Werte der Norm ASTM E399-90. Vollständiger Bericht online.",
-    "it": "Studio Abaqus di meccanica della frattura: risultati entro l'1% dei valori analitici della norma ASTM E399-90. Rapporto completo online."
-   },
-   "tags": [
-    {
-     "fr": "Abaqus",
-     "en": "Abaqus",
-     "de": "Abaqus",
-     "it": "Abaqus"
-    },
-    {
-     "fr": "Éléments finis",
-     "en": "Finite elements",
-     "de": "Finite Elemente",
-     "it": "Elementi finiti"
-    },
-    {
-     "fr": "ASTM E399-90",
-     "en": "ASTM E399-90",
-     "de": "ASTM E399-90",
-     "it": "ASTM E399-90"
-    }
-   ],
-   "link": "abaqus.html",
-   "wip": false
-  },
-  {
-   "img": "images/projets/hallb.jpg",
+   "img": "images/projets/hallb.jpg.png",
    "title": {
     "fr": "Refonte du site Hall B",
     "en": "Hall B website revamp",
@@ -624,12 +623,6 @@
      "en": "HTML / CSS",
      "de": "HTML / CSS",
      "it": "HTML / CSS"
-    },
-    {
-     "fr": "Autoformation",
-     "en": "Self-taught",
-     "de": "Autodidaktik",
-     "it": "Autodidatta"
     }
    ],
    "link": "https://www.hallb.fr/",
@@ -669,7 +662,7 @@
      "it": "Running stones"
     }
    ],
-   "link": "",
+   "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
    "wip": true
   },
   {
@@ -1199,8 +1192,8 @@
   "escalade": {
    "emoji": "🧗",
    "title": "Escalade",
-   "why": "Avant tout pour l'effort physique en pleine nature, dehors. L'escalade est aussi un sport de partage : on grimpe à plusieurs, on s'assure et on se motive mutuellement. Et chaque ascension est un défi qui donne envie de se dépasser.",
-   "gained": "Le goût de la résolution de problèmes : lire une voie, persévérer sur un mouvement difficile et trouver la solution — une démarche que je retrouve naturellement en ingénierie.",
+   "why": "Avant tout pour l'effort physique en pleine nature, dehors. L'escalade est aussi un sport de partage : on grimpe à plusieurs, on s'assure et on se motive mutuellement. Chaque ascension est un défi .",
+   "gained": "Des souvenirs et le sens de la résolution de problèmes : lire une voie, persévérer sur un mouvement difficile et trouver la solution.",
    "grid": "g2",
    "photos": [
     {
@@ -1218,8 +1211,8 @@
   "ski": {
    "emoji": "⛷️",
    "title": "Ski",
-   "why": "Pour le plaisir d'un sport d'extérieur et la liberté qu'il procure : aller où l'on veut, à la vitesse que l'on choisit. J'adore cette sensation de glisse, dans un cadre de montagne dont je ne me lasse jamais — en ski alpin comme en ski de randonnée.",
-   "gained": "Le sens de l'autonomie et de la gestion du risque en milieu naturel, ainsi qu'une réelle capacité d'adaptation au terrain et aux conditions.",
+   "why": "Pour le plaisir d'un sport d'extérieur et la liberté qu'il procure : aller où l'on veut, comme on veut. J’adore cette sensation de liberté au milieu des montagnes.— en ski alpin comme en ski de randonnée.",
+   "gained": "Le sens de l'autonomie et de la gestion du risque , ainsi qu'une réelle capacité d'adaptation au terrain et aux conditions.",
    "grid": "g4",
    "photos": [
     {
@@ -1248,7 +1241,7 @@
    "emoji": "🏔️",
    "title": "Alpinisme",
    "why": "L'alpinisme réunit tout ce que j'aime dans le ski et l'escalade : l'effort partagé à plusieurs, le grand air, l'immensité de la montagne, le défi sportif et la liberté.",
-   "gained": "L'engagement et la rigueur : un sommet se prépare, se planifie et s'atteint pas à pas. Le sang-froid et la persévérance face à l'imprévu sont des qualités que je transpose au quotidien.",
+   "gained": "La montagne m’a appris l’importance de la préparation, de la rigueur et de la persévérance. Savoir rester calme face aux imprévus et avancer étape par étape sont des qualités que j’utilise au quotidien.",
    "grid": "gmany",
    "photos": [
     {
@@ -1312,7 +1305,7 @@
    "emoji": "🏃",
    "title": "Ultra Trail",
    "why": "Encore une fois, le plaisir d'être dehors et de faire du sport — mais surtout le défi. Sur des ultra-trails de plus de 100 km, l'objectif est de me prouver que j'en suis capable et d'aller au bout de l'effort.",
-   "gained": "Que la volonté et l'organisation comptent souvent autant que le talent : se fixer un objectif qui paraît déraisonnable, puis le préparer jusqu'à le rendre atteignable. Une leçon directement applicable aux projets d'ingénierie les plus exigeants.",
+   "gained": "Que la volonté et l'organisation comptent souvent autant que l'entrainement : se fixer un objectif qui paraît déraisonnable, puis le préparer jusqu'à le rendre atteignable. ",
    "grid": "g4",
    "photos": [
     {
@@ -1340,8 +1333,8 @@
   "kitesurf": {
    "emoji": "🪁",
    "title": "Kite Surf",
-   "why": "Pour les sensations : la glisse y est d'une fluidité grisante. C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et réaliser des sauts.",
-   "gained": "Le plaisir de dompter une force naturelle et de progresser techniquement, le tout face à des paysages magnifiques et avec une liberté folle.",
+   "why": "La sensation de glisse est juste magnifique . C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et s'envoyer en l'air .",
+   "gained": "Des maux de dos majoritairement, mais aussi beaucoup de plaisir à dompter le vent et à progresser techniquement, le tout face à des paysages magnifiques et avec une incroyable sensation de liberté.",
    "grid": "g4",
    "photos": [
     {
