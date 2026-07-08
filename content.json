@@ -709,6 +709,31 @@
    ],
    "link": "",
    "wip": true
+  },
+  {
+   "img": "",
+   "title": {
+    "fr": "Projets divers et variés.",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "J’ai toujours été bricoleur et curieux. Voici donc une liste non exhaustive de quelques projets que j’ai conçus, fabriqués ou bricolés.",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Autodidacte",
+     "en": "",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "",
+   "wip": false
   }
  ],
  "skills": [
