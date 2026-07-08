@@ -157,7 +157,8 @@
    "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotics · Computer Vision · Applied AI",
    "de": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotik · Computer Vision · Angewandte KI",
    "it": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotica · Visione artificiale · IA applicata"
-  }
+  },
+  "photo": ""
  },
  "about": [
   {
@@ -208,7 +209,8 @@
      "de": "Mechanische Konstruktion, Robotik, fortgeschrittene Industriesysteme, Signalverarbeitung, Finite Elemente, Fertigungsverfahren, Modellierung, Automatisierung, Programmierung und Datenanalyse.",
      "it": "Progettazione meccanica, robotica, sistemi industriali avanzati, elaborazione dei segnali, elementi finiti, processi di fabbricazione, modellazione, automazione, programmazione e analisi dei dati."
     }
-   ]
+   ],
+   "img": ""
   },
   {
    "date": "2021 — 2024",
@@ -238,7 +240,8 @@
      "de": "Entwicklung analytischer Präzision und Fähigkeit unter Druck zu arbeiten",
      "it": "Sviluppo del rigore analitico e della capacità di lavorare sotto pressione"
     }
-   ]
+   ],
+   "img": ""
   }
  ],
  "experiences": [
@@ -282,7 +285,8 @@
      "de": "Aufbau der Social-Media-Kanäle, Einrichtung und Logistik",
      "it": "Creazione dei canali social, allestimento e logistica"
     }
-   ]
+   ],
+   "img": ""
   },
   {
    "date": "2025 — 2026",
@@ -312,7 +316,8 @@
      "de": "Fast 4.000 € für wohltätige Zwecke gesammelt.",
      "it": "Quasi 4.000 € raccolti a favore di opere benefiche."
     }
-   ]
+   ],
+   "img": ""
   },
   {
    "date": "2020 — 2021",
@@ -348,7 +353,8 @@
      "de": "Verschiedene manuelle Arbeiten und Logistik",
      "it": "Vari lavori manuali e logistica"
     }
-   ]
+   ],
+   "img": ""
   },
   {
    "date": "2020 — 2021",
@@ -372,7 +378,8 @@
      "de": "Traubenernte während der Weinlese",
      "it": "Raccolta delle uve durante la vendemmia"
     }
-   ]
+   ],
+   "img": ""
   },
   {
    "date": "Juin — Août 2026",
@@ -402,7 +409,8 @@
      "de": "Begleitung und Unterstützung der Wartungsteams",
      "it": "Affiancamento e supporto alle squadre di manutenzione"
     }
-   ]
+   ],
+   "img": ""
   }
  ],
  "projects": [
@@ -1138,6 +1146,22 @@
     "it": "gauthier.bonhomme30@gmail.com"
    },
    "href": "https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com"
+  },
+  {
+   "icon": "github",
+   "label": {
+    "fr": "GitHub",
+    "en": "GitHub",
+    "de": "GitHub",
+    "it": "GitHub"
+   },
+   "value": {
+    "fr": "github.com/Gauthier-Bonhomme",
+    "en": "github.com/Gauthier-Bonhomme",
+    "de": "github.com/Gauthier-Bonhomme",
+    "it": "github.com/Gauthier-Bonhomme"
+   },
+   "href": "https://github.com/Gauthier-Bonhomme"
   },
   {
    "icon": "phone",

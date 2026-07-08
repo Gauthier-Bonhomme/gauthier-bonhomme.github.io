@@ -191,6 +191,16 @@ function uploadField(host, labelTxt, targetDir, onDone, accept) {
   host.append(inp);
 }
 
+// ligne « image » réutilisable : aperçu + champ chemin (vidable) + upload -> obj.img
+function imageRow(host, obj, dir, labelTxt) {
+  host.append(el('label', {}, labelTxt || 'Image'));
+  if (obj.img) host.append(el('img', { src: '/' + obj.img, class: 'imgprev', onerror: "this.style.display='none'" }));
+  const r = el('div', { class: 'row' });
+  const d1 = el('div', {}); d1.append(txtField('Chemin (vide = pas d\'image)', obj, 'img', dir + '/…')); r.append(d1);
+  const d2 = el('div', {}); uploadField(d2, 'Téléverser', dir, rel => { obj.img = rel; }); r.append(d2);
+  host.append(r);
+}
+
 // ───────── sections ─────────
 const RENDER = {
 
@@ -200,6 +210,11 @@ general(m) {
   m.append(mlField('Badge vert (disponibilité)', C.hero.badge));
   m.append(mlField('Titre sous le nom', C.hero.title));
   m.append(mlField('Phrase d\'accroche', C.hero.tagline, { area: true, html: true }));
+  m.append(el('h2', { style: 'margin-top:26px' }, 'Photo de profil'));
+  m.append(el('div', { class: 'hint' }, 'Affichée en rond en haut du CV. Carrée de préférence. Vide le champ « chemin » pour ne pas afficher de photo.'));
+  if (C.hero.photo) m.append(el('img', { src: '/' + C.hero.photo, class: 'imgprev', style: 'height:110px;width:110px;border-radius:50%;object-fit:cover;', onerror: "this.style.display='none'" }));
+  const heroUp = el('div', {}); uploadField(heroUp, 'Téléverser une photo', 'images', rel => { C.hero.photo = rel; }); m.append(heroUp);
+  m.append(txtField('Chemin de la photo', C.hero, 'photo', 'images/…'));
   m.append(el('h2', { style: 'margin-top:26px' }, 'Paragraphes « À propos »'));
   listEditor(m, C.about, p => (p.fr || '').replace(/<[^>]+>/g, '').slice(0, 60) + '…',
     (body, p) => body.append(mlField('Texte', p, { area: true, html: true })),
@@ -213,12 +228,13 @@ formations(m) {
       const r = el('div', { class: 'row' });
       r.append(el('div', {}, txtField('Dates (texte libre)', f, 'date', '2024 — 2027')), el('div', {}, txtField('Lien (optionnel)', f, 'link', 'https://…')));
       body.append(r, mlField('Titre', f.title), mlField('Sous-titre', f.subtitle));
+      imageRow(body, f, 'images/formations', 'Image (logo de l\'école / photo — optionnel)');
       body.append(el('label', {}, 'Points (liste à puces)'));
       const sub = el('div', { class: 'sub' });
       listEditor(sub, f.items, li => (li.fr || '').slice(0, 50), (b, li) => b.append(mlField('Texte du point', li, { area: true })), () => newML('Nouveau point'), 'Ajouter un point');
       body.append(sub);
     },
-    () => ({ date: '', link: '', title: newML('Nouvelle formation'), subtitle: newML(''), items: [newML('')] }),
+    () => ({ date: '', link: '', img: '', title: newML('Nouvelle formation'), subtitle: newML(''), items: [newML('')] }),
     'Ajouter une formation');
 },
 
@@ -229,12 +245,13 @@ experiences(m) {
       const r = el('div', { class: 'row' });
       r.append(el('div', {}, txtField('Dates', f, 'date')), el('div', {}, txtField('Lien (optionnel)', f, 'link')));
       body.append(r, mlField('Titre', f.title), mlField('Sous-titre', f.subtitle));
+      imageRow(body, f, 'images/experiences', 'Image (logo de l\'entreprise / photo — optionnel)');
       body.append(el('label', {}, 'Points'));
       const sub = el('div', { class: 'sub' });
       listEditor(sub, f.items, li => (li.fr || '').slice(0, 50), (b, li) => b.append(mlField('Texte du point', li, { area: true })), () => newML(''), 'Ajouter un point');
       body.append(sub);
     },
-    () => ({ date: '', link: '', title: newML('Nouvelle expérience'), subtitle: newML(''), items: [newML('')] }),
+    () => ({ date: '', link: '', img: '', title: newML('Nouvelle expérience'), subtitle: newML(''), items: [newML('')] }),
     'Ajouter une expérience');
 },
 
@@ -311,7 +328,7 @@ contacts(m) {
   listEditor(m, C.contacts, c => c.label.fr,
     (body, c) => {
       const r = el('div', { class: 'row' });
-      r.append(el('div', {}, selField('Icône', c, 'icon', [['email', '✉ Email'], ['phone', '📞 Téléphone'], ['pin', '📍 Lieu'], ['car', '🚗 Permis / véhicule']])));
+      r.append(el('div', {}, selField('Icône', c, 'icon', [['email', '✉ Email'], ['github', '💻 GitHub'], ['phone', '📞 Téléphone'], ['pin', '📍 Lieu'], ['car', '🚗 Permis / véhicule']])));
       r.append(el('div', {}, txtField('Lien (optionnel)', c, 'href', 'mailto:… / tel:… / https://…')));
       body.append(r, mlField('Libellé (petite ligne)', c.label), mlField('Valeur affichée', c.value));
     },

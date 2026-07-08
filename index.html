@@ -87,7 +87,9 @@ body{
 .topnav a.active{color:var(--accent);background:var(--accent-dim);}
 
 /* ═══ HERO ═══ */
-.hero{padding:56px 0 8px;}
+.hero{padding:56px 0 8px;display:flex;align-items:center;gap:44px;}
+.hero-text{flex:1;min-width:0;}
+.hero-photo{width:190px;height:190px;flex-shrink:0;object-fit:cover;border-radius:50%;border:2px solid var(--accent-border);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
 .hero-badge{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);background:var(--green-dim);border:1px solid var(--green-border);border-radius:999px;padding:7px 16px;margin-bottom:26px;}
 .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 1.6s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
@@ -120,6 +122,8 @@ section{margin-bottom:96px;scroll-margin-top:86px;}
 .card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
 .card:hover .card-title{color:var(--accent);}
 .card-date{font-size:13px;color:var(--muted);font-weight:400;padding-top:3px;line-height:1.4;}
+.card.has-img{grid-template-columns:110px 1fr auto;}
+.card-thumb{width:108px;height:108px;object-fit:cover;border-radius:12px;border:1px solid var(--border);background:var(--bg);align-self:center;}
 .card-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:4px;transition:color 0.2s;line-height:1.35;}
 .card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
 .card-title a:hover{color:var(--accent);}
@@ -318,7 +322,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .topnav{order:3;width:100%;flex:none;justify-content:flex-start;margin:0 -14px;padding:0 14px;}
   .topnav a{font-size:11.5px;padding:6px 10px;}
   .layout{padding:0 18px;}
-  .hero{padding:40px 0 4px;}
+  .hero{padding:40px 0 4px;flex-direction:column-reverse;align-items:flex-start;gap:20px;}
+  .hero-photo{width:100px;height:100px;}
   .hero-badge{font-size:10.5px;padding:6px 12px;margin-bottom:18px;}
   .tagline{font-size:14.5px;}
   .cta-row{margin-top:22px;gap:10px;}
@@ -331,6 +336,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .section-label{font-size:10px;letter-spacing:0.15em;margin-bottom:18px;}
   .about-text p{font-size:14px;}
   .card{grid-template-columns:1fr;gap:4px;padding:14px 12px;}
+  .card.has-img{grid-template-columns:1fr;}
+  .card-thumb{width:100%;height:160px;margin-top:10px;}
   .card-date{font-size:11px;color:var(--accent);margin-bottom:4px;}
   .card-title{font-size:15px;}
   .card-subtitle{font-size:12px;margin-bottom:8px;}
@@ -433,6 +440,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 <main class="right">
 
   <section class="hero" id="top">
+   <div class="hero-text">
     <div class="hero-badge" data-i18n="seeking">Stage de fin d'études — dès début 2027</div>
     <h1 class="name">Gauthier <span>Bonhomme</span></h1>
     <div class="title" data-i18n="job-title">Élève ingénieur · Mécatronique & Contrôle</div>
@@ -455,6 +463,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
         </a>
       </div>
     </div>
+   </div>
+   <img class="hero-photo" id="hero-photo" alt="Gauthier Bonhomme" style="display:none">
   </section>
   <section id="about">
     <div class="section-label" data-i18n="sec-about">À propos</div>
@@ -527,7 +537,8 @@ const CONTACT_ICONS = {
   email: '<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>',
   phone: '<path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/>',
   pin: '<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/>',
-  car: '<path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>'
+  car: '<path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>',
+  github: '<path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>'
 };
 
 function renderStatics() {
@@ -548,6 +559,11 @@ function renderStatics() {
   document.querySelector('.hero-badge').textContent = pick(CONTENT.hero.badge);
   document.querySelector('.hero .title').innerHTML = pick(CONTENT.hero.title);
   document.querySelector('.hero .tagline').innerHTML = pick(CONTENT.hero.tagline);
+  const photo = document.getElementById('hero-photo');
+  if (photo) {
+    if (CONTENT.hero.photo) { photo.src = CONTENT.hero.photo; photo.style.display = ''; photo.onerror = () => { photo.style.display = 'none'; }; }
+    else photo.style.display = 'none';
+  }
   // boutons CV (libellé + fichier)
   document.querySelectorAll('a.btn-download, a.btn-download-inline').forEach(a => a.setAttribute('href', CONTENT.pdf));
   const dl1 = document.querySelector('.btn-download span'); if (dl1) dl1.textContent = pick(lb.dlBtn);
@@ -568,13 +584,16 @@ function datedCardHtml(item) {
   const titleHtml = item.link
     ? '<a href="' + item.link + '" target="_blank" rel="noopener"><span>' + title + '</span><span class="ext-icon">↗</span></a>'
     : '<span>' + title + '</span>';
-  return '<div class="card">' +
+  const img = item.img
+    ? '<img class="card-thumb" src="' + item.img + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+    : '';
+  return '<div class="card' + (item.img ? ' has-img' : '') + '">' +
     '<div class="card-date">' + (item.date || '') + '</div>' +
     '<div class="card-content">' +
     '<div class="card-title">' + titleHtml + '</div>' +
     '<div class="card-subtitle">' + pick(item.subtitle) + '</div>' +
     '<div class="card-desc"><ul>' + item.items.map(li => '<li>' + pick(li) + '</li>').join('') + '</ul></div>' +
-    '</div></div>';
+    '</div>' + img + '</div>';
 }
 function renderDatedList(id, arr) {
   document.getElementById(id).innerHTML = arr.map(datedCardHtml).join('');
