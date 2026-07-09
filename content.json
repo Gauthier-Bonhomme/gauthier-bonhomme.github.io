@@ -210,7 +210,7 @@
      "it": "Progettazione meccanica, robotica, sistemi industriali avanzati, elaborazione dei segnali, elementi finiti, processi di fabbricazione, modellazione, automazione, programmazione e analisi dei dati."
     }
    ],
-   "img": ""
+   "img": "images/formations/images-1-.png"
   },
   {
    "date": "2021 — 2024",
@@ -241,7 +241,7 @@
      "it": "Sviluppo del rigore analitico e della capacità di lavorare sotto pressione"
     }
    ],
-   "img": ""
+   "img": "images/formations/images-2-.png"
   }
  ],
  "experiences": [
@@ -410,53 +410,10 @@
      "it": "Affiancamento e supporto alle squadre di manutenzione"
     }
    ],
-   "img": "images/experiences/royal-canin.jpg"
+   "img": "images/experiences/royalcaninlogosquarelarge.png"
   }
  ],
  "projects": [
-  {
-   "img": "images/projets/statue.jpg",
-   "title": {
-    "fr": "Statue commémorative en fonderie",
-    "en": "Commemorative Cast Statue",
-    "de": "Gegossene Gedenkstatue",
-    "it": "Statua commemorativa in fonderia"
-   },
-   "desc": {
-    "fr": "Conception et réalisation d'une statue commémorative en métal, de la modélisation 3D au moulage. J'ai combiné l'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.",
-    "en": "Design and creation of a commemorative metal statue, from 3D modelling to casting. I combined 3D printing for the pattern with home foundry casting — a project blending metallurgy, thermal transformation of materials and hands-on craftsmanship.",
-    "de": "Entwurf und Herstellung einer gegossenen Gedenkstatue aus Metall, vom 3D-Modell bis zum Guss. Ich kombinierte 3D-Druck für das Modell mit eigenem Gießen — ein Projekt rund um Metallurgie, thermische Materialumwandlung und handwerkliche Fertigung.",
-    "it": "Progettazione e realizzazione di una statua commemorativa in metallo, dalla modellazione 3D alla colata. Ho unito la stampa 3D per il modello e la fonderia artigianale per la colata — un progetto che combina metallurgia, trasformazioni termiche della materia e fabbricazione artigianale."
-   },
-   "tags": [
-    {
-     "fr": "Fonderie",
-     "en": "Foundry",
-     "de": "Gießerei",
-     "it": "Fonderia"
-    },
-    {
-     "fr": "Impression 3D",
-     "en": "3D Printing",
-     "de": "3D-Druck",
-     "it": "Stampa 3D"
-    },
-    {
-     "fr": "Métallurgie",
-     "en": "Metallurgy",
-     "de": "Metallurgie",
-     "it": "Metallurgia"
-    },
-    {
-     "fr": "Moulage sable ",
-     "en": "Sand casting",
-     "de": "Sandguss",
-     "it": "Fusione in sabbia"
-    }
-   ],
-   "link": "",
-   "wip": false
-  },
   {
    "img": "images/projets/gymlocator.jpg",
    "title": {
@@ -566,6 +523,49 @@
     }
    ],
    "link": "https://github.com/EmenstaNougat/ESP32-BlueJammer",
+   "wip": false
+  },
+  {
+   "img": "images/projets/statue.jpg",
+   "title": {
+    "fr": "Statue commémorative en fonderie",
+    "en": "Commemorative Cast Statue",
+    "de": "Gegossene Gedenkstatue",
+    "it": "Statua commemorativa in fonderia"
+   },
+   "desc": {
+    "fr": "Conception et réalisation d'une statue commémorative en métal, de la modélisation 3D au moulage. J'ai combiné l'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.",
+    "en": "Design and creation of a commemorative metal statue, from 3D modelling to casting. I combined 3D printing for the pattern with home foundry casting — a project blending metallurgy, thermal transformation of materials and hands-on craftsmanship.",
+    "de": "Entwurf und Herstellung einer gegossenen Gedenkstatue aus Metall, vom 3D-Modell bis zum Guss. Ich kombinierte 3D-Druck für das Modell mit eigenem Gießen — ein Projekt rund um Metallurgie, thermische Materialumwandlung und handwerkliche Fertigung.",
+    "it": "Progettazione e realizzazione di una statua commemorativa in metallo, dalla modellazione 3D alla colata. Ho unito la stampa 3D per il modello e la fonderia artigianale per la colata — un progetto che combina metallurgia, trasformazioni termiche della materia e fabbricazione artigianale."
+   },
+   "tags": [
+    {
+     "fr": "Fonderie",
+     "en": "Foundry",
+     "de": "Gießerei",
+     "it": "Fonderia"
+    },
+    {
+     "fr": "Impression 3D",
+     "en": "3D Printing",
+     "de": "3D-Druck",
+     "it": "Stampa 3D"
+    },
+    {
+     "fr": "Métallurgie",
+     "en": "Metallurgy",
+     "de": "Metallurgie",
+     "it": "Metallurgia"
+    },
+    {
+     "fr": "Moulage sable ",
+     "en": "Sand casting",
+     "de": "Sandguss",
+     "it": "Fusione in sabbia"
+    }
+   ],
+   "link": "",
    "wip": false
   },
   {

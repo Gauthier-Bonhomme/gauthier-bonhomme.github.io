@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Projet — Gauthier Bonhomme</title>
+<meta name="description" content="Album photo d'un projet de Gauthier Bonhomme">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0a0f1e;--surface:#111827;--border:rgba(255,255,255,0.08);
+  --text:#9fb0c7;--heading:#eef2f8;--muted:#64748b;
+  --accent:#60a5fa;--accent-dim:rgba(96,165,250,0.1);--accent-border:rgba(96,165,250,0.3);
+  --radius:14px;
+}
+body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);
+     background-image:radial-gradient(1100px 500px at 85% -5%,rgba(96,165,250,0.07),transparent 60%),radial-gradient(800px 450px at -10% 25%,rgba(52,211,153,0.04),transparent 60%);
+     background-attachment:fixed;min-height:100vh;}
+.bar{position:sticky;top:0;z-index:200;background:rgba(10,15,30,0.82);
+     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);
+     padding:10px 24px;display:flex;align-items:center;gap:14px;}
+.back{display:inline-flex;align-items:center;gap:8px;color:var(--accent);
+      background:var(--accent-dim);border:1px solid var(--accent-border);
+      border-radius:10px;padding:9px 16px;font-size:14px;font-weight:500;
+      cursor:pointer;font-family:inherit;text-decoration:none;transition:background 0.2s,transform 0.2s;white-space:nowrap;}
+.back:hover{background:rgba(96,165,250,0.2);transform:translateY(-1px);}
+.back svg{width:16px;height:16px;fill:currentColor;}
+.bar-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.14em;
+           text-transform:uppercase;color:var(--heading);margin-right:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.langs{display:flex;gap:3px;flex-shrink:0;}
+.langs button{background:none;border:1px solid transparent;color:var(--muted);font-family:'Syne',sans-serif;
+              font-size:11px;font-weight:700;letter-spacing:0.06em;padding:5px 8px;border-radius:7px;cursor:pointer;}
+.langs button.active,.langs button:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
+.wrap{max-width:1040px;margin:0 auto;padding:34px 20px 80px;}
+.head{margin-bottom:30px;}
+.head h1{font-family:'Syne',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:800;color:var(--heading);line-height:1.1;letter-spacing:-0.5px;}
+.head p{margin-top:12px;font-size:16px;line-height:1.7;color:var(--text);max-width:70ch;}
+.empty{color:var(--muted);padding:40px 0;text-align:center;}
+/* galerie masonry (hauteurs variées) */
+.album{column-width:300px;column-gap:18px;}
+.fig{break-inside:avoid;margin:0 0 18px;background:var(--surface);border:1px solid var(--border);
+     border-radius:var(--radius);overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.fig:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.fig img{width:100%;display:block;cursor:zoom-in;}
+.fig figcaption{padding:12px 15px;font-size:14px;line-height:1.55;color:var(--text);}
+.fig.nocap figcaption{display:none;}
+/* visionneuse plein écran */
+#ov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.94);
+    flex-direction:column;align-items:center;justify-content:center;padding:16px;opacity:0;transition:opacity 0.25s;}
+#ov.open{display:flex;} #ov.vis{opacity:1;}
+#ov img{max-width:92vw;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,0.8);
+        transform:scale(0.96);transition:transform 0.25s;}
+#ov.vis img{transform:scale(1);}
+#ov .ovcap{color:#e2e8f0;font-size:15px;line-height:1.5;margin-top:16px;max-width:800px;text-align:center;padding:0 12px;}
+.ovbtn{position:absolute;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;cursor:pointer;
+       display:flex;align-items:center;justify-content:center;}
+#ovclose{top:16px;right:20px;width:40px;height:40px;font-size:20px;}
+.ovnav{top:50%;transform:translateY(-50%);width:48px;height:48px;font-size:26px;}
+#ovprev{left:14px;} #ovnext{right:14px;}
+@media(max-width:600px){ .bar{padding:10px 14px;} .bar-title{font-size:11px;} .back{font-size:13px;padding:8px 13px;} .wrap{padding:22px 14px 60px;} .album{column-width:100%;} }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="back" href="index.html" onclick="return goBackCV()">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span id="back-label">Retour au CV</span>
+  </a>
+  <div class="bar-title" id="bar-title"></div>
+  <div class="langs" id="langs"></div>
+</div>
+
+<div class="wrap">
+  <div class="head" id="head"></div>
+  <div id="gallery"></div>
+</div>
+
+<div id="ov" onclick="if(event.target===this)closeOv()">
+  <button class="ovbtn" id="ovclose" onclick="closeOv()">✕</button>
+  <button class="ovbtn ovnav" id="ovprev" onclick="navOv(-1)">&#8249;</button>
+  <img id="ovimg" src="" alt="">
+  <button class="ovbtn ovnav" id="ovnext" onclick="navOv(1)">&#8250;</button>
+  <div class="ovcap" id="ovcap"></div>
+</div>
+
+<script>
+const LANGS = ['fr', 'en', 'de', 'it'];
+const BACK = { fr: 'Retour au CV', en: 'Back to CV', de: 'Zurück zum CV', it: 'Torna al CV' };
+let LANG = (function () { try { return localStorage.getItem('cvLang') || 'fr'; } catch (e) { return 'fr'; } })();
+if (!LANGS.includes(LANG)) LANG = 'fr';
+let PROJECT = null, ALBUM = [], cur = 0;
+const pick = o => (o && typeof o === 'object') ? (o[LANG] || o.fr || '') : (o || '');
+const id = new URLSearchParams(location.search).get('id');
+
+function goBackCV() {
+  try { if (history.length > 1 && document.referrer && new URL(document.referrer).host === location.host) { history.back(); return false; } } catch (e) {}
+  return true;
+}
+
+fetch('content.json').then(r => r.json()).then(c => {
+  PROJECT = (c.projects || []).find(p => p.slug && p.slug === id);
+  renderLangs();
+  render();
+}).catch(e => { document.getElementById('gallery').innerHTML = '<p class="empty">Contenu indisponible.</p>'; console.error(e); });
+
+function renderLangs() {
+  const box = document.getElementById('langs'); box.innerHTML = '';
+  for (const l of LANGS) {
+    const b = document.createElement('button');
+    b.textContent = l.toUpperCase();
+    if (l === LANG) b.className = 'active';
+    b.onclick = () => { LANG = l; try { localStorage.setItem('cvLang', l); } catch (e) {} renderLangs(); render(); };
+    box.append(b);
+  }
+}
+
+function render() {
+  document.getElementById('back-label').textContent = BACK[LANG] || BACK.fr;
+  if (!PROJECT) {
+    document.getElementById('bar-title').textContent = '';
+    document.getElementById('head').innerHTML = '';
+    document.getElementById('gallery').innerHTML = '<p class="empty">Projet introuvable.</p>';
+    return;
+  }
+  const title = pick(PROJECT.title);
+  document.title = title + ' — Gauthier Bonhomme';
+  document.getElementById('bar-title').textContent = title;
+  document.getElementById('head').innerHTML = '<h1>' + title + '</h1>' + (pick(PROJECT.desc) ? '<p>' + pick(PROJECT.desc) + '</p>' : '');
+  ALBUM = PROJECT.album || [];
+  const g = document.getElementById('gallery');
+  if (!ALBUM.length) { g.innerHTML = '<p class="empty">Aucune photo pour le moment.</p>'; return; }
+  g.className = 'album';
+  g.innerHTML = ALBUM.map((ph, i) => {
+    const cap = pick(ph.caption);
+    return '<figure class="fig' + (cap ? '' : ' nocap') + '">' +
+      '<img src="' + ph.img + '" alt="" loading="lazy" onclick="openOv(' + i + ')" onerror="this.closest(\'.fig\').style.display=\'none\'">' +
+      '<figcaption>' + cap + '</figcaption></figure>';
+  }).join('');
+}
+
+function openOv(i) { cur = i; loadOv(); const o = document.getElementById('ov'); o.classList.add('open'); requestAnimationFrame(() => requestAnimationFrame(() => o.classList.add('vis'))); }
+function loadOv() { document.getElementById('ovimg').src = ALBUM[cur].img; document.getElementById('ovcap').textContent = pick(ALBUM[cur].caption); }
+function closeOv() { const o = document.getElementById('ov'); o.classList.remove('vis'); setTimeout(() => o.classList.remove('open'), 250); }
+function navOv(d) { cur = (cur + d + ALBUM.length) % ALBUM.length; loadOv(); }
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('ov').classList.contains('open')) return;
+  if (e.key === 'Escape') closeOv();
+  if (e.key === 'ArrowRight') navOv(1);
+  if (e.key === 'ArrowLeft') navOv(-1);
+});
+</script>
+</body>
+</html>

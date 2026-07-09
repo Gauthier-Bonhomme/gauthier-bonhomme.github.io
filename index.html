@@ -606,8 +606,11 @@ function renderProjects() {
   const view = pick(CONTENT.labels.projView);
   const wipLbl = pick(CONTENT.labels.projWip);
   document.getElementById('projects-scroll').innerHTML = CONTENT.projects.map(p => {
-    const ext = /^https?:/.test(p.link || '');
-    const openJs = p.link ? (ext ? "window.open('" + p.link + "','_blank','noopener')" : "window.location.href='" + p.link + "'") : '';
+    // un projet avec un album de photos ouvre sa page dédiée (prioritaire sur un lien externe)
+    const hasAlbum = p.album && p.album.length && p.slug;
+    const link = hasAlbum ? ('projet.html?id=' + encodeURIComponent(p.slug)) : (p.link || '');
+    const ext = /^https?:/.test(link);
+    const openJs = link ? (ext ? "window.open('" + link + "','_blank','noopener')" : "window.location.href='" + link + "'") : '';
     let h = '<div class="skill-category' + (p.wip ? ' proj-wip' : '') + '"' +
       (openJs ? ' onclick="' + openJs + '" style="cursor:pointer;"' : '') + '>';
     if (p.img) h += '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">';
@@ -615,7 +618,7 @@ function renderProjects() {
     h += '<div class="card-title">' + pick(p.title) + '</div>';
     h += '<div class="card-desc">' + pick(p.desc) + '</div>';
     h += '<div class="skill-tags" style="margin-top:14px;">' + p.tags.map(t => '<span class="tag neutral">' + pick(t) + '</span>').join('') + '</div>';
-    if (p.link) h += '<button class="tag-link" style="margin-top:14px;" onclick="event.stopPropagation();' + openJs + '">' + view + '</button>';
+    if (link) h += '<button class="tag-link" style="margin-top:14px;" onclick="event.stopPropagation();' + openJs + '">' + view + '</button>';
     h += '</div>';
     return h;
   }).join('');
@@ -674,6 +677,7 @@ function renderAll() {
 
 function setLang(lang) {
   currentLang = lang;
+  try { localStorage.setItem('cvLang', lang); } catch (e) {} // mémorise la langue pour les sous-pages (projet.html)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
   renderAll();
 }
@@ -800,7 +804,10 @@ function initProjectsCarousel(){
 // DÉMARRAGE — charge content.json puis rend tout le site
 fetch('content.json').then(r => r.json()).then(c => {
   CONTENT = c;
-  renderAll();
+  let saved = 'fr';
+  try { saved = localStorage.getItem('cvLang') || 'fr'; } catch (e) {}
+  if (!['fr', 'en', 'de', 'it'].includes(saved)) saved = 'fr';
+  setLang(saved); // applique la langue mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
 }).catch(e => console.error('Chargement de content.json impossible :', e));
 </script>
