@@ -228,6 +228,11 @@ general(m) {
   if (C.hero.photo) m.append(el('img', { src: '/' + C.hero.photo, class: 'imgprev', style: 'height:110px;width:110px;border-radius:50%;object-fit:cover;', onerror: "this.style.display='none'" }));
   const heroUp = el('div', {}); uploadField(heroUp, 'Téléverser une photo', 'images', rel => { C.hero.photo = rel; }); m.append(heroUp);
   m.append(txtField('Chemin de la photo', C.hero, 'photo', 'images/…'));
+  m.append(el('h2', { style: 'margin-top:26px' }, 'Image de couverture (panorama 360°)'));
+  m.append(el('div', { class: 'hint' }, 'Photo panoramique très large affichée en haut du CV, qui défile lentement en boucle. Idéalement un panorama 360° (bord gauche = bord droit pour une boucle sans couture). Vide le champ « chemin » pour ne pas afficher de couverture.'));
+  if (C.hero.pano) m.append(el('img', { src: '/' + C.hero.pano, class: 'imgprev', onerror: "this.style.display='none'" }));
+  const panoUp = el('div', {}); uploadField(panoUp, 'Téléverser un panorama', 'images', rel => { C.hero.pano = rel; }); m.append(panoUp);
+  m.append(txtField('Chemin du panorama', C.hero, 'pano', 'images/…'));
   m.append(el('h2', { style: 'margin-top:26px' }, 'Paragraphes « À propos »'));
   listEditor(m, C.about, p => (p.fr || '').replace(/<[^>]+>/g, '').slice(0, 60) + '…',
     (body, p) => body.append(mlField('Texte', p, { area: true, html: true })),

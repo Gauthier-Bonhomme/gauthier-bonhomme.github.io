@@ -109,6 +109,14 @@ body{
 .social a:hover{color:var(--accent);border-color:var(--accent-border);transform:translateY(-2px);}
 .social a svg{width:19px;height:19px;fill:currentColor;}
 
+/* ═══ COUVERTURE PANORAMIQUE (hero.pano) ═══ */
+.pano{position:relative;height:280px;margin-top:26px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,0.35);}
+.pano-track{display:flex;height:100%;width:max-content;animation:pano-drift 120s linear infinite;will-change:transform;}
+.pano-track img{height:100%;width:auto;display:block;flex-shrink:0;max-width:none;}
+.pano::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,30,0.45),transparent 40%);pointer-events:none;}
+@keyframes pano-drift{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){.pano-track{animation:none;}}
+
 /* ═══ CONTENU ═══ */
 .layout{max-width:1160px;margin:0 auto;width:100%;padding:0 28px;}
 .right{padding:20px 0 100px;}
@@ -174,6 +182,14 @@ section{margin-bottom:96px;scroll-margin-top:86px;}
   box-shadow:0 0 10px rgba(96,165,250,0.35);
   transform:translateY(-1px);
 }
+/* cartes projet cliquables : affordance visible (survol + bouton plein) */
+.skill-category.proj-click{cursor:pointer;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
+.skill-category.proj-click:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(96,165,250,0.14);}
+.skill-category.proj-click:hover .card-title{color:var(--accent);}
+.tag-link.strong{background:var(--accent);color:#0a0f1e;border-color:var(--accent);padding:7px 16px;font-size:12.5px;}
+.tag-link.strong:hover{background:#7db6fb;box-shadow:0 0 14px rgba(96,165,250,0.5);}
+.tag-link .go{display:inline-block;transition:transform 0.2s;}
+.tag-link:hover .go,.skill-category.proj-click:hover .tag-link .go{transform:translateX(3px);}
 button.tag:hover{border-color:var(--accent);color:var(--accent);}
 .lang-list{display:flex;gap:16px;flex-wrap:wrap;}
 .lang-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s;flex:1;min-width:160px;}
@@ -326,6 +342,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .topnav a{font-size:11.5px;padding:6px 10px;}
   .layout{padding:0 18px;}
   .hero{padding:40px 0 4px;flex-direction:column-reverse;align-items:flex-start;gap:20px;}
+  .pano{height:150px;margin-top:12px;}
   .hero-photo{width:100px;height:100px;}
   .hero-badge{font-size:10.5px;padding:6px 12px;margin-bottom:18px;}
   .tagline{font-size:14.5px;}
@@ -441,6 +458,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 <div class="layout">
 <main class="right">
+
+  <div class="pano" id="pano" style="display:none" aria-hidden="true"><div class="pano-track" id="pano-track"></div></div>
 
   <section class="hero" id="top">
    <div class="hero-text">
@@ -611,14 +630,14 @@ function renderProjects() {
     const link = hasAlbum ? ('projet.html?id=' + encodeURIComponent(p.slug)) : (p.link || '');
     const ext = /^https?:/.test(link);
     const openJs = link ? (ext ? "window.open('" + link + "','_blank','noopener')" : "window.location.href='" + link + "'") : '';
-    let h = '<div class="skill-category' + (p.wip ? ' proj-wip' : '') + '"' +
-      (openJs ? ' onclick="' + openJs + '" style="cursor:pointer;"' : '') + '>';
+    let h = '<div class="skill-category' + (p.wip ? ' proj-wip' : '') + (openJs ? ' proj-click' : '') + '"' +
+      (openJs ? ' onclick="' + openJs + '"' : '') + '>';
     if (p.img) h += '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">';
     if (p.wip) h += '<span class="badge-wip">' + wipLbl + '</span>';
     h += '<div class="card-title">' + pick(p.title) + '</div>';
     h += '<div class="card-desc">' + pick(p.desc) + '</div>';
     h += '<div class="skill-tags" style="margin-top:14px;">' + p.tags.map(t => '<span class="tag neutral">' + pick(t) + '</span>').join('') + '</div>';
-    if (link) h += '<button class="tag-link" style="margin-top:14px;" onclick="event.stopPropagation();' + openJs + '">' + view + '</button>';
+    if (link) h += '<button class="tag-link strong" style="margin-top:14px;" onclick="event.stopPropagation();' + openJs + '">' + view + ' <span class="go">→</span></button>';
     h += '</div>';
     return h;
   }).join('');
@@ -763,13 +782,15 @@ updateNav();
   }
 })();
 
-// PROJETS : défilement automatique (carrousel) toutes les 3 s
+// PROJETS : défilement automatique (carrousel) toutes les 3 s.
+// Dès que le visiteur y touche (doigt, molette, glisser, flèches), l'auto-défilement
+// s'arrête définitivement pour ne pas tourner pendant qu'il lit.
 function initProjectsCarousel(){
   const track = document.querySelector('#projets .projects-scroll');
   if(!track) return;
-  let paused = false, resumeT = null;
+  let hovered = false, stopped = false;
   function nextStep(){
-    if(paused || document.hidden) return;
+    if(stopped || hovered || document.hidden) return;
     const cards = track.querySelectorAll('.skill-category');
     if(cards.length < 2) return;
     const stride = cards[1].offsetLeft - cards[0].offsetLeft; // largeur carte + gap (unités locales = compatibles scrollLeft, même sous zoom)
@@ -779,26 +800,42 @@ function initProjectsCarousel(){
     track.scrollTo({left: next, behavior: 'smooth'});
   }
   setInterval(nextStep, 3000);
-  // pause au survol, reprise en quittant
-  track.addEventListener('mouseenter', () => { paused = true; });
-  track.addEventListener('mouseleave', () => { paused = false; });
-  // pause temporaire quand l'utilisateur fait défiler manuellement
+  // pause au survol, reprise en quittant (tant que pas d'interaction directe)
+  track.addEventListener('mouseenter', () => { hovered = true; });
+  track.addEventListener('mouseleave', () => { hovered = false; });
+  // toute interaction directe stoppe l'auto-défilement pour de bon
   ['pointerdown','touchstart','wheel'].forEach(ev =>
-    track.addEventListener(ev, () => {
-      paused = true;
-      clearTimeout(resumeT);
-      resumeT = setTimeout(() => { paused = false; }, 6000);
-    }, {passive:true})
+    track.addEventListener(ev, () => { stopped = true; }, {passive:true})
   );
-  // flèches ‹ › (boutons .proj-arrow)
+  // flèches ‹ › (boutons .proj-arrow) — comptent aussi comme une interaction
   window.projScroll = function(dir){
     const cards = track.querySelectorAll('.skill-category');
     const stride = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 316;
     track.scrollBy({left: dir * stride, behavior: 'smooth'});
-    paused = true;
-    clearTimeout(resumeT);
-    resumeT = setTimeout(() => { paused = false; }, 6000);
+    stopped = true;
   };
+}
+
+// COUVERTURE : panorama (hero.pano) qui dérive lentement — 2 copies côte à côte,
+// translateX(-50%) = boucle sans couture si les bords gauche/droit de la photo se raccordent (360°).
+function initPano(){
+  const src = CONTENT.hero && CONTENT.hero.pano;
+  if(!src) return;
+  const box = document.getElementById('pano'), track = document.getElementById('pano-track');
+  const img = document.createElement('img');
+  img.alt = '';
+  img.onload = () => {
+    track.append(img.cloneNode());
+    box.style.display = '';
+    requestAnimationFrame(() => {
+      // vitesse constante (~22 px/s) quelle que soit la largeur affichée du panorama
+      const w = img.offsetWidth || img.naturalWidth;
+      track.style.animationDuration = Math.max(30, Math.round(w / 22)) + 's';
+    });
+  };
+  img.onerror = () => { box.style.display = 'none'; };
+  track.append(img);
+  img.src = src;
 }
 
 // DÉMARRAGE — charge content.json puis rend tout le site
@@ -809,6 +846,7 @@ fetch('content.json').then(r => r.json()).then(c => {
   if (!['fr', 'en', 'de', 'it'].includes(saved)) saved = 'fr';
   setLang(saved); // applique la langue mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
+  initPano();
 }).catch(e => console.error('Chargement de content.json impossible :', e));
 </script>
 
