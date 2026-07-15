@@ -12,7 +12,9 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
+% bleu des liens, relevé au pipette dans le PDF d'origine : rg 0.08235 0.29805 0.60783
+\definecolor{linkblue}{RGB}{21,76,155}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,citecolor=linkblue]{hyperref}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -23,11 +25,12 @@
 \titlespacing{\section}{0pt}{0.6em}{0.35em}
 \usepackage{needspace}
 
-% flèche de lien externe (rendue par CMSY comme dans l'original)
-\newcommand{\lk}{\textsuperscript{$\nearrow$}}
+% lien externe : texte + flèche, le tout en bleu (flèche rendue par CMSY7 comme dans l'original)
+\newcommand{\lk}{\,\textsuperscript{$\nearrow$}}
+\newcommand{\link}[2]{\href{#1}{#2\lk}}
 
-% listes compactes
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.05em,parsep=0pt,topsep=0.15em,label=\textbullet}
+% listes compactes ; puce = petit bullet CMSY7, comme l'original
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.05em,parsep=0pt,topsep=0.15em,label={\scriptsize$\bullet$}}
 
 \begin{document}
 
@@ -35,20 +38,20 @@
 \begin{center}
   {\Huge\bfseries Gauthier Bonhomme}\\[0.45em]
   MSc student in Mechatronics \& Control Engineering --- Arts et Métiers (ENSAM)\\[0.15em]
-  \textit{Seeking a 6-month graduation internship in Robotics $\cdot$ Computer Vision $\cdot$ Applied AI --- available from early 2027}\\[0.35em]
-  +33 6 08 27 62 16 \,\textbullet\, \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com} \,\textbullet\, French citizen (EU)\\[0.15em]
-  Portfolio: \href{https://gauthierbonhomme.com}{gauthierbonhomme.com} \,\textbullet\, GitHub: \href{https://github.com/Gauthier-Bonhomme}{github.com/Gauthier-Bonhomme}
+  Seeking a 6-month graduation internship in \textbf{Robotics \textperiodcentered{} Computer Vision \textperiodcentered{} Applied AI} --- available from early 2027\\[0.35em]
+  +33 6 08 27 62 16 \,{\scriptsize$\bullet$}\, \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com} \,{\scriptsize$\bullet$}\, French citizen (EU)\\[0.15em]
+  Portfolio: \href{https://gauthierbonhomme.com}{gauthierbonhomme.com} \,{\scriptsize$\bullet$}\, GitHub: \href{https://github.com/Gauthier-Bonhomme}{github.com/Gauthier-Bonhomme}
 \end{center}
 
 % ───── formation ─────
 \section{Education}
 
-\textbf{\href{https://artsetmetiers.fr/}{Arts et Métiers (ENSAM)}\lk} \hfill Aix-en-Provence, France\\
+\textbf{\link{https://artsetmetiers.fr/}{Arts et Métiers (ENSAM)}} \hfill Aix-en-Provence, France\\
 \textit{Diplôme d'Ingénieur (MSc in Engineering), Mechatronics \& Control track} \hfill 2024 -- 2027\\
 Coursework: automatic control (state-space, discrete-time control, RST synthesis, Smith predictor), electric drives (field-oriented control), signal processing, finite-element analysis, manufacturing processes.
 
 \vspace{0.35em}
-\textbf{\href{https://fr.wikipedia.org/wiki/Classe_pr\%C3\%A9paratoire_physique_et_technologie}{Classe préparatoire PT}\lk{} --- Lycée Mermoz} \hfill Montpellier, France\\
+\textbf{\link{https://fr.wikipedia.org/wiki/Classe_pr\%C3\%A9paratoire_physique_et_technologie}{Classe préparatoire PT} --- Lycée Mermoz} \hfill Montpellier, France\\
 \textit{Intensive undergraduate programme in mathematics, physics \& engineering science} \hfill 2021 -- 2024
 
 % ───── projets ─────
@@ -60,34 +63,37 @@ Coursework: automatic control (state-space, discrete-time control, RST synthesis
   \item Now adding a face-recognition stage (InsightFace) for membership-fraud detection; carried out the GDPR (Art.~9) / CNIL impact assessment required before processing biometric data.
 \end{itemize}
 
-\textbf{GymLocator --- geospatial site-selection tool, Python} \href{https://gauthierbonhomme.com/python.html}{live demo}\lk \hfill 2025
+\textbf{GymLocator --- geospatial site-selection tool, Python} \enspace\link{https://gauthierbonhomme.com/python.html}{live demo} \hfill 2025
 \begin{itemize}
   \item Bi-criteria scoring combining INSEE population density (Gaussian kernel) with OpenStreetMap competitor pressure; heat-map output used to select the gym's actual location --- in production since opening. NumPy, Pandas, Geopy, Matplotlib.
 \end{itemize}
 
-\textbf{CNC machining of a crankshaft --- CAM programming} \href{https://gauthierbonhomme.com/usinage.html}{report}\lk \hfill 2025
+\textbf{CNC machining of a crankshaft --- CAM programming} \enspace\link{https://gauthierbonhomme.com/usinage.html}{report} \hfill 2025
 \begin{itemize}
   \item Full CAM workflow in Fusion 360 (turning, milling, threading); produced on a DMG MORI CTX Gamma 1250 TC turn-mill; adapted programs to real machine constraints (vibration, axis limits).
 \end{itemize}
 
 \vspace{0.2em}
-Also: ESP32 electronics prototyping with 3D-printed parts; fracture-mechanics FEA within 1\,\% of ASTM E399-90 analytical values (\href{https://gauthierbonhomme.com/abaqus.html}{report}\lk); rebuilt \href{https://www.hallb.fr/}{hallb.fr}\lk{} --- full write-ups on the \href{https://gauthierbonhomme.com}{portfolio}\lk.
+\textbf{Also:} ESP32 electronics prototyping with 3D-printed parts; fracture-mechanics FEA within 1\,\% of ASTM E399-90 analytical values (\link{https://gauthierbonhomme.com/abaqus.html}{report}); rebuilt \link{https://www.hallb.fr/}{hallb.fr} --- full write-ups on the \link{https://gauthierbonhomme.com}{portfolio}.
 
 % ───── expérience ─────
 \section{Experience}
 
-\textbf{Royal Canin --- pet-food manufacturing plant} \hfill Aimargues, France\\
+\textbf{\link{https://www.royalcanin.com/}{Royal Canin} --- pet-food manufacturing plant} \hfill Aimargues, France\\
 \textit{Summer intern --- plant maintenance software} \hfill Jun -- Aug 2026\\
 Contributed to improving the plant's existing maintenance software; worked alongside and supported the maintenance teams on the ground.
 
 \vspace{0.35em}
-\textbf{Hall b --- fitness startup} \hfill Saint-Dionisy, France\\
+\textbf{\link{https://www.hallb.fr/}{Hall b} --- fitness startup} \hfill Saint-Dionisy, France\\
 \textit{Founding team} \hfill Jun -- Aug 2025\\
-End-to-end launch of the facility: site selection (GymLocator), video-surveillance and web infrastructure (\href{https://www.hallb.fr/}{hallb.fr}), social-media channels built from zero.
+End-to-end launch of the facility: site selection (GymLocator), video-surveillance and web infrastructure (hallb.fr), social-media channels built from zero.
 
 \vspace{0.35em}
-\textbf{ÉPOPÉE GADZ --- student association, Europ'Raid 2026} \hfill 2025 -- 2026\\
+\textbf{\link{https://europraid.fr/}{ÉPOPÉE GADZ} --- student association, Europ'Raid 2026} \hfill 2025 -- 2026\\
 \textit{Treasurer --- budget and sponsorship for an 8,000-km humanitarian road trip across Europe}
+
+\vspace{0.2em}
+\textbf{Also:} earlier summer jobs --- all-round technician at \link{https://www.funride30.fr/}{FunRide} bike leisure centre (repair \& maintenance, customer advice, logistics); seasonal grape-harvesting (\textit{vendanges}).
 
 % ───── compétences ─────
 \section{Skills}
