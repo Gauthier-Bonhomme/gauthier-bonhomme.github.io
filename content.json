@@ -158,7 +158,8 @@
    "de": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotik · Computer Vision · Angewandte KI",
    "it": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotica · Visione artificiale · IA applicata"
   },
-  "photo": "images/gridart_20230529_100653070.jpg"
+  "photo": "images/gridart_20230529_100653070.jpg",
+  "pano": "images/adobestock_435489198.jpeg"
  },
  "about": [
   {
@@ -526,6 +527,211 @@
    "wip": false
   },
   {
+   "img": "images/projets/capture-d-cran-2026-07-15-103135.png",
+   "title": {
+    "fr": "Projets divers et variés. ( mini portfolio )",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "J’ai toujours été bricoleur et curieux. Voici donc une liste non exhaustive de quelques projets que j’ai conçus, fabriqués ou bricolés.",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Autodidacte",
+     "en": "",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "",
+   "wip": false,
+   "album": [
+    {
+     "img": "images/projets/projets-divers-et-varies/snapchat-1574939897.jpg",
+     "caption": {
+      "fr": "Avec un ami nous expérimentions ici l'ECM (Electrochemical Machining), un procédé d'usinage électrochimique simple, peu coûteux et pouvant être mis en place à la maison.",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.png",
+     "caption": {
+      "fr": "Nous étions ici en train de fabriquer une jardinière ",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102955.png",
+     "caption": {
+      "fr": "J'ai à de nombreuses reprise pu travailler sur des moteur de moto ( 125 cc 4T , 300cc 2T , 350cc 4T , moteur TU1 d'une 205 ex ...)",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20240114_115122.jpg",
+     "caption": {
+      "fr": "Voici l'étape intermédiaire d'une table basse que j'ai fabriquée en chaudronnerie avec un ami.",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
+     "caption": {
+      "fr": "Voici l'un des moteurs que j'ai remis à neuf ",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103103.png",
+     "caption": {
+      "fr": "Fabrication d'une autre table en chaudronnerie ",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.png",
+     "caption": {
+      "fr": "J'ai eu à de nombreuses reprises l'occasion de réaliser de petits projets avec des cartes Arduino.",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20230211_175603.jpg",
+     "caption": {
+      "fr": "Rénovation ( et peinture ) d'un vélo de A à Z ",
+      "en": "",
+      "de": "",
+      "it": ""
+     }
+    }
+   ],
+   "slug": "projets-divers-et-varies"
+  },
+  {
+   "img": "images/projets/hallb.jpg.png",
+   "title": {
+    "fr": "Refonte du site Hall B",
+    "en": "Hall B website revamp",
+    "de": "Überarbeitung der Hall-B-Website",
+    "it": "Rinnovo del sito Hall B"
+   },
+   "desc": {
+    "fr": "Amélioration du site web d'une salle de sport. Un vrai défi : je ne maîtrisais quasiment aucun des langages concernés au départ. Je me suis formé en autonomie pour livrer une version améliorée du site.",
+    "en": "Improving the website of a gym. A real challenge: I knew almost none of the languages involved at the start. I taught myself in order to deliver an improved version of the site.",
+    "de": "Verbesserung der Website eines Fitnessstudios. Eine echte Herausforderung: Anfangs beherrschte ich kaum eine der betroffenen Sprachen. Ich habe mir alles selbst beigebracht, um eine verbesserte Version der Website zu liefern.",
+    "it": "Miglioramento del sito web di una palestra. Una vera sfida: all'inizio non conoscevo quasi nessuno dei linguaggi coinvolti. Ho imparato da autodidatta per consegnare una versione migliorata del sito."
+   },
+   "tags": [
+    {
+     "fr": "Développement web",
+     "en": "Web development",
+     "de": "Webentwicklung",
+     "it": "Sviluppo web"
+    },
+    {
+     "fr": "HTML / CSS",
+     "en": "HTML / CSS",
+     "de": "HTML / CSS",
+     "it": "HTML / CSS"
+    }
+   ],
+   "link": "https://www.hallb.fr/",
+   "wip": false
+  },
+  {
+   "img": "images/projets/reconnaissance-faciale.jpg",
+   "title": {
+    "fr": "Analyse vidéo & reconnaissance faciale",
+    "en": "Video analytics & face recognition",
+    "de": "Videoanalyse & Gesichtserkennung",
+    "it": "Videoanalisi & riconoscimento facciale"
+   },
+   "desc": {
+    "fr": "Pipeline multi-caméras de détection de personnes déployé pour la salle Hall b : Frigate NVR sous Docker/Linux, flux RTSP des caméras existantes, inférence deep-learning temps réel sur RTX 3060. En cours : reconnaissance faciale (InsightFace) contre la fraude à l'abonnement, avec l'analyse d'impact RGPD (art. 9) / CNIL menée avant tout traitement biométrique.",
+    "en": "Multi-camera person-detection pipeline deployed for the Hall b gym: Frigate NVR on Docker/Linux, RTSP streams from the existing CCTV, real-time deep-learning inference on an RTX 3060. Now adding a face-recognition stage (InsightFace) for membership-fraud detection, with the GDPR (Art. 9) / CNIL impact assessment carried out before any biometric processing.",
+    "de": "Multikamera-Personenerkennung für das Studio Hall b: Frigate NVR unter Docker/Linux, RTSP-Streams der vorhandenen Kameras, Deep-Learning-Inferenz in Echtzeit auf einer RTX 3060. In Arbeit: Gesichtserkennung (InsightFace) gegen Abo-Betrug, mit der vor jeder biometrischen Verarbeitung erforderlichen DSGVO- (Art. 9) / CNIL-Folgenabschätzung.",
+    "it": "Pipeline multi-camera di rilevamento persone per la palestra Hall b: Frigate NVR su Docker/Linux, flussi RTSP delle telecamere esistenti, inferenza deep learning in tempo reale su RTX 3060. In corso: riconoscimento facciale (InsightFace) contro le frodi sugli abbonamenti, con la valutazione d'impatto GDPR (art. 9) / CNIL richiesta prima di ogni trattamento biometrico."
+   },
+   "tags": [
+    {
+     "fr": "Frigate · Docker",
+     "en": "Frigate · Docker",
+     "de": "Frigate · Docker",
+     "it": "Frigate · Docker"
+    },
+    {
+     "fr": "Vision par ordinateur",
+     "en": "Computer vision",
+     "de": "Computer Vision",
+     "it": "Visione artificiale"
+    },
+    {
+     "fr": "RGPD · CNIL",
+     "en": "GDPR · CNIL",
+     "de": "DSGVO · CNIL",
+     "it": "GDPR · CNIL"
+    }
+   ],
+   "link": "",
+   "wip": true
+  },
+  {
+   "img": "images/projets/vilbrequin.jpg",
+   "title": {
+    "fr": "Usinage d'un vilebrequin",
+    "en": "Machining a crankshaft",
+    "de": "Zerspanung einer Kurbelwelle",
+    "it": "Lavorazione di un albero motore"
+   },
+   "desc": {
+    "fr": "Gamme complète programmée en FAO sur Fusion 360 (tournage, fraisage, filetage), validée par mes professeurs puis produite sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC — en adaptant les programmes aux contraintes réelles de la machine (vibrations, limites d'axes).",
+    "en": "Full CAM workflow in Fusion 360 (turning, milling, threading), validated by my teachers and produced on a DMG MORI CTX Gamma 1250 TC turn-mill — adapting the programs to real machine constraints (vibration, axis limits).",
+    "de": "Komplette CAM-Programmierung in Fusion 360 (Drehen, Fräsen, Gewinde), von meinen Lehrern validiert und auf einem Dreh-Fräszentrum DMG MORI CTX Gamma 1250 TC gefertigt — mit Anpassung der Programme an reale Maschinengrenzen (Vibrationen, Achslimits).",
+    "it": "Ciclo CAM completo in Fusion 360 (tornitura, fresatura, filettatura), validato dai miei professori e prodotto su un tornio-fresa DMG MORI CTX Gamma 1250 TC — adattando i programmi ai vincoli reali della macchina (vibrazioni, limiti degli assi)."
+   },
+   "tags": [
+    {
+     "fr": "FAO",
+     "en": "CAM",
+     "de": "CAM",
+     "it": "CAM"
+    },
+    {
+     "fr": "Fusion 360",
+     "en": "Fusion 360",
+     "de": "Fusion 360",
+     "it": "Fusion 360"
+    },
+    {
+     "fr": "Usinage",
+     "en": "Machining",
+     "de": "Zerspanung",
+     "it": "Lavorazione"
+    }
+   ],
+   "link": "usinage.html",
+   "wip": false
+  },
+  {
    "img": "images/projets/statue.jpg",
    "title": {
     "fr": "Statue commémorative en fonderie",
@@ -569,74 +775,6 @@
    "wip": false
   },
   {
-   "img": "images/projets/vilbrequin.jpg",
-   "title": {
-    "fr": "Usinage d'un vilebrequin",
-    "en": "Machining a crankshaft",
-    "de": "Zerspanung einer Kurbelwelle",
-    "it": "Lavorazione di un albero motore"
-   },
-   "desc": {
-    "fr": "Gamme complète programmée en FAO sur Fusion 360 (tournage, fraisage, filetage), validée par mes professeurs puis produite sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC — en adaptant les programmes aux contraintes réelles de la machine (vibrations, limites d'axes).",
-    "en": "Full CAM workflow in Fusion 360 (turning, milling, threading), validated by my teachers and produced on a DMG MORI CTX Gamma 1250 TC turn-mill — adapting the programs to real machine constraints (vibration, axis limits).",
-    "de": "Komplette CAM-Programmierung in Fusion 360 (Drehen, Fräsen, Gewinde), von meinen Lehrern validiert und auf einem Dreh-Fräszentrum DMG MORI CTX Gamma 1250 TC gefertigt — mit Anpassung der Programme an reale Maschinengrenzen (Vibrationen, Achslimits).",
-    "it": "Ciclo CAM completo in Fusion 360 (tornitura, fresatura, filettatura), validato dai miei professori e prodotto su un tornio-fresa DMG MORI CTX Gamma 1250 TC — adattando i programmi ai vincoli reali della macchina (vibrazioni, limiti degli assi)."
-   },
-   "tags": [
-    {
-     "fr": "FAO",
-     "en": "CAM",
-     "de": "CAM",
-     "it": "CAM"
-    },
-    {
-     "fr": "Fusion 360",
-     "en": "Fusion 360",
-     "de": "Fusion 360",
-     "it": "Fusion 360"
-    },
-    {
-     "fr": "Usinage",
-     "en": "Machining",
-     "de": "Zerspanung",
-     "it": "Lavorazione"
-    }
-   ],
-   "link": "usinage.html",
-   "wip": false
-  },
-  {
-   "img": "images/projets/hallb.jpg.png",
-   "title": {
-    "fr": "Refonte du site Hall B",
-    "en": "Hall B website revamp",
-    "de": "Überarbeitung der Hall-B-Website",
-    "it": "Rinnovo del sito Hall B"
-   },
-   "desc": {
-    "fr": "Amélioration du site web d'une salle de sport. Un vrai défi : je ne maîtrisais quasiment aucun des langages concernés au départ. Je me suis formé en autonomie pour livrer une version améliorée du site.",
-    "en": "Improving the website of a gym. A real challenge: I knew almost none of the languages involved at the start. I taught myself in order to deliver an improved version of the site.",
-    "de": "Verbesserung der Website eines Fitnessstudios. Eine echte Herausforderung: Anfangs beherrschte ich kaum eine der betroffenen Sprachen. Ich habe mir alles selbst beigebracht, um eine verbesserte Version der Website zu liefern.",
-    "it": "Miglioramento del sito web di una palestra. Una vera sfida: all'inizio non conoscevo quasi nessuno dei linguaggi coinvolti. Ho imparato da autodidatta per consegnare una versione migliorata del sito."
-   },
-   "tags": [
-    {
-     "fr": "Développement web",
-     "en": "Web development",
-     "de": "Webentwicklung",
-     "it": "Sviluppo web"
-    },
-    {
-     "fr": "HTML / CSS",
-     "en": "HTML / CSS",
-     "de": "HTML / CSS",
-     "it": "HTML / CSS"
-    }
-   ],
-   "link": "https://www.hallb.fr/",
-   "wip": false
-  },
-  {
    "img": "images/projets/utmb.jpg",
    "title": {
     "fr": "UTMB — Ultra-Trail du Mont-Blanc",
@@ -672,68 +810,6 @@
    ],
    "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
    "wip": true
-  },
-  {
-   "img": "images/projets/reconnaissance-faciale.jpg",
-   "title": {
-    "fr": "Analyse vidéo & reconnaissance faciale",
-    "en": "Video analytics & face recognition",
-    "de": "Videoanalyse & Gesichtserkennung",
-    "it": "Videoanalisi & riconoscimento facciale"
-   },
-   "desc": {
-    "fr": "Pipeline multi-caméras de détection de personnes déployé pour la salle Hall b : Frigate NVR sous Docker/Linux, flux RTSP des caméras existantes, inférence deep-learning temps réel sur RTX 3060. En cours : reconnaissance faciale (InsightFace) contre la fraude à l'abonnement, avec l'analyse d'impact RGPD (art. 9) / CNIL menée avant tout traitement biométrique.",
-    "en": "Multi-camera person-detection pipeline deployed for the Hall b gym: Frigate NVR on Docker/Linux, RTSP streams from the existing CCTV, real-time deep-learning inference on an RTX 3060. Now adding a face-recognition stage (InsightFace) for membership-fraud detection, with the GDPR (Art. 9) / CNIL impact assessment carried out before any biometric processing.",
-    "de": "Multikamera-Personenerkennung für das Studio Hall b: Frigate NVR unter Docker/Linux, RTSP-Streams der vorhandenen Kameras, Deep-Learning-Inferenz in Echtzeit auf einer RTX 3060. In Arbeit: Gesichtserkennung (InsightFace) gegen Abo-Betrug, mit der vor jeder biometrischen Verarbeitung erforderlichen DSGVO- (Art. 9) / CNIL-Folgenabschätzung.",
-    "it": "Pipeline multi-camera di rilevamento persone per la palestra Hall b: Frigate NVR su Docker/Linux, flussi RTSP delle telecamere esistenti, inferenza deep learning in tempo reale su RTX 3060. In corso: riconoscimento facciale (InsightFace) contro le frodi sugli abbonamenti, con la valutazione d'impatto GDPR (art. 9) / CNIL richiesta prima di ogni trattamento biometrico."
-   },
-   "tags": [
-    {
-     "fr": "Frigate · Docker",
-     "en": "Frigate · Docker",
-     "de": "Frigate · Docker",
-     "it": "Frigate · Docker"
-    },
-    {
-     "fr": "Vision par ordinateur",
-     "en": "Computer vision",
-     "de": "Computer Vision",
-     "it": "Visione artificiale"
-    },
-    {
-     "fr": "RGPD · CNIL",
-     "en": "GDPR · CNIL",
-     "de": "DSGVO · CNIL",
-     "it": "GDPR · CNIL"
-    }
-   ],
-   "link": "",
-   "wip": true
-  },
-  {
-   "img": "",
-   "title": {
-    "fr": "Projets divers et variés.",
-    "en": "",
-    "de": "",
-    "it": ""
-   },
-   "desc": {
-    "fr": "J’ai toujours été bricoleur et curieux. Voici donc une liste non exhaustive de quelques projets que j’ai conçus, fabriqués ou bricolés.",
-    "en": "",
-    "de": "",
-    "it": ""
-   },
-   "tags": [
-    {
-     "fr": "Autodidacte",
-     "en": "",
-     "de": "",
-     "it": ""
-    }
-   ],
-   "link": "",
-   "wip": false
   }
  ],
  "skills": [
@@ -1141,7 +1217,7 @@
   {
    "icon": "💻",
    "name": {
-    "fr": "Vibecoding",
+    "fr": "Vibecoding & Open-source ",
     "en": "Vibecoding",
     "de": "Vibecoding",
     "it": "Vibecoding"
