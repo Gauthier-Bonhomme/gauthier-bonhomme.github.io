@@ -153,6 +153,19 @@ function selField(labelTxt, obj, key, options) {
 }
 function newML(fr = '') { return { fr, en: '', de: '', it: '' }; }
 
+// slug kebab-case sans accents à partir d'un texte
+function slugify(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'projet';
+}
+// slug unique : dédupliqué contre les slugs des autres projets
+function uniqueSlug(base, list, self) {
+  const taken = new Set(list.filter(x => x !== self).map(x => x.slug).filter(Boolean));
+  let s = base, n = 2;
+  while (taken.has(s)) { s = base + '-' + n++; }
+  return s;
+}
+
 // éditeur de liste générique (monter/descendre/supprimer/ajouter)
 function listEditor(host, arr, itemTitle, buildItem, createNew, addLabel) {
   const box = el('div');
@@ -278,6 +291,29 @@ projects(m) {
       const sub = el('div', { class: 'sub' });
       listEditor(sub, p.tags, t => t.fr || '', (b, t) => b.append(mlField('Tag', t)), () => newML('Tag'), 'Ajouter un tag');
       body.append(sub);
+
+      // Page dédiée : galerie photo légendée (projet.html?id=<slug>)
+      body.append(el('label', {}, 'Page dédiée (galerie photo légendée)'));
+      const dedic = el('div', { class: 'sub' });
+      if (p.slug && p.album && p.album.length)
+        dedic.append(el('div', { class: 'hint', style: 'margin:2px 0 10px' }, 'Cette carte ouvre : projet.html?id=' + p.slug));
+      if (p.album && p.album.length) {
+        listEditor(dedic, p.album,
+          ph => (ph.caption && ph.caption.fr ? ph.caption.fr.slice(0, 40) : (ph.img ? ph.img.split('/').pop() : 'Photo')),
+          (b, ph) => { imageRow(b, ph, 'images/projets/' + (p.slug || 'divers'), 'Photo'); b.append(mlField('Légende', ph.caption)); },
+          () => ({ img: '', caption: newML('') }),
+          'Ajouter une photo');
+      } else {
+        dedic.append(el('div', { class: 'hint', style: 'margin:2px 0 10px' }, 'Ajoute une première photo pour créer la page dédiée (une URL sera générée automatiquement à partir du titre).'));
+        dedic.append(el('div', { class: 'addbar' },
+          el('button', { onclick: () => {
+            if (!p.album) p.album = [];
+            if (!p.slug) p.slug = uniqueSlug(slugify(p.title.fr), C.projects, p);
+            p.album.push({ img: '', caption: newML('') });
+            markDirty(); renderSection();
+          } }, '+ Ajouter une photo')));
+      }
+      body.append(dedic);
     },
     () => ({ img: '', title: newML('Nouveau projet'), desc: newML(''), tags: [newML('Tag')], link: '', wip: false }),
     'Ajouter un projet');
