@@ -250,10 +250,10 @@
    "date": "Juin — Août 2025",
    "link": "https://www.hallb.fr/",
    "title": {
-    "fr": "Hall b — Stage · équipe fondatrice",
-    "en": "Hall b — Internship · founding team",
-    "de": "Hall b — Praktikum · Gründungsteam",
-    "it": "Hall b — Stage · team fondatore"
+    "fr": "Hall b — Équipe fondatrice",
+    "en": "Hall b — Founding team",
+    "de": "Hall b — Gründungsteam",
+    "it": "Hall b — Team fondatore"
    },
    "subtitle": {
     "fr": "Saint-Dionisy · Lancement d'une salle de sport",
@@ -392,7 +392,7 @@
     "it": "Royal Canin — Tirocinio"
    },
    "subtitle": {
-    "fr": "Aimargue · stage d'été à l'usine ",
+    "fr": "Aimargues · stage d'été à l'usine ",
     "en": "Aimargues · summer internship at the factory",
     "de": "Aimargues · Sommerpraktikum im Werk",
     "it": "Aimargues · tirocinio estivo in fabbrica"
@@ -530,22 +530,22 @@
    "img": "images/projets/capture-d-cran-2026-07-15-103135.png",
    "title": {
     "fr": "Projets divers et variés. ( mini portfolio )",
-    "en": "",
-    "de": "",
-    "it": ""
+    "en": "Assorted personal projects (mini portfolio)",
+    "de": "Verschiedene kleine Projekte (Mini-Portfolio)",
+    "it": "Progetti vari e assortiti (mini portfolio)"
    },
    "desc": {
     "fr": "J’ai toujours été bricoleur et curieux. Voici donc une liste non exhaustive de quelques projets que j’ai conçus, fabriqués ou bricolés.",
-    "en": "",
-    "de": "",
-    "it": ""
+    "en": "I have always been a curious tinkerer. Here is a non-exhaustive selection of projects I have designed, built or fixed up.",
+    "de": "Ich war schon immer neugierig und habe gern getüftelt. Hier eine nicht erschöpfende Auswahl von Projekten, die ich entworfen, gebaut oder gebastelt habe.",
+    "it": "Sono sempre stato curioso e amante del fai-da-te. Ecco una selezione non esaustiva di progetti che ho progettato, costruito o sistemato."
    },
    "tags": [
     {
      "fr": "Autodidacte",
-     "en": "",
-     "de": "",
-     "it": ""
+     "en": "Self-taught",
+     "de": "Autodidakt",
+     "it": "Autodidatta"
     }
    ],
    "link": "",
@@ -555,72 +555,72 @@
      "img": "images/projets/projets-divers-et-varies/snapchat-1574939897.jpg",
      "caption": {
       "fr": "Avec un ami nous expérimentions ici l'ECM (Electrochemical Machining), un procédé d'usinage électrochimique simple, peu coûteux et pouvant être mis en place à la maison.",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "With a friend, we were experimenting with ECM (Electrochemical Machining), a simple, low-cost electrochemical machining process that can be set up at home.",
+      "de": "Mit einem Freund experimentierte ich hier mit ECM (Electrochemical Machining), einem einfachen, kostengünstigen elektrochemischen Abtragverfahren, das sich zu Hause umsetzen lässt.",
+      "it": "Con un amico stavamo sperimentando l'ECM (Electrochemical Machining), un processo di lavorazione elettrochimica semplice, economico e realizzabile in casa."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.png",
      "caption": {
       "fr": "Nous étions ici en train de fabriquer une jardinière ",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "Here we were building a planter box.",
+      "de": "Hier bauten wir gerade einen Pflanzkasten.",
+      "it": "Qui stavamo costruendo una fioriera."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102955.png",
      "caption": {
       "fr": "J'ai à de nombreuses reprise pu travailler sur des moteur de moto ( 125 cc 4T , 300cc 2T , 350cc 4T , moteur TU1 d'une 205 ex ...)",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "I have worked many times on motorcycle engines (125 cc 4-stroke, 300 cc 2-stroke, 350 cc 4-stroke, the TU1 engine of an old Peugeot 205…).",
+      "de": "Ich habe viele Male an Motorradmotoren gearbeitet (125 ccm 4-Takt, 300 ccm 2-Takt, 350 ccm 4-Takt, TU1-Motor eines alten Peugeot 205 …).",
+      "it": "Ho lavorato molte volte su motori di moto (125 cc 4T, 300 cc 2T, 350 cc 4T, il motore TU1 di una vecchia Peugeot 205…)."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/20240114_115122.jpg",
      "caption": {
       "fr": "Voici l'étape intermédiaire d'une table basse que j'ai fabriquée en chaudronnerie avec un ami.",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "An intermediate stage of a coffee table I built in the metal workshop with a friend.",
+      "de": "Ein Zwischenschritt eines Couchtischs, den ich mit einem Freund im Metallbau gefertigt habe.",
+      "it": "La fase intermedia di un tavolino che ho realizzato in carpenteria metallica con un amico."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
      "caption": {
       "fr": "Voici l'un des moteurs que j'ai remis à neuf ",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "One of the engines I fully reconditioned.",
+      "de": "Einer der Motoren, die ich generalüberholt habe.",
+      "it": "Uno dei motori che ho rimesso a nuovo."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103103.png",
      "caption": {
       "fr": "Fabrication d'une autre table en chaudronnerie ",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "Building another table in the metal workshop.",
+      "de": "Bau eines weiteren Tischs im Metallbau.",
+      "it": "Realizzazione di un altro tavolo in carpenteria metallica."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.png",
      "caption": {
       "fr": "J'ai eu à de nombreuses reprises l'occasion de réaliser de petits projets avec des cartes Arduino.",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "I have had many opportunities to build small projects with Arduino boards.",
+      "de": "Ich hatte viele Gelegenheiten, kleine Projekte mit Arduino-Boards umzusetzen.",
+      "it": "Ho avuto molte occasioni di realizzare piccoli progetti con schede Arduino."
      }
     },
     {
      "img": "images/projets/projets-divers-et-varies/20230211_175603.jpg",
      "caption": {
       "fr": "Rénovation ( et peinture ) d'un vélo de A à Z ",
-      "en": "",
-      "de": "",
-      "it": ""
+      "en": "Complete renovation (and repaint) of a bicycle, from A to Z.",
+      "de": "Komplette Aufarbeitung (und Neulackierung) eines Fahrrads von A bis Z.",
+      "it": "Restauro completo (e riverniciatura) di una bicicletta dalla A alla Z."
      }
     }
    ],
@@ -1009,18 +1009,18 @@
     {
      "label": {
       "fr": "Fusion 360 — Usinage",
-      "en": "Fusion 360 — Usinage",
-      "de": "Fusion 360 — Usinage",
-      "it": "Fusion 360 — Usinage"
+      "en": "Fusion 360 — Machining",
+      "de": "Fusion 360 — Zerspanung",
+      "it": "Fusion 360 — Lavorazione"
      },
      "link": "usinage.html"
     },
     {
      "label": {
       "fr": "QuickCast — Fonderie",
-      "en": "QuickCast — Fonderie",
-      "de": "QuickCast — Fonderie",
-      "it": "QuickCast — Fonderie"
+      "en": "QuickCast — Foundry",
+      "de": "QuickCast — Gießerei",
+      "it": "QuickCast — Fonderia"
      },
      "link": "fonderie.html"
     }
@@ -1112,9 +1112,9 @@
    },
    "detail": {
     "fr": "Ceinture noire",
-    "en": "Ceinture noire",
-    "de": "Ceinture noire",
-    "it": "Ceinture noire"
+    "en": "Black belt",
+    "de": "Schwarzer Gürtel",
+    "it": "Cintura nera"
    },
    "page": ""
   },
@@ -1128,9 +1128,9 @@
    },
    "detail": {
     "fr": "Niveau 7B · Album ↗",
-    "en": "Niveau 7B · Album ↗",
-    "de": "Niveau 7B · Album ↗",
-    "it": "Niveau 7B · Album ↗"
+    "en": "Grade 7B · Album ↗",
+    "de": "Grad 7B · Album ↗",
+    "it": "Grado 7B · Album ↗"
    },
    "page": "escalade"
   },
@@ -1144,9 +1144,9 @@
    },
    "detail": {
     "fr": "Alpin & randonnée · ↗",
-    "en": "Alpin & randonnée · ↗",
-    "de": "Alpin & randonnée · ↗",
-    "it": "Alpin & randonnée · ↗"
+    "en": "Alpine & touring · ↗",
+    "de": "Alpin & Skitouren · ↗",
+    "it": "Alpino & scialpinismo · ↗"
    },
    "page": "ski"
   },
@@ -1218,9 +1218,9 @@
    "icon": "💻",
    "name": {
     "fr": "Vibecoding & Open-source ",
-    "en": "Vibecoding",
-    "de": "Vibecoding",
-    "it": "Vibecoding"
+    "en": "Vibecoding & open source",
+    "de": "Vibecoding & Open Source",
+    "it": "Vibecoding & open source"
    },
    "detail": {
     "fr": "",

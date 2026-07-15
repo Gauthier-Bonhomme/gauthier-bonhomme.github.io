@@ -1,0 +1,106 @@
+% ══════════════════════════════════════════════════════════════════
+% Source du CV téléchargeable (anglais, 1 page, police Charter)
+% Reconstruit le 15/07/2026 d'après le PDF compilé (l'original était sur Overleaf).
+% Compiler : tectonic CV_Gauthier_Bonhomme_EN.tex
+% Le PDF produit remplace Gauthier_Bonhomme_CV.pdf à la racine du site.
+% ══════════════════════════════════════════════════════════════════
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=1.0cm,bottom=1.0cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.15em}
+
+% titres de section : gras + filet, comme le thème "engineering resumes"
+\titleformat{\section}{\needspace{4\baselineskip}\large\bfseries}{}{0pt}{}[\vspace{-0.75em}\rule{\textwidth}{0.4pt}]
+\titlespacing{\section}{0pt}{0.6em}{0.35em}
+\usepackage{needspace}
+
+% flèche de lien externe (rendue par CMSY comme dans l'original)
+\newcommand{\lk}{\textsuperscript{$\nearrow$}}
+
+% listes compactes
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.05em,parsep=0pt,topsep=0.15em,label=\textbullet}
+
+\begin{document}
+
+% ───── en-tête ─────
+\begin{center}
+  {\Huge\bfseries Gauthier Bonhomme}\\[0.45em]
+  MSc student in Mechatronics \& Control Engineering --- Arts et Métiers (ENSAM)\\[0.15em]
+  \textit{Seeking a 6-month graduation internship in Robotics $\cdot$ Computer Vision $\cdot$ Applied AI --- available from early 2027}\\[0.35em]
+  +33 6 08 27 62 16 \,\textbullet\, \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com} \,\textbullet\, French citizen (EU)\\[0.15em]
+  Portfolio: \href{https://gauthierbonhomme.com}{gauthierbonhomme.com} \,\textbullet\, GitHub: \href{https://github.com/Gauthier-Bonhomme}{github.com/Gauthier-Bonhomme}
+\end{center}
+
+% ───── formation ─────
+\section{Education}
+
+\textbf{\href{https://artsetmetiers.fr/}{Arts et Métiers (ENSAM)}\lk} \hfill Aix-en-Provence, France\\
+\textit{Diplôme d'Ingénieur (MSc in Engineering), Mechatronics \& Control track} \hfill 2024 -- 2027\\
+Coursework: automatic control (state-space, discrete-time control, RST synthesis, Smith predictor), electric drives (field-oriented control), signal processing, finite-element analysis, manufacturing processes.
+
+\vspace{0.35em}
+\textbf{\href{https://fr.wikipedia.org/wiki/Classe_pr\%C3\%A9paratoire_physique_et_technologie}{Classe préparatoire PT}\lk{} --- Lycée Mermoz} \hfill Montpellier, France\\
+\textit{Intensive undergraduate programme in mathematics, physics \& engineering science} \hfill 2021 -- 2024
+
+% ───── projets ─────
+\section{Projects}
+
+\textbf{Real-time video analytics \& face recognition --- Hall b gym} \hfill 2025 -- present
+\begin{itemize}
+  \item Designed and deployed a multi-camera person-detection pipeline: Frigate NVR on Docker/Linux, RTSP streams from the site's existing CCTV, real-time deep-learning inference on an NVIDIA RTX 3060.
+  \item Now adding a face-recognition stage (InsightFace) for membership-fraud detection; carried out the GDPR (Art.~9) / CNIL impact assessment required before processing biometric data.
+\end{itemize}
+
+\textbf{GymLocator --- geospatial site-selection tool, Python} \href{https://gauthierbonhomme.com/python.html}{live demo}\lk \hfill 2025
+\begin{itemize}
+  \item Bi-criteria scoring combining INSEE population density (Gaussian kernel) with OpenStreetMap competitor pressure; heat-map output used to select the gym's actual location --- in production since opening. NumPy, Pandas, Geopy, Matplotlib.
+\end{itemize}
+
+\textbf{CNC machining of a crankshaft --- CAM programming} \href{https://gauthierbonhomme.com/usinage.html}{report}\lk \hfill 2025
+\begin{itemize}
+  \item Full CAM workflow in Fusion 360 (turning, milling, threading); produced on a DMG MORI CTX Gamma 1250 TC turn-mill; adapted programs to real machine constraints (vibration, axis limits).
+\end{itemize}
+
+\vspace{0.2em}
+Also: ESP32 electronics prototyping with 3D-printed parts; fracture-mechanics FEA within 1\,\% of ASTM E399-90 analytical values (\href{https://gauthierbonhomme.com/abaqus.html}{report}\lk); rebuilt \href{https://www.hallb.fr/}{hallb.fr}\lk{} --- full write-ups on the \href{https://gauthierbonhomme.com}{portfolio}\lk.
+
+% ───── expérience ─────
+\section{Experience}
+
+\textbf{Royal Canin --- pet-food manufacturing plant} \hfill Aimargues, France\\
+\textit{Summer intern --- plant maintenance software} \hfill Jun -- Aug 2026\\
+Contributed to improving the plant's existing maintenance software; worked alongside and supported the maintenance teams on the ground.
+
+\vspace{0.35em}
+\textbf{Hall b --- fitness startup} \hfill Saint-Dionisy, France\\
+\textit{Founding team} \hfill Jun -- Aug 2025\\
+End-to-end launch of the facility: site selection (GymLocator), video-surveillance and web infrastructure (\href{https://www.hallb.fr/}{hallb.fr}), social-media channels built from zero.
+
+\vspace{0.35em}
+\textbf{ÉPOPÉE GADZ --- student association, Europ'Raid 2026} \hfill 2025 -- 2026\\
+\textit{Treasurer --- budget and sponsorship for an 8,000-km humanitarian road trip across Europe}
+
+% ───── compétences ─────
+\section{Skills}
+
+\textbf{Programming:} Python (NumPy, Pandas, OpenCV, Matplotlib), Git, Docker, Linux, HTML/CSS\\
+\textbf{AI \& computer vision:} deployment of machine-learning inference (InsightFace face recognition, Frigate object detection), NVIDIA GPU acceleration, GDPR/DPIA compliance for biometric systems\\
+\textbf{Control \& embedded:} PID and RST controller synthesis, state-space modelling, discrete-time control, field-oriented motor control (FOC), ESP32\\
+\textbf{CAD \& simulation:} CATIA V5, Fusion 360 (CAM), 3DExperience, Abaqus (FEA), FDM 3D printing\\
+\textbf{Languages:} French (native), English (C1)
+
+% ───── centres d'intérêt ─────
+\section{Interests}
+
+\textbf{Mountain \& endurance:} 100-km ultra-trail finisher (5,000\,m elevation gain), preparing UTMB; alpine routes in autonomy; bouldering (7B); judo black belt.
+
+\end{document}
