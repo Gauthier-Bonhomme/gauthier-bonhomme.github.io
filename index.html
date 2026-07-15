@@ -347,7 +347,16 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .hero{padding:40px 0 4px;flex-direction:column-reverse;align-items:flex-start;gap:20px;}
   .pano{height:150px;margin-top:12px;}
   .hero-photo{width:100px;height:100px;}
-  body.has-pano .hero-photo{margin-top:-90px;margin-right:16px;align-self:flex-end;border-width:3px;}
+  /* avec panorama : photo ancrée au coin bas-droit de la couverture (hors flux),
+     le texte occupe toute la largeur juste sous le panorama, ordonné nom → titre → badge */
+  body.has-pano .hero{position:relative;padding-top:26px;}
+  body.has-pano .hero-photo{position:absolute;top:-80px;right:10px;margin:0;align-self:auto;border-width:3px;}
+  body.has-pano .hero-text{display:flex;flex-direction:column;align-items:flex-start;}
+  body.has-pano .name{order:1;}
+  body.has-pano .title{order:2;}
+  body.has-pano .hero-badge{order:3;margin:2px 0 18px;}
+  body.has-pano .tagline{order:4;}
+  body.has-pano .cta-row{order:5;align-self:stretch;}
   .hero-badge{font-size:10.5px;padding:6px 12px;margin-bottom:18px;}
   .tagline{font-size:14.5px;}
   .cta-row{margin-top:22px;gap:10px;}
