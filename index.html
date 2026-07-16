@@ -14,7 +14,12 @@
   <meta property="og:title" content="Gauthier Bonhomme — Élève ingénieur Mécatronique & Contrôle">
   <meta property="og:description" content="Robotique · Vision par ordinateur · IA appliquée — Arts et Métiers, Aix-en-Provence. Recherche un stage de fin d'études.">
   <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://gauthier-bonhomme.github.io/">
+  <meta property="og:url" content="https://gauthierbonhomme.com/">
+  <meta property="og:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
 
   <!-- Données structurées Google (rich results) -->
   <script type="application/ld+json">
@@ -27,7 +32,7 @@
       "@type": "EducationalOrganization",
       "name": "Arts et Métiers (ENSAM)"
     },
-    "url": "https://gauthier-bonhomme.github.io/",
+    "url": "https://gauthierbonhomme.com/",
     "email": "gauthier.bonhomme30@gmail.com",
     "telephone": "+33608276216",
     "address": {
@@ -39,6 +44,9 @@
   }
   </script>
 
+  <link rel="canonical" href="https://gauthierbonhomme.com/">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -709,6 +717,7 @@ function renderAll() {
 
 function setLang(lang) {
   currentLang = lang;
+  document.documentElement.lang = lang;
   try { localStorage.setItem('cvLang', lang); } catch (e) {} // mémorise la langue pour les sous-pages (projet.html)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
   renderAll();
@@ -751,7 +760,8 @@ function showPageBack() { showPage('page-cv'); }
 // SPORT: handled by separate HTML files
 
 function openSport(act) {
-  window.location.href = act + '.html';
+  if (/^https?:/.test(act)) window.open(act, '_blank', 'noopener'); // URL externe (ex. GitHub)
+  else window.location.href = act + '.html';
 }
 
 // CV NAV ACTIVE ON SCROLL
@@ -812,7 +822,9 @@ function initProjectsCarousel(){
     if(next >= maxScroll - 2) next = 0;                       // retour au début en boucle
     track.scrollTo({left: next, behavior: 'smooth'});
   }
-  setInterval(nextStep, 3000);
+  // pas d'auto-défilement si le visiteur préfère limiter les animations
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) setInterval(nextStep, 3000);
   // pause au survol, reprise en quittant (tant que pas d'interaction directe)
   track.addEventListener('mouseenter', () => { hovered = true; });
   track.addEventListener('mouseleave', () => { hovered = false; });

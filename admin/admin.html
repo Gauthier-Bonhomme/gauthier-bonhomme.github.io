@@ -89,7 +89,6 @@ let DIRTY = false;
 
 const $ = s => document.querySelector(s);
 const LANGS = ['fr', 'en', 'de', 'it'];
-const SPORT_PAGES = ['', 'escalade', 'ski', 'alpinisme', 'trail', 'kitesurf'];
 
 const SECTIONS = [
   ['general',    '🏠 Accueil & À propos'],
@@ -102,6 +101,7 @@ const SECTIONS = [
   ['contacts',   '✉️ Contacts'],
   ['sports',     '🏔 Pages sport'],
   ['pdf',        '📄 CV téléchargeable'],
+  ['share',      '🔗 Partage & favicon'],
   ['labels',     '🔤 Libellés de l\'interface'],
   ['advanced',   '🧰 Avancé (fichiers)'],
 ];
@@ -200,6 +200,37 @@ function uploadField(host, labelTxt, targetDir, onDone, accept) {
     const j = await r.json();
     if (j.ok) { onDone(rel); markDirty(); renderSection(); }
     else alert('Échec de l\'upload : ' + (j.error || ''));
+  };
+  host.append(inp);
+}
+
+// téléversement à NOM FIXE : recadre l'image en w×h (cover) via canvas, puis l'envoie toujours
+// sur le même chemin `rel` — le site pointe en dur dessus, aucun HTML à modifier.
+function fixedUpload(host, labelTxt, rel, w, h, fmt) {
+  host.append(el('label', {}, labelTxt));
+  const inp = el('input', { type: 'file', accept: 'image/*' });
+  inp.onchange = () => {
+    const f = inp.files[0];
+    if (!f) return;
+    const img = new Image();
+    img.onload = () => {
+      const cv = document.createElement('canvas');
+      cv.width = w; cv.height = h;
+      const ctx = cv.getContext('2d');
+      const sc = Math.max(w / img.width, h / img.height); // cover : remplit sans déformer
+      const dw = img.width * sc, dh = img.height * sc;
+      ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      cv.toBlob(async b => {
+        const r = await fetch('/api/upload?path=' + encodeURIComponent(rel), { method: 'POST', body: b });
+        const j = await r.json();
+        if (j.ok) {
+          const st = $('#save-state'); st.textContent = 'Image téléversée ✓ — publie pour la mettre en ligne'; st.className = 'ok';
+          renderSection();
+        } else alert('Échec de l\'upload : ' + (j.error || ''));
+      }, fmt === 'png' ? 'image/png' : 'image/jpeg', 0.9);
+      URL.revokeObjectURL(img.src);
+    };
+    img.src = URL.createObjectURL(f);
   };
   host.append(inp);
 }
@@ -352,12 +383,12 @@ languages(m) {
 },
 
 interests(m) {
-  m.append(el('h2', {}, 'Centres d\'intérêt'), el('div', { class: 'hint' }, '« Page liée » ouvre l\'album sport correspondant au clic.'));
+  m.append(el('h2', {}, 'Centres d\'intérêt'), el('div', { class: 'hint' }, '« Page liée » ouvre au clic soit un album sport (escalade, ski, alpinisme, trail, kitesurf), soit une URL externe (https://…).'));
   listEditor(m, C.interests, i => i.name.fr,
     (body, it) => {
       const r = el('div', { class: 'row' });
       r.append(el('div', {}, txtField('Emoji', it, 'icon')));
-      r.append(el('div', {}, selField('Page liée', it, 'page', SPORT_PAGES.map(p => [p, p || '(aucune)']))));
+      r.append(el('div', {}, txtField('Page liée (album sport ou https://…)', it, 'page', 'escalade / https://…')));
       body.append(r, mlField('Nom', it.name), mlField('Détail (petite ligne)', it.detail));
     },
     () => ({ icon: '✨', name: newML('Nouveau'), detail: newML(''), page: '' }),
@@ -382,13 +413,11 @@ sports(m) {
   for (const [key, s] of Object.entries(C.sports)) {
     const body = el('div');
     const r = el('div', { class: 'row' });
-    r.append(el('div', {}, txtField('Emoji', s, 'emoji')), el('div', {}, txtField('Titre', s, 'title')),
+    r.append(el('div', {}, txtField('Emoji', s, 'emoji')), el('div', {}, mlField('Titre', s.title)),
       el('div', {}, selField('Grille', s, 'grid', [['g1', '1 colonne'], ['g2', 'grandes photos'], ['g3', '2 colonnes'], ['g4', '2 colonnes + variées'], ['gmany', 'mosaïque']])));
     body.append(r);
-    body.append(el('label', {}, 'Pourquoi ce sport ?'));
-    body.append(el('textarea', { value: s.why, oninput: e => { s.why = e.target.value; markDirty(); } }));
-    body.append(el('label', {}, 'Ce que ça m\'a apporté'));
-    body.append(el('textarea', { value: s.gained, oninput: e => { s.gained = e.target.value; markDirty(); } }));
+    body.append(mlField('Pourquoi ce sport ?', s.why, { area: true }));
+    body.append(mlField('Ce que ça m\'a apporté', s.gained, { area: true }));
     body.append(el('label', {}, 'Photos'));
     const sub = el('div', { class: 'sub' });
     listEditor(sub, s.photos, p => p.full.split('/').pop(),
@@ -405,7 +434,7 @@ sports(m) {
     uploadField(up, 'Téléverser une nouvelle photo (ajoutée à la fin)', 'images/' + key,
       rel => { s.photos.push({ thumb: rel, full: rel, cls: '' }); });
     body.append(up);
-    m.append(el('div', { class: 'item' }, el('div', { class: 'item-head' }, el('span', { class: 't' }, s.emoji + ' ' + s.title + ' (' + key + '.html)')), body));
+    m.append(el('div', { class: 'item' }, el('div', { class: 'item-head' }, el('span', { class: 't' }, s.emoji + ' ' + ((s.title && s.title.fr) || key) + ' (' + key + '.html)')), body));
   }
 },
 
@@ -417,6 +446,21 @@ pdf(m) {
   uploadField(up, 'Remplacer par un nouveau PDF', '', rel => { C.pdf = rel; }, 'application/pdf');
   m.append(up);
   m.append(el('div', { class: 'hint', style: 'margin-top:10px' }, 'Astuce : garde le même nom de fichier pour remplacer sans changer les liens, ou téléverse sous un nouveau nom (le site pointera automatiquement dessus).'));
+},
+
+share(m) {
+  m.append(el('h2', {}, 'Partage & favicon'),
+    el('div', { class: 'hint' }, 'Le favicon (icône de l\'onglet du navigateur) et l\'image affichée quand le lien du CV est partagé (LinkedIn, WhatsApp, iMessage…). Les fichiers sont enregistrés sous un nom fixe — images/favicon.png et images/og-image.jpg — sur lequel le site pointe en dur : téléverse, puis publie, rien d\'autre à changer.'));
+  m.append(el('h2', { style: 'font-size:14px;margin-top:18px' }, 'Favicon (icône d\'onglet)'));
+  m.append(el('img', { src: '/images/favicon.png?' + Date.now(), class: 'imgprev', style: 'height:48px;width:48px;', onerror: "this.style.display='none'" }));
+  const favUp = el('div', {});
+  fixedUpload(favUp, 'Remplacer le favicon (image carrée conseillée — recadrée en 180×180)', 'images/favicon.png', 180, 180, 'png');
+  m.append(favUp);
+  m.append(el('h2', { style: 'font-size:14px;margin-top:22px' }, 'Image de partage (aperçu du lien)'));
+  m.append(el('img', { src: '/images/og-image.jpg?' + Date.now(), class: 'imgprev', style: 'height:130px;', onerror: "this.style.display='none'" }));
+  const ogUp = el('div', {});
+  fixedUpload(ogUp, 'Remplacer l\'image de partage (recadrée automatiquement en 1200×630)', 'images/og-image.jpg', 1200, 630, 'jpeg');
+  m.append(ogUp);
 },
 
 labels(m) {

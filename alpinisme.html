@@ -4,6 +4,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Alpinisme — Gauthier Bonhomme</title>
 <meta name="description" content="Album Alpinisme de Gauthier Bonhomme">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -29,6 +31,10 @@ body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);
       cursor:pointer;font-family:inherit;text-decoration:none;transition:background 0.2s,transform 0.2s;}
 .back:hover{background:rgba(96,165,250,0.2);transform:translateY(-1px);}
 .back svg{width:16px;height:16px;fill:currentColor;}
+.langs{display:flex;gap:3px;flex-shrink:0;}
+.langs button{background:none;border:1px solid transparent;color:var(--muted);font-family:'Syne',sans-serif;
+              font-size:11px;font-weight:700;letter-spacing:0.06em;padding:5px 8px;border-radius:7px;cursor:pointer;}
+.langs button.active,.langs button:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
 .content{max-width:880px;margin:0 auto;padding:0 0 60px;}
 .intro{max-width:720px;margin:28px auto 8px;padding:26px 28px;background:var(--surface);
        border:1px solid var(--border);border-radius:var(--radius);}
@@ -86,19 +92,20 @@ body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);
 <div class="bar">
   <a class="back" href="index.html" onclick="return goBackCV()">
     <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-    Retour au CV
+    <span class="back-label">Retour au CV</span>
   </a>
   <div class="bar-title" id="bar-title"></div>
+  <div class="langs" id="langs"></div>
 </div>
 <div class="content">
   
   <div class="intro" id="intro"></div>
-  <div class="section-title">Photos</div><div class="grid" id="gallery"></div>
+  <div class="section-title" id="photos-title">Photos</div><div class="grid" id="gallery"></div>
 </div>
 <div class="botbar">
   <a class="back" href="index.html" onclick="return goBackCV()">
     <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-    Retour au CV
+    <span class="back-label">Retour au CV</span>
   </a>
 </div>
 <div id="overlay" onclick="if(event.target===this)closeOverlay()">
@@ -116,25 +123,55 @@ function goBackCV(){
 }
 let cells = [];
 const SPORT = location.pathname.split('/').pop().replace('.html', '');
+// multilingue : même mécanique que projet.html (langue mémorisée dans localStorage)
+const LANGS = ['fr', 'en', 'de', 'it'];
+const L10N = {
+  back:   { fr: 'Retour au CV', en: 'Back to CV', de: 'Zurück zum CV', it: 'Torna al CV' },
+  why:    { fr: 'Pourquoi ce sport ?', en: 'Why this sport?', de: 'Warum dieser Sport?', it: 'Perché questo sport?' },
+  gained: { fr: 'Ce que ça m\'a apporté', en: 'What it taught me', de: 'Was es mir gebracht hat', it: 'Cosa mi ha dato' },
+  photos: { fr: 'Photos', en: 'Photos', de: 'Fotos', it: 'Foto' }
+};
+let LANG = (function () { try { return localStorage.getItem('cvLang') || 'fr'; } catch (e) { return 'fr'; } })();
+if (!LANGS.includes(LANG)) LANG = 'fr';
+const pick = o => (o && typeof o === 'object') ? (o[LANG] || o.fr || '') : (o || '');
+let SDATA = null;
 fetch('content.json').then(r => r.json()).then(c => {
-  const s = c.sports[SPORT];
-  if (!s) { console.error('sport inconnu dans content.json :', SPORT); return; }
-  document.title = s.title + ' — Gauthier Bonhomme';
-  document.getElementById('bar-title').innerHTML = '<span class="emo">' + s.emoji + '</span>' + s.title;
-  document.getElementById('intro').innerHTML =
-    '<h2 class="intro-h">Pourquoi ce sport ?</h2>' +
-    '<p class="intro-p">' + s.why + '</p>' +
-    '<h2 class="intro-h">Ce que ça m\'a apporté</h2>' +
-    '<p class="intro-p last">' + s.gained + '</p>';
+  SDATA = c.sports[SPORT];
+  if (!SDATA) { console.error('sport inconnu dans content.json :', SPORT); return; }
+  renderLangs();
+  renderTexts();
   const g = document.getElementById('gallery');
-  g.className = 'grid ' + (s.grid || 'g4');
-  g.innerHTML = s.photos.map((p, i) =>
+  g.className = 'grid ' + (SDATA.grid || 'g4');
+  g.innerHTML = SDATA.photos.map((p, i) =>
     '<div class="gc ' + (p.cls || '') + '" onclick="showOverlay(' + i + ')">' +
     '<img class="gc-thumb" src="' + p.thumb + '" loading="lazy">' +
     '<img class="gc-full" src="' + p.full + '" style="display:none" loading="lazy">' +
     '</div>').join('');
   cells = Array.from(document.querySelectorAll('.gc'));
 }).catch(e => console.error('Chargement de content.json impossible :', e));
+function renderLangs() {
+  const box = document.getElementById('langs'); box.innerHTML = '';
+  for (const l of LANGS) {
+    const b = document.createElement('button');
+    b.textContent = l.toUpperCase();
+    if (l === LANG) b.className = 'active';
+    b.onclick = () => { LANG = l; try { localStorage.setItem('cvLang', l); } catch (e) {} renderLangs(); renderTexts(); };
+    box.append(b);
+  }
+}
+function renderTexts() {
+  document.documentElement.lang = LANG;
+  const title = pick(SDATA.title);
+  document.title = title + ' — Gauthier Bonhomme';
+  document.getElementById('bar-title').innerHTML = '<span class="emo">' + SDATA.emoji + '</span>' + title;
+  document.getElementById('intro').innerHTML =
+    '<h2 class="intro-h">' + L10N.why[LANG] + '</h2>' +
+    '<p class="intro-p">' + pick(SDATA.why) + '</p>' +
+    '<h2 class="intro-h">' + L10N.gained[LANG] + '</h2>' +
+    '<p class="intro-p last">' + pick(SDATA.gained) + '</p>';
+  document.getElementById('photos-title').textContent = L10N.photos[LANG];
+  document.querySelectorAll('.back-label').forEach(s => { s.textContent = L10N.back[LANG]; });
+}
 let cur = 0;
 function showOverlay(i) {
   cur = i;

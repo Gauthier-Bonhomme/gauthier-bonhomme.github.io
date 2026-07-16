@@ -175,10 +175,10 @@
    "it": "Dopo la classe preparatoria PT al Lycée Mermoz (Montpellier), amo i progetti che vanno dal modello al campo: per una palestra ho realizzato una <strong>pipeline di videoanalisi in tempo reale</strong> (Frigate, InsightFace) e uno <strong>strumento geospaziale di scelta del sito</strong> (GymLocator) — entrambi commissionati e in produzione."
   },
   {
-   "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — J’aime passer du temps dehors et faire un efforts physiques en extérieur . Je suis titulaire du <strong>permis B et A</strong>.",
-   "en": "Outside my studies, I devote my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — I love being outdoors and pushing myself physically in the open air. I hold both <strong>car and motorcycle licences (B and A)</strong>.",
-   "de": "Neben dem Studium widme ich meine Zeit dem Ausdauer- und Bergsport — <strong>Ultra-Trail (+100 km), Alpinismus, Klettern (7B)</strong> — ich bin gern draußen und fordere mich körperlich im Freien. Ich besitze den <strong>Führerschein B und A</strong>.",
-   "it": "Al di fuori degli studi dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — amo stare all'aria aperta e impegnarmi fisicamente all'esterno. Ho la <strong>patente B e A</strong>."
+   "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — et je suis <strong>ceinture noire de judo</strong>. J'aime passer du temps dehors et fournir des efforts physiques en extérieur. Je suis titulaire des <strong>permis B et A</strong>.",
+   "en": "Outside my studies, I devote my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — and I hold a <strong>black belt in judo</strong>. I love being outdoors and pushing myself physically in the open air. I hold both <strong>car and motorcycle licences (B and A)</strong>.",
+   "de": "Neben dem Studium widme ich meine Zeit dem Ausdauer- und Bergsport — <strong>Ultra-Trail (+100 km), Alpinismus, Klettern (7B)</strong> — außerdem trage ich den <strong>schwarzen Gürtel im Judo</strong>. Ich bin gern draußen und fordere mich körperlich im Freien. Ich besitze die <strong>Führerscheine B und A</strong>.",
+   "it": "Al di fuori degli studi dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — e sono <strong>cintura nera di judo</strong>. Amo stare all'aria aperta e impegnarmi fisicamente all'esterno. Ho le <strong>patenti B e A</strong>."
   }
  ],
  "formations": [
@@ -199,7 +199,7 @@
    },
    "items": [
     {
-     "fr": "Formation généraliste mais accès sur l'industrie du futur / innovation ",
+     "fr": "Formation généraliste, axée sur l'industrie du futur et l'innovation",
      "en": "Generalist engineering programme focused on the industry of the future and innovation",
      "de": "Generalistisches Ingenieurstudium mit Ausrichtung auf die Industrie der Zukunft und Innovation",
      "it": "Formazione ingegneristica generalista orientata all'industria del futuro e all'innovazione"
@@ -384,15 +384,15 @@
   },
   {
    "date": "Juin — Août 2026",
-   "link": "https://www.royalcanin.com/fr/dogs/puppy/puppy-training-and-play?gclsrc=aw.ds&gad_source=1&gad_campaignid=22850546321&gbraid=0AAAABBeyDcrBFq9hjKnMnWBAKGUfm6rCb&gclid=CjwKCAjwx7LSBhB3EiwAjcodxPCapVTITeVwgfVzXV7KN9HEEIDYJWxsbPsZo84A6tchogicYz6PwhoCPhQQAvD_BwE",
+   "link": "https://www.royalcanin.com/fr",
    "title": {
-    "fr": "Royal Canin  — Stage",
+    "fr": "Royal Canin — Stage",
     "en": "Royal Canin — Internship",
     "de": "Royal Canin — Praktikum",
     "it": "Royal Canin — Tirocinio"
    },
    "subtitle": {
-    "fr": "Aimargues · stage d'été à l'usine ",
+    "fr": "Aimargues · Stage d'été à l'usine",
     "en": "Aimargues · summer internship at the factory",
     "de": "Aimargues · Sommerpraktikum im Werk",
     "it": "Aimargues · tirocinio estivo in fabbrica"
@@ -405,7 +405,7 @@
      "it": "Contributo al miglioramento del software di manutenzione esistente"
     },
     {
-     "fr": "A permis d’accompagner les équipes de maintenance.",
+     "fr": "Accompagnement des équipes de maintenance au quotidien.",
      "en": "Worked alongside and supported the maintenance teams",
      "de": "Begleitung und Unterstützung der Wartungsteams",
      "it": "Affiancamento e supporto alle squadre di manutenzione"
@@ -424,7 +424,7 @@
     "it": "GymLocator — Posizione ottimale"
    },
    "desc": {
-    "fr": "Logiciel commandé et rémunéré par une salle de sport — Il est actuellement utilisé pour déterminer le prochain site. La v2 calcule un modèle d'accessibilité E2SFCA ( Le même modèle que pour les déserts médicaux. ) sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
+    "fr": "Logiciel commandé et rémunéré par une salle de sport — Il est actuellement utilisé pour déterminer le prochain site. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
     "en": "Software commissioned and paid for by a gym — currently used to choose their next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo online.",
     "de": "Von einem Fitnessstudio in Auftrag gegebene und bezahlte Software — derzeit im Einsatz, um den nächsten Standort zu bestimmen. Version 2 berechnet ein E2SFCA-Erreichbarkeitsmodell (dasselbe Modell wie für medizinische Versorgungslücken) auf dem 1-km-INSEE-Raster und kreuzt die lokale Nachfrage mit 12 500 Studios (SIRENE, Data ES), um unterversorgte Gebiete zu kartieren. Live-Demo online.",
     "it": "Software commissionato e retribuito da una palestra — attualmente utilizzato per scegliere il prossimo sito. La v2 calcola un modello di accessibilità E2SFCA (lo stesso modello usato per i deserti sanitari) sulla griglia INSEE di 1 km e incrocia la domanda locale con 12 500 palestre (SIRENE, Data ES) per mappare le zone sotto-servite. Demo online."
@@ -453,41 +453,78 @@
    "wip": false
   },
   {
-   "img": "images/projets/trail100k.jpg",
+   "img": "images/projets/learnscroll.jpg",
    "title": {
-    "fr": "100 km — Défi ultra trail",
-    "en": "100 km — Ultra trail challenge",
-    "de": "100 km — Ultra-Trail-Herausforderung",
-    "it": "100 km — Sfida ultra trail"
+    "fr": "LearnScroll — le TikTok de l'apprentissage",
+    "en": "LearnScroll — the TikTok of learning",
+    "de": "LearnScroll — das TikTok des Lernens",
+    "it": "LearnScroll — il TikTok dell'apprendimento"
    },
    "desc": {
-    "fr": "Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif. Il a fallu m'entraîner chaque semaine avec assiduité, planifier ma progression et gérer l'effort sur la durée. Objectif atteint — course parfaitement déroulée.",
-    "en": "A goal built over several years: completing a 100 km race with 5,000 m of elevation gain. It took consistent weekly training, careful progression planning and managing effort over the long haul. Goal achieved — the race went perfectly.",
-    "de": "Ein über mehrere Jahre aufgebautes Ziel: einen Lauf über 100 km mit 5.000 Höhenmetern zu bewältigen. Das erforderte konsequentes wöchentliches Training, sorgfältige Planung der Steigerung und Kräfteeinteilung über die Distanz. Ziel erreicht — der Lauf verlief perfekt.",
-    "it": "Un obiettivo costruito in diversi anni: completare una gara di 100 km con 5.000 m di dislivello positivo. Ha richiesto un allenamento settimanale costante, una pianificazione attenta della progressione e la gestione dello sforzo sulla lunga distanza. Obiettivo raggiunto — gara andata alla perfezione."
+    "fr": "Application web que j'ai conçue et mise en ligne : un fil vertical de cartes de savoir générées par un pipeline IA à partir de sources réelles (flux RSS d'actualité scientifique et technique). 100 % statique, hébergée sur ce domaine — pensée pour apprendre quelque chose à chaque scroll.",
+    "en": "Web app I designed and shipped: a vertical feed of bite-size knowledge cards generated by an AI pipeline from real sources (science and tech RSS feeds). Fully static, hosted on this domain — built so every scroll teaches you something.",
+    "de": "Web-App, die ich entworfen und veröffentlicht habe: ein vertikaler Feed aus Wissenskarten, generiert von einer KI-Pipeline aus echten Quellen (Wissenschafts- und Technik-RSS-Feeds). Komplett statisch, auf dieser Domain gehostet — bei jedem Scroll lernt man etwas Neues.",
+    "it": "Web app che ho progettato e pubblicato: un feed verticale di schede di conoscenza generate da una pipeline IA da fonti reali (feed RSS di scienza e tecnologia). Completamente statica, ospitata su questo dominio — per imparare qualcosa a ogni scroll."
    },
    "tags": [
     {
-     "fr": "100 km · 5 000 m D+",
-     "en": "100 km · 5,000 m D+",
-     "de": "100 km · 5.000 m D+",
-     "it": "100 km · 5.000 m D+"
+     "fr": "IA générative",
+     "en": "Generative AI",
+     "de": "Generative KI",
+     "it": "IA generativa"
+    },
+    {
+     "fr": "Pipeline de données",
+     "en": "Data pipeline",
+     "de": "Daten-Pipeline",
+     "it": "Pipeline di dati"
+    },
+    {
+     "fr": "En ligne sur ce domaine",
+     "en": "Live on this domain",
+     "de": "Live auf dieser Domain",
+     "it": "Online su questo dominio"
+    }
+   ],
+   "link": "https://gauthierbonhomme.com/learnscroll/",
+   "wip": false
+  },
+  {
+   "img": "images/projets/trail100k.jpg",
+   "title": {
+    "fr": "Ultra trail — du 100 km à l'UTMB",
+    "en": "Ultra trail — from 100 km to the UTMB",
+    "de": "Ultra-Trail — vom 100-km-Lauf zum UTMB",
+    "it": "Ultra trail — dai 100 km all'UTMB"
+   },
+   "desc": {
+    "fr": "Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif — objectif atteint, course parfaitement déroulée. Cap désormais sur l'UTMB (170 km, 10 000 m D+) : je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.",
+    "en": "A goal built over several years: completing a 100 km race with 5,000 m of elevation gain — done, and the race went perfectly. Next up: the UTMB (170 km, 10,000 m D+). I train accordingly and am collecting the running stones needed to qualify.",
+    "de": "Ein über mehrere Jahre aufgebautes Ziel: einen Lauf über 100 km mit 5.000 Höhenmetern zu bewältigen — geschafft, der Lauf verlief perfekt. Jetzt im Visier: der UTMB (170 km, 10.000 hm). Ich trainiere entsprechend und sammle die nötigen Running Stones für die Qualifikation.",
+    "it": "Un obiettivo costruito in diversi anni: completare una gara di 100 km con 5.000 m di dislivello positivo — obiettivo raggiunto, gara perfetta. Ora punto all'UTMB (170 km, 10.000 m D+): mi alleno di conseguenza e raccolgo le running stones necessarie per qualificarmi."
+   },
+   "tags": [
+    {
+     "fr": "100 km · 5 000 m D+ ✓",
+     "en": "100 km · 5,000 m D+ ✓",
+     "de": "100 km · 5.000 m D+ ✓",
+     "it": "100 km · 5.000 m D+ ✓"
+    },
+    {
+     "fr": "Objectif UTMB · 170 km",
+     "en": "UTMB goal · 170 km",
+     "de": "Ziel UTMB · 170 km",
+     "it": "Obiettivo UTMB · 170 km"
     },
     {
      "fr": "Endurance",
      "en": "Endurance",
      "de": "Ausdauer",
      "it": "Resistenza"
-    },
-    {
-     "fr": "Discipline",
-     "en": "Discipline",
-     "de": "Disziplin",
-     "it": "Disciplina"
     }
    ],
    "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
-   "wip": false
+   "wip": true
   },
   {
    "img": "images/projets/esp32.jpg",
@@ -527,9 +564,9 @@
    "wip": false
   },
   {
-   "img": "images/projets/capture-d-cran-2026-07-15-103135.png",
+   "img": "images/projets/capture-d-cran-2026-07-15-103135.jpg",
    "title": {
-    "fr": "Projets divers et variés. ( mini portfolio )",
+    "fr": "Projets divers et variés — mini-portfolio",
     "en": "Assorted personal projects (mini portfolio)",
     "de": "Verschiedene kleine Projekte (Mini-Portfolio)",
     "it": "Progetti vari e assortiti (mini portfolio)"
@@ -561,7 +598,7 @@
      }
     },
     {
-     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.png",
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.jpg",
      "caption": {
       "fr": "Nous étions ici en train de fabriquer une jardinière ",
       "en": "Here we were building a planter box.",
@@ -606,7 +643,7 @@
      }
     },
     {
-     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.png",
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.jpg",
      "caption": {
       "fr": "J'ai eu à de nombreuses reprises l'occasion de réaliser de petits projets avec des cartes Arduino.",
       "en": "I have had many opportunities to build small projects with Arduino boards.",
@@ -627,7 +664,7 @@
    "slug": "projets-divers-et-varies"
   },
   {
-   "img": "images/projets/hallb.jpg.png",
+   "img": "images/projets/hallb-site.jpg",
    "title": {
     "fr": "Refonte du site Hall B",
     "en": "Hall B website revamp",
@@ -773,43 +810,6 @@
    ],
    "link": "",
    "wip": false
-  },
-  {
-   "img": "images/projets/utmb.jpg",
-   "title": {
-    "fr": "UTMB — Ultra-Trail du Mont-Blanc",
-    "en": "UTMB — Ultra-Trail du Mont-Blanc",
-    "de": "UTMB — Ultra-Trail du Mont-Blanc",
-    "it": "UTMB — Ultra-Trail du Mont-Blanc"
-   },
-   "desc": {
-    "fr": "Après les 100 km, je prépare actuellement l'UTMB : 170 km et 10 000 m de dénivelé positif. Je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.",
-    "en": "After the 100 km, I am currently preparing for the UTMB: 170 km and 10,000 m of elevation gain. I train accordingly and am collecting the running stones needed to qualify.",
-    "de": "Nach den 100 km bereite ich mich derzeit auf den UTMB vor: 170 km und 10.000 Höhenmeter. Ich trainiere entsprechend und sammle die nötigen Running Stones, um mich zu qualifizieren.",
-    "it": "Dopo i 100 km, sto attualmente preparando l'UTMB: 170 km e 10.000 m di dislivello positivo. Mi alleno di conseguenza e sto raccogliendo le running stones necessarie per qualificarmi."
-   },
-   "tags": [
-    {
-     "fr": "170 km · 10 000 m D+",
-     "en": "170 km · 10,000 m D+",
-     "de": "170 km · 10.000 m D+",
-     "it": "170 km · 10.000 m D+"
-    },
-    {
-     "fr": "Ultra trail",
-     "en": "Ultra trail",
-     "de": "Ultra-Trail",
-     "it": "Ultra trail"
-    },
-    {
-     "fr": "Running stones",
-     "en": "Running stones",
-     "de": "Running Stones",
-     "it": "Running stones"
-    }
-   ],
-   "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
-   "wip": true
   }
  ],
  "skills": [
@@ -1217,18 +1217,18 @@
   {
    "icon": "💻",
    "name": {
-    "fr": "Vibecoding & Open-source ",
+    "fr": "Vibecoding & Open-source",
     "en": "Vibecoding & open source",
     "de": "Vibecoding & Open Source",
     "it": "Vibecoding & open source"
    },
    "detail": {
-    "fr": "",
-    "en": "",
-    "de": "",
-    "it": ""
+    "fr": "GitHub ↗",
+    "en": "GitHub ↗",
+    "de": "GitHub ↗",
+    "it": "GitHub ↗"
    },
-   "page": ""
+   "page": "https://github.com/Gauthier-Bonhomme"
   }
  ],
  "contacts": [
@@ -1316,9 +1316,24 @@
  "sports": {
   "escalade": {
    "emoji": "🧗",
-   "title": "Escalade",
-   "why": "Avant tout pour l'effort physique en pleine nature, dehors. L'escalade est aussi un sport de partage : on grimpe à plusieurs, on s'assure et on se motive mutuellement. Chaque ascension est un défi .",
-   "gained": "Des souvenirs et le sens de la résolution de problèmes : lire une voie, persévérer sur un mouvement difficile et trouver la solution.",
+   "title": {
+    "fr": "Escalade",
+    "en": "Climbing",
+    "de": "Klettern",
+    "it": "Arrampicata"
+   },
+   "why": {
+    "fr": "Avant tout pour l'effort physique en pleine nature, dehors. L'escalade est aussi un sport de partage : on grimpe à plusieurs, on s'assure et on se motive mutuellement. Chaque ascension est un défi.",
+    "en": "Above all for the physical effort out in nature. Climbing is also a sport you share: you climb together, belay each other and keep each other motivated. Every ascent is a challenge.",
+    "de": "Vor allem wegen der körperlichen Anstrengung draußen in der Natur. Klettern ist auch ein Sport des Teilens: Man klettert gemeinsam, sichert sich gegenseitig und motiviert einander. Jede Begehung ist eine Herausforderung.",
+    "it": "Prima di tutto per lo sforzo fisico in piena natura, all'aperto. L'arrampicata è anche uno sport di condivisione: si scala insieme, ci si assicura e ci si motiva a vicenda. Ogni scalata è una sfida."
+   },
+   "gained": {
+    "fr": "Des souvenirs et le sens de la résolution de problèmes : lire une voie, persévérer sur un mouvement difficile et trouver la solution.",
+    "en": "Great memories and a real sense of problem-solving: reading a route, persevering on a hard move and finding the solution.",
+    "de": "Schöne Erinnerungen und einen Sinn fürs Problemlösen: eine Route lesen, an einem schwierigen Zug dranbleiben und die Lösung finden.",
+    "it": "Bei ricordi e il senso della risoluzione dei problemi: leggere una via, perseverare su un movimento difficile e trovare la soluzione."
+   },
    "grid": "g2",
    "photos": [
     {
@@ -1335,9 +1350,24 @@
   },
   "ski": {
    "emoji": "⛷️",
-   "title": "Ski",
-   "why": "Pour le plaisir d'un sport d'extérieur et la liberté qu'il procure : aller où l'on veut, comme on veut. J’adore cette sensation de liberté au milieu des montagnes.— en ski alpin comme en ski de randonnée.",
-   "gained": "Le sens de l'autonomie et de la gestion du risque , ainsi qu'une réelle capacité d'adaptation au terrain et aux conditions.",
+   "title": {
+    "fr": "Ski",
+    "en": "Skiing",
+    "de": "Ski",
+    "it": "Sci"
+   },
+   "why": {
+    "fr": "Pour le plaisir d'un sport d'extérieur et la liberté qu'il procure : aller où l'on veut, comme on veut — en ski alpin comme en ski de randonnée. J'adore cette sensation de liberté au milieu des montagnes.",
+    "en": "For the joy of an outdoor sport and the freedom it brings: going wherever you want, however you want — on alpine skis as well as on touring skis. I love that feeling of freedom in the middle of the mountains.",
+    "de": "Für die Freude an einem Outdoor-Sport und die Freiheit, die er schenkt: hingehen, wohin man will, wie man will — auf der Piste wie auf Skitour. Ich liebe dieses Gefühl von Freiheit mitten in den Bergen.",
+    "it": "Per il piacere di uno sport all'aria aperta e la libertà che dà: andare dove si vuole, come si vuole — sia in sci alpino sia in scialpinismo. Adoro questa sensazione di libertà in mezzo alle montagne."
+   },
+   "gained": {
+    "fr": "Le sens de l'autonomie et de la gestion du risque, ainsi qu'une réelle capacité d'adaptation au terrain et aux conditions.",
+    "en": "A sense of autonomy and risk management, along with a real ability to adapt to the terrain and the conditions.",
+    "de": "Selbstständigkeit und Risikomanagement sowie eine echte Fähigkeit, mich an Gelände und Bedingungen anzupassen.",
+    "it": "Il senso dell'autonomia e della gestione del rischio, oltre a una vera capacità di adattamento al terreno e alle condizioni."
+   },
    "grid": "g4",
    "photos": [
     {
@@ -1364,9 +1394,24 @@
   },
   "alpinisme": {
    "emoji": "🏔️",
-   "title": "Alpinisme",
-   "why": "L'alpinisme réunit tout ce que j'aime dans le ski et l'escalade : l'effort partagé à plusieurs, le grand air, l'immensité de la montagne, le défi sportif et la liberté.",
-   "gained": "La montagne m’a appris l’importance de la préparation, de la rigueur et de la persévérance. Savoir rester calme face aux imprévus et avancer étape par étape sont des qualités que j’utilise au quotidien.",
+   "title": {
+    "fr": "Alpinisme",
+    "en": "Mountaineering",
+    "de": "Alpinismus",
+    "it": "Alpinismo"
+   },
+   "why": {
+    "fr": "L'alpinisme réunit tout ce que j'aime dans le ski et l'escalade : l'effort partagé à plusieurs, le grand air, l'immensité de la montagne, le défi sportif et la liberté.",
+    "en": "Mountaineering brings together everything I love about skiing and climbing: shared effort, fresh air, the vastness of the mountains, the athletic challenge and the freedom.",
+    "de": "Der Alpinismus vereint alles, was ich am Skifahren und Klettern liebe: die gemeinsame Anstrengung, die frische Luft, die Weite der Berge, die sportliche Herausforderung und die Freiheit.",
+    "it": "L'alpinismo riunisce tutto ciò che amo dello sci e dell'arrampicata: lo sforzo condiviso, l'aria aperta, l'immensità della montagna, la sfida sportiva e la libertà."
+   },
+   "gained": {
+    "fr": "La montagne m'a appris l'importance de la préparation, de la rigueur et de la persévérance. Savoir rester calme face aux imprévus et avancer étape par étape sont des qualités que j'utilise au quotidien.",
+    "en": "The mountains taught me the importance of preparation, rigour and perseverance. Staying calm when things go wrong and moving forward step by step are qualities I use every day.",
+    "de": "Die Berge haben mich gelehrt, wie wichtig Vorbereitung, Sorgfalt und Ausdauer sind. Bei Unvorhergesehenem ruhig zu bleiben und Schritt für Schritt weiterzugehen sind Qualitäten, die ich täglich nutze.",
+    "it": "La montagna mi ha insegnato l'importanza della preparazione, del rigore e della perseveranza. Restare calmo di fronte agli imprevisti e avanzare passo dopo passo sono qualità che uso ogni giorno."
+   },
    "grid": "gmany",
    "photos": [
     {
@@ -1428,9 +1473,24 @@
   },
   "trail": {
    "emoji": "🏃",
-   "title": "Ultra Trail",
-   "why": "Encore une fois, le plaisir d'être dehors et de faire du sport — mais surtout le défi. Sur des ultra-trails de plus de 100 km, l'objectif est de me prouver que j'en suis capable et d'aller au bout de l'effort.",
-   "gained": "Que la volonté et l'organisation comptent souvent autant que l'entrainement : se fixer un objectif qui paraît déraisonnable, puis le préparer jusqu'à le rendre atteignable. ",
+   "title": {
+    "fr": "Ultra Trail",
+    "en": "Ultra Trail",
+    "de": "Ultra-Trail",
+    "it": "Ultra Trail"
+   },
+   "why": {
+    "fr": "Encore une fois, le plaisir d'être dehors et de faire du sport — mais surtout le défi. Sur des ultra-trails de plus de 100 km, l'objectif est de me prouver que j'en suis capable et d'aller au bout de l'effort.",
+    "en": "Once again, the pleasure of being outdoors and exercising — but above all the challenge. On ultra trails of more than 100 km, the goal is to prove to myself that I can do it and to see the effort through.",
+    "de": "Wieder einmal die Freude, draußen zu sein und Sport zu treiben — vor allem aber die Herausforderung. Bei Ultratrails über 100 km geht es darum, mir zu beweisen, dass ich es kann, und die Anstrengung bis zum Ende durchzustehen.",
+    "it": "Ancora una volta, il piacere di stare all'aperto e fare sport — ma soprattutto la sfida. Sugli ultra trail di oltre 100 km, l'obiettivo è dimostrare a me stesso che ne sono capace e arrivare in fondo allo sforzo."
+   },
+   "gained": {
+    "fr": "Que la volonté et l'organisation comptent souvent autant que l'entraînement : se fixer un objectif qui paraît déraisonnable, puis le préparer jusqu'à le rendre atteignable.",
+    "en": "That willpower and organisation often matter as much as training: set a goal that seems unreasonable, then prepare for it until it becomes achievable.",
+    "de": "Dass Wille und Organisation oft genauso zählen wie das Training: sich ein scheinbar unvernünftiges Ziel setzen und es dann so vorbereiten, dass es erreichbar wird.",
+    "it": "Che la volontà e l'organizzazione contano spesso quanto l'allenamento: fissarsi un obiettivo che sembra irragionevole e poi prepararlo fino a renderlo raggiungibile."
+   },
    "grid": "g4",
    "photos": [
     {
@@ -1457,9 +1517,24 @@
   },
   "kitesurf": {
    "emoji": "🪁",
-   "title": "Kite Surf",
-   "why": "La sensation de glisse est juste magnifique . C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et s'envoyer en l'air .",
-   "gained": "Des maux de dos majoritairement, mais aussi beaucoup de plaisir à dompter le vent et à progresser techniquement, le tout face à des paysages magnifiques et avec une incroyable sensation de liberté.",
+   "title": {
+    "fr": "Kite Surf",
+    "en": "Kitesurfing",
+    "de": "Kitesurfen",
+    "it": "Kitesurf"
+   },
+   "why": {
+    "fr": "La sensation de glisse est juste magnifique. C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et enchaîner les sauts.",
+    "en": "The feeling of gliding is just wonderful. It is also a powerful, technical sport, where you learn to master the wind to gain speed and link jumps together.",
+    "de": "Das Gleitgefühl ist einfach großartig. Es ist auch ein kraftvoller, technischer Sport, bei dem man lernt, den Wind zu beherrschen, um Geschwindigkeit aufzunehmen und Sprünge aneinanderzureihen.",
+    "it": "La sensazione di planata è semplicemente magnifica. È anche uno sport potente e tecnico, in cui si impara a padroneggiare il vento per prendere velocità e concatenare i salti."
+   },
+   "gained": {
+    "fr": "Des maux de dos majoritairement, mais aussi beaucoup de plaisir à dompter le vent et à progresser techniquement, le tout face à des paysages magnifiques et avec une incroyable sensation de liberté.",
+    "en": "Mostly back pain, but also a lot of fun taming the wind and improving technically, all in front of magnificent scenery and with an incredible feeling of freedom.",
+    "de": "Vor allem Rückenschmerzen, aber auch viel Freude daran, den Wind zu zähmen und technisch besser zu werden — vor herrlichen Landschaften und mit einem unglaublichen Freiheitsgefühl.",
+    "it": "Soprattutto mal di schiena, ma anche tanto piacere nel domare il vento e progredire tecnicamente, il tutto davanti a paesaggi magnifici e con un'incredibile sensazione di libertà."
+   },
    "grid": "g4",
    "photos": [
     {

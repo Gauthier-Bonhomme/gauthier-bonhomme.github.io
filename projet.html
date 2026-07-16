@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Projet — Gauthier Bonhomme</title>
 <meta name="description" content="Album photo d'un projet de Gauthier Bonhomme">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -116,6 +118,7 @@ function renderLangs() {
 }
 
 function render() {
+  document.documentElement.lang = LANG;
   document.getElementById('back-label').textContent = BACK[LANG] || BACK.fr;
   if (!PROJECT) {
     document.getElementById('bar-title').textContent = '';
