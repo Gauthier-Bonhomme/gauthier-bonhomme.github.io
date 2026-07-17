@@ -512,7 +512,9 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .metric b{font-size:8.5px;}
   .metric span{font-size:12px;}
 
-  /* cartes projets : image réduite + description limitée à 5 lignes pour tenir sur un écran */
+  /* cartes projets : image réduite + description limitée à 5 lignes pour tenir sur un écran.
+     flex-start = chaque carte garde sa propre hauteur : « Lire la suite » n'agrandit que la carte cliquée */
+  .projects-scroll{align-items:flex-start;}
   .projects-scroll > .skill-category > img{height:105px !important;}
   .projects-scroll .card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;}
   .projects-scroll .card-desc.expanded{display:block;-webkit-line-clamp:unset;overflow:visible;}
@@ -1045,13 +1047,13 @@ function runLoop(frame) {
   const canvas = document.getElementById('arm-hero');
   if (!stage || !canvas) return;
   const ctx = canvas.getContext('2d');
-  let L1 = 120, L2 = 95, S = 1;  // S = échelle (bras réduit sur téléphone)
+  let L1 = 150, L2 = 120, S = 1;  // S = échelle (bras réduit sur téléphone)
   let W = 0, H = 0;
   function resize() {
     const DPR = Math.min(2, window.devicePixelRatio || 1);
     W = stage.clientWidth; H = stage.clientHeight;
-    S = W < 700 ? 0.52 : 1;
-    L1 = 120 * S; L2 = 95 * S;
+    S = W < 700 ? 0.65 : 1;
+    L1 = 150 * S; L2 = 120 * S;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
