@@ -467,7 +467,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 .course-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;}
 .course-box{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
 #course-svg{display:block;width:100%;height:auto;}
-.cp-card{position:absolute;left:20px;bottom:16px;max-width:340px;background:rgba(17,24,39,0.92);border:1px solid var(--accent-border);border-radius:12px;padding:13px 17px;backdrop-filter:blur(6px);}
+/* carte d'étape : en haut à gauche, dans le vide du profil (le tracé monte vers la droite) */
+.cp-card{position:absolute;left:20px;top:16px;max-width:340px;background:rgba(17,24,39,0.92);border:1px solid var(--accent-border);border-radius:12px;padding:13px 17px;backdrop-filter:blur(6px);}
 .cp-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin:0 0 4px;}
 .cp-card p{font-size:12.5px;line-height:1.5;color:var(--text);}
 .scroll-cue{text-align:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-top:12px;transition:opacity .3s;}
@@ -495,7 +496,6 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 #pid-canvas{display:block;width:100%;height:100%;min-height:260px;}
 
 @media(max-width:768px){
-  #arm-hero{display:none;}
   .cp-card{position:static;max-width:none;margin:0;border-left:none;border-right:none;border-bottom:none;border-radius:0;}
 
   /* PID compact : le graphe passe AU-DESSUS des réglages et tout tient sur un écran */
@@ -515,7 +515,12 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   /* cartes projets : image réduite + description limitée à 5 lignes pour tenir sur un écran */
   .projects-scroll > .skill-category > img{height:105px !important;}
   .projects-scroll .card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;}
+  .projects-scroll .card-desc.expanded{display:block;-webkit-line-clamp:unset;overflow:visible;}
 }
+
+/* bouton « Lire la suite » des cartes projets (n'apparaît que si la description est tronquée) */
+.desc-more{display:inline-block;margin-top:6px;background:none;border:none;padding:0;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;letter-spacing:0.02em;}
+.desc-more:hover{text-decoration:underline;}
 
 </style>
 </head>
@@ -1040,18 +1045,20 @@ function runLoop(frame) {
   const canvas = document.getElementById('arm-hero');
   if (!stage || !canvas) return;
   const ctx = canvas.getContext('2d');
-  const L1 = 120, L2 = 95;
+  let L1 = 120, L2 = 95, S = 1;  // S = échelle (bras réduit sur téléphone)
   let W = 0, H = 0;
   function resize() {
     const DPR = Math.min(2, window.devicePixelRatio || 1);
     W = stage.clientWidth; H = stage.clientHeight;
+    S = W < 700 ? 0.52 : 1;
+    L1 = 120 * S; L2 = 95 * S;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
   resize(); window.addEventListener('resize', resize);
 
   let a1 = -2.2, a2 = 1.6, tx = null, ty = null, t = 0;
-  const base = () => ({ x: W * 0.78, y: H - 8 });
+  const base = () => ({ x: W * (S < 1 ? 0.88 : 0.78), y: H - 8 });
 
   // suivi souris : dès que le curseur est dans le hero
   document.addEventListener('pointermove', e => {
@@ -1077,13 +1084,13 @@ function runLoop(frame) {
   }
   function frame() {
     if (stage.clientWidth !== W || stage.clientHeight !== H) resize();
-    if (!W || !H || canvas.offsetParent === null) return; // masqué (mobile)
+    if (!W || !H) return;
     t += 0.016;
     const b = base();
     let px, py;
     if (tx !== null) { px = tx; py = ty; }
-    else if (!V2_REDUCED) { px = b.x - 120 + Math.sin(t * 0.5) * 85; py = H * 0.42 + Math.cos(t * 0.73) * 45; }
-    else { px = b.x - 140; py = H * 0.4; }
+    else if (!V2_REDUCED) { px = b.x - 120 * S + Math.sin(t * 0.5) * 85 * S; py = H * 0.42 + Math.cos(t * 0.73) * 45 * S; }
+    else { px = b.x - 140 * S; py = H * 0.4; }
     const [g1, g2] = solveIK(b.x, b.y, px, py);
     const k = 0.2;
     a1 += (g1 - a1) * k; a2 += (g2 - a2) * k;
@@ -1097,28 +1104,28 @@ function runLoop(frame) {
     ctx.setLineDash([]);
     // socle
     ctx.fillStyle = '#1e293b';
-    ctx.beginPath(); ctx.roundRect(b.x - 28, b.y - 5, 56, 10, 4); ctx.fill();
+    ctx.beginPath(); ctx.roundRect(b.x - 28 * S, b.y - 5 * S, 56 * S, 10 * S, 4 * S); ctx.fill();
     ctx.strokeStyle = 'rgba(255,255,255,0.10)'; ctx.stroke();
     // segments
-    capsule(b.x, b.y - 3, jx, jy, 13, '#243352');
-    capsule(b.x, b.y - 3, jx, jy, 8, '#31446e');
-    capsule(jx, jy, ex, ey, 10, '#2b3d63');
-    capsule(jx, jy, ex, ey, 6, '#3b5488');
+    capsule(b.x, b.y - 3 * S, jx, jy, 13 * S, '#243352');
+    capsule(b.x, b.y - 3 * S, jx, jy, 8 * S, '#31446e');
+    capsule(jx, jy, ex, ey, 10 * S, '#2b3d63');
+    capsule(jx, jy, ex, ey, 6 * S, '#3b5488');
     // articulations
-    for (const [cx2, cy2, r] of [[b.x, b.y - 3, 8], [jx, jy, 6.5]]) {
+    for (const [cx2, cy2, r] of [[b.x, b.y - 3 * S, 8 * S], [jx, jy, 6.5 * S]]) {
       ctx.fillStyle = '#0d1526'; ctx.beginPath(); ctx.arc(cx2, cy2, r, 0, 7); ctx.fill();
-      ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = 2; ctx.stroke();
-      ctx.fillStyle = '#60a5fa'; ctx.beginPath(); ctx.arc(cx2, cy2, 2, 0, 7); ctx.fill();
+      ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = Math.max(1.2, 2 * S); ctx.stroke();
+      ctx.fillStyle = '#60a5fa'; ctx.beginPath(); ctx.arc(cx2, cy2, 2 * S, 0, 7); ctx.fill();
     }
     // pince
     const ha = a1 + a2;
-    ctx.save(); ctx.translate(ex, ey); ctx.rotate(ha);
+    ctx.save(); ctx.translate(ex, ey); ctx.rotate(ha); ctx.scale(S, S);
     ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = 2.5; ctx.lineCap = 'round';
     ctx.beginPath(); ctx.moveTo(0, -5); ctx.quadraticCurveTo(10, -7, 13, -2); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(0, 5); ctx.quadraticCurveTo(10, 7, 13, 2); ctx.stroke();
     ctx.restore();
     ctx.fillStyle = 'rgba(96,165,250,0.12)';
-    ctx.beginPath(); ctx.arc(ex, ey, 13, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(ex, ey, 13 * S, 0, 7); ctx.fill();
     // réticule quand la souris est suivie
     if (tx !== null) {
       ctx.strokeStyle = 'rgba(52,211,153,0.7)'; ctx.lineWidth = 1.5;
@@ -1137,11 +1144,11 @@ function runLoop(frame) {
   const outer = document.getElementById('course-outer');
   if (!outer) return;
   const CPS = [
-    { at: 0.00, title: 'Bac → Classe prépa PT', desc: 'Lycée Mermoz, Montpellier. Trois ans de montée régulière : maths, physique, SI. On part au train, sans se griller.' },
-    { at: 0.30, title: 'Arts et Métiers (ENSAM)', desc: 'Aix-en-Provence, filière Mécatronique & Contrôle. Le rythme s\'accélère, le terrain devient technique.' },
-    { at: 0.55, title: 'Hall b — équipe fondatrice', desc: 'Lancement d\'une salle de sport de A à Z : GymLocator, vidéosurveillance, site web. Premier vrai sommet en conditions réelles.' },
-    { at: 0.78, title: 'Royal Canin — stage usine', desc: 'Aimargues, été 2026. Logiciel de maintenance, équipes terrain. Dernière portion roulante avant l\'ascension finale.' },
-    { at: 1.00, title: 'Stage de fin d\'études — début 2027', desc: 'Robotique, vision par ordinateur ou IA appliquée. La ligne d\'arrivée est ouverte : elle se franchit avec vous.' },
+    { at: 0.00, title: 'Bac → Classe prépa PT', desc: 'Lycée Mermoz, Montpellier. Trois ans de mathématiques, de physique et de sciences de l\'ingénieur pour construire des bases solides.' },
+    { at: 0.30, title: 'Arts et Métiers (ENSAM)', desc: 'Aix-en-Provence, filière Mécatronique & Contrôle. Robotique, automatique, conception : le cœur de ce que j\'aime faire.' },
+    { at: 0.55, title: 'Hall b — équipe fondatrice', desc: 'Lancement d\'une salle de sport de A à Z avec l\'équipe fondatrice : GymLocator, vidéosurveillance intelligente, site web.' },
+    { at: 0.78, title: 'Royal Canin — stage usine', desc: 'Aimargues, été 2026. Amélioration du logiciel de maintenance de l\'usine, aux côtés des équipes de terrain.' },
+    { at: 1.00, title: 'Stage de fin d\'études — début 2027', desc: 'Robotique, vision par ordinateur ou IA appliquée — 6 mois, disponible dès début 2027. Et si c\'était chez vous ?' },
   ];
   const pathD = 'M 20 330 C 90 320, 130 285, 185 268 C 240 250, 265 290, 320 272 C 380 252, 400 200, 455 185 C 505 172, 520 230, 575 215 C 635 198, 655 140, 710 128 C 760 117, 775 170, 830 150 C 895 126, 930 92, 975 62';
   const main = document.getElementById('course-path');
@@ -1177,6 +1184,7 @@ function runLoop(frame) {
   });
   const runner = document.getElementById('runner');
   const robot = document.getElementById('robot');
+  const svgEl = document.getElementById('course-svg');
   const card = { t: document.getElementById('cp-title'), d: document.getElementById('cp-desc') };
   let currentCp = -1;
   function setCp(i) {
@@ -1195,8 +1203,10 @@ function runLoop(frame) {
     const p2 = main.getPointAtLength(Math.min(LEN, at + 3));
     const p1 = main.getPointAtLength(Math.max(0, at - 3));
     const angle = Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;
+    // agrandit le robot quand le SVG est affiché petit (téléphone), pour qu'il reste bien visible
+    const rs = Math.max(1, Math.min(2, 700 / (svgEl.clientWidth || 700)));
     runner.setAttribute('transform', 'translate(' + p.x + ',' + p.y + ')');
-    robot.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ')');
+    robot.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ') scale(' + rs.toFixed(2) + ')');
     done.style.strokeDashoffset = LEN - at;
     let idx = 0;
     CPS.forEach((cp, i) => {
@@ -1319,6 +1329,40 @@ function runLoop(frame) {
   // le canvas peut avoir une largeur nulle au premier passage : re-tente jusqu'à réussite
   update();
   const retry = setInterval(() => { if (box.clientWidth) { update(); clearInterval(retry); } }, 200);
+})();
+
+/* ───── CARTES PROJETS (mobile) : bouton « Lire la suite » quand la description est tronquée ───── */
+(() => {
+  function addSuiteButtons() {
+    document.querySelectorAll('#projects-scroll .card-desc').forEach(desc => {
+      const next = desc.nextElementSibling;
+      const btn = next && next.classList && next.classList.contains('desc-more') ? next : null;
+      const clipped = desc.scrollHeight > desc.clientHeight + 2;
+      if ((clipped || desc.classList.contains('expanded')) && !btn) {
+        const b = document.createElement('button');
+        b.className = 'desc-more';
+        b.textContent = 'Lire la suite ▾';
+        b.onclick = e => {
+          e.stopPropagation(); // la carte est cliquable : ne pas ouvrir le projet
+          const open = desc.classList.toggle('expanded');
+          b.textContent = open ? 'Réduire ▴' : 'Lire la suite ▾';
+        };
+        desc.after(b);
+      } else if (!clipped && !desc.classList.contains('expanded') && btn) {
+        btn.remove();
+      }
+    });
+  }
+  // renderProjects (script principal) reconstruit les cartes à chaque changement de langue :
+  // on l'enveloppe pour ré-ajouter les boutons après chaque rendu.
+  if (typeof window.renderProjects === 'function') {
+    const orig = window.renderProjects;
+    window.renderProjects = function () { orig(); setTimeout(addSuiteButtons, 30); };
+  }
+  // réconciliation périodique : couvre le premier rendu (fetch asynchrone), les rotations
+  // d'écran et les environnements où l'évènement resize ne se déclenche pas. Idempotent et léger.
+  setInterval(addSuiteButtons, 700);
+  setTimeout(addSuiteButtons, 300);
 })();
 })();
 </script>
