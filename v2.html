@@ -459,18 +459,16 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 /* bras robot du hero (desktop uniquement) */
 .hero{position:relative;}
-#arm-hero{position:absolute;inset:0;z-index:0;pointer-events:none;}
+#arm-hero{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;}
 .hero-text,.hero-photo{position:relative;z-index:1;}
 
 /* section Parcours — profil de course lié au défilement */
 #parcours .course-outer{height:200vh;position:relative;}
-.course-sticky{position:sticky;top:64px;height:calc(100vh - 80px);display:flex;flex-direction:column;justify-content:center;}
+.course-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;}
 .course-box{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
 #course-svg{display:block;width:100%;height:auto;}
-.course-hint{position:absolute;top:12px;right:14px;z-index:4;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(10,15,30,0.75);border:1px solid var(--accent-border);border-radius:999px;padding:5px 12px;pointer-events:none;}
 .cp-card{position:absolute;left:20px;bottom:16px;max-width:340px;background:rgba(17,24,39,0.92);border:1px solid var(--accent-border);border-radius:12px;padding:13px 17px;backdrop-filter:blur(6px);}
-.cp-card .km{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.08em;}
-.cp-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin:2px 0 4px;}
+.cp-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin:0 0 4px;}
 .cp-card p{font-size:12.5px;line-height:1.5;color:var(--text);}
 .scroll-cue{text-align:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-top:12px;transition:opacity .3s;}
 
@@ -498,10 +496,25 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 
 @media(max-width:768px){
   #arm-hero{display:none;}
-  .course-sticky{top:104px;height:auto;justify-content:flex-start;}
   .cp-card{position:static;max-width:none;margin:0;border-left:none;border-right:none;border-bottom:none;border-radius:0;}
-  .pid-grid{grid-template-columns:1fr;}
-  .pid-panel{border-right:none;border-bottom:1px solid var(--border);}
+
+  /* PID compact : le graphe passe AU-DESSUS des réglages et tout tient sur un écran */
+  .pid-grid{grid-template-columns:1fr;min-height:0;}
+  .pid-grid > div:last-child{order:-1;}
+  #pid-canvas{min-height:170px;}
+  .pid-panel{border-right:none;border-top:1px solid var(--border);padding:12px 14px 14px;gap:9px;}
+  .pid-head{padding:13px 14px 2px;}
+  .pid-head small{font-size:11.5px;}
+  .slider-row label{font-size:11.5px;margin-bottom:2px;}
+  .pid-panel input[type=range]{height:18px;}
+  .preset{font-size:10.5px;padding:4px 10px;}
+  .metric{padding:5px 9px;}
+  .metric b{font-size:8.5px;}
+  .metric span{font-size:12px;}
+
+  /* cartes projets : image réduite + description limitée à 5 lignes pour tenir sur un écran */
+  .projects-scroll > .skill-category > img{height:105px !important;}
+  .projects-scroll .card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;}
 }
 
 </style>
@@ -571,11 +584,10 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   </section>
 
   <section id="parcours">
-    <div class="section-label">Le parcours — façon ultra-trail</div>
+    <div class="section-label">Le parcours</div>
     <div class="course-outer" id="course-outer">
       <div class="course-sticky">
         <div class="course-box">
-          <div class="course-hint">Continue de défiler</div>
           <svg id="course-svg" viewBox="0 0 1000 380" role="img" aria-label="Parcours de Gauthier présenté comme un profil de course de montagne">
             <defs>
               <linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1">
@@ -588,18 +600,24 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
             <path id="course-path" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"></path>
             <path id="course-done" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linejoin="round"></path>
             <g id="checkpoints"></g>
+            <!-- petit robot qui grimpe la pente (incliné selon la pente par le script) -->
             <g id="runner">
-              <circle r="14" fill="rgba(52,211,153,0.18)"></circle>
-              <circle r="6" fill="#34d399"></circle>
+              <g id="robot">
+                <line x1="0" y1="-14" x2="0" y2="-21" stroke="#34d399" stroke-width="1.5"/>
+                <circle id="robot-light" cx="0" cy="-23" r="2.2" fill="#fbbf24"/>
+                <rect x="-10" y="-15" width="20" height="10" rx="3" fill="#34d399"/>
+                <rect x="3" y="-12.6" width="4.5" height="5.2" rx="1.2" fill="#0a0f1e"/>
+                <circle cx="-6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+                <circle cx="6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+              </g>
             </g>
           </svg>
           <div class="cp-card">
-            <div class="km" id="cp-km">KM 0</div>
             <h3 id="cp-title">Départ</h3>
             <p id="cp-desc">…</p>
           </div>
         </div>
-        <div class="scroll-cue" id="course-cue">▼ le coureur avance avec toi ▼</div>
+        <div class="scroll-cue" id="course-cue">▼ le robot grimpe avec toi ▼</div>
       </div>
     </div>
   </section>
@@ -1067,7 +1085,7 @@ function runLoop(frame) {
     else if (!V2_REDUCED) { px = b.x - 120 + Math.sin(t * 0.5) * 85; py = H * 0.42 + Math.cos(t * 0.73) * 45; }
     else { px = b.x - 140; py = H * 0.4; }
     const [g1, g2] = solveIK(b.x, b.y, px, py);
-    const k = 0.14;
+    const k = 0.2;
     a1 += (g1 - a1) * k; a2 += (g2 - a2) * k;
     const jx = b.x + L1 * Math.cos(a1), jy = b.y + L1 * Math.sin(a1);
     const ex = jx + L2 * Math.cos(a1 + a2), ey = jy + L2 * Math.sin(a1 + a2);
@@ -1119,11 +1137,11 @@ function runLoop(frame) {
   const outer = document.getElementById('course-outer');
   if (!outer) return;
   const CPS = [
-    { at: 0.00, km: 'KM 0 — DÉPART', title: 'Bac → Classe prépa PT', desc: 'Lycée Mermoz, Montpellier. Trois ans de montée régulière : maths, physique, SI. On part au train, sans se griller.' },
-    { at: 0.30, km: 'KM 30 — RAVITO 1', title: 'Arts et Métiers (ENSAM)', desc: 'Aix-en-Provence, filière Mécatronique & Contrôle. Le rythme s\'accélère, le terrain devient technique.' },
-    { at: 0.55, km: 'KM 55 — RAVITO 2', title: 'Hall b — équipe fondatrice', desc: 'Lancement d\'une salle de sport de A à Z : GymLocator, vidéosurveillance, site web. Premier vrai sommet en conditions réelles.' },
-    { at: 0.78, km: 'KM 78 — RAVITO 3', title: 'Royal Canin — stage usine', desc: 'Aimargues, été 2026. Logiciel de maintenance, équipes terrain. Dernière portion roulante avant l\'ascension finale.' },
-    { at: 1.00, km: 'KM 100 — ARRIVÉE', title: 'Stage de fin d\'études — début 2027', desc: 'Robotique, vision par ordinateur ou IA appliquée. La ligne d\'arrivée est ouverte : elle se franchit avec vous.' },
+    { at: 0.00, title: 'Bac → Classe prépa PT', desc: 'Lycée Mermoz, Montpellier. Trois ans de montée régulière : maths, physique, SI. On part au train, sans se griller.' },
+    { at: 0.30, title: 'Arts et Métiers (ENSAM)', desc: 'Aix-en-Provence, filière Mécatronique & Contrôle. Le rythme s\'accélère, le terrain devient technique.' },
+    { at: 0.55, title: 'Hall b — équipe fondatrice', desc: 'Lancement d\'une salle de sport de A à Z : GymLocator, vidéosurveillance, site web. Premier vrai sommet en conditions réelles.' },
+    { at: 0.78, title: 'Royal Canin — stage usine', desc: 'Aimargues, été 2026. Logiciel de maintenance, équipes terrain. Dernière portion roulante avant l\'ascension finale.' },
+    { at: 1.00, title: 'Stage de fin d\'études — début 2027', desc: 'Robotique, vision par ordinateur ou IA appliquée. La ligne d\'arrivée est ouverte : elle se franchit avec vous.' },
   ];
   const pathD = 'M 20 330 C 90 320, 130 285, 185 268 C 240 250, 265 290, 320 272 C 380 252, 400 200, 455 185 C 505 172, 520 230, 575 215 C 635 198, 655 140, 710 128 C 760 117, 775 170, 830 150 C 895 126, 930 92, 975 62';
   const main = document.getElementById('course-path');
@@ -1158,13 +1176,14 @@ function runLoop(frame) {
     return { c };
   });
   const runner = document.getElementById('runner');
-  const card = { km: document.getElementById('cp-km'), t: document.getElementById('cp-title'), d: document.getElementById('cp-desc') };
+  const robot = document.getElementById('robot');
+  const card = { t: document.getElementById('cp-title'), d: document.getElementById('cp-desc') };
   let currentCp = -1;
   function setCp(i) {
     if (i === currentCp) return;
     currentCp = i;
     const cp = CPS[i];
-    card.km.textContent = cp.km; card.t.textContent = cp.title; card.d.textContent = cp.desc;
+    card.t.textContent = cp.title; card.d.textContent = cp.desc;
   }
   function onScroll() {
     const r = outer.getBoundingClientRect();
@@ -1172,7 +1191,12 @@ function runLoop(frame) {
     const prog = Math.max(0, Math.min(1, -r.top / total));
     const at = prog * LEN;
     const p = main.getPointAtLength(at);
+    // incline le robot selon la pente locale du profil
+    const p2 = main.getPointAtLength(Math.min(LEN, at + 3));
+    const p1 = main.getPointAtLength(Math.max(0, at - 3));
+    const angle = Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;
     runner.setAttribute('transform', 'translate(' + p.x + ',' + p.y + ')');
+    robot.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ')');
     done.style.strokeDashoffset = LEN - at;
     let idx = 0;
     CPS.forEach((cp, i) => {
@@ -1234,7 +1258,7 @@ function runLoop(frame) {
   }
   function draw(pts) {
     const DPR = Math.min(2, window.devicePixelRatio || 1);
-    const W = box.clientWidth, H = Math.max(260, box.clientHeight);
+    const W = box.clientWidth, H = Math.max(170, box.clientHeight); // 170 = hauteur compacte mobile
     if (!W) return;
     cv.width = W * DPR; cv.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
