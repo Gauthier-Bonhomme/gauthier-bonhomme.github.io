@@ -4,7 +4,7 @@
  "features": {
   "arm": {
    "enabled": true,
-   "size": 100
+   "size": 150
   },
   "parcours": {
    "enabled": true,
@@ -15,7 +15,7 @@
     "it": "Il percorso"
    },
    "cue": {
-    "fr": "▼ le robot grimpe avec toi ▼",
+    "fr": "▼ le robot avance ▼",
     "en": "▼ the robot climbs as you scroll ▼",
     "de": "▼ der Roboter klettert beim Scrollen ▼",
     "it": "▼ il robot sale mentre scorri ▼"
@@ -102,7 +102,7 @@
     "it": "Demo interattiva — sintesi PID"
    },
    "desc": {
-    "fr": "Un vrai correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
+    "fr": "Un correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
     "en": "A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.",
     "de": "Ein echter PID-Regler an einem simulierten Masse-Feder-System: stellen Sie Kp, Ki, Kd ein und beobachten Sie die Antwort. Probieren Sie die Voreinstellungen.",
     "it": "Un vero regolatore PID su un sistema massa-molla simulato: regolate Kp, Ki, Kd e osservate la risposta. Provate i preset."
