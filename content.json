@@ -1,6 +1,114 @@
 {
  "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché.",
  "pdf": "Gauthier_Bonhomme_CV.pdf",
+ "features": {
+  "arm": {
+   "enabled": true,
+   "size": 100
+  },
+  "parcours": {
+   "enabled": true,
+   "title": {
+    "fr": "Le parcours",
+    "en": "The journey",
+    "de": "Der Werdegang",
+    "it": "Il percorso"
+   },
+   "cue": {
+    "fr": "▼ le robot grimpe avec toi ▼",
+    "en": "▼ the robot climbs as you scroll ▼",
+    "de": "▼ der Roboter klettert beim Scrollen ▼",
+    "it": "▼ il robot sale mentre scorri ▼"
+   },
+   "steps": [
+    {
+     "title": {
+      "fr": "Bac → Classe prépa PT",
+      "en": "Baccalauréat → PT preparatory class",
+      "de": "Abitur → Vorbereitungsklasse PT",
+      "it": "Maturità → Classe preparatoria PT"
+     },
+     "desc": {
+      "fr": "Lycée Mermoz, Montpellier. Trois ans de mathématiques, de physique et de sciences de l'ingénieur pour construire des bases solides.",
+      "en": "Lycée Mermoz, Montpellier. Three years of mathematics, physics and engineering science to build solid foundations.",
+      "de": "Lycée Mermoz, Montpellier. Drei Jahre Mathematik, Physik und Ingenieurwissenschaften für ein solides Fundament.",
+      "it": "Liceo Mermoz, Montpellier. Tre anni di matematica, fisica e scienze dell'ingegneria per costruire basi solide."
+     }
+    },
+    {
+     "title": {
+      "fr": "Arts et Métiers (ENSAM)",
+      "en": "Arts et Métiers (ENSAM)",
+      "de": "Arts et Métiers (ENSAM)",
+      "it": "Arts et Métiers (ENSAM)"
+     },
+     "desc": {
+      "fr": "Aix-en-Provence, filière Mécatronique & Contrôle. Robotique, automatique, conception : le cœur de ce que j'aime faire.",
+      "en": "Aix-en-Provence, Mechatronics & Control track. Robotics, control engineering, design: the heart of what I love doing.",
+      "de": "Aix-en-Provence, Vertiefung Mechatronik & Regelungstechnik. Robotik, Automatisierung, Konstruktion: der Kern dessen, was ich gerne tue.",
+      "it": "Aix-en-Provence, indirizzo Meccatronica & Controllo. Robotica, automazione, progettazione: il cuore di ciò che amo fare."
+     }
+    },
+    {
+     "title": {
+      "fr": "Hall b — équipe fondatrice",
+      "en": "Hall b — founding team",
+      "de": "Hall b — Gründungsteam",
+      "it": "Hall b — team fondatore"
+     },
+     "desc": {
+      "fr": "Lancement d'une salle de sport de A à Z avec l'équipe fondatrice : GymLocator, vidéosurveillance intelligente, site web.",
+      "en": "Launching a gym from scratch with the founding team: GymLocator, smart video-surveillance, website.",
+      "de": "Aufbau eines Fitnessstudios von Grund auf mit dem Gründungsteam: GymLocator, intelligente Videoüberwachung, Website.",
+      "it": "Lancio di una palestra da zero con il team fondatore: GymLocator, videosorveglianza intelligente, sito web."
+     }
+    },
+    {
+     "title": {
+      "fr": "Royal Canin — stage usine",
+      "en": "Royal Canin — factory internship",
+      "de": "Royal Canin — Werkspraktikum",
+      "it": "Royal Canin — tirocinio in fabbrica"
+     },
+     "desc": {
+      "fr": "Aimargues, été 2026. Amélioration du logiciel de maintenance de l'usine, aux côtés des équipes de terrain.",
+      "en": "Aimargues, summer 2026. Improving the factory's maintenance software, alongside the field teams.",
+      "de": "Aimargues, Sommer 2026. Verbesserung der Wartungssoftware des Werks, gemeinsam mit den Teams vor Ort.",
+      "it": "Aimargues, estate 2026. Miglioramento del software di manutenzione dello stabilimento, al fianco delle squadre sul campo."
+     }
+    },
+    {
+     "title": {
+      "fr": "Stage de fin d'études — début 2027",
+      "en": "End-of-studies internship — early 2027",
+      "de": "Abschlusspraktikum — Anfang 2027",
+      "it": "Stage di fine studi — inizio 2027"
+     },
+     "desc": {
+      "fr": "Robotique, vision par ordinateur ou IA appliquée — 6 mois, disponible dès début 2027. Et si c'était chez vous ?",
+      "en": "Robotics, computer vision or applied AI — 6 months, available from early 2027. Why not with you?",
+      "de": "Robotik, Computer Vision oder angewandte KI — 6 Monate, verfügbar ab Anfang 2027. Warum nicht bei Ihnen?",
+      "it": "Robotica, visione artificiale o IA applicata — 6 mesi, disponibile da inizio 2027. Perché non da voi?"
+     }
+    }
+   ]
+  },
+  "pid": {
+   "enabled": true,
+   "title": {
+    "fr": "Démo interactive — synthèse PID",
+    "en": "Interactive demo — PID tuning",
+    "de": "Interaktive Demo — PID-Auslegung",
+    "it": "Demo interattiva — sintesi PID"
+   },
+   "desc": {
+    "fr": "Un vrai correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
+    "en": "A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.",
+    "de": "Ein echter PID-Regler an einem simulierten Masse-Feder-System: stellen Sie Kp, Ki, Kd ein und beobachten Sie die Antwort. Probieren Sie die Voreinstellungen.",
+    "it": "Un vero regolatore PID su un sistema massa-molla simulato: regolate Kp, Ki, Kd e osservate la risposta. Provate i preset."
+   }
+  }
+ },
  "labels": {
   "pageTitle": {
    "fr": "Gauthier Bonhomme — Ingénieur",

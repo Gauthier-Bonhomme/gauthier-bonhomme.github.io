@@ -452,6 +452,69 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .card-title{font-size:15px;}
 }
 
+/* ═══ EFFETS INTERACTIFS (bras robot · parcours · PID) — pilotés par content.json > features ═══ */
+.hero{position:relative;}
+#arm-hero{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;}
+.hero-text,.hero-photo{position:relative;z-index:1;}
+
+/* section Parcours — profil de course lié au défilement */
+#parcours .course-outer{height:200vh;position:relative;}
+.course-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;}
+.course-box{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+#course-svg{display:block;width:100%;height:auto;}
+.cp-card{position:absolute;left:20px;top:16px;max-width:340px;background:rgba(17,24,39,0.92);border:1px solid var(--accent-border);border-radius:12px;padding:13px 17px;backdrop-filter:blur(6px);}
+.cp-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin:0 0 4px;}
+.cp-card p{font-size:12.5px;line-height:1.5;color:var(--text);}
+.scroll-cue{text-align:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-top:12px;transition:opacity .3s;}
+
+/* playground PID (section Compétences) */
+.pid-card{margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color 0.2s;}
+.pid-card:hover{border-color:var(--accent-border);}
+.pid-head{padding:16px 22px 4px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
+.pid-head small{display:block;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text);margin-top:4px;line-height:1.5;}
+.pid-grid{display:grid;grid-template-columns:280px 1fr;min-height:320px;}
+.pid-panel{padding:16px 22px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:13px;}
+.slider-row label{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--heading);margin-bottom:5px;}
+.slider-row label output{color:var(--accent);}
+.pid-panel input[type=range]{width:100%;accent-color:var(--accent);height:20px;cursor:pointer;}
+.pid-panel input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+.presets{display:flex;gap:7px;flex-wrap:wrap;}
+.preset{font-family:'Syne',sans-serif;font-size:11.5px;font-weight:600;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border);border-radius:999px;padding:5px 13px;cursor:pointer;transition:background .2s;}
+.preset:hover{background:rgba(96,165,250,0.22);}
+.pid-metrics{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto;}
+.metric{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:7px 11px;}
+.metric b{display:block;font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.metric span{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--heading);font-variant-numeric:tabular-nums;}
+.metric span.bad{color:#f87171;}
+.metric span.good{color:var(--green);}
+#pid-canvas{display:block;width:100%;height:100%;min-height:260px;}
+.desc-more{display:inline-block;margin-top:6px;background:none;border:none;padding:0;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;letter-spacing:0.02em;}
+.desc-more:hover{text-decoration:underline;}
+
+@media(max-width:768px){
+  #arm-hero{display:none;} /* pas de bras robot sur téléphone */
+  .cp-card{position:static;max-width:none;margin:0;border-left:none;border-right:none;border-bottom:none;border-radius:0;}
+  /* PID compact : le graphe passe AU-DESSUS des réglages et tout tient sur un écran */
+  .pid-grid{grid-template-columns:1fr;min-height:0;}
+  .pid-grid > div:last-child{order:-1;}
+  #pid-canvas{min-height:170px;}
+  .pid-panel{border-right:none;border-top:1px solid var(--border);padding:12px 14px 14px;gap:9px;}
+  .pid-head{padding:13px 14px 2px;}
+  .pid-head small{font-size:11.5px;}
+  .slider-row label{font-size:11.5px;margin-bottom:2px;}
+  .pid-panel input[type=range]{height:18px;}
+  .preset{font-size:10.5px;padding:4px 10px;}
+  .metric{padding:5px 9px;}
+  .metric b{font-size:8.5px;}
+  .metric span{font-size:12px;}
+  /* cartes projets : image réduite + description limitée à 5 lignes (bouton « Lire la suite »).
+     flex-start = chaque carte garde sa propre hauteur : déplier une carte ne touche pas les voisines */
+  .projects-scroll{align-items:flex-start;}
+  .projects-scroll > .skill-category > img{height:105px !important;}
+  .projects-scroll .card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;}
+  .projects-scroll .card-desc.expanded{display:block;-webkit-line-clamp:unset;overflow:visible;}
+}
+
 </style>
 </head>
 <body>
@@ -461,6 +524,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   <a class="brand" href="#top">Gauthier <span>Bonhomme</span></a>
   <nav class="topnav" id="main-nav">
     <a href="#about" class="active" data-i18n="nav-about">À propos</a>
+    <a href="#parcours" id="nav-parcours-link" style="display:none">Parcours</a>
     <a href="#formation" data-i18n="nav-formation">Formation</a>
     <a href="#experiences" data-i18n="nav-exp">Expériences</a>
     <a href="#projets" data-i18n="nav-projets">Projets</a>
@@ -483,6 +547,7 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   <div class="pano" id="pano" style="display:none" aria-hidden="true"><div class="pano-track" id="pano-track"></div></div>
 
   <section class="hero" id="top">
+   <canvas id="arm-hero" aria-hidden="true" style="display:none"></canvas>
    <div class="hero-text">
     <div class="hero-badge" data-i18n="seeking">Stage de fin d'études — dès début 2027</div>
     <h1 class="name">Gauthier <span>Bonhomme</span></h1>
@@ -514,6 +579,44 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
     <div class="about-text"></div>
   </section>
 
+  <section id="parcours">
+    <div class="section-label" id="parcours-label">Le parcours</div>
+    <div class="course-outer" id="course-outer">
+      <div class="course-sticky">
+        <div class="course-box">
+          <svg id="course-svg" viewBox="0 0 1000 380" role="img" aria-label="Parcours de Gauthier présenté comme un profil de course de montagne">
+            <defs>
+              <linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(96,165,250,0.30)"/>
+                <stop offset="1" stop-color="rgba(96,165,250,0.02)"/>
+              </linearGradient>
+            </defs>
+            <g id="gridlines"></g>
+            <path id="course-fill" fill="url(#fillg)" stroke="none"></path>
+            <path id="course-path" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"></path>
+            <path id="course-done" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linejoin="round"></path>
+            <g id="checkpoints"></g>
+            <g id="runner">
+              <g id="robot">
+                <line x1="0" y1="-14" x2="0" y2="-21" stroke="#34d399" stroke-width="1.5"/>
+                <circle cx="0" cy="-23" r="2.2" fill="#fbbf24"/>
+                <rect x="-10" y="-15" width="20" height="10" rx="3" fill="#34d399"/>
+                <rect x="3" y="-12.6" width="4.5" height="5.2" rx="1.2" fill="#0a0f1e"/>
+                <circle cx="-6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+                <circle cx="6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+              </g>
+            </g>
+          </svg>
+          <div class="cp-card">
+            <h3 id="cp-title">Départ</h3>
+            <p id="cp-desc">…</p>
+          </div>
+        </div>
+        <div class="scroll-cue" id="course-cue"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="formation">
     <div class="section-label" data-i18n="sec-formation">Formation</div>
     <div id="formation-list"></div>
@@ -537,6 +640,39 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   <section id="competences">
     <div class="section-label" data-i18n="sec-comp">Compétences</div>
     <div class="skills-grid" id="skills-grid"></div>
+    <div class="pid-card" id="pid-card">
+      <div class="pid-head"><span id="pid-title">Démo interactive — synthèse PID</span>
+        <small id="pid-desc">Un vrai correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.</small>
+      </div>
+      <div class="pid-grid">
+        <div class="pid-panel">
+          <div class="slider-row">
+            <label><span class="pl" data-k="kp">Kp — proportionnel</span> <output id="kp-out">12.0</output></label>
+            <input type="range" id="kp" min="0" max="60" step="0.5" value="12" aria-label="Gain proportionnel Kp">
+          </div>
+          <div class="slider-row">
+            <label><span class="pl" data-k="ki">Ki — intégral</span> <output id="ki-out">0.0</output></label>
+            <input type="range" id="ki" min="0" max="40" step="0.5" value="0" aria-label="Gain intégral Ki">
+          </div>
+          <div class="slider-row">
+            <label><span class="pl" data-k="kd">Kd — dérivé</span> <output id="kd-out">0.0</output></label>
+            <input type="range" id="kd" min="0" max="15" step="0.1" value="0" aria-label="Gain dérivé Kd">
+          </div>
+          <div class="presets">
+            <button class="preset" data-p="2,0,2.5" data-k="mou">Trop mou</button>
+            <button class="preset" data-p="4,30,0" data-k="instable">Instable</button>
+            <button class="preset" data-p="26,16,6.5" data-k="regle">Bien réglé</button>
+          </div>
+          <div class="pid-metrics">
+            <div class="metric"><b data-k="over">Dépassement</b><span id="m-over">—</span></div>
+            <div class="metric"><b data-k="settle">Temps de réponse</b><span id="m-settle">—</span></div>
+            <div class="metric"><b data-k="errlbl">Erreur statique</b><span id="m-err">—</span></div>
+            <div class="metric"><b data-k="verdict">Verdict</b><span id="m-verdict">—</span></div>
+          </div>
+        </div>
+        <div><canvas id="pid-canvas"></canvas></div>
+      </div>
+    </div>
   </section>
 
   <section id="langues">
@@ -712,6 +848,7 @@ function renderAll() {
   renderLanguages();
   renderInterests();
   renderContacts();
+  renderEffectsTexts(); // bras/parcours/PID : textes dépendants de la langue
   updateNav();
 }
 
@@ -765,8 +902,9 @@ function openSport(act) {
 }
 
 // CV NAV ACTIVE ON SCROLL
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('#main-nav a');
+let sections = document.querySelectorAll('section[id]');
+let navLinks = document.querySelectorAll('#main-nav a');
+function refreshNavRefs(){ sections = document.querySelectorAll('section[id]'); navLinks = document.querySelectorAll('#main-nav a'); }
 let _lastNavActive = null;
 function updateNav() {
   let current = '';
@@ -864,6 +1002,276 @@ function initPano(){
   img.src = src;
 }
 
+// ══════════════════════════════════════
+// EFFETS INTERACTIFS — bras robot · parcours · PID (pilotés par content.json > features)
+// ══════════════════════════════════════
+const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// boucle d'animation : rAF si dispo, sinon repli setInterval (rendus sans compositeur)
+function runLoop(frame){ let alive=false; function loop(){ alive=true; frame(); requestAnimationFrame(loop); } requestAnimationFrame(loop); setTimeout(()=>{ if(!alive) setInterval(frame,33); },500); }
+
+// libellés techniques du PID (les 4 langues) — titre/description viennent de content.json
+const PID_L10N = {
+  kp:{fr:'Kp — proportionnel',en:'Kp — proportional',de:'Kp — Proportionalanteil',it:'Kp — proporzionale'},
+  ki:{fr:'Ki — intégral',en:'Ki — integral',de:'Ki — Integralanteil',it:'Ki — integrale'},
+  kd:{fr:'Kd — dérivé',en:'Kd — derivative',de:'Kd — Differentialanteil',it:'Kd — derivativo'},
+  mou:{fr:'Trop mou',en:'Too soft',de:'Zu träge',it:'Troppo molle'},
+  instable:{fr:'Instable',en:'Unstable',de:'Instabil',it:'Instabile'},
+  regle:{fr:'Bien réglé',en:'Well tuned',de:'Gut eingestellt',it:'Ben regolato'},
+  over:{fr:'Dépassement',en:'Overshoot',de:'Überschwingen',it:'Sovraelongazione'},
+  settle:{fr:'Temps de réponse',en:'Settling time',de:'Ausregelzeit',it:'Tempo di risposta'},
+  errlbl:{fr:'Erreur statique',en:'Steady-state error',de:'Bleibende Abweichung',it:'Errore a regime'},
+  verdict:{fr:'Verdict',en:'Verdict',de:'Urteil',it:'Verdetto'},
+  consigne:{fr:'consigne',en:'setpoint',de:'Sollwert',it:'setpoint'},
+  vInstable:{fr:'Instable ✗',en:'Unstable ✗',de:'Instabil ✗',it:'Instabile ✗'},
+  vBien:{fr:'Bien réglé ✓',en:'Well tuned ✓',de:'Gut eingestellt ✓',it:'Ben regolato ✓'},
+  vErr:{fr:'Erreur statique',en:'Steady-state error',de:'Regelabweichung',it:'Errore a regime'},
+  vMoyen:{fr:'Peut mieux faire',en:'Could be better',de:'Geht besser',it:'Può migliorare'}
+};
+
+let _armApi = null, _parcoursApi = null, _pidApi = null;
+
+// ─── initialisation unique (après chargement de content.json) ───
+function initEffects(){
+  const F = (CONTENT && CONTENT.features) || {};
+  // Bras robot : retiré du DOM si désactivé
+  if(!(F.arm && F.arm.enabled !== false)) { const c=document.getElementById('arm-hero'); if(c) c.remove(); }
+  else _armApi = initArm();
+  // Parcours : section retirée si désactivé (+ son lien de sommaire)
+  if(!(F.parcours && F.parcours.enabled !== false)) {
+    const s=document.getElementById('parcours'); if(s) s.remove();
+    const l=document.getElementById('nav-parcours-link'); if(l) l.remove();
+    refreshNavRefs(); // la section/le lien retirés ne doivent plus fausser la nav au scroll
+  } else _parcoursApi = initParcours();
+  // PID : carte retirée si désactivé
+  if(!(F.pid && F.pid.enabled !== false)) { const p=document.getElementById('pid-card'); if(p) p.remove(); }
+  else _pidApi = initPid();
+  renderEffectsTexts();
+  // boutons « Lire la suite » : re-calcul après chargement des polices, aux redimensionnements
+  // et rotations d'écran (ResizeObserver = fiable là où l'évènement resize ne suffit pas)
+  [400, 1200, 2500].forEach(d => setTimeout(addSuiteButtons, d));
+  const scroll = document.getElementById('projects-scroll');
+  if (scroll && 'ResizeObserver' in window) {
+    let deb; new ResizeObserver(() => { clearTimeout(deb); deb = setTimeout(addSuiteButtons, 150); }).observe(scroll);
+  }
+  window.addEventListener('resize', () => setTimeout(addSuiteButtons, 150));
+}
+
+// ─── textes dépendants de la langue (appelé à chaque setLang) ───
+function renderEffectsTexts(){
+  if(!CONTENT) return;
+  const F = CONTENT.features || {};
+  // Parcours : titre de section, lien de sommaire, accroche, carte d'étape courante
+  if(_parcoursApi && F.parcours){
+    const lbl=document.getElementById('parcours-label'); if(lbl) lbl.textContent=pick(F.parcours.title);
+    const nav=document.getElementById('nav-parcours-link'); if(nav){ nav.textContent=pick(F.parcours.title); nav.style.display=''; }
+    const cue=document.getElementById('course-cue'); if(cue) cue.textContent=pick(F.parcours.cue);
+    _parcoursApi.refresh();
+  }
+  // PID : titre + description (content.json) et libellés techniques (dico)
+  if(_pidApi && F.pid){
+    const t=document.getElementById('pid-title'); if(t) t.textContent=pick(F.pid.title);
+    const d=document.getElementById('pid-desc'); if(d) d.textContent=pick(F.pid.desc);
+    document.querySelectorAll('#pid-card [data-k]').forEach(el=>{ const k=el.getAttribute('data-k'); if(PID_L10N[k]) el.textContent=pick(PID_L10N[k]); });
+    _pidApi.refresh();
+  }
+  addSuiteButtons(); // boutons « Lire la suite » des cartes projets (mobile)
+}
+
+// ─── BRAS ROBOT 2 axes (cinématique inverse) — suit la souris dans le hero ───
+function initArm(){
+  const stage=document.querySelector('.hero'), canvas=document.getElementById('arm-hero');
+  if(!stage||!canvas) return null;
+  canvas.style.display='';
+  const ctx=canvas.getContext('2d');
+  const sizePct=(CONTENT.features.arm && CONTENT.features.arm.size) || 100;
+  let L1=150,L2=120,S=1,W=0,H=0;
+  function resize(){
+    const DPR=Math.min(2,window.devicePixelRatio||1);
+    W=stage.clientWidth; H=stage.clientHeight;
+    S=(W<700?0.65:1)*(sizePct/100);
+    L1=150*S; L2=120*S;
+    canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  resize(); window.addEventListener('resize',resize);
+  let a1=-2.2,a2=1.6,tx=null,ty=null,t=0;
+  const base=()=>({x:W*(S<1&&W<700?0.88:0.78),y:H-8});
+  document.addEventListener('pointermove',e=>{
+    const r=stage.getBoundingClientRect(); const x=e.clientX-r.left,y=e.clientY-r.top;
+    if(x>=0&&y>=0&&x<=r.width&&y<=r.height){tx=x;ty=y;} else {tx=ty=null;}
+  },{passive:true});
+  function solveIK(bx,by,px,py){
+    let dx=px-bx,dy=py-by; const dmax=L1+L2-4,d=Math.hypot(dx,dy);
+    if(d>dmax){dx*=dmax/d;dy*=dmax/d;}
+    const dist=Math.min(Math.hypot(dx,dy),dmax);
+    const c2=(dist*dist-L1*L1-L2*L2)/(2*L1*L2);
+    const A2=-Math.acos(Math.max(-1,Math.min(1,c2)));
+    const A1=Math.atan2(dy,dx)-Math.atan2(L2*Math.sin(A2),L1+L2*Math.cos(A2));
+    return [A1,A2];
+  }
+  function cap(x1,y1,x2,y2,w,c){ ctx.strokeStyle=c;ctx.lineWidth=w;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke(); }
+  function frame(){
+    if(stage.clientWidth!==W||stage.clientHeight!==H) resize();
+    if(!W||!H||canvas.offsetParent===null) return; // masqué (mobile)
+    t+=0.016; const b=base(); let px,py;
+    if(tx!==null){px=tx;py=ty;}
+    else if(!REDUCED){px=b.x-120*S+Math.sin(t*0.5)*85*S; py=H*0.42+Math.cos(t*0.73)*45*S;}
+    else {px=b.x-140*S;py=H*0.4;}
+    const [g1,g2]=solveIK(b.x,b.y,px,py); a1+=(g1-a1)*0.2; a2+=(g2-a2)*0.2;
+    const jx=b.x+L1*Math.cos(a1),jy=b.y+L1*Math.sin(a1);
+    const ex=jx+L2*Math.cos(a1+a2),ey=jy+L2*Math.sin(a1+a2);
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(96,165,250,0.08)';ctx.lineWidth=1;ctx.setLineDash([4,7]);
+    ctx.beginPath();ctx.arc(b.x,b.y,L1+L2-4,Math.PI,2*Math.PI);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#1e293b';ctx.beginPath();ctx.roundRect(b.x-28*S,b.y-5*S,56*S,10*S,4*S);ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.10)';ctx.stroke();
+    cap(b.x,b.y-3*S,jx,jy,13*S,'#243352'); cap(b.x,b.y-3*S,jx,jy,8*S,'#31446e');
+    cap(jx,jy,ex,ey,10*S,'#2b3d63'); cap(jx,jy,ex,ey,6*S,'#3b5488');
+    for(const [cx2,cy2,r] of [[b.x,b.y-3*S,8*S],[jx,jy,6.5*S]]){
+      ctx.fillStyle='#0d1526';ctx.beginPath();ctx.arc(cx2,cy2,r,0,7);ctx.fill();
+      ctx.strokeStyle='#60a5fa';ctx.lineWidth=Math.max(1.2,2*S);ctx.stroke();
+      ctx.fillStyle='#60a5fa';ctx.beginPath();ctx.arc(cx2,cy2,2*S,0,7);ctx.fill();
+    }
+    ctx.save();ctx.translate(ex,ey);ctx.rotate(a1+a2);ctx.scale(S,S);
+    ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(0,-5);ctx.quadraticCurveTo(10,-7,13,-2);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(0,5);ctx.quadraticCurveTo(10,7,13,2);ctx.stroke();ctx.restore();
+    ctx.fillStyle='rgba(96,165,250,0.12)';ctx.beginPath();ctx.arc(ex,ey,13*S,0,7);ctx.fill();
+    if(tx!==null){
+      ctx.strokeStyle='rgba(52,211,153,0.7)';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.arc(px,py,8,0,7);ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(px-13,py);ctx.lineTo(px-4,py);ctx.moveTo(px+4,py);ctx.lineTo(px+13,py);
+      ctx.moveTo(px,py-13);ctx.lineTo(px,py-4);ctx.moveTo(px,py+4);ctx.lineTo(px,py+13);ctx.stroke();
+    }
+  }
+  runLoop(frame);
+  return {};
+}
+
+// ─── PARCOURS façon profil de course (lié au défilement) ───
+function initParcours(){
+  const outer=document.getElementById('course-outer'); if(!outer) return null;
+  const main=document.getElementById('course-path'),done=document.getElementById('course-done'),fill=document.getElementById('course-fill');
+  const pathD='M 20 330 C 90 320, 130 285, 185 268 C 240 250, 265 290, 320 272 C 380 252, 400 200, 455 185 C 505 172, 520 230, 575 215 C 635 198, 655 140, 710 128 C 760 117, 775 170, 830 150 C 895 126, 930 92, 975 62';
+  main.setAttribute('d',pathD); done.setAttribute('d',pathD); fill.setAttribute('d',pathD+' L 975 380 L 20 380 Z');
+  const LEN=main.getTotalLength(); done.style.strokeDasharray=LEN; done.style.strokeDashoffset=LEN;
+  const grid=document.getElementById('gridlines');
+  for(let y=80;y<380;y+=75){ const l=document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1',20);l.setAttribute('x2',980);l.setAttribute('y1',y);l.setAttribute('y2',y);
+    l.setAttribute('stroke','rgba(255,255,255,0.05)');l.setAttribute('stroke-dasharray','3 6');grid.appendChild(l); }
+  const runner=document.getElementById('runner'),robot=document.getElementById('robot'),svgEl=document.getElementById('course-svg');
+  const card={t:document.getElementById('cp-title'),d:document.getElementById('cp-desc')};
+  const cpg=document.getElementById('checkpoints');
+  let cpEls=[],currentCp=-1;
+  // les étapes viennent de content.json ; leur position est répartie uniformément le long du tracé
+  function steps(){ return (CONTENT.features.parcours.steps)||[]; }
+  function positions(){ const s=steps(); const n=s.length; return s.map((cp,i)=> n<=1?1:i/(n-1)); }
+  function buildCheckpoints(){
+    cpg.innerHTML=''; cpEls=[];
+    positions().forEach(at=>{
+      const p=main.getPointAtLength(at*LEN);
+      const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+      const halo=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      halo.setAttribute('cx',p.x);halo.setAttribute('cy',p.y);halo.setAttribute('r',10);
+      halo.setAttribute('fill','none');halo.setAttribute('stroke','rgba(96,165,250,0.35)');
+      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',5);
+      c.setAttribute('fill','#0d1526');c.setAttribute('stroke','#60a5fa');c.setAttribute('stroke-width',2);
+      g.append(halo,c);cpg.appendChild(g);cpEls.push(c);
+    });
+  }
+  function setCp(i){ const s=steps(); if(!s[i]) return; card.t.textContent=pick(s[i].title); card.d.textContent=pick(s[i].desc); currentCp=i; }
+  function onScroll(){
+    const r=outer.getBoundingClientRect(); const total=r.height-window.innerHeight;
+    const prog=Math.max(0,Math.min(1,-r.top/total)); const at=prog*LEN;
+    const p=main.getPointAtLength(at);
+    const p2=main.getPointAtLength(Math.min(LEN,at+3)),p1=main.getPointAtLength(Math.max(0,at-3));
+    const angle=Math.atan2(p2.y-p1.y,p2.x-p1.x)*180/Math.PI;
+    const rs=Math.max(1,Math.min(2,700/(svgEl.clientWidth||700))); // robot agrandi quand le SVG est petit (mobile)
+    runner.setAttribute('transform','translate('+p.x+','+p.y+')');
+    robot.setAttribute('transform','rotate('+angle.toFixed(1)+') scale('+rs.toFixed(2)+')');
+    done.style.strokeDashoffset=LEN-at;
+    const pos=positions(); let idx=0;
+    pos.forEach((at2,i)=>{ const passed=prog>=at2-0.02; if(cpEls[i]){ cpEls[i].setAttribute('fill',passed?'#34d399':'#0d1526'); cpEls[i].setAttribute('stroke',passed?'#34d399':'#60a5fa'); } if(passed) idx=i; });
+    if(idx!==currentCp) setCp(idx);
+    const cue=document.getElementById('course-cue'); if(cue) cue.style.opacity=prog>0.95?0.25:1;
+  }
+  buildCheckpoints();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  setInterval(onScroll,250);
+  onScroll();
+  // refresh = reconstruit les checkpoints (nb d'étapes a pu changer) et re-traduit la carte
+  return { refresh(){ buildCheckpoints(); currentCp=-1; onScroll(); } };
+}
+
+// ─── PLAYGROUND PID (section Compétences) ───
+function initPid(){
+  const cv=document.getElementById('pid-canvas'); if(!cv) return null;
+  const ctx=cv.getContext('2d'), box=cv.parentElement;
+  const $=id=>document.getElementById(id);
+  const inputs={kp:$('kp'),ki:$('ki'),kd:$('kd')}, outs={kp:$('kp-out'),ki:$('ki-out'),kd:$('kd-out')};
+  function simulate(Kp,Ki,Kd){
+    const m=1,c=0.5,k=3,dt=0.002,T=6; let x=0,v=0,I=0; const pts=[];
+    for(let t=0;t<=T;t+=dt){ const e=1-x; I+=e*dt; const u=Kp*e+Ki*I-Kd*v; const a=(u-c*v-k*x)/m; v+=a*dt; x+=v*dt;
+      if(Math.abs(x)>50){pts.push([t,x]);break;} if(pts.length===0||t-pts[pts.length-1][0]>=0.01) pts.push([t,x]); }
+    return pts;
+  }
+  function metrics(pts){
+    const last=pts[pts.length-1][1]; const diverged=Math.abs(last)>5||pts[pts.length-1][0]<5.9;
+    let peak=0; for(const [,x] of pts) peak=Math.max(peak,x); const over=Math.max(0,(peak-1)*100);
+    let settle=null; if(Math.abs(last-1)<=0.02){ settle=0; for(let i=pts.length-1;i>=0;i--){ if(Math.abs(pts[i][1]-1)>0.02){ settle=pts[Math.min(i+1,pts.length-1)][0]; break; } } }
+    const err=Math.abs(1-last)*100;
+    return {over,settle:diverged?null:settle,err:diverged?null:err,diverged};
+  }
+  function draw(pts){
+    const DPR=Math.min(2,window.devicePixelRatio||1); const W=box.clientWidth,H=Math.max(170,box.clientHeight); if(!W) return;
+    cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
+    const PL=46,PR=18,PT=24,PB=34,iw=W-PL-PR,ih=H-PT-PB,ymin=-0.25,ymax=2.0;
+    const X=t=>PL+(t/6)*iw, Y=x=>PT+(1-(x-ymin)/(ymax-ymin))*ih;
+    ctx.font='11px JetBrains Mono, Consolas, monospace';
+    for(let g=0;g<=2;g+=0.5){ ctx.strokeStyle=g===0?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.06)'; ctx.beginPath();ctx.moveTo(PL,Y(g));ctx.lineTo(W-PR,Y(g));ctx.stroke(); ctx.fillStyle='#64748b';ctx.fillText(g.toFixed(1),12,Y(g)+4); }
+    for(let t=0;t<=6;t++){ ctx.strokeStyle='rgba(255,255,255,0.05)'; ctx.beginPath();ctx.moveTo(X(t),PT);ctx.lineTo(X(t),H-PB);ctx.stroke(); ctx.fillStyle='#64748b';ctx.fillText(t+' s',X(t)-6,H-14); }
+    ctx.strokeStyle='rgba(52,211,153,0.65)';ctx.setLineDash([6,5]);ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(PL,Y(1));ctx.lineTo(W-PR,Y(1));ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(52,211,153,0.9)';ctx.fillText(pick(PID_L10N.consigne),W-PR-58,Y(1)-6);
+    ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.beginPath();
+    pts.forEach(([t,x],i)=>{ const yy=Math.max(PT-10,Math.min(H-PB+10,Y(x))); if(i===0)ctx.moveTo(X(t),yy);else ctx.lineTo(X(t),yy); }); ctx.stroke();
+  }
+  const fmt=(v,u,d)=>v===null?'—':v.toFixed(d)+u;
+  function update(){
+    const Kp=+inputs.kp.value,Ki=+inputs.ki.value,Kd=+inputs.kd.value;
+    outs.kp.textContent=Kp.toFixed(1);outs.ki.textContent=Ki.toFixed(1);outs.kd.textContent=Kd.toFixed(1);
+    const pts=simulate(Kp,Ki,Kd); draw(pts); const m=metrics(pts);
+    $('m-over').textContent=m.diverged?'∞':fmt(m.over,' %',1); $('m-over').className=m.over>25||m.diverged?'bad':'';
+    $('m-settle').textContent=m.diverged?'—':(m.settle!==null&&m.settle<5.9?fmt(m.settle,' s',2):'> 6 s');
+    $('m-err').textContent=m.diverged?'—':fmt(m.err,' %',1);
+    let key,cls=''; if(m.diverged){key='vInstable';cls='bad';}
+    else if(m.over<12&&m.settle!==null&&m.settle<2.2&&m.err<2){key='vBien';cls='good';}
+    else if(m.err>5){key='vErr';} else {key='vMoyen';}
+    $('m-verdict').textContent=pick(PID_L10N[key]); $('m-verdict').className=cls;
+  }
+  for(const inp of Object.values(inputs)) inp.addEventListener('input',update);
+  document.querySelectorAll('#pid-card .preset').forEach(b=>b.addEventListener('click',()=>{ const [p,i,d]=b.dataset.p.split(','); inputs.kp.value=p;inputs.ki.value=i;inputs.kd.value=d; update(); }));
+  window.addEventListener('resize',update);
+  update();
+  const retry=setInterval(()=>{ if(box.clientWidth){ update(); clearInterval(retry); } },200);
+  return { refresh: update };
+}
+
+// ─── cartes projets (mobile) : bouton « Lire la suite » quand la description déborde ───
+function addSuiteButtons(){
+  document.querySelectorAll('#projects-scroll .card-desc').forEach(desc=>{
+    const next=desc.nextElementSibling;
+    const btn=(next&&next.classList&&next.classList.contains('desc-more'))?next:null;
+    const clipped=desc.scrollHeight>desc.clientHeight+2;
+    if((clipped||desc.classList.contains('expanded'))&&!btn){
+      const b=document.createElement('button'); b.className='desc-more'; b.textContent='Lire la suite ▾';
+      b.onclick=e=>{ e.stopPropagation(); const open=desc.classList.toggle('expanded'); b.textContent=open?'Réduire ▴':'Lire la suite ▾'; };
+      desc.after(b);
+    } else if(!clipped&&!desc.classList.contains('expanded')&&btn){ btn.remove(); }
+  });
+}
+
 // DÉMARRAGE — charge content.json puis rend tout le site
 fetch('content.json').then(r => r.json()).then(c => {
   CONTENT = c;
@@ -873,6 +1281,7 @@ fetch('content.json').then(r => r.json()).then(c => {
   setLang(saved); // applique la langue mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
   initPano();
+  initEffects(); // bras robot · parcours · PID (pilotés par content.json > features)
 }).catch(e => console.error('Chargement de content.json impossible :', e));
 </script>
 

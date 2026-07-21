@@ -100,6 +100,7 @@ const SECTIONS = [
   ['interests',  '⭐ Centres d\'intérêt'],
   ['contacts',   '✉️ Contacts'],
   ['sports',     '🏔 Pages sport'],
+  ['effects',    '✨ Effets interactifs'],
   ['pdf',        '📄 CV téléchargeable'],
   ['share',      '🔗 Partage & favicon'],
   ['labels',     '🔤 Libellés de l\'interface'],
@@ -152,6 +153,25 @@ function selField(labelTxt, obj, key, options) {
   return wrap;
 }
 function newML(fr = '') { return { fr, en: '', de: '', it: '' }; }
+
+// case à cocher on/off (activé par défaut si la clé vaut autre chose que false)
+function boolField(labelTxt, obj, key) {
+  const wrap = el('label', { style: 'display:flex;align-items:center;gap:9px;cursor:pointer;margin:10px 0 2px;' });
+  const cb = el('input', { type: 'checkbox', checked: obj[key] !== false, onchange: e => { obj[key] = e.target.checked; markDirty(); } });
+  wrap.append(cb, el('span', {}, labelTxt));
+  return wrap;
+}
+
+// normalise C.features (content.json ancien sans effets → valeurs par défaut)
+function ensureFeatures() {
+  if (!C.features) C.features = {};
+  const F = C.features;
+  if (!F.arm) F.arm = { enabled: true, size: 100 };
+  if (typeof F.arm.size !== 'number') F.arm.size = 100;
+  if (!F.parcours) F.parcours = { enabled: true, title: newML('Le parcours'), cue: newML(''), steps: [] };
+  if (!Array.isArray(F.parcours.steps)) F.parcours.steps = [];
+  if (!F.pid) F.pid = { enabled: true, title: newML(''), desc: newML('') };
+}
 
 // slug kebab-case sans accents à partir d'un texte
 function slugify(s) {
@@ -438,6 +458,47 @@ sports(m) {
   }
 },
 
+effects(m) {
+  ensureFeatures();
+  const F = C.features;
+  m.append(el('h2', {}, 'Effets interactifs'),
+    el('div', { class: 'hint' }, 'Les trois animations « waouh » du CV. Active/désactive chacune, règle la taille du bras, ajoute ou retire des étapes du parcours. Les textes existent dans les 4 langues (sélecteur en haut).'));
+
+  // ─── Bras robot ───
+  m.append(el('h2', { style: 'font-size:15px;margin-top:22px' }, '🦾 Bras robot (accueil)'));
+  m.append(el('div', { class: 'hint' }, 'Un bras articulé qui suit la souris dans le bandeau d\'accueil. Affiché sur ordinateur uniquement (jamais sur téléphone).'));
+  m.append(boolField('Afficher le bras robot', F.arm, 'enabled'));
+  const sizeWrap = el('div', { style: 'margin-top:10px' });
+  sizeWrap.append(el('label', {}, 'Taille du bras'));
+  const sizeVal = el('span', { style: 'color:var(--accent);font-weight:600;margin-left:10px' }, (F.arm.size || 100) + ' %');
+  sizeWrap.lastChild.append(sizeVal);
+  const rng = el('input', { type: 'range', min: '50', max: '150', step: '5', value: String(F.arm.size || 100), style: 'width:100%;accent-color:var(--accent);' });
+  rng.oninput = e => { F.arm.size = +e.target.value; sizeVal.textContent = e.target.value + ' %'; markDirty(); };
+  sizeWrap.append(rng);
+  m.append(sizeWrap);
+
+  // ─── Parcours ───
+  m.append(el('h2', { style: 'font-size:15px;margin-top:26px' }, '🏔 Le parcours (frise animée)'));
+  m.append(el('div', { class: 'hint' }, 'Une frise en profil de montagne où un petit robot grimpe au défilement. Les étapes s\'espacent automatiquement le long du tracé — ajoute-en autant que tu veux.'));
+  m.append(boolField('Afficher la section « Le parcours »', F.parcours, 'enabled'));
+  m.append(mlField('Titre de la section', F.parcours.title));
+  m.append(mlField('Petite phrase sous la frise', F.parcours.cue));
+  m.append(el('label', {}, 'Étapes (du départ à l\'arrivée)'));
+  const stepsBox = el('div', { class: 'sub' });
+  listEditor(stepsBox, F.parcours.steps, s => (s.title && s.title.fr) || 'Étape',
+    (b, s) => { b.append(mlField('Titre de l\'étape', s.title), mlField('Description', s.desc, { area: true })); },
+    () => ({ title: newML('Nouvelle étape'), desc: newML('') }),
+    'Ajouter une étape');
+  m.append(stepsBox);
+
+  // ─── PID ───
+  m.append(el('h2', { style: 'font-size:15px;margin-top:26px' }, '🎛 Démo PID (compétences)'));
+  m.append(el('div', { class: 'hint' }, 'Un mini-simulateur de correcteur PID dans la section Compétences. Les libellés techniques (Kp, dépassement, verdicts…) sont traduits automatiquement ; seuls le titre et la phrase d\'intro se modifient ici.'));
+  m.append(boolField('Afficher la démo PID', F.pid, 'enabled'));
+  m.append(mlField('Titre de la démo', F.pid.title));
+  m.append(mlField('Phrase d\'introduction', F.pid.desc, { area: true }));
+},
+
 pdf(m) {
   m.append(el('h2', {}, 'CV téléchargeable'),
     el('div', { class: 'hint' }, 'Le fichier PDF proposé par les boutons « Télécharger mon CV ».'));
@@ -549,6 +610,7 @@ async function publish() {
 // ───────── démarrage ─────────
 fetch('/api/content').then(r => r.json()).then(c => {
   C = c;
+  ensureFeatures(); // garantit la présence de C.features (bras/parcours/PID) même sur un ancien content.json
   renderNav(); renderLangPicker(); renderSection();
   const st = $('#save-state'); st.textContent = 'À jour'; st.className = 'ok';
 }).catch(e => { $('#main').textContent = 'Impossible de charger content.json : ' + e; });
