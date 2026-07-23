@@ -355,12 +355,12 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .hero{padding:40px 0 4px;flex-direction:column-reverse;align-items:flex-start;gap:20px;}
   .pano{height:150px;margin-top:12px;}
   .hero-photo{width:100px;height:100px;}
-  /* avec panorama : photo ancrée au coin bas-droit de la couverture (hors flux),
-     le texte occupe toute la largeur juste sous le panorama, ordonné nom → titre → badge */
-  body.has-pano .hero{position:relative;padding-top:26px;}
-  body.has-pano .hero-photo{position:absolute;top:-80px;right:10px;margin:0;align-self:auto;border-width:3px;}
+  /* avec panorama : la photo de profil se place à DROITE du nom, en haut du CV ;
+     le nom réserve la place à sa droite (padding) et s'aligne verticalement avec la photo */
+  body.has-pano .hero{position:relative;padding-top:16px;}
+  body.has-pano .hero-photo{position:absolute;top:16px;right:0;width:90px;height:90px;margin:0;align-self:auto;border-width:3px;z-index:2;}
   body.has-pano .hero-text{display:flex;flex-direction:column;align-items:flex-start;}
-  body.has-pano .name{order:1;}
+  body.has-pano .name{order:1;padding-right:102px;min-height:90px;font-size:34px;display:flex;flex-direction:column;justify-content:center;}
   body.has-pano .title{order:2;}
   body.has-pano .hero-badge{order:3;margin:2px 0 18px;}
   body.has-pano .tagline{order:4;}
