@@ -1246,7 +1246,7 @@ function addSuiteButtons(){
 }
 
 // DÉMARRAGE — charge content.json puis rend tout le site
-fetch('content.json').then(r => r.json()).then(c => {
+fetch('content.json', {cache: 'no-cache'}).then(r => r.json()).then(c => {
   CONTENT = c;
   let saved = 'fr';
   try { saved = localStorage.getItem('cvLang') || 'fr'; } catch (e) {}
