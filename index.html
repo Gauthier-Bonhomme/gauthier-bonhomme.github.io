@@ -941,39 +941,14 @@ updateNav();
   }
 })();
 
-// PROJETS : défilement automatique (carrousel) toutes les 3 s.
-// Dès que le visiteur y touche (doigt, molette, glisser, flèches), l'auto-défilement
-// s'arrête définitivement pour ne pas tourner pendant qu'il lit.
+// PROJETS : flèches ‹ › (boutons .proj-arrow) pour faire défiler les cartes.
 function initProjectsCarousel(){
   const track = document.querySelector('#projets .projects-scroll');
   if(!track) return;
-  let hovered = false, stopped = false;
-  function nextStep(){
-    if(stopped || hovered || document.hidden) return;
-    const cards = track.querySelectorAll('.skill-category');
-    if(cards.length < 2) return;
-    const stride = cards[1].offsetLeft - cards[0].offsetLeft; // largeur carte + gap (unités locales = compatibles scrollLeft, même sous zoom)
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    let next = track.scrollLeft + stride;
-    if(next >= maxScroll - 2) next = 0;                       // retour au début en boucle
-    track.scrollTo({left: next, behavior: 'smooth'});
-  }
-  // pas d'auto-défilement si le visiteur préfère limiter les animations
-  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion) setInterval(nextStep, 3000);
-  // pause au survol, reprise en quittant (tant que pas d'interaction directe)
-  track.addEventListener('mouseenter', () => { hovered = true; });
-  track.addEventListener('mouseleave', () => { hovered = false; });
-  // toute interaction directe stoppe l'auto-défilement pour de bon
-  ['pointerdown','touchstart','wheel'].forEach(ev =>
-    track.addEventListener(ev, () => { stopped = true; }, {passive:true})
-  );
-  // flèches ‹ › (boutons .proj-arrow) — comptent aussi comme une interaction
   window.projScroll = function(dir){
     const cards = track.querySelectorAll('.skill-category');
     const stride = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 316;
     track.scrollBy({left: dir * stride, behavior: 'smooth'});
-    stopped = true;
   };
 }
 
