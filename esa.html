@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page dédiée aux candidatures ESA 2027 : non indexée, non liée depuis index.html -->
+  <title>Gauthier Bonhomme — ESA Student Internship 2027</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Gauthier Bonhomme — Mechatronics & Control engineering student at Arts et Métiers (ENSAM), applying for a 6-month ESA student internship (February – July 2027): hands-on prototyping, robotics, manufacturing.">
+  <meta name="author" content="Gauthier Bonhomme">
+
+  <!-- Open Graph / Twitter (aperçu de lien) -->
+  <meta property="og:title" content="Gauthier Bonhomme — ESA Student Internship 2027">
+  <meta property="og:description" content="Gauthier Bonhomme — Mechatronics & Control engineering student at Arts et Métiers (ENSAM), applying for a 6-month ESA student internship (February – July 2027): hands-on prototyping, robotics, manufacturing.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://gauthierbonhomme.com/esa">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauthier Bonhomme — ESA Student Internship 2027">
+  <meta name="twitter:description" content="Gauthier Bonhomme — Mechatronics & Control engineering student at Arts et Métiers (ENSAM), applying for a 6-month ESA student internship (February – July 2027): hands-on prototyping, robotics, manufacturing.">
+  <meta name="twitter:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
+
+  <link rel="canonical" href="https://gauthierbonhomme.com/esa">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-content="content-esa.json" data-default-lang="en" data-langs="en,fr">
+
+<div id="page-cv" class="page active">
+<header class="topbar">
+  <a class="brand" href="#top">Gauthier <span>Bonhomme</span></a>
+  <nav class="topnav" id="main-nav">
+    <a href="#about" class="active" data-i18n="nav-about">About</a>
+    <a href="#parcours" id="nav-parcours-link" style="display:none">The journey</a>
+    <a href="#formation" data-i18n="nav-formation">Education</a>
+    <a href="#experiences" data-i18n="nav-exp">Experience</a>
+    <a href="#projets" data-i18n="nav-projets">Projects</a>
+    <a href="#competences" data-i18n="nav-comp">Skills</a>
+    <a href="#langues" data-i18n="nav-lang">Languages</a>
+    <a href="#interets" data-i18n="nav-int">Interests</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
+  </nav>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
+    <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
+  </div>
+</header>
+
+<div class="layout">
+<main class="right">
+
+  <div class="pano" id="pano" style="display:none" aria-hidden="true"><div class="pano-track" id="pano-track"></div></div>
+
+  <section class="hero" id="top">
+   <canvas id="arm-hero" aria-hidden="true" style="display:none"></canvas>
+   <div class="hero-text">
+    <div class="hero-badge" data-i18n="seeking">ESA Student Internship 2027 · Feb – Jul 2027</div>
+    <h1 class="name">Gauthier <span>Bonhomme</span></h1>
+    <div class="title" data-i18n="job-title">Mechatronics & Control engineering student</div>
+    <p class="tagline"><strong>Arts et Métiers</strong> · Aix-en-Provence — <span data-i18n="tagline-sub">Hands-on prototyping · Robotics · Manufacturing</span></p>
+    <div class="cta-row">
+      <a href="Gauthier_Bonhomme_CV_ESA.pdf" download class="btn-download">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn">Download my CV</span>
+      </a>
+      <a href="#contact" class="btn-ghost" data-i18n="nav-contact">Contact</a>
+      <div class="social">
+        <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="tel:+33608276216" title="Phone">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        </a>
+        <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+        </a>
+      </div>
+    </div>
+   </div>
+   <img class="hero-photo" id="hero-photo" alt="Gauthier Bonhomme" style="display:none">
+  </section>
+  <section id="about">
+    <div class="section-label" data-i18n="sec-about">About</div>
+    <div class="about-text"></div>
+  </section>
+
+  <section id="parcours">
+    <div class="section-label" id="parcours-label">The journey</div>
+    <div class="course-outer" id="course-outer">
+      <div class="course-sticky">
+        <div class="course-box">
+          <svg id="course-svg" viewBox="0 0 1000 380" role="img" aria-label="Gauthier's path shown as a mountain-race elevation profile">
+            <defs>
+              <linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(96,165,250,0.30)"/>
+                <stop offset="1" stop-color="rgba(96,165,250,0.02)"/>
+              </linearGradient>
+            </defs>
+            <g id="gridlines"></g>
+            <path id="course-fill" fill="url(#fillg)" stroke="none"></path>
+            <path id="course-path" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"></path>
+            <path id="course-done" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linejoin="round"></path>
+            <g id="checkpoints"></g>
+            <g id="runner">
+              <g id="robot">
+                <line x1="0" y1="-14" x2="0" y2="-21" stroke="#34d399" stroke-width="1.5"/>
+                <circle cx="0" cy="-23" r="2.2" fill="#fbbf24"/>
+                <rect x="-10" y="-15" width="20" height="10" rx="3" fill="#34d399"/>
+                <rect x="3" y="-12.6" width="4.5" height="5.2" rx="1.2" fill="#0a0f1e"/>
+                <circle cx="-6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+                <circle cx="6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
+              </g>
+            </g>
+          </svg>
+          <div class="cp-card">
+            <h3 id="cp-title">Start</h3>
+            <p id="cp-desc">…</p>
+          </div>
+        </div>
+        <div class="scroll-cue" id="course-cue"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="section-label" data-i18n="sec-formation">Education</div>
+    <div id="formation-list"></div>
+  </section>
+
+  <section id="experiences">
+    <div class="section-label" data-i18n="sec-exp">Experience</div>
+    <div id="exp-list"></div>
+  </section>
+
+  <section id="projets">
+    <div class="section-label" data-i18n="sec-projets">Projects</div>
+    <div class="projects-wrap">
+    <button class="proj-arrow prev" onclick="projScroll(-1)" aria-label="Previous project">‹</button>
+    <button class="proj-arrow next" onclick="projScroll(1)" aria-label="Next project">›</button>
+    <div class="projects-scroll" id="projects-scroll">
+    </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="section-label" data-i18n="sec-comp">Skills</div>
+    <div class="skills-grid" id="skills-grid"></div>
+    <div class="pid-card" id="pid-card">
+      <div class="pid-head"><span id="pid-title">Interactive demo — PID tuning</span>
+        <small id="pid-desc">A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.</small>
+      </div>
+      <div class="pid-grid">
+        <div class="pid-panel">
+          <div class="slider-row">
+            <label><span class="pl" data-k="kp">Kp — proportional</span> <output id="kp-out">12.0</output></label>
+            <input type="range" id="kp" min="0" max="60" step="0.5" value="12" aria-label="Proportional gain Kp">
+          </div>
+          <div class="slider-row">
+            <label><span class="pl" data-k="ki">Ki — integral</span> <output id="ki-out">0.0</output></label>
+            <input type="range" id="ki" min="0" max="40" step="0.5" value="0" aria-label="Integral gain Ki">
+          </div>
+          <div class="slider-row">
+            <label><span class="pl" data-k="kd">Kd — derivative</span> <output id="kd-out">0.0</output></label>
+            <input type="range" id="kd" min="0" max="15" step="0.1" value="0" aria-label="Derivative gain Kd">
+          </div>
+          <div class="presets">
+            <button class="preset" data-p="2,0,2.5" data-k="mou">Too soft</button>
+            <button class="preset" data-p="4,30,0" data-k="instable">Unstable</button>
+            <button class="preset" data-p="26,16,6.5" data-k="regle">Well tuned</button>
+          </div>
+          <div class="pid-metrics">
+            <div class="metric"><b data-k="over">Overshoot</b><span id="m-over">—</span></div>
+            <div class="metric"><b data-k="settle">Settling time</b><span id="m-settle">—</span></div>
+            <div class="metric"><b data-k="errlbl">Steady-state error</b><span id="m-err">—</span></div>
+            <div class="metric"><b data-k="verdict">Verdict</b><span id="m-verdict">—</span></div>
+          </div>
+        </div>
+        <div><canvas id="pid-canvas"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="langues">
+    <div class="section-label" data-i18n="sec-lang">Languages</div>
+    <div class="lang-list" id="lang-list"></div>
+  </section>
+
+  <section id="interets">
+    <div class="section-label" data-i18n="sec-int">Interests</div>
+    <div class="interests-grid" id="interests-grid"></div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label" data-i18n="sec-contact">Contact</div>
+    <div class="contact-grid" id="contact-grid"></div>
+  </section>
+
+  <footer class="cv-footer">
+    <div style="margin-bottom:16px;">
+      <a href="Gauthier_Bonhomme_CV_ESA.pdf" download class="btn-download-inline">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn-long">Download my CV (PDF)</span>
+      </a>
+    </div>
+    <span data-i18n="footer-txt">Designed and developed with care · Gauthier Bonhomme · 2026</span>
+  </footer>
+</main>
+</div>
+</div>
+
+<script src="assets/site.js"></script>
+
+</body>
+</html>

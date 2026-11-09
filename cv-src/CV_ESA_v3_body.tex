@@ -1,0 +1,122 @@
+% ══════════════════════════════════════════════════════════════════
+% CV — ESA Student Internships 2027 — version 3 : v2 + portfolio mis en avant (encadré + QR code)
+% IMPORTANT : le lien et le QR pointent vers gauthierbonhomme.com/esa — la page doit être en ligne avant l'envoi.
+% Principe : 3 points forts en encadré, une ligne par élément, moins d'éléments.
+% Faits vérifiés dans les rapports du site (usinage, fonderie, Abaqus) et content.json.
+%
+% Compiler une variante :
+%   pdflatex CV_ESA_v3_Robotics_ESTEC.tex
+%   pdflatex CV_ESA_v3_Spaceship_EAC.tex
+% ══════════════════════════════════════════════════════════════════
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1.3cm,bottom=1.2cm,left=1.7cm,right=1.7cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\usepackage{qrcode}
+\definecolor{accent}{RGB}{21,76,155}
+\definecolor{boxbg}{RGB}{236,242,251}
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=accent,
+            pdftitle={Gauthier Bonhomme - CV - ESA Student Internship 2027},
+            pdfauthor={Gauthier Bonhomme}]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% titres de section : bleu + filet bleu
+\titleformat{\section}{\needspace{4\baselineskip}\large\bfseries\color{accent}}{}{0pt}{}[\vspace{-0.85em}\textcolor{accent}{\rule{\textwidth}{0.6pt}}]
+\titlespacing{\section}{0pt}{1.35em}{0.7em}
+
+\newcommand{\lk}{\,\textsuperscript{$\nearrow$}}
+\newcommand{\link}[2]{\href{#1}{#2\lk}}
+\newcommand{\sep}{\enspace{\scriptsize\textbullet}\enspace}
+\newcommand{\gap}{\par\vspace{0.85em}}
+
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.3em,parsep=0pt,topsep=0pt,label={\textcolor{accent}{\small\textbullet}}}
+
+% nom de l'offre visée (défini par le fichier de variante)
+\providecommand{\cvtarget}{}
+
+\begin{document}
+
+% ───── en-tête ─────
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries Gauthier Bonhomme}\\[0.55em]
+  Final-year engineering student in \textbf{Mechatronics \& Control} --- Arts et Métiers (ENSAM), France\\[0.3em]
+  {\color{accent}\bfseries ESA student internship 2027\cvtarget}\sep 6 months, Feb -- Jul 2027\\[0.4em]
+  {\small +33 6 08 27 62 16\sep\href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com}\sep\href{https://gauthierbonhomme.com/esa}{gauthierbonhomme.com/esa}\sep French national}
+\end{center}
+
+\vspace{0.2em}
+% ───── points forts ─────
+\begin{tcolorbox}[enhanced,colback=boxbg,colframe=boxbg,boxrule=0pt,arc=3pt,
+  left=9pt,right=9pt,top=7pt,bottom=7pt,
+  sidebyside,sidebyside align=center,lefthand ratio=0.84,sidebyside gap=8pt,segmentation hidden]
+\begin{itemize}
+  \item \textbf{Hands-on builder} --- CNC machining, sand casting, engine rebuild, metalwork.
+  \item \textbf{Mechatronics \& control} --- robotics, PID/RST, FOC drives, microcontrollers.
+  \item \textbf{Simulate, then validate} --- FEA within ${\approx}1$\,\% of ASTM; CAM run on a turn-mill.
+\end{itemize}
+\vspace{0.5em}
+{\color{accent}\bfseries $\rightarrow$ Reports, workshop photos \& live demos:\enspace\href{https://gauthierbonhomme.com/esa}{gauthierbonhomme.com/esa}}
+\tcblower
+\centering
+\qrcode[link,height=1.85cm]{https://gauthierbonhomme.com/esa}\\[3pt]
+{\scriptsize\color{accent}\bfseries Portfolio}
+\end{tcolorbox}
+
+% ───── formation ─────
+\section{Education}
+
+\textbf{Arts et Métiers (ENSAM)} --- \textit{Diplôme d'Ingénieur (MSc), Mechatronics \& Control} \hfill 2024 -- 2027\\
+Robotics, control, drives, mechanical design, FEA, manufacturing --- enrolled until Jul 2027.
+\gap
+\textbf{Classe préparatoire PT}, Lycée Mermoz, Montpellier --- \textit{maths, physics, engineering science} \hfill 2021 -- 2024
+
+% ───── projets ─────
+\section{Projects}
+
+\textbf{CNC-machined engine crankshaft} \enspace\link{https://gauthierbonhomme.com/usinage.html}{report} \hfill 2025\\
+Fusion 360 CAM $\rightarrow$ DMG MORI turn-mill; solved chatter and axis-limit issues on the machine.
+\gap
+\textbf{Cast-iron foundry part} --- team of 4 \enspace\link{https://gauthierbonhomme.com/fonderie.html}{report} \hfill 2025 -- 2026\\
+QuickCast simulation, riser and gating design, hand-made sand moulds and cores, cast-iron pour.
+\gap
+\textbf{Fracture-mechanics FEA (Abaqus)} \enspace\link{https://gauthierbonhomme.com/abaqus.html}{report}\\
+Stress-intensity factor within ${\approx}1$\,\% of the ASTM E399-90 analytical value.
+\gap
+\textbf{Workshop \& prototyping} --- personal \enspace\link{https://gauthierbonhomme.com/projet.html?id=projets-divers-et-varies}{photos}\\
+Motorcycle and car engines (one fully reconditioned), sheet-metal tables, Arduino builds.
+
+% ───── expérience ─────
+\section{Experience}
+
+\textbf{Royal Canin} --- summer intern, plant maintenance software \hfill Jun -- Aug 2026\\
+Improved a pet-food plant's maintenance software, working daily with the maintenance teams.
+\gap
+\textbf{Hall b} --- founding team, fitness startup \hfill Jun -- Aug 2025\\
+Launched the facility from scratch; built its site-selection model and real-time video analytics.
+\gap
+\textbf{ÉPOPÉE GADZ} --- treasurer, Europ'Raid 2026 \hfill 2025 -- 2026\\
+8,000-km charity raid across Europe: budget and sponsorship, nearly 4,000 euros raised.
+
+% ───── compétences ─────
+\section{Skills}
+
+\textbf{Design \& manufacturing:} CATIA V5, Fusion 360 (CAM), CNC turn-milling, sand casting, 3D printing\\[0.2em]
+\textbf{Simulation \& control:} Abaqus, QuickCast, PID/RST synthesis, motor control (FOC), MATLAB (basic)\\[0.2em]
+\textbf{Programming \& embedded:} Python, Arduino/ESP32, Git, Linux\\[0.2em]
+\textbf{Languages:} French (native), English (C1)
+
+% ───── centres d'intérêt ─────
+\section{Interests}
+
+Ultra-trail (100-km finisher, preparing the UTMB)\sep alpinism\sep bouldering 7B\sep judo black belt
+
+\end{document}

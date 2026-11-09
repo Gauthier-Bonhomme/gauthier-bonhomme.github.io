@@ -6,6 +6,35 @@ let currentLang = 'fr';
 // texte dans la langue courante, repli sur le français si la traduction manque
 const pick = (o, l) => { l = l || currentLang; return o ? (o[l] || o.fr || '') : ''; };
 
+// PARAMÈTRES DE LA PAGE — lus sur <body> : un même gabarit sert index.html, esa.html et les futures pages par entreprise
+//   data-content="content-esa.json"  fichier de contenu (défaut : content.json)
+//   data-default-lang="en"           langue de départ, sans lire la langue mémorisée du site au premier chargement
+//   data-langs="en,fr"               langues proposées (défaut : les 4) ; les autres boutons sont masqués
+const ALL_LANGS = ['fr', 'en', 'de', 'it'];
+const PAGE = (function () {
+  const d = document.body.dataset;
+  let langs = (d.langs || '').split(',').map(s => s.trim()).filter(l => ALL_LANGS.includes(l));
+  if (!langs.length) langs = ALL_LANGS.slice();
+  const def = ALL_LANGS.includes(d.defaultLang) ? d.defaultLang : '';
+  return { content: d.content || 'content.json', defaultLang: def, langs: langs };
+})();
+document.querySelectorAll('.lang-btn').forEach(b => { if (!PAGE.langs.includes(b.getAttribute('data-lang'))) b.style.display = 'none'; });
+
+// langue au démarrage : celle imposée par la page (et, dans le même onglet, le choix fait ensuite sur CETTE page,
+// pour qu'un retour depuis une sous-page la conserve) ; sinon la langue mémorisée du site
+function initialLang() {
+  let lang = '';
+  if (PAGE.defaultLang) {
+    try { lang = sessionStorage.getItem('cvLang:' + PAGE.content) || ''; } catch (e) {}
+    if (!PAGE.langs.includes(lang)) lang = PAGE.defaultLang;
+  } else {
+    lang = 'fr';
+    try { lang = localStorage.getItem('cvLang') || 'fr'; } catch (e) {}
+    if (!ALL_LANGS.includes(lang)) lang = 'fr';
+  }
+  return PAGE.langs.includes(lang) ? lang : PAGE.langs[0];
+}
+
 const CONTACT_ICONS = {
   email: '<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>',
   phone: '<path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/>',
@@ -46,6 +75,22 @@ function renderStatics() {
   if (lb.pageTitle) document.title = pick(lb.pageTitle);
 }
 
+// POINTS FORTS (clé optionnelle highlights) — encadré inséré juste sous le hero ; clé absente ou vide = rien
+function renderHighlights() {
+  const list = CONTENT.highlights;
+  let box = document.getElementById('highlights');
+  if (!list || !list.length) { if (box) box.remove(); return; }
+  if (!box) {
+    box = document.createElement('div');
+    box.id = 'highlights';
+    box.className = 'highlights';
+    document.querySelector('.hero').after(box);
+  }
+  box.innerHTML = list.map((it, i) =>
+    '<div class="hl-item"><span class="hl-num">' + String(i + 1).padStart(2, '0') + '</span><p>' + pick(it) + '</p></div>'
+  ).join('');
+}
+
 function renderAbout() {
   document.querySelector('.about-text').innerHTML =
     CONTENT.about.map(p => '<p>' + pick(p) + '</p>').join('');
@@ -83,9 +128,11 @@ function renderProjects() {
     const openJs = link ? (ext ? "window.open('" + link + "','_blank','noopener')" : "window.location.href='" + link + "'") : '';
     let h = '<div class="skill-category' + (p.wip ? ' proj-wip' : '') + (openJs ? ' proj-click' : '') + '"' +
       (openJs ? ' onclick="' + openJs + '"' : '') + '>';
-    if (p.img) h += '<img src="' + p.img + '" alt="" onerror="this.style.display=\'none\'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">';
+    if (p.img) h += '<img src="' + p.img + '" alt="" loading="lazy" onerror="this.style.display=\'none\'" style="width:calc(100% + 40px);height:170px;object-fit:cover;display:block;margin:-18px -20px 16px;border-radius:10px 10px 0 0;">';
     if (p.wip) h += '<span class="badge-wip">' + wipLbl + '</span>';
     h += '<div class="card-title">' + pick(p.title) + '</div>';
+    // mention optionnelle sous le titre (ex. « Report in French ») — clé absente = rien d'affiché
+    if (pick(p.note)) h += '<div class="proj-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>' + pick(p.note) + '</div>';
     h += '<div class="card-desc">' + pick(p.desc) + '</div>';
     h += '<div class="skill-tags" style="margin-top:14px;">' + p.tags.map(t => '<span class="tag neutral">' + pick(t) + '</span>').join('') + '</div>';
     if (link) h += '<button class="tag-link strong" style="margin-top:14px;" onclick="event.stopPropagation();' + openJs + '">' + view + ' <span class="go">→</span></button>';
@@ -134,6 +181,7 @@ function renderContacts() {
 function renderAll() {
   if (!CONTENT) return;
   renderStatics();
+  renderHighlights();
   renderAbout();
   renderDatedList('formation-list', CONTENT.formations);
   renderDatedList('exp-list', CONTENT.experiences);
@@ -150,6 +198,7 @@ function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   try { localStorage.setItem('cvLang', lang); } catch (e) {} // mémorise la langue pour les sous-pages (projet.html)
+  if (PAGE.defaultLang) { try { sessionStorage.setItem('cvLang:' + PAGE.content, lang); } catch (e) {} } // choix propre à cette page (onglet courant)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
   renderAll();
 }
@@ -529,26 +578,26 @@ function initPid(){
 
 // ─── cartes projets (mobile) : bouton « Lire la suite » quand la description déborde ───
 function addSuiteButtons(){
+  // libellés optionnels labels.readMore / labels.readLess ; absents = textes français d'origine
+  const lb=(CONTENT&&CONTENT.labels)||{};
+  const MORE=lb.readMore?pick(lb.readMore):'Lire la suite ▾', LESS=lb.readLess?pick(lb.readLess):'Réduire ▴';
   document.querySelectorAll('#projects-scroll .card-desc').forEach(desc=>{
     const next=desc.nextElementSibling;
     const btn=(next&&next.classList&&next.classList.contains('desc-more'))?next:null;
     const clipped=desc.scrollHeight>desc.clientHeight+2;
     if((clipped||desc.classList.contains('expanded'))&&!btn){
-      const b=document.createElement('button'); b.className='desc-more'; b.textContent='Lire la suite ▾';
-      b.onclick=e=>{ e.stopPropagation(); const open=desc.classList.toggle('expanded'); b.textContent=open?'Réduire ▴':'Lire la suite ▾'; };
+      const b=document.createElement('button'); b.className='desc-more'; b.textContent=MORE;
+      b.onclick=e=>{ e.stopPropagation(); const open=desc.classList.toggle('expanded'); b.textContent=open?LESS:MORE; };
       desc.after(b);
     } else if(!clipped&&!desc.classList.contains('expanded')&&btn){ btn.remove(); }
   });
 }
 
-// DÉMARRAGE — charge content.json puis rend tout le site
-fetch('content.json', {cache: 'no-cache'}).then(r => r.json()).then(c => {
+// DÉMARRAGE — charge le fichier de contenu de la page (content.json par défaut) puis rend tout le site
+fetch(PAGE.content, {cache: 'no-cache'}).then(r => r.json()).then(c => {
   CONTENT = c;
-  let saved = 'fr';
-  try { saved = localStorage.getItem('cvLang') || 'fr'; } catch (e) {}
-  if (!['fr', 'en', 'de', 'it'].includes(saved)) saved = 'fr';
-  setLang(saved); // applique la langue mémorisée (revenir d'une page projet garde la langue)
+  setLang(initialLang()); // langue imposée par la page, sinon mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
   initPano();
   initEffects(); // bras robot · parcours · PID (pilotés par content.json > features)
-}).catch(e => console.error('Chargement de content.json impossible :', e));
+}).catch(e => console.error('Chargement de ' + PAGE.content + ' impossible :', e));

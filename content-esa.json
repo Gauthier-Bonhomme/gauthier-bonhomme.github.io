@@ -1,0 +1,1522 @@
+{
+ "_aide": "Contenu de la page esa.html (candidatures ESA 2027) — même gabarit que index.html (assets/site.js). Anglais par défaut, français disponible ; les champs DE/IT restent vides (non proposés sur cette page). Modifié à la main : l'admin local n'édite que content.json.",
+ "pdf": "Gauthier_Bonhomme_CV_ESA.pdf",
+ "features": {
+  "arm": {
+   "enabled": true,
+   "size": 150
+  },
+  "parcours": {
+   "enabled": true,
+   "title": {
+    "fr": "Le parcours",
+    "en": "The journey",
+    "de": "",
+    "it": ""
+   },
+   "cue": {
+    "fr": "▼ le robot avance ▼",
+    "en": "▼ the robot climbs as you scroll ▼",
+    "de": "",
+    "it": ""
+   },
+   "steps": [
+    {
+     "title": {
+      "fr": "Bac → Classe prépa PT",
+      "en": "Baccalauréat → PT preparatory class",
+      "de": "",
+      "it": ""
+     },
+     "desc": {
+      "fr": "Lycée Mermoz, Montpellier. Trois ans de mathématiques, de physique et de sciences de l'ingénieur pour construire des bases solides.",
+      "en": "Lycée Mermoz, Montpellier. Three years of mathematics, physics and engineering science to build solid foundations.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "title": {
+      "fr": "Arts et Métiers (ENSAM)",
+      "en": "Arts et Métiers (ENSAM)",
+      "de": "",
+      "it": ""
+     },
+     "desc": {
+      "fr": "Aix-en-Provence, filière Mécatronique & Contrôle. Robotique, automatique, conception : le cœur de ce que j'aime faire.",
+      "en": "Aix-en-Provence, Mechatronics & Control track. Robotics, control engineering, design: the heart of what I love doing.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "title": {
+      "fr": "Hall b — équipe fondatrice",
+      "en": "Hall b — founding team",
+      "de": "",
+      "it": ""
+     },
+     "desc": {
+      "fr": "Lancement d'une salle de sport de A à Z avec l'équipe fondatrice : GymLocator, vidéosurveillance intelligente, site web.",
+      "en": "Launching a gym from scratch with the founding team: GymLocator, smart video-surveillance, website.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "title": {
+      "fr": "Royal Canin — stage usine",
+      "en": "Royal Canin — factory internship",
+      "de": "",
+      "it": ""
+     },
+     "desc": {
+      "fr": "Aimargues, été 2026. Amélioration du logiciel de maintenance de l'usine, aux côtés des équipes de terrain.",
+      "en": "Aimargues, summer 2026. Improving the factory's maintenance software, alongside the field teams.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "title": {
+      "fr": "Prochaine étape : stage ESA — févr. 2027",
+      "en": "Next: ESA internship — Feb 2027",
+      "de": "",
+      "it": ""
+     },
+     "desc": {
+      "fr": "6 mois de robotique et de prototypage concret, de février à juillet 2027.",
+      "en": "6 months of hands-on robotics and prototyping, from February to July 2027.",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  "pid": {
+   "enabled": true,
+   "title": {
+    "fr": "Démo interactive — synthèse PID",
+    "en": "Interactive demo — PID tuning",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Un correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
+    "en": "A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.",
+    "de": "",
+    "it": ""
+   }
+  }
+ },
+ "labels": {
+  "pageTitle": {
+   "fr": "Gauthier Bonhomme — Stage ESA 2027",
+   "en": "Gauthier Bonhomme — ESA Student Internship 2027",
+   "de": "",
+   "it": ""
+  },
+  "nav": {
+   "about": {
+    "fr": "À propos",
+    "en": "About",
+    "de": "",
+    "it": ""
+   },
+   "formation": {
+    "fr": "Formation",
+    "en": "Education",
+    "de": "",
+    "it": ""
+   },
+   "exp": {
+    "fr": "Expériences",
+    "en": "Experience",
+    "de": "",
+    "it": ""
+   },
+   "projets": {
+    "fr": "Projets",
+    "en": "Projects",
+    "de": "",
+    "it": ""
+   },
+   "comp": {
+    "fr": "Compétences",
+    "en": "Skills",
+    "de": "",
+    "it": ""
+   },
+   "lang": {
+    "fr": "Langues",
+    "en": "Languages",
+    "de": "",
+    "it": ""
+   },
+   "int": {
+    "fr": "Centres d'intérêt",
+    "en": "Interests",
+    "de": "",
+    "it": ""
+   },
+   "contact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "de": "",
+    "it": ""
+   }
+  },
+  "sections": {
+   "about": {
+    "fr": "À propos",
+    "en": "About",
+    "de": "",
+    "it": ""
+   },
+   "formation": {
+    "fr": "Formation",
+    "en": "Education",
+    "de": "",
+    "it": ""
+   },
+   "exp": {
+    "fr": "Expériences",
+    "en": "Experience",
+    "de": "",
+    "it": ""
+   },
+   "projets": {
+    "fr": "Projets",
+    "en": "Projects",
+    "de": "",
+    "it": ""
+   },
+   "comp": {
+    "fr": "Compétences",
+    "en": "Skills",
+    "de": "",
+    "it": ""
+   },
+   "lang": {
+    "fr": "Langues",
+    "en": "Languages",
+    "de": "",
+    "it": ""
+   },
+   "int": {
+    "fr": "Centres d'intérêt",
+    "en": "Interests",
+    "de": "",
+    "it": ""
+   },
+   "contact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "de": "",
+    "it": ""
+   }
+  },
+  "dlBtn": {
+   "fr": "Télécharger mon CV",
+   "en": "Download my CV",
+   "de": "",
+   "it": ""
+  },
+  "dlBtnLong": {
+   "fr": "Télécharger mon CV (PDF)",
+   "en": "Download my CV (PDF)",
+   "de": "",
+   "it": ""
+  },
+  "footer": {
+   "fr": "Conçu et développé avec soin · Gauthier Bonhomme · 2026",
+   "en": "Designed and developed with care · Gauthier Bonhomme · 2026",
+   "de": "",
+   "it": ""
+  },
+  "projView": {
+   "fr": "Voir le projet ↗",
+   "en": "View project ↗",
+   "de": "",
+   "it": ""
+  },
+  "projWip": {
+   "fr": "En cours",
+   "en": "In progress",
+   "de": "",
+   "it": ""
+  },
+  "readMore": {
+   "fr": "Lire la suite ▾",
+   "en": "Read more ▾",
+   "de": "",
+   "it": ""
+  },
+  "readLess": {
+   "fr": "Réduire ▴",
+   "en": "Show less ▴",
+   "de": "",
+   "it": ""
+  }
+ },
+ "hero": {
+  "badge": {
+   "fr": "Stage ESA 2027 · févr. – juil. 2027",
+   "en": "ESA Student Internship 2027 · Feb – Jul 2027",
+   "de": "",
+   "it": ""
+  },
+  "title": {
+   "fr": "Élève ingénieur · Mécatronique & Contrôle",
+   "en": "Mechatronics & Control engineering student",
+   "de": "",
+   "it": ""
+  },
+  "tagline": {
+   "fr": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Prototypage concret · Robotique · Fabrication",
+   "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Hands-on prototyping · Robotics · Manufacturing",
+   "de": "",
+   "it": ""
+  },
+  "photo": "images/whatsapp-image-2026-07-23-at-17.09.00.jpeg",
+  "pano": ""
+ },
+ "highlights": [
+  {
+   "fr": "<strong>Fabrication concrète</strong> — usinage CNC, fonderie au sable, réfection de moteur, chaudronnerie.",
+   "en": "<strong>Hands-on builder</strong> — CNC machining, sand casting, engine rebuild, metalwork.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Mécatronique & automatique</strong> — robotique, commande PID/RST, commande vectorielle (FOC), microcontrôleurs.",
+   "en": "<strong>Mechatronics & control</strong> — robotics, PID/RST control, FOC drives, microcontrollers.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Simuler, puis valider</strong> — calcul éléments finis à ≈1 % des valeurs ASTM ; programmes FAO exécutés sur un vrai tour-fraiseur.",
+   "en": "<strong>Simulate, then validate</strong> — FEA within ≈1 % of ASTM values; CAM programs run on a real turn-mill.",
+   "de": "",
+   "it": ""
+  }
+ ],
+ "about": [
+  {
+   "fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong>, filière Mécatronique & Contrôle. Je candidate à un <strong>stage de 6 mois à l'ESA (février – juillet 2027)</strong> en robotique et prototypage concret. Cette page rassemble les projets qui se cachent derrière mon CV.",
+   "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong>, Mechatronics & Control track. I am applying for a <strong>6-month ESA student internship (February – July 2027)</strong> in robotics and hands-on prototyping. This page gathers the projects behind my CV.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "J'aime aller de la CAO et de la simulation jusqu'à l'atelier : j'ai programmé et conduit un <strong>tour-fraiseur CNC</strong>, conçu et coulé une <strong>pièce en fonte</strong> avec mon équipe, remis un moteur à neuf et construit de petits prototypes avec des microcontrôleurs et des pièces imprimées en 3D. Essayez la <strong>démo de réglage PID</strong> plus bas — et le bras robot en haut de la page suit votre curseur grâce à la cinématique inverse.",
+   "en": "I like taking things from CAD and simulation all the way to the workshop: I have programmed and run a <strong>CNC turn-mill</strong>, designed and poured a <strong>cast-iron part</strong> with my team, reconditioned an engine and built small prototypes with microcontrollers and 3D-printed parts. Try the <strong>PID-tuning demo</strong> below — and the robot arm at the top of the page follows your cursor using inverse kinematics.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "En dehors de l'ingénierie, je pratique les sports d'endurance et de montagne — <strong>finisher d'un ultra-trail de 100 km</strong> (5 000 m de dénivelé positif), alpinisme, escalade (7B) — et je suis <strong>ceinture noire de judo</strong>.",
+   "en": "Outside engineering, I practise endurance and mountain sports — <strong>100-km ultra-trail finisher</strong> (5,000 m elevation gain), mountaineering, climbing (7B) — and I hold a <strong>judo black belt</strong>.",
+   "de": "",
+   "it": ""
+  }
+ ],
+ "formations": [
+  {
+   "date": "2024 — 2027",
+   "link": "https://artsetmetiers.fr/fr",
+   "title": {
+    "fr": "École Nationale Supérieure des Arts et Métiers",
+    "en": "École Nationale Supérieure des Arts et Métiers",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Aix-en-Provence · Diplôme d'ingénieur — filière Mécatronique & Contrôle",
+    "en": "Aix-en-Provence · MSc in Engineering — Mechatronics & Control track",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Formation généraliste, axée sur l'industrie du futur et l'innovation",
+     "en": "Generalist engineering programme focused on the industry of the future and innovation",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Conception mécanique, robotique, systèmes industriels avancés, traitement du signal, éléments finis, procédés de fabrication, modélisation, automatisation, programmation et analyse de données.",
+     "en": "Mechanical design, robotics, advanced industrial systems, signal processing, finite elements, manufacturing processes, modelling, automation, programming and data analysis.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/formations/images-1-.png"
+  },
+  {
+   "date": "2021 — 2024",
+   "link": "https://fr.wikipedia.org/wiki/Classe_pr%C3%A9paratoire_physique_et_technologie",
+   "title": {
+    "fr": "Classe Préparatoire PT",
+    "en": "Preparatory Class PT",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Lycée Mermoz, Montpellier",
+    "en": "Lycée Mermoz, Montpellier",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Mathématiques, physique, sciences de l'ingénieur — formation intensive sur 3 ans",
+     "en": "Mathematics, physics, engineering sciences — intensive 3-year programme",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Acquisition d'une rigueur analytique et d'une capacité à travailler sous pression",
+     "en": "Development of analytical rigour and ability to work under pressure",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/formations/images-2-.png"
+  }
+ ],
+ "experiences": [
+  {
+   "date": "Juin — Août 2026",
+   "link": "https://www.royalcanin.com/fr",
+   "title": {
+    "fr": "Royal Canin — Stage",
+    "en": "Royal Canin — Internship",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Aimargues · Stage d'été à l'usine",
+    "en": "Aimargues · summer internship at the factory",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Contribution à l’amélioration du logiciel de maintenance existant",
+     "en": "Contributed to improving the existing maintenance software",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Accompagnement des équipes de maintenance au quotidien.",
+     "en": "Worked alongside and supported the maintenance teams",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/royalcaninlogosquarelarge.png"
+  },
+  {
+   "date": "2025 — 2026",
+   "link": "https://europraid.fr/",
+   "title": {
+    "fr": "ÉPOPÉE GADZ — Association étudiante",
+    "en": "ÉPOPÉE GADZ — Student association",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Trésorier · Europ'Raid 2026",
+    "en": "Treasurer · Europ'Raid 2026",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Budget et sponsoring d'un raid humanitaire de 8 000 km à travers l'Europe",
+     "en": "Budget and sponsorship for an 8,000-km humanitarian road trip across Europe",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Près de 4 000 € récoltés au profit d’œuvres caritatives.",
+     "en": "Nearly €4,000 raised for charity.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/carte-itin-raire-2021.jpg"
+  },
+  {
+   "date": "Juin — Août 2025",
+   "link": "https://www.hallb.fr/",
+   "title": {
+    "fr": "Hall b — Équipe fondatrice",
+    "en": "Hall b — Founding team",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Saint-Dionisy · Lancement d'une salle de sport",
+    "en": "Saint-Dionisy · Sports facility launch",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Lancement complet d'une salle de sport, de A à Z",
+     "en": "End-to-end launch of a fitness facility, from scratch",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Création de l’outil GymLocator, développé sur mesure pour détecter les emplacements propices à l’implantation d’une nouvelle salle de sport.",
+     "en": "Built GymLocator, a custom-made tool to identify the best locations for opening a new gym",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Mise en place de la vidéosurveillance et du site web hallb.fr",
+     "en": "Set up the video-surveillance and web infrastructure (hallb.fr)",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Mise en place des réseaux sociaux, aménagement et logistique",
+     "en": "Set-up of the social-media channels, fit-out and logistics",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/og-image.jpg"
+  },
+  {
+   "date": "2020 — 2021",
+   "link": "https://www.funride30.fr/",
+   "title": {
+    "fr": "Technicien polyvalent",
+    "en": "Maintenance Technician",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Langlade · Centre de loisirs pour vélo",
+    "en": "Langlade · Bike leisure centre",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Réparation et maintenance de vélos",
+     "en": "Bicycle repair and maintenance",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Accueil et conseil clients",
+     "en": "Customer welcome and advice",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Divers travaux manuels et logistique",
+     "en": "Various manual tasks and logistics",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/images.jpeg"
+  }
+ ],
+ "projects": [
+  {
+   "img": "images/projets/vilbrequin.jpg",
+   "title": {
+    "fr": "Vilebrequin usiné en CNC",
+    "en": "CNC-machined engine crankshaft",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Gamme complète en FAO sur Fusion 360 (tournage, fraisage, filetage) pour le vilebrequin d'un moteur monocylindre, puis fabrication sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC. Chaque programme était simulé sur la machine avant l'usinage ; sur place, j'ai traité les vibrations en bout de pièce et repris les trajectoires de fraisage à cause des limites d'axes de la machine. J'ai aussi chiffré le coût de la pièce (temps machine, main-d'œuvre, matière).",
+    "en": "Full CAM workflow in Fusion 360 (turning, milling, threading) for a single-cylinder engine crankshaft, then produced on a DMG MORI CTX Gamma 1250 TC turn-mill. Every program was simulated on the machine before cutting; at the machine, I dealt with chatter at the end of the part and reworked milling paths around the machine's axis limits. I also costed the part (machining time, labour, material).",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "FAO",
+     "en": "CAM",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Fusion 360",
+     "en": "Fusion 360",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Tournage-fraisage CNC",
+     "en": "CNC turn-milling",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "usinage.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport en français",
+    "en": "Report in French",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/fonderie-coulee.jpg",
+   "title": {
+    "fr": "Pièce en fonte — fonderie en équipe de 4",
+    "en": "Cast-iron foundry part — team of 4",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Moulage au sable d'un chaînon en fonte pour la fontaine de la Rotonde, à Aix-en-Provence. Nous avons mené des simulations thermiques QuickCast pour choisir l'orientation de la pièce et localiser les retassures, dimensionné les masselottes (règles des modules, des rayons d'action et des retraits) et conçu le système de remplissage en CAO. Nous avons ensuite réalisé à la main les noyaux en sable à prise chimique et les moules en sable à vert, calculé la charge du moule et coulé de la fonte grise GG-30. L'imprimante 3D prévue pour le modèle était en panne : la coulée s'est faite avec un outillage existant, sans masselottes — une vraie leçon sur l'écart entre une conception optimisée et les contraintes de l'atelier.",
+    "en": "Sand casting of a cast-iron chain link for the Rotonde fountain in Aix-en-Provence. We ran QuickCast thermal simulations to choose the part orientation and locate shrinkage hot spots, sized the risers (modulus, feeding-distance and shrinkage rules) and designed the gating system in CAD. We then hand-made the chemically-bonded sand cores and green-sand moulds, calculated the mould weighting and poured GG-30 grey cast iron. The 3D printer for the pattern was down, so the pour used existing tooling without risers — a real lesson in the gap between an optimised design and workshop constraints.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Fonderie",
+     "en": "Foundry",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "QuickCast",
+     "en": "QuickCast",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Moulage sable",
+     "en": "Sand casting",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "fonderie.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport en français",
+    "en": "Report in French",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/capture-d-cran-2026-07-15-103135.jpg",
+   "title": {
+    "fr": "Atelier & prototypage — projets personnels",
+    "en": "Workshop & prototyping — personal projects",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "J'ai toujours été bricoleur : moteurs de moto et de voiture (125 à 350 cm³, 2 et 4 temps ; Peugeot TU1), dont un entièrement remis à neuf ; tables fabriquées en chaudronnerie ; essais d'usinage électrochimique (ECM) à la maison ; montages Arduino ; rénovation complète d'un vélo. Photos dans l'album.",
+    "en": "I have always been a hands-on tinkerer: motorcycle and car engines (125–350 cc, 2- and 4-stroke; Peugeot TU1), one of them fully reconditioned; metal tables built in a sheet-metal workshop; home electrochemical machining (ECM) experiments; Arduino builds; a complete bike renovation. Photos in the album.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Autodidacte",
+     "en": "Self-taught",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "",
+   "wip": false,
+   "album": [
+    {
+     "img": "images/projets/projets-divers-et-varies/snapchat-1574939897.jpg",
+     "caption": {
+      "fr": "Avec un ami nous expérimentions ici l'ECM (Electrochemical Machining), un procédé d'usinage électrochimique simple, peu coûteux et pouvant être mis en place à la maison.",
+      "en": "With a friend, we were experimenting with ECM (Electrochemical Machining), a simple, low-cost electrochemical machining process that can be set up at home.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.jpg",
+     "caption": {
+      "fr": "Nous étions ici en train de fabriquer une jardinière ",
+      "en": "Here we were building a planter box.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102955.png",
+     "caption": {
+      "fr": "J'ai à de nombreuses reprise pu travailler sur des moteur de moto ( 125 cc 4T , 300cc 2T , 350cc 4T , moteur TU1 d'une 205 ex ...)",
+      "en": "I have worked many times on motorcycle engines (125 cc 4-stroke, 300 cc 2-stroke, 350 cc 4-stroke, the TU1 engine of an old Peugeot 205…).",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20240114_115122.jpg",
+     "caption": {
+      "fr": "Voici l'étape intermédiaire d'une table basse que j'ai fabriquée en chaudronnerie avec un ami.",
+      "en": "An intermediate stage of a coffee table I built in the metal workshop with a friend.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
+     "caption": {
+      "fr": "Voici l'un des moteurs que j'ai remis à neuf ",
+      "en": "One of the engines I fully reconditioned.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103103.png",
+     "caption": {
+      "fr": "Fabrication d'une autre table en chaudronnerie ",
+      "en": "Building another table in the metal workshop.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.jpg",
+     "caption": {
+      "fr": "J'ai eu à de nombreuses reprises l'occasion de réaliser de petits projets avec des cartes Arduino.",
+      "en": "I have had many opportunities to build small projects with Arduino boards.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20230211_175603.jpg",
+     "caption": {
+      "fr": "Rénovation ( et peinture ) d'un vélo de A à Z ",
+      "en": "Complete renovation (and repaint) of a bicycle, from A to Z.",
+      "de": "",
+      "it": ""
+     }
+    }
+   ],
+   "slug": "projets-divers-et-varies"
+  },
+  {
+   "img": "images/projets/abaqus-contraintes.jpg",
+   "title": {
+    "fr": "Mécanique de la rupture sous Abaqus — équipe de 3",
+    "en": "Fracture-mechanics FEA (Abaqus) — team of 3",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Éprouvette DCT (Disc Compact Tension) dimensionnée selon l'ASTM E399-90 : modèle 2D avec maillage en toile d'araignée en fond de fissure, champs de contraintes et facteur d'intensité de contrainte K_I. Le K_I éléments finis concorde avec la valeur analytique à environ 1 % près, et nous en avons déduit la charge maximale avant rupture pour plusieurs matériaux.",
+    "en": "Disc compact tension (DCT) specimen sized to ASTM E399-90: 2D model with a spider-web mesh at the crack tip, stress fields and stress-intensity factor K_I. The finite-element K_I matched the analytical value within about 1 %, and we derived the maximum load before fracture for several materials.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Abaqus",
+     "en": "Abaqus",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Éléments finis",
+     "en": "FEA",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "ASTM E399",
+     "en": "ASTM E399",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "abaqus.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport en français",
+    "en": "Report in French",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/statue.jpg",
+   "title": {
+    "fr": "Statue commémorative en fonderie",
+    "en": "Commemorative Cast Statue",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Conception et réalisation d'une statue commémorative en métal, de la modélisation 3D au moulage. J'ai combiné l'impression 3D pour le modèle et la fonderie maison pour la coulée — un projet mêlant métallurgie, transformations thermiques de la matière et fabrication artisanale.",
+    "en": "Design and creation of a commemorative metal statue, from 3D modelling to casting. I combined 3D printing for the pattern with home foundry casting — a project blending metallurgy, thermal transformation of materials and hands-on craftsmanship.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Fonderie",
+     "en": "Foundry",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Impression 3D",
+     "en": "3D Printing",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Métallurgie",
+     "en": "Metallurgy",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Moulage sable ",
+     "en": "Sand casting",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "",
+   "wip": false
+  },
+  {
+   "img": "images/projets/trail100k.jpg",
+   "title": {
+    "fr": "Ultra trail — du 100 km à l'UTMB",
+    "en": "Ultra trail — from 100 km to the UTMB",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif — objectif atteint, course parfaitement déroulée. Cap désormais sur l'UTMB (170 km, 10 000 m D+) : je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.",
+    "en": "A goal built over several years: completing a 100 km race with 5,000 m of elevation gain — done, and the race went perfectly. Next up: the UTMB (170 km, 10,000 m D+). I train accordingly and am collecting the running stones needed to qualify.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "100 km · 5 000 m D+ ✓",
+     "en": "100 km · 5,000 m D+ ✓",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Objectif UTMB · 170 km",
+     "en": "UTMB goal · 170 km",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Endurance",
+     "en": "Endurance",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
+   "wip": true
+  }
+ ],
+ "skills": [
+  {
+   "title": {
+    "fr": "Conception & fabrication",
+    "en": "Design & manufacturing",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "CATIA V5",
+      "en": "CATIA V5",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "3DExperience",
+      "en": "3DExperience",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Fusion 360 (FAO)",
+      "en": "Fusion 360 (CAM)",
+      "de": "",
+      "it": ""
+     },
+     "link": "usinage.html"
+    },
+    {
+     "label": {
+      "fr": "Tournage-fraisage CNC",
+      "en": "CNC turn-milling",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Fonderie au sable",
+      "en": "Sand casting",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Impression 3D FDM",
+      "en": "FDM 3D printing",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Simulation",
+    "en": "Simulation",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Abaqus (éléments finis)",
+      "en": "Abaqus (FEA)",
+      "de": "",
+      "it": ""
+     },
+     "link": "abaqus.html"
+    },
+    {
+     "label": {
+      "fr": "QuickCast (fonderie)",
+      "en": "QuickCast (casting)",
+      "de": "",
+      "it": ""
+     },
+     "link": "fonderie.html"
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Automatique & embarqué",
+    "en": "Control & embedded",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Synthèse PID/RST",
+      "en": "PID/RST synthesis",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Représentation d'état",
+      "en": "State-space modelling",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Commande à temps discret",
+      "en": "Discrete-time control",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Commande vectorielle (FOC)",
+      "en": "Field-oriented control (FOC)",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Arduino",
+      "en": "Arduino",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "ESP32",
+      "en": "ESP32",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Programmation",
+    "en": "Programming",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Python",
+      "en": "Python",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Git",
+      "en": "Git",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Linux",
+      "en": "Linux",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "MATLAB (bases)",
+      "en": "MATLAB (basic)",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Savoir-être",
+    "en": "Soft Skills",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Pédagogie",
+      "en": "Teaching",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Travail d'équipe",
+      "en": "Teamwork",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Rigueur",
+      "en": "Rigour",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Adaptabilité",
+      "en": "Adaptability",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  }
+ ],
+ "languages": [
+  {
+   "icon": "🇫🇷",
+   "name": {
+    "fr": "Français",
+    "en": "French",
+    "de": "",
+    "it": ""
+   },
+   "level": {
+    "fr": "Langue maternelle",
+    "en": "Native language",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "icon": "🇬🇧",
+   "name": {
+    "fr": "Anglais",
+    "en": "English",
+    "de": "",
+    "it": ""
+   },
+   "level": {
+    "fr": "Niveau C1 — Courant",
+    "en": "C1 Level — Fluent",
+    "de": "",
+    "it": ""
+   }
+  }
+ ],
+ "interests": [
+  {
+   "icon": "🥋",
+   "name": {
+    "fr": "Judo",
+    "en": "Judo",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Ceinture noire",
+    "en": "Black belt",
+    "de": "",
+    "it": ""
+   },
+   "page": ""
+  },
+  {
+   "icon": "🧗",
+   "name": {
+    "fr": "Escalade",
+    "en": "Climbing",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Niveau 7B · Album ↗",
+    "en": "Grade 7B · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "escalade"
+  },
+  {
+   "icon": "⛷️",
+   "name": {
+    "fr": "Ski",
+    "en": "Skiing",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Alpin & randonnée · ↗",
+    "en": "Alpine & touring · ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "ski"
+  },
+  {
+   "icon": "🏔️",
+   "name": {
+    "fr": "Alpinisme",
+    "en": "Mountaineering",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "↗",
+    "en": "↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "alpinisme"
+  },
+  {
+   "icon": "🏃",
+   "name": {
+    "fr": "Ultra Trail",
+    "en": "Ultra Trail",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "+100 km · ↗",
+    "en": "+100 km · ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "trail"
+  },
+  {
+   "icon": "🪁",
+   "name": {
+    "fr": "Kite Surf",
+    "en": "Kite Surf",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "↗",
+    "en": "↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "kitesurf"
+  },
+  {
+   "icon": "✈️",
+   "name": {
+    "fr": "Voyages",
+    "en": "Travel",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": ""
+   },
+   "page": ""
+  }
+ ],
+ "contacts": [
+  {
+   "icon": "email",
+   "label": {
+    "fr": "Email",
+    "en": "Email",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "gauthier.bonhomme30@gmail.com",
+    "en": "gauthier.bonhomme30@gmail.com",
+    "de": "",
+    "it": ""
+   },
+   "href": "https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com"
+  },
+  {
+   "icon": "phone",
+   "label": {
+    "fr": "Téléphone",
+    "en": "Phone",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "+33 6 08 27 62 16",
+    "en": "+33 6 08 27 62 16",
+    "de": "",
+    "it": ""
+   },
+   "href": "tel:+33608276216"
+  },
+  {
+   "icon": "pin",
+   "label": {
+    "fr": "Localisation",
+    "en": "Location",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "Calvisson, 30420 — Gard (30) ↗",
+    "en": "Calvisson, 30420 — Gard, France ↗",
+    "de": "",
+    "it": ""
+   },
+   "href": "https://maps.google.com/?q=Calvisson,30420"
+  }
+ ],
+ "sports": {
+  "escalade": {
+   "emoji": "🧗",
+   "title": {
+    "fr": "Escalade",
+    "en": "Climbing",
+    "de": "",
+    "it": ""
+   },
+   "why": {
+    "fr": "Avant tout pour l'effort physique en pleine nature, dehors. L'escalade est aussi un sport de partage : on grimpe à plusieurs, on s'assure et on se motive mutuellement. Chaque ascension est un défi.",
+    "en": "Above all for the physical effort out in nature. Climbing is also a sport you share: you climb together, belay each other and keep each other motivated. Every ascent is a challenge.",
+    "de": "",
+    "it": ""
+   },
+   "gained": {
+    "fr": "Des souvenirs et le sens de la résolution de problèmes : lire une voie, persévérer sur un mouvement difficile et trouver la solution.",
+    "en": "Great memories and a real sense of problem-solving: reading a route, persevering on a hard move and finding the solution.",
+    "de": "",
+    "it": ""
+   },
+   "grid": "g2",
+   "photos": [
+    {
+     "thumb": "images/escalade/thumb_1.jpg",
+     "full": "images/escalade/photo_1.jpg",
+     "cls": "span2"
+    },
+    {
+     "thumb": "images/escalade/thumb_2.jpg",
+     "full": "images/escalade/photo_2.jpg",
+     "cls": "span2"
+    }
+   ]
+  },
+  "ski": {
+   "emoji": "⛷️",
+   "title": {
+    "fr": "Ski",
+    "en": "Skiing",
+    "de": "",
+    "it": ""
+   },
+   "why": {
+    "fr": "Pour le plaisir d'un sport d'extérieur et la liberté qu'il procure : aller où l'on veut, comme on veut — en ski alpin comme en ski de randonnée. J'adore cette sensation de liberté au milieu des montagnes.",
+    "en": "For the joy of an outdoor sport and the freedom it brings: going wherever you want, however you want — on alpine skis as well as on touring skis. I love that feeling of freedom in the middle of the mountains.",
+    "de": "",
+    "it": ""
+   },
+   "gained": {
+    "fr": "Le sens de l'autonomie et de la gestion du risque, ainsi qu'une réelle capacité d'adaptation au terrain et aux conditions.",
+    "en": "A sense of autonomy and risk management, along with a real ability to adapt to the terrain and the conditions.",
+    "de": "",
+    "it": ""
+   },
+   "grid": "g4",
+   "photos": [
+    {
+     "thumb": "images/ski/thumb_1.jpg",
+     "full": "images/ski/photo_1.jpg",
+     "cls": "tall"
+    },
+    {
+     "thumb": "images/ski/thumb_2.jpg",
+     "full": "images/ski/photo_2.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/ski/thumb_3.jpg",
+     "full": "images/ski/photo_3.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/ski/thumb_4.jpg",
+     "full": "images/ski/photo_4.jpg",
+     "cls": "span2"
+    }
+   ]
+  },
+  "alpinisme": {
+   "emoji": "🏔️",
+   "title": {
+    "fr": "Alpinisme",
+    "en": "Mountaineering",
+    "de": "",
+    "it": ""
+   },
+   "why": {
+    "fr": "L'alpinisme réunit tout ce que j'aime dans le ski et l'escalade : l'effort partagé à plusieurs, le grand air, l'immensité de la montagne, le défi sportif et la liberté.",
+    "en": "Mountaineering brings together everything I love about skiing and climbing: shared effort, fresh air, the vastness of the mountains, the athletic challenge and the freedom.",
+    "de": "",
+    "it": ""
+   },
+   "gained": {
+    "fr": "La montagne m'a appris l'importance de la préparation, de la rigueur et de la persévérance. Savoir rester calme face aux imprévus et avancer étape par étape sont des qualités que j'utilise au quotidien.",
+    "en": "The mountains taught me the importance of preparation, rigour and perseverance. Staying calm when things go wrong and moving forward step by step are qualities I use every day.",
+    "de": "",
+    "it": ""
+   },
+   "grid": "gmany",
+   "photos": [
+    {
+     "thumb": "images/alpinisme/thumb_1.jpg",
+     "full": "images/alpinisme/photo_1.jpg",
+     "cls": "tall"
+    },
+    {
+     "thumb": "images/alpinisme/thumb_2.jpg",
+     "full": "images/alpinisme/photo_2.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_3.jpg",
+     "full": "images/alpinisme/photo_3.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_4.jpg",
+     "full": "images/alpinisme/photo_4.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_5.jpg",
+     "full": "images/alpinisme/photo_5.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_6.jpg",
+     "full": "images/alpinisme/photo_6.jpg",
+     "cls": "tall-r"
+    },
+    {
+     "thumb": "images/alpinisme/thumb_7.jpg",
+     "full": "images/alpinisme/photo_7.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_8.jpg",
+     "full": "images/alpinisme/photo_8.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_9.jpg",
+     "full": "images/alpinisme/photo_9.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/alpinisme/thumb_10.jpg",
+     "full": "images/alpinisme/photo_10.jpg",
+     "cls": "span2"
+    },
+    {
+     "thumb": "images/alpinisme/thumb_11.jpg",
+     "full": "images/alpinisme/photo_11.jpg",
+     "cls": "span2"
+    }
+   ]
+  },
+  "trail": {
+   "emoji": "🏃",
+   "title": {
+    "fr": "Ultra Trail",
+    "en": "Ultra Trail",
+    "de": "",
+    "it": ""
+   },
+   "why": {
+    "fr": "Encore une fois, le plaisir d'être dehors et de faire du sport — mais surtout le défi. Sur des ultra-trails de plus de 100 km, l'objectif est de me prouver que j'en suis capable et d'aller au bout de l'effort.",
+    "en": "Once again, the pleasure of being outdoors and exercising — but above all the challenge. On ultra trails of more than 100 km, the goal is to prove to myself that I can do it and to see the effort through.",
+    "de": "",
+    "it": ""
+   },
+   "gained": {
+    "fr": "Que la volonté et l'organisation comptent souvent autant que l'entraînement : se fixer un objectif qui paraît déraisonnable, puis le préparer jusqu'à le rendre atteignable.",
+    "en": "That willpower and organisation often matter as much as training: set a goal that seems unreasonable, then prepare for it until it becomes achievable.",
+    "de": "",
+    "it": ""
+   },
+   "grid": "g4",
+   "photos": [
+    {
+     "thumb": "images/trail/thumb_1.jpg",
+     "full": "images/trail/photo_1.jpg",
+     "cls": "tall"
+    },
+    {
+     "thumb": "images/trail/thumb_2.jpg",
+     "full": "images/trail/photo_2.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/trail/thumb_3.jpg",
+     "full": "images/trail/photo_3.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/trail/thumb_4.jpg",
+     "full": "images/trail/photo_4.jpg",
+     "cls": "span2"
+    }
+   ]
+  },
+  "kitesurf": {
+   "emoji": "🪁",
+   "title": {
+    "fr": "Kite Surf",
+    "en": "Kitesurfing",
+    "de": "",
+    "it": ""
+   },
+   "why": {
+    "fr": "La sensation de glisse est juste magnifique. C'est aussi un sport puissant et technique, où l'on apprend à maîtriser le vent pour prendre de la vitesse et enchaîner les sauts.",
+    "en": "The feeling of gliding is just wonderful. It is also a powerful, technical sport, where you learn to master the wind to gain speed and link jumps together.",
+    "de": "",
+    "it": ""
+   },
+   "gained": {
+    "fr": "Des maux de dos majoritairement, mais aussi beaucoup de plaisir à dompter le vent et à progresser techniquement, le tout face à des paysages magnifiques et avec une incroyable sensation de liberté.",
+    "en": "Mostly back pain, but also a lot of fun taming the wind and improving technically, all in front of magnificent scenery and with an incredible feeling of freedom.",
+    "de": "",
+    "it": ""
+   },
+   "grid": "g4",
+   "photos": [
+    {
+     "thumb": "images/kitesurf/thumb_1.jpg",
+     "full": "images/kitesurf/photo_1.jpg",
+     "cls": "span2"
+    },
+    {
+     "thumb": "images/kitesurf/thumb_2.jpg",
+     "full": "images/kitesurf/photo_2.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/kitesurf/thumb_3.jpg",
+     "full": "images/kitesurf/photo_3.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/kitesurf/thumb_4.jpg",
+     "full": "images/kitesurf/photo_4.jpg",
+     "cls": ""
+    },
+    {
+     "thumb": "images/kitesurf/thumb_5.jpg",
+     "full": "images/kitesurf/photo_5.jpg",
+     "cls": "span2"
+    }
+   ]
+  }
+ }
+}
