@@ -398,25 +398,14 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .card-title{font-size:15px;}
 }
 
-/* ═══ HERO + SECTION PARCOURS (pilotée par content.json > features.parcours) ═══ */
+/* ═══ HERO ═══ */
 .hero{position:relative;}
 .hero-text,.hero-photo{position:relative;z-index:1;}
-
-/* section Parcours — profil de course lié au défilement */
-#parcours .course-outer{height:200vh;position:relative;}
-.course-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;}
-.course-box{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
-#course-svg{display:block;width:100%;height:auto;}
-.cp-card{position:absolute;left:20px;top:16px;max-width:340px;background:rgba(17,24,39,0.92);border:1px solid var(--accent-border);border-radius:12px;padding:13px 17px;backdrop-filter:blur(6px);}
-.cp-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin:0 0 4px;}
-.cp-card p{font-size:12.5px;line-height:1.5;color:var(--text);}
-.scroll-cue{text-align:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-top:12px;transition:opacity .3s;}
 
 .desc-more{display:inline-block;margin-top:6px;background:none;border:none;padding:0;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;letter-spacing:0.02em;}
 .desc-more:hover{text-decoration:underline;}
 
 @media(max-width:768px){
-  .cp-card{position:static;max-width:none;margin:0;border-left:none;border-right:none;border-bottom:none;border-radius:0;}
   /* cartes projets : image réduite + description limitée à 5 lignes (bouton « Lire la suite »).
      flex-start = chaque carte garde sa propre hauteur : déplier une carte ne touche pas les voisines */
   .projects-scroll{align-items:flex-start;}

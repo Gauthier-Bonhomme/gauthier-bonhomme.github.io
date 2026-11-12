@@ -190,7 +190,7 @@ function renderAll() {
   renderLanguages();
   renderInterests();
   renderContacts();
-  renderEffectsTexts(); // parcours : textes dépendants de la langue
+  addSuiteButtons(); // boutons « Lire la suite » des cartes projets (mobile)
   updateNav();
 }
 
@@ -247,7 +247,6 @@ function openSport(act) {
 // CV NAV ACTIVE ON SCROLL
 let sections = document.querySelectorAll('section[id]');
 let navLinks = document.querySelectorAll('#main-nav a');
-function refreshNavRefs(){ sections = document.querySelectorAll('section[id]'); navLinks = document.querySelectorAll('#main-nav a'); }
 let _lastNavActive = null;
 function updateNav() {
   let current = '';
@@ -320,93 +319,15 @@ function initPano(){
   img.src = src;
 }
 
-// ══════════════════════════════════════
-// SECTION PARCOURS — frise en profil de course (pilotée par content.json > features.parcours)
-// ══════════════════════════════════════
-let _parcoursApi = null;
-
-// ─── initialisation unique (après chargement de content.json) ───
-function initEffects(){
-  const F = (CONTENT && CONTENT.features) || {};
-  // Parcours : section retirée si désactivé (+ son lien de sommaire)
-  if(!(F.parcours && F.parcours.enabled !== false)) {
-    const s=document.getElementById('parcours'); if(s) s.remove();
-    const l=document.getElementById('nav-parcours-link'); if(l) l.remove();
-    refreshNavRefs(); // la section/le lien retirés ne doivent plus fausser la nav au scroll
-  } else _parcoursApi = initParcours();
-  renderEffectsTexts();
-  // boutons « Lire la suite » : re-calcul après chargement des polices, aux redimensionnements
-  // et rotations d'écran (ResizeObserver = fiable là où l'évènement resize ne suffit pas)
+// ─── boutons « Lire la suite » des cartes projets (mobile) : re-calcul après chargement des polices,
+// aux redimensionnements et rotations d'écran (ResizeObserver = fiable là où l'évènement resize ne suffit pas) ───
+function initSuiteButtons(){
   [400, 1200, 2500].forEach(d => setTimeout(addSuiteButtons, d));
   const scroll = document.getElementById('projects-scroll');
   if (scroll && 'ResizeObserver' in window) {
     let deb; new ResizeObserver(() => { clearTimeout(deb); deb = setTimeout(addSuiteButtons, 150); }).observe(scroll);
   }
   window.addEventListener('resize', () => setTimeout(addSuiteButtons, 150));
-}
-
-// ─── textes dépendants de la langue (appelé à chaque setLang) ───
-function renderEffectsTexts(){
-  if(!CONTENT) return;
-  const F = CONTENT.features || {};
-  // Parcours : titre de section, lien de sommaire, accroche, carte d'étape courante
-  if(_parcoursApi && F.parcours){
-    const lbl=document.getElementById('parcours-label'); if(lbl) lbl.textContent=pick(F.parcours.title);
-    const nav=document.getElementById('nav-parcours-link'); if(nav){ nav.textContent=pick(F.parcours.title); nav.style.display=''; }
-    const cue=document.getElementById('course-cue'); if(cue) cue.textContent=pick(F.parcours.cue);
-    _parcoursApi.refresh();
-  }
-  addSuiteButtons(); // boutons « Lire la suite » des cartes projets (mobile)
-}
-
-// ─── PARCOURS façon profil de course (lié au défilement) ───
-function initParcours(){
-  const outer=document.getElementById('course-outer'); if(!outer) return null;
-  const main=document.getElementById('course-path'),done=document.getElementById('course-done'),fill=document.getElementById('course-fill');
-  const pathD='M 20 330 C 90 320, 130 285, 185 268 C 240 250, 265 290, 320 272 C 380 252, 400 200, 455 185 C 505 172, 520 230, 575 215 C 635 198, 655 140, 710 128 C 760 117, 775 170, 830 150 C 895 126, 930 92, 975 62';
-  main.setAttribute('d',pathD); done.setAttribute('d',pathD); fill.setAttribute('d',pathD+' L 975 380 L 20 380 Z');
-  const LEN=main.getTotalLength(); done.style.strokeDasharray=LEN; done.style.strokeDashoffset=LEN;
-  const grid=document.getElementById('gridlines');
-  for(let y=80;y<380;y+=75){ const l=document.createElementNS('http://www.w3.org/2000/svg','line');
-    l.setAttribute('x1',20);l.setAttribute('x2',980);l.setAttribute('y1',y);l.setAttribute('y2',y);
-    l.setAttribute('stroke','rgba(255,255,255,0.05)');l.setAttribute('stroke-dasharray','3 6');grid.appendChild(l); }
-  const card={t:document.getElementById('cp-title'),d:document.getElementById('cp-desc')};
-  const cpg=document.getElementById('checkpoints');
-  let cpEls=[],currentCp=-1;
-  // les étapes viennent de content.json ; leur position est répartie uniformément le long du tracé
-  function steps(){ return (CONTENT.features.parcours.steps)||[]; }
-  function positions(){ const s=steps(); const n=s.length; return s.map((cp,i)=> n<=1?1:i/(n-1)); }
-  function buildCheckpoints(){
-    cpg.innerHTML=''; cpEls=[];
-    positions().forEach(at=>{
-      const p=main.getPointAtLength(at*LEN);
-      const g=document.createElementNS('http://www.w3.org/2000/svg','g');
-      const halo=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      halo.setAttribute('cx',p.x);halo.setAttribute('cy',p.y);halo.setAttribute('r',10);
-      halo.setAttribute('fill','none');halo.setAttribute('stroke','rgba(96,165,250,0.35)');
-      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',5);
-      c.setAttribute('fill','#0d1526');c.setAttribute('stroke','#60a5fa');c.setAttribute('stroke-width',2);
-      g.append(halo,c);cpg.appendChild(g);cpEls.push(c);
-    });
-  }
-  function setCp(i){ const s=steps(); if(!s[i]) return; card.t.textContent=pick(s[i].title); card.d.textContent=pick(s[i].desc); currentCp=i; }
-  function onScroll(){
-    const r=outer.getBoundingClientRect(); const total=r.height-window.innerHeight;
-    const prog=Math.max(0,Math.min(1,-r.top/total)); const at=prog*LEN;
-    done.style.strokeDashoffset=LEN-at;
-    const pos=positions(); let idx=0;
-    pos.forEach((at2,i)=>{ const passed=prog>=at2-0.02; if(cpEls[i]){ cpEls[i].setAttribute('fill',passed?'#34d399':'#0d1526'); cpEls[i].setAttribute('stroke',passed?'#34d399':'#60a5fa'); } if(passed) idx=i; });
-    if(idx!==currentCp) setCp(idx);
-    const cue=document.getElementById('course-cue'); if(cue) cue.style.opacity=prog>0.95?0.25:1;
-  }
-  buildCheckpoints();
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  setInterval(onScroll,250);
-  onScroll();
-  // refresh = reconstruit les checkpoints (nb d'étapes a pu changer) et re-traduit la carte
-  return { refresh(){ buildCheckpoints(); currentCp=-1; onScroll(); } };
 }
 
 // ─── cartes projets (mobile) : bouton « Lire la suite » quand la description déborde ───
@@ -432,5 +353,5 @@ fetch(PAGE.content, {cache: 'no-cache'}).then(r => r.json()).then(c => {
   setLang(initialLang()); // langue imposée par la page, sinon mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
   initPano();
-  initEffects(); // section parcours (pilotée par content.json > features.parcours)
+  initSuiteButtons(); // boutons « Lire la suite » des cartes projets (mobile)
 }).catch(e => console.error('Chargement de ' + PAGE.content + ' impossible :', e));
