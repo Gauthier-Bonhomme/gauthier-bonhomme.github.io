@@ -190,7 +190,7 @@ function renderAll() {
   renderLanguages();
   renderInterests();
   renderContacts();
-  renderEffectsTexts(); // bras/parcours/PID : textes dépendants de la langue
+  renderEffectsTexts(); // parcours : textes dépendants de la langue
   updateNav();
 }
 
@@ -321,48 +321,19 @@ function initPano(){
 }
 
 // ══════════════════════════════════════
-// EFFETS INTERACTIFS — bras robot · parcours · PID (pilotés par content.json > features)
+// SECTION PARCOURS — frise en profil de course (pilotée par content.json > features.parcours)
 // ══════════════════════════════════════
-const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// boucle d'animation : rAF si dispo, sinon repli setInterval (rendus sans compositeur)
-function runLoop(frame){ let alive=false; function loop(){ alive=true; frame(); requestAnimationFrame(loop); } requestAnimationFrame(loop); setTimeout(()=>{ if(!alive) setInterval(frame,33); },500); }
-
-// libellés techniques du PID (les 4 langues) — titre/description viennent de content.json
-const PID_L10N = {
-  kp:{fr:'Kp — proportionnel',en:'Kp — proportional',de:'Kp — Proportionalanteil',it:'Kp — proporzionale'},
-  ki:{fr:'Ki — intégral',en:'Ki — integral',de:'Ki — Integralanteil',it:'Ki — integrale'},
-  kd:{fr:'Kd — dérivé',en:'Kd — derivative',de:'Kd — Differentialanteil',it:'Kd — derivativo'},
-  mou:{fr:'Trop mou',en:'Too soft',de:'Zu träge',it:'Troppo molle'},
-  instable:{fr:'Instable',en:'Unstable',de:'Instabil',it:'Instabile'},
-  regle:{fr:'Bien réglé',en:'Well tuned',de:'Gut eingestellt',it:'Ben regolato'},
-  over:{fr:'Dépassement',en:'Overshoot',de:'Überschwingen',it:'Sovraelongazione'},
-  settle:{fr:'Temps de réponse',en:'Settling time',de:'Ausregelzeit',it:'Tempo di risposta'},
-  errlbl:{fr:'Erreur statique',en:'Steady-state error',de:'Bleibende Abweichung',it:'Errore a regime'},
-  verdict:{fr:'Verdict',en:'Verdict',de:'Urteil',it:'Verdetto'},
-  consigne:{fr:'consigne',en:'setpoint',de:'Sollwert',it:'setpoint'},
-  vInstable:{fr:'Instable ✗',en:'Unstable ✗',de:'Instabil ✗',it:'Instabile ✗'},
-  vBien:{fr:'Bien réglé ✓',en:'Well tuned ✓',de:'Gut eingestellt ✓',it:'Ben regolato ✓'},
-  vErr:{fr:'Erreur statique',en:'Steady-state error',de:'Regelabweichung',it:'Errore a regime'},
-  vMoyen:{fr:'Peut mieux faire',en:'Could be better',de:'Geht besser',it:'Può migliorare'}
-};
-
-let _armApi = null, _parcoursApi = null, _pidApi = null;
+let _parcoursApi = null;
 
 // ─── initialisation unique (après chargement de content.json) ───
 function initEffects(){
   const F = (CONTENT && CONTENT.features) || {};
-  // Bras robot : retiré du DOM si désactivé
-  if(!(F.arm && F.arm.enabled !== false)) { const c=document.getElementById('arm-hero'); if(c) c.remove(); }
-  else _armApi = initArm();
   // Parcours : section retirée si désactivé (+ son lien de sommaire)
   if(!(F.parcours && F.parcours.enabled !== false)) {
     const s=document.getElementById('parcours'); if(s) s.remove();
     const l=document.getElementById('nav-parcours-link'); if(l) l.remove();
     refreshNavRefs(); // la section/le lien retirés ne doivent plus fausser la nav au scroll
   } else _parcoursApi = initParcours();
-  // PID : carte retirée si désactivé
-  if(!(F.pid && F.pid.enabled !== false)) { const p=document.getElementById('pid-card'); if(p) p.remove(); }
-  else _pidApi = initPid();
   renderEffectsTexts();
   // boutons « Lire la suite » : re-calcul après chargement des polices, aux redimensionnements
   // et rotations d'écran (ResizeObserver = fiable là où l'évènement resize ne suffit pas)
@@ -385,85 +356,7 @@ function renderEffectsTexts(){
     const cue=document.getElementById('course-cue'); if(cue) cue.textContent=pick(F.parcours.cue);
     _parcoursApi.refresh();
   }
-  // PID : titre + description (content.json) et libellés techniques (dico)
-  if(_pidApi && F.pid){
-    const t=document.getElementById('pid-title'); if(t) t.textContent=pick(F.pid.title);
-    const d=document.getElementById('pid-desc'); if(d) d.textContent=pick(F.pid.desc);
-    document.querySelectorAll('#pid-card [data-k]').forEach(el=>{ const k=el.getAttribute('data-k'); if(PID_L10N[k]) el.textContent=pick(PID_L10N[k]); });
-    _pidApi.refresh();
-  }
   addSuiteButtons(); // boutons « Lire la suite » des cartes projets (mobile)
-}
-
-// ─── BRAS ROBOT 2 axes (cinématique inverse) — suit la souris dans le hero ───
-function initArm(){
-  const stage=document.querySelector('.hero'), canvas=document.getElementById('arm-hero');
-  if(!stage||!canvas) return null;
-  canvas.style.display='';
-  const ctx=canvas.getContext('2d');
-  const sizePct=(CONTENT.features.arm && CONTENT.features.arm.size) || 100;
-  let L1=150,L2=120,S=1,W=0,H=0;
-  function resize(){
-    const DPR=Math.min(2,window.devicePixelRatio||1);
-    W=stage.clientWidth; H=stage.clientHeight;
-    S=(W<700?0.65:1)*(sizePct/100);
-    L1=150*S; L2=120*S;
-    canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
-  }
-  resize(); window.addEventListener('resize',resize);
-  let a1=-2.2,a2=1.6,tx=null,ty=null,t=0;
-  const base=()=>({x:W*(S<1&&W<700?0.88:0.78),y:H-8});
-  document.addEventListener('pointermove',e=>{
-    const r=stage.getBoundingClientRect(); const x=e.clientX-r.left,y=e.clientY-r.top;
-    if(x>=0&&y>=0&&x<=r.width&&y<=r.height){tx=x;ty=y;} else {tx=ty=null;}
-  },{passive:true});
-  function solveIK(bx,by,px,py){
-    let dx=px-bx,dy=py-by; const dmax=L1+L2-4,d=Math.hypot(dx,dy);
-    if(d>dmax){dx*=dmax/d;dy*=dmax/d;}
-    const dist=Math.min(Math.hypot(dx,dy),dmax);
-    const c2=(dist*dist-L1*L1-L2*L2)/(2*L1*L2);
-    const A2=-Math.acos(Math.max(-1,Math.min(1,c2)));
-    const A1=Math.atan2(dy,dx)-Math.atan2(L2*Math.sin(A2),L1+L2*Math.cos(A2));
-    return [A1,A2];
-  }
-  function cap(x1,y1,x2,y2,w,c){ ctx.strokeStyle=c;ctx.lineWidth=w;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke(); }
-  function frame(){
-    if(stage.clientWidth!==W||stage.clientHeight!==H) resize();
-    if(!W||!H||canvas.offsetParent===null) return; // masqué (mobile)
-    t+=0.016; const b=base(); let px,py;
-    if(tx!==null){px=tx;py=ty;}
-    else if(!REDUCED){px=b.x-120*S+Math.sin(t*0.5)*85*S; py=H*0.42+Math.cos(t*0.73)*45*S;}
-    else {px=b.x-140*S;py=H*0.4;}
-    const [g1,g2]=solveIK(b.x,b.y,px,py); a1+=(g1-a1)*0.2; a2+=(g2-a2)*0.2;
-    const jx=b.x+L1*Math.cos(a1),jy=b.y+L1*Math.sin(a1);
-    const ex=jx+L2*Math.cos(a1+a2),ey=jy+L2*Math.sin(a1+a2);
-    ctx.clearRect(0,0,W,H);
-    ctx.strokeStyle='rgba(96,165,250,0.08)';ctx.lineWidth=1;ctx.setLineDash([4,7]);
-    ctx.beginPath();ctx.arc(b.x,b.y,L1+L2-4,Math.PI,2*Math.PI);ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle='#1e293b';ctx.beginPath();ctx.roundRect(b.x-28*S,b.y-5*S,56*S,10*S,4*S);ctx.fill();
-    ctx.strokeStyle='rgba(255,255,255,0.10)';ctx.stroke();
-    cap(b.x,b.y-3*S,jx,jy,13*S,'#243352'); cap(b.x,b.y-3*S,jx,jy,8*S,'#31446e');
-    cap(jx,jy,ex,ey,10*S,'#2b3d63'); cap(jx,jy,ex,ey,6*S,'#3b5488');
-    for(const [cx2,cy2,r] of [[b.x,b.y-3*S,8*S],[jx,jy,6.5*S]]){
-      ctx.fillStyle='#0d1526';ctx.beginPath();ctx.arc(cx2,cy2,r,0,7);ctx.fill();
-      ctx.strokeStyle='#60a5fa';ctx.lineWidth=Math.max(1.2,2*S);ctx.stroke();
-      ctx.fillStyle='#60a5fa';ctx.beginPath();ctx.arc(cx2,cy2,2*S,0,7);ctx.fill();
-    }
-    ctx.save();ctx.translate(ex,ey);ctx.rotate(a1+a2);ctx.scale(S,S);
-    ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.lineCap='round';
-    ctx.beginPath();ctx.moveTo(0,-5);ctx.quadraticCurveTo(10,-7,13,-2);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(0,5);ctx.quadraticCurveTo(10,7,13,2);ctx.stroke();ctx.restore();
-    ctx.fillStyle='rgba(96,165,250,0.12)';ctx.beginPath();ctx.arc(ex,ey,13*S,0,7);ctx.fill();
-    if(tx!==null){
-      ctx.strokeStyle='rgba(52,211,153,0.7)';ctx.lineWidth=1.5;
-      ctx.beginPath();ctx.arc(px,py,8,0,7);ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(px-13,py);ctx.lineTo(px-4,py);ctx.moveTo(px+4,py);ctx.lineTo(px+13,py);
-      ctx.moveTo(px,py-13);ctx.lineTo(px,py-4);ctx.moveTo(px,py+4);ctx.lineTo(px,py+13);ctx.stroke();
-    }
-  }
-  runLoop(frame);
-  return {};
 }
 
 // ─── PARCOURS façon profil de course (lié au défilement) ───
@@ -477,7 +370,6 @@ function initParcours(){
   for(let y=80;y<380;y+=75){ const l=document.createElementNS('http://www.w3.org/2000/svg','line');
     l.setAttribute('x1',20);l.setAttribute('x2',980);l.setAttribute('y1',y);l.setAttribute('y2',y);
     l.setAttribute('stroke','rgba(255,255,255,0.05)');l.setAttribute('stroke-dasharray','3 6');grid.appendChild(l); }
-  const runner=document.getElementById('runner'),robot=document.getElementById('robot'),svgEl=document.getElementById('course-svg');
   const card={t:document.getElementById('cp-title'),d:document.getElementById('cp-desc')};
   const cpg=document.getElementById('checkpoints');
   let cpEls=[],currentCp=-1;
@@ -502,12 +394,6 @@ function initParcours(){
   function onScroll(){
     const r=outer.getBoundingClientRect(); const total=r.height-window.innerHeight;
     const prog=Math.max(0,Math.min(1,-r.top/total)); const at=prog*LEN;
-    const p=main.getPointAtLength(at);
-    const p2=main.getPointAtLength(Math.min(LEN,at+3)),p1=main.getPointAtLength(Math.max(0,at-3));
-    const angle=Math.atan2(p2.y-p1.y,p2.x-p1.x)*180/Math.PI;
-    const rs=Math.max(1,Math.min(2,700/(svgEl.clientWidth||700))); // robot agrandi quand le SVG est petit (mobile)
-    runner.setAttribute('transform','translate('+p.x+','+p.y+')');
-    robot.setAttribute('transform','rotate('+angle.toFixed(1)+') scale('+rs.toFixed(2)+')');
     done.style.strokeDashoffset=LEN-at;
     const pos=positions(); let idx=0;
     pos.forEach((at2,i)=>{ const passed=prog>=at2-0.02; if(cpEls[i]){ cpEls[i].setAttribute('fill',passed?'#34d399':'#0d1526'); cpEls[i].setAttribute('stroke',passed?'#34d399':'#60a5fa'); } if(passed) idx=i; });
@@ -521,59 +407,6 @@ function initParcours(){
   onScroll();
   // refresh = reconstruit les checkpoints (nb d'étapes a pu changer) et re-traduit la carte
   return { refresh(){ buildCheckpoints(); currentCp=-1; onScroll(); } };
-}
-
-// ─── PLAYGROUND PID (section Compétences) ───
-function initPid(){
-  const cv=document.getElementById('pid-canvas'); if(!cv) return null;
-  const ctx=cv.getContext('2d'), box=cv.parentElement;
-  const $=id=>document.getElementById(id);
-  const inputs={kp:$('kp'),ki:$('ki'),kd:$('kd')}, outs={kp:$('kp-out'),ki:$('ki-out'),kd:$('kd-out')};
-  function simulate(Kp,Ki,Kd){
-    const m=1,c=0.5,k=3,dt=0.002,T=6; let x=0,v=0,I=0; const pts=[];
-    for(let t=0;t<=T;t+=dt){ const e=1-x; I+=e*dt; const u=Kp*e+Ki*I-Kd*v; const a=(u-c*v-k*x)/m; v+=a*dt; x+=v*dt;
-      if(Math.abs(x)>50){pts.push([t,x]);break;} if(pts.length===0||t-pts[pts.length-1][0]>=0.01) pts.push([t,x]); }
-    return pts;
-  }
-  function metrics(pts){
-    const last=pts[pts.length-1][1]; const diverged=Math.abs(last)>5||pts[pts.length-1][0]<5.9;
-    let peak=0; for(const [,x] of pts) peak=Math.max(peak,x); const over=Math.max(0,(peak-1)*100);
-    let settle=null; if(Math.abs(last-1)<=0.02){ settle=0; for(let i=pts.length-1;i>=0;i--){ if(Math.abs(pts[i][1]-1)>0.02){ settle=pts[Math.min(i+1,pts.length-1)][0]; break; } } }
-    const err=Math.abs(1-last)*100;
-    return {over,settle:diverged?null:settle,err:diverged?null:err,diverged};
-  }
-  function draw(pts){
-    const DPR=Math.min(2,window.devicePixelRatio||1); const W=box.clientWidth,H=Math.max(170,box.clientHeight); if(!W) return;
-    cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
-    const PL=46,PR=18,PT=24,PB=34,iw=W-PL-PR,ih=H-PT-PB,ymin=-0.25,ymax=2.0;
-    const X=t=>PL+(t/6)*iw, Y=x=>PT+(1-(x-ymin)/(ymax-ymin))*ih;
-    ctx.font='11px JetBrains Mono, Consolas, monospace';
-    for(let g=0;g<=2;g+=0.5){ ctx.strokeStyle=g===0?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.06)'; ctx.beginPath();ctx.moveTo(PL,Y(g));ctx.lineTo(W-PR,Y(g));ctx.stroke(); ctx.fillStyle='#64748b';ctx.fillText(g.toFixed(1),12,Y(g)+4); }
-    for(let t=0;t<=6;t++){ ctx.strokeStyle='rgba(255,255,255,0.05)'; ctx.beginPath();ctx.moveTo(X(t),PT);ctx.lineTo(X(t),H-PB);ctx.stroke(); ctx.fillStyle='#64748b';ctx.fillText(t+' s',X(t)-6,H-14); }
-    ctx.strokeStyle='rgba(52,211,153,0.65)';ctx.setLineDash([6,5]);ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(PL,Y(1));ctx.lineTo(W-PR,Y(1));ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle='rgba(52,211,153,0.9)';ctx.fillText(pick(PID_L10N.consigne),W-PR-58,Y(1)-6);
-    ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.beginPath();
-    pts.forEach(([t,x],i)=>{ const yy=Math.max(PT-10,Math.min(H-PB+10,Y(x))); if(i===0)ctx.moveTo(X(t),yy);else ctx.lineTo(X(t),yy); }); ctx.stroke();
-  }
-  const fmt=(v,u,d)=>v===null?'—':v.toFixed(d)+u;
-  function update(){
-    const Kp=+inputs.kp.value,Ki=+inputs.ki.value,Kd=+inputs.kd.value;
-    outs.kp.textContent=Kp.toFixed(1);outs.ki.textContent=Ki.toFixed(1);outs.kd.textContent=Kd.toFixed(1);
-    const pts=simulate(Kp,Ki,Kd); draw(pts); const m=metrics(pts);
-    $('m-over').textContent=m.diverged?'∞':fmt(m.over,' %',1); $('m-over').className=m.over>25||m.diverged?'bad':'';
-    $('m-settle').textContent=m.diverged?'—':(m.settle!==null&&m.settle<5.9?fmt(m.settle,' s',2):'> 6 s');
-    $('m-err').textContent=m.diverged?'—':fmt(m.err,' %',1);
-    let key,cls=''; if(m.diverged){key='vInstable';cls='bad';}
-    else if(m.over<12&&m.settle!==null&&m.settle<2.2&&m.err<2){key='vBien';cls='good';}
-    else if(m.err>5){key='vErr';} else {key='vMoyen';}
-    $('m-verdict').textContent=pick(PID_L10N[key]); $('m-verdict').className=cls;
-  }
-  for(const inp of Object.values(inputs)) inp.addEventListener('input',update);
-  document.querySelectorAll('#pid-card .preset').forEach(b=>b.addEventListener('click',()=>{ const [p,i,d]=b.dataset.p.split(','); inputs.kp.value=p;inputs.ki.value=i;inputs.kd.value=d; update(); }));
-  window.addEventListener('resize',update);
-  update();
-  const retry=setInterval(()=>{ if(box.clientWidth){ update(); clearInterval(retry); } },200);
-  return { refresh: update };
 }
 
 // ─── cartes projets (mobile) : bouton « Lire la suite » quand la description déborde ───
@@ -599,5 +432,5 @@ fetch(PAGE.content, {cache: 'no-cache'}).then(r => r.json()).then(c => {
   setLang(initialLang()); // langue imposée par la page, sinon mémorisée (revenir d'une page projet garde la langue)
   initProjectsCarousel();
   initPano();
-  initEffects(); // bras robot · parcours · PID (pilotés par content.json > features)
+  initEffects(); // section parcours (pilotée par content.json > features.parcours)
 }).catch(e => console.error('Chargement de ' + PAGE.content + ' impossible :', e));

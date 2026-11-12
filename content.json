@@ -2,10 +2,6 @@
  "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché.",
  "pdf": "Gauthier_Bonhomme_CV.pdf",
  "features": {
-  "arm": {
-   "enabled": true,
-   "size": 150
-  },
   "parcours": {
    "enabled": true,
    "title": {
@@ -15,10 +11,10 @@
     "it": "Il percorso"
    },
    "cue": {
-    "fr": "▼ le robot avance ▼",
-    "en": "▼ the robot climbs as you scroll ▼",
-    "de": "▼ der Roboter klettert beim Scrollen ▼",
-    "it": "▼ il robot sale mentre scorri ▼"
+    "fr": "▼ défilez pour avancer ▼",
+    "en": "▼ scroll to move along ▼",
+    "de": "▼ zum Weitergehen scrollen ▼",
+    "it": "▼ scorri per avanzare ▼"
    },
    "steps": [
     {
@@ -92,21 +88,6 @@
      }
     }
    ]
-  },
-  "pid": {
-   "enabled": true,
-   "title": {
-    "fr": "Démo interactive — synthèse PID",
-    "en": "Interactive demo — PID tuning",
-    "de": "Interaktive Demo — PID-Auslegung",
-    "it": "Demo interattiva — sintesi PID"
-   },
-   "desc": {
-    "fr": "Un correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
-    "en": "A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.",
-    "de": "Ein echter PID-Regler an einem simulierten Masse-Feder-System: stellen Sie Kp, Ki, Kd ein und beobachten Sie die Antwort. Probieren Sie die Voreinstellungen.",
-    "it": "Un vero regolatore PID su un sistema massa-molla simulato: regolate Kp, Ki, Kd e osservate la risposta. Provate i preset."
-   }
   }
  },
  "labels": {

@@ -398,9 +398,8 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .card-title{font-size:15px;}
 }
 
-/* ═══ EFFETS INTERACTIFS (bras robot · parcours · PID) — pilotés par content.json > features ═══ */
+/* ═══ HERO + SECTION PARCOURS (pilotée par content.json > features.parcours) ═══ */
 .hero{position:relative;}
-#arm-hero{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;}
 .hero-text,.hero-photo{position:relative;z-index:1;}
 
 /* section Parcours — profil de course lié au défilement */
@@ -413,46 +412,11 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
 .cp-card p{font-size:12.5px;line-height:1.5;color:var(--text);}
 .scroll-cue{text-align:center;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-top:12px;transition:opacity .3s;}
 
-/* playground PID (section Compétences) */
-.pid-card{margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color 0.2s;}
-.pid-card:hover{border-color:var(--accent-border);}
-.pid-head{padding:16px 22px 4px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
-.pid-head small{display:block;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--text);margin-top:4px;line-height:1.5;}
-.pid-grid{display:grid;grid-template-columns:280px 1fr;min-height:320px;}
-.pid-panel{padding:16px 22px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:13px;}
-.slider-row label{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--heading);margin-bottom:5px;}
-.slider-row label output{color:var(--accent);}
-.pid-panel input[type=range]{width:100%;accent-color:var(--accent);height:20px;cursor:pointer;}
-.pid-panel input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
-.presets{display:flex;gap:7px;flex-wrap:wrap;}
-.preset{font-family:'Syne',sans-serif;font-size:11.5px;font-weight:600;background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border);border-radius:999px;padding:5px 13px;cursor:pointer;transition:background .2s;}
-.preset:hover{background:rgba(96,165,250,0.22);}
-.pid-metrics{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto;}
-.metric{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:7px 11px;}
-.metric b{display:block;font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
-.metric span{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--heading);font-variant-numeric:tabular-nums;}
-.metric span.bad{color:#f87171;}
-.metric span.good{color:var(--green);}
-#pid-canvas{display:block;width:100%;height:100%;min-height:260px;}
 .desc-more{display:inline-block;margin-top:6px;background:none;border:none;padding:0;color:var(--accent);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;letter-spacing:0.02em;}
 .desc-more:hover{text-decoration:underline;}
 
 @media(max-width:768px){
-  #arm-hero{display:none;} /* pas de bras robot sur téléphone */
   .cp-card{position:static;max-width:none;margin:0;border-left:none;border-right:none;border-bottom:none;border-radius:0;}
-  /* PID compact : le graphe passe AU-DESSUS des réglages et tout tient sur un écran */
-  .pid-grid{grid-template-columns:1fr;min-height:0;}
-  .pid-grid > div:last-child{order:-1;}
-  #pid-canvas{min-height:170px;}
-  .pid-panel{border-right:none;border-top:1px solid var(--border);padding:12px 14px 14px;gap:9px;}
-  .pid-head{padding:13px 14px 2px;}
-  .pid-head small{font-size:11.5px;}
-  .slider-row label{font-size:11.5px;margin-bottom:2px;}
-  .pid-panel input[type=range]{height:18px;}
-  .preset{font-size:10.5px;padding:4px 10px;}
-  .metric{padding:5px 9px;}
-  .metric b{font-size:8.5px;}
-  .metric span{font-size:12px;}
   /* cartes projets : image réduite + description limitée à 5 lignes (bouton « Lire la suite »).
      flex-start = chaque carte garde sa propre hauteur : déplier une carte ne touche pas les voisines */
   .projects-scroll{align-items:flex-start;}

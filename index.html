@@ -81,7 +81,6 @@
   <div class="pano" id="pano" style="display:none" aria-hidden="true"><div class="pano-track" id="pano-track"></div></div>
 
   <section class="hero" id="top">
-   <canvas id="arm-hero" aria-hidden="true" style="display:none"></canvas>
    <div class="hero-text">
     <div class="hero-badge" data-i18n="seeking">Stage de fin d'études — dès début 2027</div>
     <h1 class="name">Gauthier <span>Bonhomme</span></h1>
@@ -130,16 +129,6 @@
             <path id="course-path" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"></path>
             <path id="course-done" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linejoin="round"></path>
             <g id="checkpoints"></g>
-            <g id="runner">
-              <g id="robot">
-                <line x1="0" y1="-14" x2="0" y2="-21" stroke="#34d399" stroke-width="1.5"/>
-                <circle cx="0" cy="-23" r="2.2" fill="#fbbf24"/>
-                <rect x="-10" y="-15" width="20" height="10" rx="3" fill="#34d399"/>
-                <rect x="3" y="-12.6" width="4.5" height="5.2" rx="1.2" fill="#0a0f1e"/>
-                <circle cx="-6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
-                <circle cx="6" cy="-3" r="3.2" fill="#0d1526" stroke="#34d399" stroke-width="1.5"/>
-              </g>
-            </g>
           </svg>
           <div class="cp-card">
             <h3 id="cp-title">Départ</h3>
@@ -174,39 +163,6 @@
   <section id="competences">
     <div class="section-label" data-i18n="sec-comp">Compétences</div>
     <div class="skills-grid" id="skills-grid"></div>
-    <div class="pid-card" id="pid-card">
-      <div class="pid-head"><span id="pid-title">Démo interactive — synthèse PID</span>
-        <small id="pid-desc">Un vrai correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.</small>
-      </div>
-      <div class="pid-grid">
-        <div class="pid-panel">
-          <div class="slider-row">
-            <label><span class="pl" data-k="kp">Kp — proportionnel</span> <output id="kp-out">12.0</output></label>
-            <input type="range" id="kp" min="0" max="60" step="0.5" value="12" aria-label="Gain proportionnel Kp">
-          </div>
-          <div class="slider-row">
-            <label><span class="pl" data-k="ki">Ki — intégral</span> <output id="ki-out">0.0</output></label>
-            <input type="range" id="ki" min="0" max="40" step="0.5" value="0" aria-label="Gain intégral Ki">
-          </div>
-          <div class="slider-row">
-            <label><span class="pl" data-k="kd">Kd — dérivé</span> <output id="kd-out">0.0</output></label>
-            <input type="range" id="kd" min="0" max="15" step="0.1" value="0" aria-label="Gain dérivé Kd">
-          </div>
-          <div class="presets">
-            <button class="preset" data-p="2,0,2.5" data-k="mou">Trop mou</button>
-            <button class="preset" data-p="4,30,0" data-k="instable">Instable</button>
-            <button class="preset" data-p="26,16,6.5" data-k="regle">Bien réglé</button>
-          </div>
-          <div class="pid-metrics">
-            <div class="metric"><b data-k="over">Dépassement</b><span id="m-over">—</span></div>
-            <div class="metric"><b data-k="settle">Temps de réponse</b><span id="m-settle">—</span></div>
-            <div class="metric"><b data-k="errlbl">Erreur statique</b><span id="m-err">—</span></div>
-            <div class="metric"><b data-k="verdict">Verdict</b><span id="m-verdict">—</span></div>
-          </div>
-        </div>
-        <div><canvas id="pid-canvas"></canvas></div>
-      </div>
-    </div>
   </section>
 
   <section id="langues">

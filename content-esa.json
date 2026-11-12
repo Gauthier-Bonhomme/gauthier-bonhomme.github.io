@@ -2,10 +2,6 @@
  "_aide": "Contenu de la page esa.html (candidatures ESA 2027) — même gabarit que index.html (assets/site.js). Anglais par défaut, français disponible ; les champs DE/IT restent vides (non proposés sur cette page). Modifié à la main : l'admin local n'édite que content.json.",
  "pdf": "Gauthier_Bonhomme_CV_ESA.pdf",
  "features": {
-  "arm": {
-   "enabled": true,
-   "size": 150
-  },
   "parcours": {
    "enabled": true,
    "title": {
@@ -15,8 +11,8 @@
     "it": ""
    },
    "cue": {
-    "fr": "▼ le robot avance ▼",
-    "en": "▼ the robot climbs as you scroll ▼",
+    "fr": "▼ défilez pour avancer ▼",
+    "en": "▼ scroll to move along ▼",
     "de": "",
     "it": ""
    },
@@ -92,21 +88,6 @@
      }
     }
    ]
-  },
-  "pid": {
-   "enabled": true,
-   "title": {
-    "fr": "Démo interactive — synthèse PID",
-    "en": "Interactive demo — PID tuning",
-    "de": "",
-    "it": ""
-   },
-   "desc": {
-    "fr": "Un correcteur PID sur un système masse-ressort simulé : réglez Kp, Ki, Kd et observez la réponse. Essayez les préréglages.",
-    "en": "A real PID controller on a simulated mass-spring system: tune Kp, Ki, Kd and watch the response. Try the presets.",
-    "de": "",
-    "it": ""
-   }
   }
  },
  "labels": {
@@ -309,8 +290,8 @@
    "it": ""
   },
   {
-   "fr": "J'aime aller de la CAO et de la simulation jusqu'à l'atelier : j'ai programmé et conduit un <strong>tour-fraiseur CNC</strong>, conçu et coulé une <strong>pièce en fonte</strong> avec mon équipe, remis un moteur à neuf et construit de petits prototypes avec des microcontrôleurs et des pièces imprimées en 3D. Essayez la <strong>démo de réglage PID</strong> plus bas — et le bras robot en haut de la page suit votre curseur grâce à la cinématique inverse.",
-   "en": "I like taking things from CAD and simulation all the way to the workshop: I have programmed and run a <strong>CNC turn-mill</strong>, designed and poured a <strong>cast-iron part</strong> with my team, reconditioned an engine and built small prototypes with microcontrollers and 3D-printed parts. Try the <strong>PID-tuning demo</strong> below — and the robot arm at the top of the page follows your cursor using inverse kinematics.",
+   "fr": "J'aime aller de la CAO et de la simulation jusqu'à l'atelier : j'ai programmé et conduit un <strong>tour-fraiseur CNC</strong>, conçu et coulé une <strong>pièce en fonte</strong> avec mon équipe, remis un moteur à neuf et construit de petits prototypes avec des microcontrôleurs et des pièces imprimées en 3D.",
+   "en": "I like taking things from CAD and simulation all the way to the workshop: I have programmed and run a <strong>CNC turn-mill</strong>, designed and poured a <strong>cast-iron part</strong> with my team, reconditioned an engine and built small prototypes with microcontrollers and 3D-printed parts.",
    "de": "",
    "it": ""
   },
