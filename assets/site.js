@@ -45,14 +45,14 @@ const CONTACT_ICONS = {
 
 function renderStatics() {
   const lb = CONTENT.labels;
-  // sommaire
-  const navMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
+  // sommaire (demo : section propre à certaines pages, ex. petzl.html — absente ailleurs, donc ignorée)
+  const navMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
   for (const [sec, key] of Object.entries(navMap)) {
     const a = document.querySelector('#main-nav a[href="#' + sec + '"]');
     if (a) a.textContent = pick(lb.nav[key]);
   }
   // libellés de sections
-  const secMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
+  const secMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
   for (const [sec, key] of Object.entries(secMap)) {
     const el = document.querySelector('#' + sec + ' .section-label');
     if (el) el.textContent = pick(lb.sections[key]);
@@ -121,9 +121,11 @@ function renderProjects() {
   const view = pick(CONTENT.labels.projView);
   const wipLbl = pick(CONTENT.labels.projWip);
   document.getElementById('projects-scroll').innerHTML = CONTENT.projects.map(p => {
-    // un projet avec un album de photos ouvre sa page dédiée (prioritaire sur un lien externe)
+    // un projet avec un album de photos ouvre sa page dédiée (prioritaire sur un lien externe) ;
+    // sur une page à contenu propre (ex. content-petzl.json), l'album est lu dans ce même fichier (&c=)
     const hasAlbum = p.album && p.album.length && p.slug;
-    const link = hasAlbum ? ('projet.html?id=' + encodeURIComponent(p.slug)) : (p.link || '');
+    const albumSrc = PAGE.content !== 'content.json' ? '&c=' + encodeURIComponent(PAGE.content) : '';
+    const link = hasAlbum ? ('projet.html?id=' + encodeURIComponent(p.slug) + albumSrc) : (p.link || '');
     const ext = /^https?:/.test(link);
     const openJs = link ? (ext ? "window.open('" + link + "','_blank','noopener')" : "window.location.href='" + link + "'") : '';
     let h = '<div class="skill-category' + (p.wip ? ' proj-wip' : '') + (openJs ? ' proj-click' : '') + '"' +
@@ -201,6 +203,8 @@ function setLang(lang) {
   if (PAGE.defaultLang) { try { sessionStorage.setItem('cvLang:' + PAGE.content, lang); } catch (e) {} } // choix propre à cette page (onglet courant)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
   renderAll();
+  // les modules propres à une page (ex. assets/demo-chute.js) se mettent à jour sur cet évènement
+  document.dispatchEvent(new CustomEvent('cv:lang', { detail: lang }));
 }
 
 // PAGE SWITCHING

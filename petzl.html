@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page dédiée à la candidature Petzl (stage R&D 2027) : non indexée, non liée depuis index.html -->
+  <title>Gauthier Bonhomme — Stage R&amp;D Petzl 2027</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Gauthier Bonhomme — élève ingénieur en dernière année aux Arts et Métiers (ENSAM), candidat au stage de fin d'études R&amp;D « simulateur de chute » (février – juillet 2027) : rapports, photos et démo interactive.">
+  <meta name="author" content="Gauthier Bonhomme">
+
+  <!-- Open Graph / Twitter (aperçu de lien) -->
+  <meta property="og:title" content="Gauthier Bonhomme — Stage R&amp;D Petzl 2027">
+  <meta property="og:description" content="Gauthier Bonhomme — élève ingénieur en dernière année aux Arts et Métiers (ENSAM), candidat au stage de fin d'études R&amp;D « simulateur de chute » (février – juillet 2027) : rapports, photos et démo interactive.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://gauthierbonhomme.com/petzl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gauthier Bonhomme — Stage R&amp;D Petzl 2027">
+  <meta name="twitter:description" content="Gauthier Bonhomme — élève ingénieur en dernière année aux Arts et Métiers (ENSAM), candidat au stage de fin d'études R&amp;D « simulateur de chute » (février – juillet 2027) : rapports, photos et démo interactive.">
+  <meta name="twitter:image" content="https://gauthierbonhomme.com/images/og-image.jpg">
+
+  <link rel="canonical" href="https://gauthierbonhomme.com/petzl">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/demo-chute.css">
+</head>
+<body data-content="content-petzl.json" data-default-lang="fr" data-langs="fr,en">
+
+<div id="page-cv" class="page active">
+<header class="topbar">
+  <a class="brand" href="#top">Gauthier <span>Bonhomme</span></a>
+  <nav class="topnav" id="main-nav">
+    <a href="#about" class="active" data-i18n="nav-about">À propos</a>
+    <a href="#formation" data-i18n="nav-formation">Formation</a>
+    <a href="#projets" data-i18n="nav-projets">Projets</a>
+    <a href="#demo" data-i18n="nav-demo">Démo</a>
+    <a href="#experiences" data-i18n="nav-exp">Expérience</a>
+    <a href="#competences" data-i18n="nav-comp">Compétences</a>
+    <a href="#langues" data-i18n="nav-lang">Langues</a>
+    <a href="#interets" data-i18n="nav-int">Centres d'intérêt</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
+  </nav>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>FR</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="2"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>EN</button>
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 5 3"><rect width="5" height="3" fill="#FFCE00"/><rect width="5" height="2" fill="#DD0000"/><rect width="5" height="1" fill="#000"/></svg>DE</button>
+    <button class="lang-btn" data-lang="it" onclick="setLang('it')"><svg class="flag" viewBox="0 0 3 2"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>IT</button>
+  </div>
+</header>
+
+<div class="layout">
+<main class="right">
+
+  <div class="pano" id="pano" style="display:none" aria-hidden="true"><div class="pano-track" id="pano-track"></div></div>
+
+  <section class="hero" id="top">
+   <div class="hero-text">
+    <div class="hero-badge" data-i18n="seeking">Stage R&amp;D — simulateur de chute · févr. – juil. 2027</div>
+    <h1 class="name">Gauthier <span>Bonhomme</span></h1>
+    <div class="title" data-i18n="job-title">Élève ingénieur en dernière année</div>
+    <p class="tagline"><strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — Modélisation · Simulation · Fabrication</p>
+    <div class="cta-row">
+      <a href="Gauthier_Bonhomme_CV_Petzl.pdf" download class="btn-download">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn">Télécharger mon CV</span>
+      </a>
+      <a href="#contact" class="btn-ghost" data-i18n="nav-contact">Contact</a>
+      <div class="social">
+        <a href="https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="tel:+33608276216" title="Téléphone">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.49 15.49 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        </a>
+        <a href="https://maps.google.com/?q=Calvisson,30420" target="_blank" rel="noopener" title="Localisation">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+        </a>
+      </div>
+    </div>
+   </div>
+   <img class="hero-photo" id="hero-photo" alt="Gauthier Bonhomme" style="display:none">
+  </section>
+  <section id="about">
+    <div class="section-label" data-i18n="sec-about">À propos</div>
+    <div class="about-text"></div>
+  </section>
+
+  <section id="formation">
+    <div class="section-label" data-i18n="sec-formation">Formation</div>
+    <div id="formation-list"></div>
+  </section>
+
+
+  <section id="projets">
+    <div class="section-label" data-i18n="sec-projets">Projets</div>
+    <div class="projects-wrap">
+    <button class="proj-arrow prev" onclick="projScroll(-1)" aria-label="Projet précédent">‹</button>
+    <button class="proj-arrow next" onclick="projScroll(1)" aria-label="Projet suivant">›</button>
+    <div class="projects-scroll" id="projects-scroll">
+    </div>
+    </div>
+  </section>
+
+  <!-- démo interactive : chute retenue par une corde (assets/demo-chute.js + assets/demo-chute.css) -->
+  <section id="demo">
+    <div class="section-label" data-i18n="sec-demo">Démo interactive</div>
+    <div class="demo">
+      <h3 class="demo-title" data-demo="title">Chute retenue par une corde</h3>
+      <p class="demo-intro" data-demo="intro"></p>
+      <div class="demo-eq">
+        <span data-dk="eq1">m·<var class="d2">x</var> = m·g − T</span>
+        <span data-dk="eq2">T = k·x + c·<var class="d1">x</var> si la corde est tendue (x &gt; 0), sinon T = 0</span>
+        <span data-dk="eq3">k = EA/L · c = 2ζ·√(k·m) · x : allongement de la corde</span>
+      </div>
+
+      <div class="demo-board">
+        <div class="demo-ctrl">
+          <span class="cell-lbl" data-dk="ctrl">Réglages</span>
+          <!-- schéma : ancrage, corde = ressort k // amortisseur c, masse m -->
+          <svg class="demo-schema" viewBox="0 0 240 172" role="img" aria-label="Schéma : point d'ancrage, corde modélisée par un ressort k et un amortisseur c en parallèle, masse m">
+            <g class="s-ink" fill="none">
+              <path class="s-bold" d="M62 16H178"/>
+              <path class="s-thin" d="M70 16l-8-8M82 16l-8-8M94 16l-8-8M106 16l-8-8M118 16l-8-8M130 16l-8-8M142 16l-8-8M154 16l-8-8M166 16l-8-8M178 16l-8-8"/>
+              <path d="M120 16V30M98 30H142M98 110H142M120 110V124"/>
+              <path d="M102 30V40L94 45L110 55L94 65L110 75L94 85L110 95L102 100V110"/>
+              <path d="M138 30V62M131 62H145M128 52V90H148V52M138 90V110"/>
+              <rect x="96" y="124" width="48" height="36"/>
+              <path class="s-thin" d="M34 16H58M34 124H92M42 16V124"/>
+              <path class="s-thin" d="M42 16l-3 8h6zM42 124l-3-8h6z" fill="currentColor"/>
+              <path class="s-red" d="M176 128V156"/>
+              <path class="s-red" d="M176 160l-4-9h8z" fill="currentColor"/>
+              <path class="s-thin" d="M212 26V52"/>
+              <path class="s-thin" d="M212 56l-3-7h6z" fill="currentColor"/>
+            </g>
+            <text x="120" y="147" text-anchor="middle">m</text>
+            <text x="84" y="74" text-anchor="end">k</text>
+            <text x="156" y="76">c</text>
+            <text x="30" y="74" text-anchor="end">L</text>
+            <text class="s-red-txt" x="184" y="148">v₀</text>
+            <text x="219" y="44">g</text>
+          </svg>
+          <div class="d-row">
+            <label for="d-m"><span data-dk="m">Masse <var>m</var></span><output id="d-m-out" for="d-m">80 kg</output></label>
+            <input type="range" id="d-m" min="40" max="120" step="1" value="80">
+          </div>
+          <div class="d-row">
+            <label for="d-h"><span data-dk="h">Chute libre <var>h</var></span><output id="d-h-out" for="d-h">4,0 m</output></label>
+            <input type="range" id="d-h" min="0.5" max="10" step="0.1" value="4">
+          </div>
+          <div class="d-row">
+            <label for="d-L"><span data-dk="L">Longueur de corde <var>L</var></span><output id="d-L-out" for="d-L">10,0 m</output></label>
+            <input type="range" id="d-L" min="1" max="20" step="0.1" value="10">
+          </div>
+          <div class="d-row">
+            <label for="d-EA"><span data-dk="EA">Module de la corde <var>EA</var></span><output id="d-EA-out" for="d-EA">23 kN</output></label>
+            <input type="range" id="d-EA" min="10" max="40" step="0.5" value="23">
+          </div>
+          <div class="d-row">
+            <label for="d-z"><span data-dk="z">Amortissement <var>ζ</var></span><output id="d-z-out" for="d-z">0,10</output></label>
+            <input type="range" id="d-z" min="0" max="0.4" step="0.01" value="0.1">
+            <div class="d-sub" id="d-c"><var>c</var> = 2<var>ζ</var>·√(<var>km</var>) = 86 N·s/m</div>
+          </div>
+          <div class="d-presets">
+            <span class="cell-lbl" data-dk="cases">Cas types</span>
+            <button type="button" data-p="0">f = 0,4 · h = 4 m</button>
+            <button type="button" data-p="1">f = 0,4 · h = 8 m</button>
+            <button type="button" data-p="2">f = 1 · h = 5 m</button>
+            <button type="button" data-p="3">f = 2 · h = 6 m</button>
+          </div>
+        </div>
+
+        <div class="demo-out">
+          <span class="cell-lbl" data-dk="plot">Réponse — force dans la corde <var>T</var>(<var>t</var>)</span>
+          <div class="demo-plot" id="d-plot"></div>
+          <div class="d-legend">
+            <span><i></i><span data-dk="legSim">simulation — Euler, Δt = 2 ms</span></span>
+            <span><i class="ana"></i><span data-dk="legAna">solution analytique, ζ = 0</span></span>
+          </div>
+          <dl class="d-metrics">
+            <div class="d-metric"><dt data-dk="f">Facteur de chute <var>f</var> = <var>h</var>/<var>L</var></dt><dd id="d-f">—</dd></div>
+            <div class="d-metric"><dt data-dk="k">Raideur <var>k</var> = <var>EA</var>/<var>L</var></dt><dd id="d-k">—</dd></div>
+            <div class="d-metric"><dt data-dk="v0">Vitesse <var>v</var>₀ = √(2<var>gh</var>)</dt><dd id="d-v0">—</dd></div>
+            <div class="d-metric key"><dt data-dk="F">Force de choc</dt><dd id="d-F">—</dd></div>
+            <div class="d-metric"><dt data-dk="x">Allongement max.</dt><dd id="d-x">—</dd></div>
+            <div class="d-metric"><dt data-dk="a">Décélération max.</dt><dd id="d-a">—</dd></div>
+          </dl>
+          <p class="d-valid" id="d-valid"></p>
+          <p class="d-warn" id="d-warn" hidden></p>
+          <p class="demo-insight" data-demo="insight"></p>
+          <p class="demo-note" data-demo="note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <div class="section-label" data-i18n="sec-exp">Expérience</div>
+    <div id="exp-list"></div>
+  </section>
+
+  <section id="competences">
+    <div class="section-label" data-i18n="sec-comp">Compétences</div>
+    <div class="skills-grid" id="skills-grid"></div>
+  </section>
+
+  <section id="langues">
+    <div class="section-label" data-i18n="sec-lang">Langues</div>
+    <div class="lang-list" id="lang-list"></div>
+  </section>
+
+  <section id="interets">
+    <div class="section-label" data-i18n="sec-int">Centres d'intérêt</div>
+    <div class="interests-grid" id="interests-grid"></div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label" data-i18n="sec-contact">Contact</div>
+    <div class="contact-grid" id="contact-grid"></div>
+  </section>
+
+  <footer class="cv-footer">
+    <div style="margin-bottom:16px;">
+      <a href="Gauthier_Bonhomme_CV_Petzl.pdf" download class="btn-download-inline">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+        <span data-i18n="dl-btn-long">Télécharger mon CV (PDF)</span>
+      </a>
+    </div>
+    <span data-i18n="footer-txt">Conçu et développé avec soin · Gauthier Bonhomme · 2026</span>
+  </footer>
+</main>
+</div>
+</div>
+
+<script src="assets/site.js"></script>
+<script src="assets/demo-chute.js"></script>
+
+</body>
+</html>

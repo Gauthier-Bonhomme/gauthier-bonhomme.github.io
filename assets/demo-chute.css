@@ -1,0 +1,108 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   DÉMO « chute retenue par une corde » (petzl.html) — repose sur assets/site.css (thème marine).
+   Deux cartes côte à côte (réglages | réponse) ; simulation en bleu d'accent, force de choc en vert.
+   ══════════════════════════════════════════════════════════════════════════ */
+.demo{min-width:0;}
+/* symboles physiques : italiques, et jamais en capitales (m, g, ζ… changeraient de sens) */
+.demo var{font-style:italic;text-transform:none;letter-spacing:0;}
+/* ẍ, ẋ : points posés en CSS au-dessus d'un x droit (le glyphe précomposé « ẍ » manque à la plupart des polices) */
+.demo .d1,.demo .d2{position:relative;display:inline-block;line-height:1;font-style:normal;}
+.demo .d1::after,.demo .d2::after{position:absolute;left:0;right:0;top:-.1em;text-align:center;line-height:1;pointer-events:none;}
+.demo .d2::after{content:'\00a8';}
+.demo .d1::after{content:'\02d9';}
+.demo .cell-lbl{display:block;font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.demo-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--heading);margin-bottom:8px;line-height:1.3;}
+.demo-intro{max-width:75ch;font-size:15.5px;line-height:1.65;color:var(--text);}
+.demo-intro em,.demo-note em{font-style:italic;color:var(--heading);}
+
+/* équation du mouvement */
+.demo-eq{
+  display:flex;flex-wrap:wrap;gap:4px 26px;margin-top:14px;padding:12px 16px;
+  background:#060d1a;border:1px solid var(--accent-border);border-radius:10px;
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;color:var(--heading);
+}
+
+/* deux cartes : réglages | réponse */
+.demo-board{display:grid;grid-template-columns:282px minmax(0,1fr);gap:16px;margin-top:18px;}
+.demo-ctrl,.demo-out{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;}
+
+/* schéma : ancrage, ressort // amortisseur, masse */
+.demo-schema{display:block;width:100%;max-width:226px;height:auto;margin:0 auto 6px;color:var(--text);}
+.demo-schema .s-ink{stroke:currentColor;stroke-width:1.4;stroke-linejoin:round;}
+.demo-schema .s-bold{stroke-width:2;}
+.demo-schema .s-thin{stroke-width:.9;}
+.demo-schema .s-red{stroke:var(--green);color:var(--green);stroke-width:1.5;}
+.demo-schema text{font:italic 13px 'JetBrains Mono',monospace;fill:var(--heading);}
+.demo-schema .s-red-txt{fill:var(--green);}
+
+/* curseurs */
+.d-row{padding:8px 0 9px;border-top:1px solid var(--border);}
+.d-row label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.d-row output{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:0;text-transform:none;color:var(--heading);white-space:nowrap;}
+.d-row input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:22px;margin:4px 0 0;background:transparent;cursor:pointer;}
+.d-row input[type=range]:focus{outline:none;}
+.d-row input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
+.d-row input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:999px;background:rgba(148,163,184,0.22);}
+.d-row input[type=range]::-moz-range-track{height:4px;border-radius:999px;background:rgba(148,163,184,0.22);}
+.d-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--accent-border),0 0 10px rgba(96,165,250,0.45);}
+.d-row input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 10px rgba(96,165,250,0.45);}
+.d-sub{margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}
+
+/* cas types */
+.d-presets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;padding-top:12px;border-top:1px solid var(--border);}
+.d-presets .cell-lbl{grid-column:1 / -1;margin-bottom:0;}
+.d-presets button{
+  padding:7px 6px;border-radius:999px;cursor:pointer;white-space:nowrap;
+  background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;
+  transition:background 0.2s;
+}
+.d-presets button:hover{background:rgba(96,165,250,0.2);}
+.d-presets button.on{background:var(--accent);border-color:var(--accent);color:#0a0f1e;}
+
+/* tracé T(t) (SVG produit par assets/demo-chute.js) */
+.demo-plot{width:100%;min-height:210px;overflow:hidden;}
+.demo-plot svg{display:block;max-width:100%;height:auto;}
+.demo-plot .g-grid{stroke:rgba(255,255,255,0.07);stroke-width:1;}
+.demo-plot .g-axis{fill:none;stroke:rgba(238,242,248,0.35);stroke-width:1.2;}
+.demo-plot .g-hatch{stroke:rgba(96,165,250,0.16);stroke-width:1.2;}
+.demo-plot .g-sim{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linejoin:round;}
+.demo-plot .g-ana{fill:none;stroke:rgba(238,242,248,0.6);stroke-width:1.1;stroke-dasharray:5 4;}
+.demo-plot .g-peak{fill:none;stroke:var(--green);stroke-width:1.6;}
+.demo-plot text{font:10px 'JetBrains Mono',monospace;fill:var(--muted);}
+/* étiquettes posées sur les tracés : un liseré couleur de carte les détache des traits */
+.demo-plot text.g-ff,.demo-plot text.g-peak-lbl{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round;}
+.demo-plot text.g-ff{letter-spacing:.08em;text-transform:uppercase;font-size:9px;}
+.demo-plot text.g-peak-lbl{font:700 12.5px 'DM Sans',sans-serif;font-variant-numeric:tabular-nums;fill:var(--green);}
+.d-legend{display:flex;flex-wrap:wrap;gap:4px 20px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}
+.d-legend > span{display:inline-flex;align-items:center;gap:8px;}
+.d-legend i{display:inline-block;width:24px;border-top:2px solid var(--accent);}
+.d-legend i.ana{border-top:1.2px dashed rgba(238,242,248,0.6);}
+
+/* résultats */
+.d-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px;}
+.d-metric{padding:9px 12px 10px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.02);}
+.d-metric dt{font-family:'Syne',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.d-metric dd{margin-top:3px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--heading);}
+.d-metric.key{border-color:var(--green-border);background:var(--green-dim);}
+.d-metric.key dd{color:var(--green);font-weight:700;}
+.d-valid{margin-top:10px;font-size:13px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--text);}
+.d-warn{margin-top:5px;font-size:13px;line-height:1.5;color:#fbbf24;}
+
+/* remarque et limites du modèle : sous les résultats */
+.demo-insight{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:14.5px;line-height:1.55;color:var(--heading);}
+.demo-note{margin-top:7px;font-size:13px;line-height:1.55;color:var(--muted);}
+
+/* ═══ TÉLÉPHONE ═══ */
+@media(max-width:768px){
+  .demo-title{font-size:16.5px;}
+  .demo-intro{font-size:14px;}
+  .demo-eq{flex-direction:column;font-size:11px;padding:10px 12px;}
+  .demo-board{grid-template-columns:minmax(0,1fr);gap:12px;}
+  .demo-ctrl,.demo-out{padding:14px;}
+  .demo-schema{max-width:200px;}
+  .d-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .d-metric dd{font-size:15px;}
+  .demo-insight{font-size:14px;}
+  .demo-note{font-size:12.5px;}
+}

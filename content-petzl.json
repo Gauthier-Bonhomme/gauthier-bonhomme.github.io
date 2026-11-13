@@ -1,0 +1,1051 @@
+{
+ "_aide": "Contenu de la page petzl.html (candidature Petzl : stage de fin d'études R&D « simulateur de chute », févr. – juil. 2027) — même gabarit que index.html et esa.html (assets/site.js). Français par défaut, anglais disponible ; les champs DE/IT restent vides (non proposés sur cette page). Clé « demo » : textes de la démo interactive (assets/demo-chute.js). Modifié à la main : l'admin local n'édite que content.json.",
+ "pdf": "Gauthier_Bonhomme_CV_Petzl.pdf",
+ "labels": {
+  "pageTitle": {
+   "fr": "Gauthier Bonhomme — Stage R&D Petzl 2027",
+   "en": "Gauthier Bonhomme — Petzl R&D internship 2027",
+   "de": "",
+   "it": ""
+  },
+  "nav": {
+   "about": {
+    "fr": "À propos",
+    "en": "About",
+    "de": "",
+    "it": ""
+   },
+   "formation": {
+    "fr": "Formation",
+    "en": "Education",
+    "de": "",
+    "it": ""
+   },
+   "projets": {
+    "fr": "Projets",
+    "en": "Projects",
+    "de": "",
+    "it": ""
+   },
+   "demo": {
+    "fr": "Démo",
+    "en": "Demo",
+    "de": "",
+    "it": ""
+   },
+   "exp": {
+    "fr": "Expérience",
+    "en": "Experience",
+    "de": "",
+    "it": ""
+   },
+   "comp": {
+    "fr": "Compétences",
+    "en": "Skills",
+    "de": "",
+    "it": ""
+   },
+   "lang": {
+    "fr": "Langues",
+    "en": "Languages",
+    "de": "",
+    "it": ""
+   },
+   "int": {
+    "fr": "Centres d'intérêt",
+    "en": "Interests",
+    "de": "",
+    "it": ""
+   },
+   "contact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "de": "",
+    "it": ""
+   }
+  },
+  "sections": {
+   "about": {
+    "fr": "À propos",
+    "en": "About",
+    "de": "",
+    "it": ""
+   },
+   "formation": {
+    "fr": "Formation",
+    "en": "Education",
+    "de": "",
+    "it": ""
+   },
+   "projets": {
+    "fr": "Projets",
+    "en": "Projects",
+    "de": "",
+    "it": ""
+   },
+   "demo": {
+    "fr": "Démo interactive",
+    "en": "Interactive demo",
+    "de": "",
+    "it": ""
+   },
+   "exp": {
+    "fr": "Expérience",
+    "en": "Experience",
+    "de": "",
+    "it": ""
+   },
+   "comp": {
+    "fr": "Compétences",
+    "en": "Skills",
+    "de": "",
+    "it": ""
+   },
+   "lang": {
+    "fr": "Langues",
+    "en": "Languages",
+    "de": "",
+    "it": ""
+   },
+   "int": {
+    "fr": "Centres d'intérêt",
+    "en": "Interests",
+    "de": "",
+    "it": ""
+   },
+   "contact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "de": "",
+    "it": ""
+   }
+  },
+  "dlBtn": {
+   "fr": "Télécharger mon CV",
+   "en": "Download my CV",
+   "de": "",
+   "it": ""
+  },
+  "dlBtnLong": {
+   "fr": "Télécharger mon CV (PDF)",
+   "en": "Download my CV (PDF)",
+   "de": "",
+   "it": ""
+  },
+  "footer": {
+   "fr": "Conçu et développé avec soin · Gauthier Bonhomme · 2026",
+   "en": "Designed and developed with care · Gauthier Bonhomme · 2026",
+   "de": "",
+   "it": ""
+  },
+  "projView": {
+   "fr": "Voir le projet ↗",
+   "en": "View project ↗",
+   "de": "",
+   "it": ""
+  },
+  "projWip": {
+   "fr": "En cours",
+   "en": "In progress",
+   "de": "",
+   "it": ""
+  },
+  "readMore": {
+   "fr": "Lire la suite ▾",
+   "en": "Read more ▾",
+   "de": "",
+   "it": ""
+  },
+  "readLess": {
+   "fr": "Réduire ▴",
+   "en": "Show less ▴",
+   "de": "",
+   "it": ""
+  }
+ },
+ "hero": {
+  "badge": {
+   "fr": "Stage R&D — simulateur de chute · févr. – juil. 2027",
+   "en": "R&D internship — fall simulator · Feb – Jul 2027",
+   "de": "",
+   "it": ""
+  },
+  "title": {
+   "fr": "Élève ingénieur en dernière année",
+   "en": "Final-year engineering student",
+   "de": "",
+   "it": ""
+  },
+  "tagline": {
+   "fr": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — Modélisation · Simulation · Fabrication",
+   "en": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — Modelling · Simulation · Manufacturing",
+   "de": "",
+   "it": ""
+  },
+  "photo": "images/photo-profil.jpg",
+  "pano": ""
+ },
+ "highlights": [
+  {
+   "fr": "<strong>Grimpeur et alpiniste</strong> — escalade 7B, alpinisme en autonomie, ultra-trail.",
+   "en": "<strong>Climber and mountaineer</strong> — 7B climbing, self-guided mountaineering, ultra-trail.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Bricoleur et ingénieux</strong> — moteurs remis à neuf, chaudronnerie, fonderie.",
+   "en": "<strong>Hands-on tinkerer</strong> — rebuilt engines, metalwork, foundry.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Mettre en équation, puis valider</strong> — calcul EF à ≈1 % de l'ASTM ; une chute simulée pas à pas (<a href=\"#demo\">démo</a>).",
+   "en": "<strong>Model it, then validate</strong> — FEA within ≈1 % of the ASTM value; a fall simulated step by step (<a href=\"#demo\">demo</a>).",
+   "de": "",
+   "it": ""
+  }
+ ],
+ "about": [
+  {
+   "fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong>, je candidate chez <strong>Petzl</strong> au <strong>stage de fin d'études R&D « simulateur de chute »</strong> : 6 mois, de février à juillet 2027. Cette page rassemble ce qu'il y a derrière mon CV — rapports, photos et une démo interactive.",
+   "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong>, I am applying to <strong>Petzl</strong> for the <strong>R&D graduation internship on the fall simulator</strong>: 6 months, from February to July 2027. This page gathers what lies behind my CV — reports, photos and an interactive demo.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "En montagne, je grimpe jusqu'au 7B, je pratique l'alpinisme en autonomie et le ski de randonnée, et j'ai bouclé un <strong>ultra-trail de 100 km</strong> (5 000 m de dénivelé positif). Je suis aussi <strong>ceinture noire de judo</strong>.",
+   "en": "In the mountains, I climb up to 7B, go self-guided mountaineering and ski touring, and I have completed a <strong>100-km ultra-trail</strong> (5,000 m of elevation gain). I also hold a <strong>judo black belt</strong>.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "À l'atelier comme sur le papier, j'aime aller jusqu'au bout : un moteur remis à neuf, des tables en chaudronnerie, une statue coulée à partir d'un modèle imprimé en 3D ; un calcul éléments finis qui retrouve la solution analytique à ≈1 % près, une pièce en fonte simulée sous QuickCast puis coulée en équipe, un vilebrequin usiné sur un tour-fraiseur CNC. Plus bas, une démo intègre pas à pas l'équation du mouvement d'une chute retenue par une corde.",
+   "en": "In the workshop as on paper, I like to see things through: a fully reconditioned engine, tables built in a metal workshop, a statue cast from a 3D-printed pattern; a finite-element model matching the analytical solution within ≈1 %, a cast-iron part simulated in QuickCast then poured as a team, a crankshaft machined on a CNC turn-mill. Further down, a demo integrates, step by step, the equation of motion of a fall arrested by a rope.",
+   "de": "",
+   "it": ""
+  }
+ ],
+ "formations": [
+  {
+   "date": "2024 — 2027",
+   "link": "https://artsetmetiers.fr/fr",
+   "title": {
+    "fr": "Arts et Métiers (ENSAM)",
+    "en": "Arts et Métiers (ENSAM)",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Aix-en-Provence · Diplôme d'ingénieur Arts et Métiers (grade master)",
+    "en": "Aix-en-Provence · Arts et Métiers engineering degree (Master's level)",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Conception mécanique, éléments finis, modélisation, procédés de fabrication.",
+     "en": "Mechanical design, finite elements, modelling, manufacturing processes.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Projet de fin d'études : février – juillet 2027.",
+     "en": "Graduation project: February – July 2027.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/formations/images-1-.png"
+  },
+  {
+   "date": "2021 — 2024",
+   "link": "https://fr.wikipedia.org/wiki/Classe_pr%C3%A9paratoire_physique_et_technologie",
+   "title": {
+    "fr": "Classe préparatoire PT",
+    "en": "Preparatory class PT",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Lycée Mermoz, Montpellier",
+    "en": "Lycée Mermoz, Montpellier",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Mathématiques, physique, sciences de l'ingénieur — formation intensive sur 3 ans.",
+     "en": "Mathematics, physics, engineering sciences — intensive 3-year programme.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/formations/images-2-.png"
+  }
+ ],
+ "experiences": [
+  {
+   "date": "Juin — Août 2026",
+   "link": "https://www.royalcanin.com/fr",
+   "title": {
+    "fr": "Royal Canin — Stage",
+    "en": "Royal Canin — Internship",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Aimargues · Logiciel de maintenance de l'usine",
+    "en": "Aimargues · Plant maintenance software",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Amélioration du logiciel de maintenance de l'usine.",
+     "en": "Improved the plant's maintenance software.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Au quotidien avec les équipes de maintenance.",
+     "en": "Worked day to day alongside the maintenance teams.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/royalcaninlogosquarelarge.png"
+  },
+  {
+   "date": "Juin — Août 2025",
+   "link": "https://www.hallb.fr/",
+   "title": {
+    "fr": "Hall b — Équipe fondatrice",
+    "en": "Hall b — Founding team",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Saint-Dionisy · Lancement d'une salle de sport",
+    "en": "Saint-Dionisy · Launch of a gym",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Lancement de la salle de A à Z : aménagement, logistique, réseaux sociaux.",
+     "en": "Launched the gym from scratch: fit-out, logistics, social media.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Choix du site avec GymLocator, un modèle développé sur mesure pour repérer les emplacements propices à une nouvelle salle.",
+     "en": "Chose the site with GymLocator, a custom-built model to identify the best locations for a new gym.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Mise en place de la vidéosurveillance et du site web hallb.fr.",
+     "en": "Set up the video surveillance and the hallb.fr website.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/og-image.jpg"
+  },
+  {
+   "date": "2025 — 2026",
+   "link": "https://europraid.fr/",
+   "title": {
+    "fr": "ÉPOPÉE GADZ — Association étudiante",
+    "en": "ÉPOPÉE GADZ — Student association",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Trésorier · Europ'Raid 2026",
+    "en": "Treasurer · Europ'Raid 2026",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Budget et sponsoring d'un raid solidaire de 8 000 km à travers l'Europe.",
+     "en": "Budget and sponsorship for an 8,000-km charity road trip across Europe.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Près de 4 000 € récoltés.",
+     "en": "Nearly €4,000 raised.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/carte-itin-raire-2021.jpg"
+  },
+  {
+   "date": "2020 — 2021",
+   "link": "https://www.funride30.fr/",
+   "title": {
+    "fr": "Technicien polyvalent",
+    "en": "Maintenance technician",
+    "de": "",
+    "it": ""
+   },
+   "subtitle": {
+    "fr": "Langlade · Centre de loisirs pour vélo",
+    "en": "Langlade · Bike leisure centre",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Réparation et maintenance de vélos.",
+     "en": "Bicycle repair and maintenance.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Accueil et conseil clients, travaux manuels et logistique.",
+     "en": "Customer welcome and advice, manual work and logistics.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/images.jpeg"
+  }
+ ],
+ "projects": [
+  {
+   "img": "images/projets/abaqus-contraintes.jpg",
+   "title": {
+    "fr": "Mécanique de la rupture sous Abaqus",
+    "en": "Fracture mechanics in Abaqus",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Éprouvette DCT (Disc Compact Tension) dimensionnée selon l'ASTM E399-90 : modèle 2D avec maillage en toile d'araignée en fond de fissure, champs de contraintes et facteur d'intensité de contrainte K<sub>I</sub>. Le K<sub>I</sub> éléments finis concorde avec la valeur analytique à environ 1 % près, et nous en avons déduit la charge maximale avant rupture pour plusieurs matériaux.",
+    "en": "Disc compact tension (DCT) specimen sized to ASTM E399-90: 2D model with a spider-web mesh at the crack tip, stress fields and stress-intensity factor K<sub>I</sub>. The finite-element K<sub>I</sub> matched the analytical value within about 1 %, and we derived the maximum load before fracture for several materials.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Abaqus",
+     "en": "Abaqus",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "ASTM E399",
+     "en": "ASTM E399",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Équipe de 3",
+     "en": "Team of 3",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "abaqus.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/masse-ressort.svg",
+   "title": {
+    "fr": "Système masse-ressort-amortisseur simulé",
+    "en": "Simulated mass-spring-damper system",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Mise en équation d'une chute retenue par une corde : la corde est modélisée par un ressort et un amortisseur en parallèle, et l'équation du mouvement est intégrée pas à pas (Euler, Δt = 2 ms). Masse, hauteur de chute, longueur et raideur de la corde se règlent au curseur ; la force dans la corde est tracée en direct et comparée à la solution analytique.",
+    "en": "Equations of a fall arrested by a rope: the rope is modelled as a spring and a damper in parallel, and the equation of motion is integrated step by step (Euler, Δt = 2 ms). Mass, fall height, rope length and stiffness are set with sliders; the rope force is plotted live and checked against the analytical solution.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Équation du mouvement",
+     "en": "Equation of motion",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Méthode d'Euler",
+     "en": "Euler method",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "JavaScript",
+     "en": "JavaScript",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "#demo",
+   "wip": false,
+   "note": {
+    "fr": "Démo interactive sur cette page",
+    "en": "Interactive demo on this page",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
+   "title": {
+    "fr": "Atelier & bricolage — projets personnels",
+    "en": "Workshop & tinkering — personal projects",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Bricoleur depuis toujours : moteurs de moto et de voiture (125 à 350 cm³, 2 et 4 temps ; Peugeot TU1), dont un entièrement remis à neuf ; tables fabriquées en chaudronnerie ; usinage électrochimique (ECM) monté à la maison ; statue coulée à partir d'un modèle imprimé en 3D ; montages Arduino ; rénovation complète d'un vélo. Photos dans l'album.",
+    "en": "A tinkerer for as long as I can remember: motorcycle and car engines (125–350 cc, 2- and 4-stroke; Peugeot TU1), one of them fully reconditioned; tables built in a metal workshop; a home-made electrochemical machining (ECM) set-up; a statue cast from a 3D-printed pattern; Arduino builds; a complete bike renovation. Photos in the album.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Moteurs",
+     "en": "Engines",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Chaudronnerie",
+     "en": "Metalwork",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Fonderie",
+     "en": "Foundry",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "",
+   "wip": false,
+   "note": {
+    "fr": "Album photos",
+    "en": "Photo album",
+    "de": "",
+    "it": ""
+   },
+   "slug": "atelier",
+   "album": [
+    {
+     "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
+     "caption": {
+      "fr": "L'un des moteurs que j'ai entièrement remis à neuf.",
+      "en": "One of the engines I fully reconditioned.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102955.png",
+     "caption": {
+      "fr": "J'ai travaillé à de nombreuses reprises sur des moteurs : motos 125 cm³ 4 temps, 300 cm³ 2 temps et 350 cm³ 4 temps, moteur TU1 d'une Peugeot 205…",
+      "en": "I have worked many times on engines: 125 cc 4-stroke, 300 cc 2-stroke and 350 cc 4-stroke motorcycles, the TU1 engine of a Peugeot 205…",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20240114_115122.jpg",
+     "caption": {
+      "fr": "Étape intermédiaire d'une table basse fabriquée en chaudronnerie avec un ami.",
+      "en": "An intermediate stage of a coffee table I built in the metal workshop with a friend.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103103.png",
+     "caption": {
+      "fr": "Fabrication d'une autre table en chaudronnerie.",
+      "en": "Building another table in the metal workshop.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/snapchat-1574939897.jpg",
+     "caption": {
+      "fr": "Avec un ami, essais d'ECM (usinage électrochimique) : un procédé simple et peu coûteux, que l'on peut mettre en place à la maison.",
+      "en": "With a friend, experimenting with ECM (electrochemical machining): a simple, low-cost process that can be set up at home.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/statue.jpg",
+     "caption": {
+      "fr": "Statue commémorative : le modèle 3D, imprimé en 3D, a servi de modèle pour la coulée en fonderie.",
+      "en": "Commemorative statue: the 3D model was 3D-printed and used as the pattern for casting.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.jpg",
+     "caption": {
+      "fr": "De nombreux petits projets réalisés avec des cartes Arduino.",
+      "en": "Many small projects built with Arduino boards.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/20230211_175603.jpg",
+     "caption": {
+      "fr": "Rénovation (et peinture) complète d'un vélo, de A à Z.",
+      "en": "Complete renovation (and repaint) of a bicycle, from A to Z.",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.jpg",
+     "caption": {
+      "fr": "Fabrication d'une jardinière.",
+      "en": "Building a planter box.",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "img": "images/projets/fonderie-coulee.jpg",
+   "title": {
+    "fr": "Pièce en fonte — de la simulation à la coulée",
+    "en": "Cast-iron part — from simulation to pouring",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Moulage au sable d'un chaînon en fonte pour la fontaine de la Rotonde, à Aix-en-Provence. Nous avons mené des simulations thermiques QuickCast pour choisir l'orientation de la pièce et localiser les retassures, dimensionné les masselottes (règles des modules, des rayons d'action et des retraits) et conçu le système de remplissage en CAO. Nous avons ensuite réalisé à la main les noyaux en sable à prise chimique et les moules en sable à vert, calculé la charge du moule et coulé de la fonte grise GG-30. L'imprimante 3D prévue pour le modèle était en panne : la coulée s'est faite avec un outillage existant, sans masselottes — une vraie leçon sur l'écart entre une conception optimisée et les contraintes de l'atelier.",
+    "en": "Sand casting of a cast-iron chain link for the Rotonde fountain in Aix-en-Provence. We ran QuickCast thermal simulations to choose the part orientation and locate shrinkage hot spots, sized the risers (modulus, feeding-distance and shrinkage rules) and designed the gating system in CAD. We then hand-made the chemically-bonded sand cores and green-sand moulds, calculated the mould weighting and poured GG-30 grey cast iron. The 3D printer for the pattern was down, so the pour used existing tooling without risers — a real lesson in the gap between an optimised design and workshop constraints.",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "QuickCast",
+     "en": "QuickCast",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Moulage sable",
+     "en": "Sand casting",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Équipe de 4",
+     "en": "Team of 4",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "fonderie.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/vilbrequin.jpg",
+   "title": {
+    "fr": "Vilebrequin usiné en CNC",
+    "en": "CNC-machined crankshaft",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Gamme complète en FAO sur Fusion 360 (tournage, fraisage, filetage) pour le vilebrequin d'un moteur monocylindre, puis fabrication sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC. Chaque programme était simulé sur la machine avant l'usinage ; sur place, j'ai traité les vibrations en bout de pièce et repris les trajectoires de fraisage à cause des limites d'axes de la machine. J'ai aussi chiffré le coût de la pièce (temps machine, main-d'œuvre, matière).",
+    "en": "Full CAM workflow in Fusion 360 (turning, milling, threading) for a single-cylinder engine crankshaft, then produced on a DMG MORI CTX Gamma 1250 TC turn-mill. Every program was simulated on the machine before cutting; at the machine, I dealt with chatter at the end of the part and reworked milling paths around the machine's axis limits. I also costed the part (machining time, labour, material).",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "FAO Fusion 360",
+     "en": "Fusion 360 CAM",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Tournage-fraisage CNC",
+     "en": "CNC turn-milling",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "usinage.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
+  }
+ ],
+ "demo": {
+  "title": {
+   "fr": "Chute retenue par une corde",
+   "en": "A fall arrested by a rope",
+   "de": "",
+   "it": ""
+  },
+  "intro": {
+   "fr": "Une masse <em>m</em> tombe en chute libre sur une hauteur <em>h</em>, puis la corde, de longueur <em>L</em>, se tend. La corde est modélisée par un ressort de raideur <em>k</em> = <em>EA</em>/<em>L</em> et un amortisseur <em>c</em> en parallèle, qui ne travaillent qu'en traction. À chaque réglage, l'équation du mouvement est intégrée pas à pas (Euler, Δt = 2 ms) et la force dans la corde est retracée.",
+   "en": "A mass <em>m</em> falls freely through a height <em>h</em>, then the rope, of length <em>L</em>, tightens. The rope is modelled as a spring of stiffness <em>k</em> = <em>EA</em>/<em>L</em> and a damper <em>c</em> in parallel, both working in tension only. At every change, the equation of motion is integrated step by step (Euler, Δt = 2 ms) and the rope force is redrawn.",
+   "de": "",
+   "it": ""
+  },
+  "insight": {
+   "fr": "À facteur de chute égal, même force de choc : comparez les deux premiers cas types — on tombe deux fois plus haut, mais sur une corde deux fois plus longue.",
+   "en": "Same fall factor, same impact force: compare the first two typical cases — the fall is twice as high, but on a rope twice as long.",
+   "de": "",
+   "it": ""
+  },
+  "note": {
+   "fr": "Limites du modèle : corde linéaire, sans frottement dans le mousqueton ni glissement au système d'assurage ; l'amortisseur visqueux impose un saut de force c·v₀ dès la mise en tension, alors qu'une vraie corde se charge progressivement. Ce sont précisément ces hypothèses qu'il faut confronter aux essais.",
+   "en": "Model limits: linear rope, no friction in the carabiner and no slip in the belay device; the viscous damper creates a force step c·v₀ as soon as the rope tightens, whereas a real rope loads up progressively. These are exactly the assumptions that need to be checked against tests.",
+   "de": "",
+   "it": ""
+  }
+ },
+ "skills": [
+  {
+   "title": {
+    "fr": "Modélisation & simulation",
+    "en": "Modelling & simulation",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Mise en équation",
+      "en": "Physical modelling",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Intégration numérique pas à pas",
+      "en": "Step-by-step numerical integration",
+      "de": "",
+      "it": ""
+     },
+     "link": "#demo"
+    },
+    {
+     "label": {
+      "fr": "Abaqus (éléments finis)",
+      "en": "Abaqus (FEA)",
+      "de": "",
+      "it": ""
+     },
+     "link": "abaqus.html"
+    },
+    {
+     "label": {
+      "fr": "QuickCast (fonderie)",
+      "en": "QuickCast (casting)",
+      "de": "",
+      "it": ""
+     },
+     "link": "fonderie.html"
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Conception & fabrication",
+    "en": "Design & manufacturing",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "CATIA V5",
+      "en": "CATIA V5",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Fusion 360 (FAO)",
+      "en": "Fusion 360 (CAM)",
+      "de": "",
+      "it": ""
+     },
+     "link": "usinage.html"
+    },
+    {
+     "label": {
+      "fr": "Usinage CNC",
+      "en": "CNC machining",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Fonderie",
+      "en": "Foundry",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Impression 3D",
+      "en": "3D printing",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Outils",
+    "en": "Tools",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Python (NumPy, Matplotlib)",
+      "en": "Python (NumPy, Matplotlib)",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "MATLAB (bases)",
+      "en": "MATLAB (basic)",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Arduino",
+      "en": "Arduino",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Git",
+      "en": "Git",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Linux",
+      "en": "Linux",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  }
+ ],
+ "languages": [
+  {
+   "icon": "🇫🇷",
+   "name": {
+    "fr": "Français",
+    "en": "French",
+    "de": "",
+    "it": ""
+   },
+   "level": {
+    "fr": "Langue maternelle",
+    "en": "Native language",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "icon": "🇬🇧",
+   "name": {
+    "fr": "Anglais",
+    "en": "English",
+    "de": "",
+    "it": ""
+   },
+   "level": {
+    "fr": "Niveau C1 — Courant",
+    "en": "C1 Level — Fluent",
+    "de": "",
+    "it": ""
+   }
+  }
+ ],
+ "interests": [
+  {
+   "icon": "🧗",
+   "name": {
+    "fr": "Escalade",
+    "en": "Climbing",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Niveau 7B · Album ↗",
+    "en": "Grade 7B · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "escalade"
+  },
+  {
+   "icon": "🏔️",
+   "name": {
+    "fr": "Alpinisme",
+    "en": "Mountaineering",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "En autonomie · Album ↗",
+    "en": "Self-guided · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "alpinisme"
+  },
+  {
+   "icon": "⛷️",
+   "name": {
+    "fr": "Ski de randonnée",
+    "en": "Ski touring",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Album ↗",
+    "en": "Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "ski"
+  },
+  {
+   "icon": "🏃",
+   "name": {
+    "fr": "Ultra-trail",
+    "en": "Ultra-trail",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "100 km · 5 000 m D+ · Album ↗",
+    "en": "100 km · 5,000 m D+ · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "trail"
+  },
+  {
+   "icon": "🥋",
+   "name": {
+    "fr": "Judo",
+    "en": "Judo",
+    "de": "",
+    "it": ""
+   },
+   "detail": {
+    "fr": "Ceinture noire",
+    "en": "Black belt",
+    "de": "",
+    "it": ""
+   },
+   "page": ""
+  }
+ ],
+ "contacts": [
+  {
+   "icon": "email",
+   "label": {
+    "fr": "Email",
+    "en": "Email",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "gauthier.bonhomme30@gmail.com",
+    "en": "gauthier.bonhomme30@gmail.com",
+    "de": "",
+    "it": ""
+   },
+   "href": "https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com"
+  },
+  {
+   "icon": "phone",
+   "label": {
+    "fr": "Téléphone",
+    "en": "Phone",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "+33 6 08 27 62 16",
+    "en": "+33 6 08 27 62 16",
+    "de": "",
+    "it": ""
+   },
+   "href": "tel:+33608276216"
+  },
+  {
+   "icon": "pin",
+   "label": {
+    "fr": "Localisation",
+    "en": "Location",
+    "de": "",
+    "it": ""
+   },
+   "value": {
+    "fr": "Calvisson, 30420 — Gard (30) ↗",
+    "en": "Calvisson, 30420 — Gard, France ↗",
+    "de": "",
+    "it": ""
+   },
+   "href": "https://maps.google.com/?q=Calvisson,30420"
+  }
+ ]
+}

@@ -93,14 +93,17 @@ let LANG = (function () { try { return localStorage.getItem('cvLang') || 'fr'; }
 if (!LANGS.includes(LANG)) LANG = 'fr';
 let PROJECT = null, ALBUM = [], cur = 0;
 const pick = o => (o && typeof o === 'object') ? (o[LANG] || o.fr || '') : (o || '');
-const id = new URLSearchParams(location.search).get('id');
+const QS = new URLSearchParams(location.search);
+const id = QS.get('id');
+// fichier de contenu de la page d'origine (&c=content-petzl.json…) ; par défaut content.json
+const SRC = /^content(-[a-z0-9-]+)?\.json$/.test(QS.get('c') || '') ? QS.get('c') : 'content.json';
 
 function goBackCV() {
   try { if (history.length > 1 && document.referrer && new URL(document.referrer).host === location.host) { history.back(); return false; } } catch (e) {}
   return true;
 }
 
-fetch('content.json').then(r => r.json()).then(c => {
+fetch(SRC).then(r => r.json()).then(c => {
   PROJECT = (c.projects || []).find(p => p.slug && p.slug === id);
   renderLangs();
   render();
