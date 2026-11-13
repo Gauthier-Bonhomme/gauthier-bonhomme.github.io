@@ -67,7 +67,8 @@ function renderStatics() {
     else photo.style.display = 'none';
   }
   // boutons CV (libellé + fichier)
-  document.querySelectorAll('a.btn-download, a.btn-download-inline').forEach(a => a.setAttribute('href', CONTENT.pdf));
+  // sans fichier PDF (clé pdf vide, ex. content-salomon.json), les boutons sont masqués
+  document.querySelectorAll('a.btn-download, a.btn-download-inline').forEach(a => { if (CONTENT.pdf) { a.setAttribute('href', CONTENT.pdf); a.style.display = ''; } else a.style.display = 'none'; });
   const dl1 = document.querySelector('.btn-download span'); if (dl1) dl1.textContent = pick(lb.dlBtn);
   const dl2 = document.querySelector('.btn-download-inline span'); if (dl2) dl2.textContent = pick(lb.dlBtnLong);
   const heroContact = document.querySelector('.cta-row .btn-ghost'); if (heroContact) heroContact.textContent = pick(lb.nav.contact);
