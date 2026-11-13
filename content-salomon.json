@@ -1,6 +1,6 @@
 {
- "_aide": "Contenu de la page salomon.html (candidatures à plusieurs stages chez Salomon, stage de fin d'études dès février 2027) — page généraliste, même gabarit que index.html, esa.html et petzl.html (assets/site.js). Français par défaut, anglais disponible ; champs DE/IT vides (non proposés). pdf vide = boutons « Télécharger mon CV » masqués. Modifié à la main : l'admin local n'édite que content.json.",
- "pdf": "",
+ "_aide": "Contenu de la page salomon.html (candidatures à plusieurs stages chez Salomon, stage de fin d'études dès février 2027) — page généraliste, même gabarit que index.html, esa.html et petzl.html (assets/site.js). Français par défaut, anglais disponible ; champs DE/IT vides (non proposés). pdf = CV proposé au téléchargement (vide = boutons « Télécharger mon CV » masqués). Modifié à la main : l'admin local n'édite que content.json.",
+ "pdf": "Gauthier_Bonhomme_CV_Salomon_Industrialisation_SkiBoots.pdf",
  "labels": {
   "pageTitle": {"fr": "Gauthier Bonhomme — Stages Salomon 2027", "en": "Gauthier Bonhomme — Salomon internships 2027", "de": "", "it": ""},
   "nav": {
@@ -161,7 +161,7 @@
   {
    "img": "images/projets/gymlocator.jpg",
    "title": {"fr": "GymLocator — localisation optimale", "en": "GymLocator — optimal location", "de": "", "it": ""},
-   "desc": {"fr": "Logiciel commandé et rémunéré par une salle de sport, utilisé pour choisir son prochain site. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE de 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées.", "en": "Software commissioned and paid for by a gym, used to choose its next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas.", "de": "", "it": ""},
+   "desc": {"fr": "Logiciel commandé et rémunéré par une salle de sport, utilisé pour choisir son prochain site. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE de 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne sur la page projet.", "en": "Software commissioned and paid for by a gym, used to choose its next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo on the project page.", "de": "", "it": ""},
    "tags": [
     {"fr": "E2SFCA", "en": "E2SFCA", "de": "", "it": ""},
     {"fr": "Géospatial", "en": "Geospatial", "de": "", "it": ""},
