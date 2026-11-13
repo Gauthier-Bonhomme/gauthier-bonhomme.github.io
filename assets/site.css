@@ -434,3 +434,19 @@ button.tag:hover{border-color:var(--accent);color:var(--accent);}
   .hl-item p{font-size:13px;line-height:1.5;}
   .proj-note{font-size:10px;margin:0 0 8px;}
 }
+
+/* ═══ LE POSTE (clé optionnelle « fit ») : besoins de l'offre → ce que j'apporte ═══ */
+.fit-intro{max-width:75ch;margin-bottom:18px;font-size:16px;color:var(--text);}
+.fit-intro strong{color:var(--heading);font-weight:500;}
+.fit-list{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);overflow:hidden;}
+.fit-row{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:0 26px;padding:14px 22px;}
+.fit-row + .fit-row{border-top:1px solid var(--border);}
+.fit-need{padding-top:2px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;line-height:1.55;text-transform:uppercase;color:var(--accent);}
+.fit-proof{font-size:15px;line-height:1.6;color:var(--text);}
+.fit-proof a{color:var(--heading);text-decoration:underline;text-decoration-color:var(--accent-border);text-underline-offset:3px;}
+.fit-proof a:hover{color:var(--accent);}
+@media(max-width:768px){
+  .fit-row{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px 14px;}
+  .fit-need{font-size:11px;}
+  .fit-proof{font-size:14px;}
+}

@@ -1,10 +1,11 @@
 {
- "_aide": "Contenu de la page salomon.html (candidatures à plusieurs stages chez Salomon, stage de fin d'études dès février 2027) — page généraliste, même gabarit que index.html, esa.html et petzl.html (assets/site.js). Français par défaut, anglais disponible ; champs DE/IT vides (non proposés). pdf = CV proposé au téléchargement (vide = boutons « Télécharger mon CV » masqués). Modifié à la main : l'admin local n'édite que content.json.",
+ "_aide": "Contenu de la page salomon.html — candidature au stage « Ingénieur industrialisation Jr — Ski Boots » (Salomon, Annecy, 6 mois dès février 2027 ; projet de traçabilité des boots, site de Roumanie). Même gabarit que index.html, esa.html et petzl.html (assets/site.js). Clé « fit » = section « Le poste » (besoins de l'offre → ce que j'ai déjà fait). Français par défaut, anglais disponible ; champs DE/IT vides (non proposés). pdf = CV proposé au téléchargement (vide = boutons masqués). Modifié à la main : l'admin local n'édite que content.json.",
  "pdf": "Gauthier_Bonhomme_CV_Salomon_Industrialisation_SkiBoots.pdf",
  "labels": {
-  "pageTitle": {"fr": "Gauthier Bonhomme — Stages Salomon 2027", "en": "Gauthier Bonhomme — Salomon internships 2027", "de": "", "it": ""},
+  "pageTitle": {"fr": "Gauthier Bonhomme — Stage industrialisation Jr Ski Boots · Salomon", "en": "Gauthier Bonhomme — Junior industrialisation internship, Ski Boots · Salomon", "de": "", "it": ""},
   "nav": {
    "about": {"fr": "À propos", "en": "About", "de": "", "it": ""},
+   "poste": {"fr": "Le poste", "en": "The role", "de": "", "it": ""},
    "formation": {"fr": "Formation", "en": "Education", "de": "", "it": ""},
    "exp": {"fr": "Expérience", "en": "Experience", "de": "", "it": ""},
    "projets": {"fr": "Projets", "en": "Projects", "de": "", "it": ""},
@@ -15,6 +16,7 @@
   },
   "sections": {
    "about": {"fr": "À propos", "en": "About", "de": "", "it": ""},
+   "poste": {"fr": "Le poste", "en": "The role", "de": "", "it": ""},
    "formation": {"fr": "Formation", "en": "Education", "de": "", "it": ""},
    "exp": {"fr": "Expérience", "en": "Experience", "de": "", "it": ""},
    "projets": {"fr": "Projets", "en": "Projects", "de": "", "it": ""},
@@ -32,22 +34,45 @@
   "readLess": {"fr": "Réduire ▴", "en": "Show less ▴", "de": "", "it": ""}
  },
  "hero": {
-  "badge": {"fr": "Stage de fin d'études · 6 mois dès février 2027", "en": "Graduation internship · 6 months from February 2027", "de": "", "it": ""},
+  "badge": {"fr": "Stage ingénieur industrialisation Jr — Ski Boots · 6 mois dès février 2027", "en": "Junior industrialisation engineer internship — Ski Boots · 6 months from February 2027", "de": "", "it": ""},
   "title": {"fr": "Élève ingénieur en dernière année", "en": "Final-year engineering student", "de": "", "it": ""},
-  "tagline": {"fr": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — Conception · Simulation · Fabrication", "en": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — Design · Simulation · Manufacturing", "de": "", "it": ""},
+  "tagline": {"fr": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — bricoleur et ingénieux", "en": "<strong>Arts et Métiers (ENSAM)</strong> · Aix-en-Provence — hands-on and resourceful", "de": "", "it": ""},
   "photo": "images/photo-profil.jpg",
   "pano": ""
  },
  "highlights": [
-  {"fr": "<strong>Sportif de montagne</strong> — ultra-trail de 100 km, ski alpin et de randonnée, alpinisme, escalade 7B.", "en": "<strong>Mountain athlete</strong> — 100-km ultra-trail, alpine skiing and ski touring, mountaineering, 7B climbing.", "de": "", "it": ""},
-  {"fr": "<strong>De la conception à l'atelier</strong> — CAO, usinage CNC, fonderie, moteurs remis à neuf.", "en": "<strong>From design to workshop</strong> — CAD, CNC machining, foundry, rebuilt engines.", "de": "", "it": ""},
-  {"fr": "<strong>Mettre en équation, puis valider</strong> — calcul EF à ≈1 % de l'ASTM, outil géospatial GymLocator utilisé en conditions réelles.", "en": "<strong>Model it, then validate</strong> — FEA within ≈1 % of the ASTM value, GymLocator geospatial tool used for real decisions.", "de": "", "it": ""}
+  {"fr": "<strong>Skieur et traileur</strong> — ski alpin et de rando, ultra-trail 100 km, alpinisme.", "en": "<strong>Skier and trail runner</strong> — alpine skiing and ski touring, 100-km ultra-trail, mountaineering.", "de": "", "it": ""},
+  {"fr": "<strong>À l'aise en usine</strong> — terrain avec la maintenance, gamme d'usinage CNC.", "en": "<strong>At home on the factory floor</strong> — field work with maintenance, CNC machining routing.", "de": "", "it": ""},
+  {"fr": "<strong>Mener un projet de A à Z</strong> — lancement d'une salle, raid de 8 000 km.", "en": "<strong>Running a project end to end</strong> — launching a gym, an 8,000-km raid.", "de": "", "it": ""}
  ],
  "about": [
-  {"fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong>, je candidate à <strong>plusieurs offres de stage chez Salomon</strong> pour mon stage de fin d'études : 6 mois, à partir de février 2027. Cette page rassemble ce qu'il y a derrière mon CV — rapports, photos et projets.", "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong>, I am applying for <strong>several internship offers at Salomon</strong> for my graduation internship: 6 months, from February 2027. This page gathers what lies behind my CV — reports, photos and projects.", "de": "", "it": ""},
-  {"fr": "En montagne, je cours, je skie et je grimpe : j'ai bouclé un <strong>ultra-trail de 100 km</strong> (5 000 m de dénivelé positif) et je prépare l'UTMB, je pratique le ski alpin et de randonnée, l'alpinisme et l'escalade (7B). Je suis aussi <strong>ceinture noire de judo</strong>.", "en": "In the mountains, I run, ski and climb: I have completed a <strong>100-km ultra-trail</strong> (5,000 m of elevation gain) and I am training for the UTMB; I go alpine skiing and ski touring, mountaineering and climbing (7B). I also hold a <strong>judo black belt</strong>.", "de": "", "it": ""},
-  {"fr": "Ma formation est généraliste et j'aime aller de la conception jusqu'à l'atelier : un vilebrequin programmé en FAO puis usiné sur un tour-fraiseur CNC, une pièce en fonte simulée sous QuickCast puis coulée en équipe, un calcul éléments finis qui retrouve la solution analytique à ≈1 % près. J'ai aussi participé au lancement d'une salle de sport de A à Z, pour laquelle j'ai développé GymLocator, un outil d'aide au choix du site.", "en": "My engineering education is broad and I like taking things from design all the way to the workshop: a crankshaft programmed in CAM then machined on a CNC turn-mill, a cast-iron part simulated in QuickCast then poured as a team, a finite-element model matching the analytical solution within ≈1 %. I also helped launch a gym from scratch, for which I built GymLocator, a site-selection tool.", "de": "", "it": ""}
+  {"fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong>, je candidate au stage <strong>Ingénieur industrialisation Jr — Ski Boots</strong> chez Salomon, à Annecy : 6 mois à partir de février 2027, sur le projet de traçabilité des chaussures de ski, de l'analyse des flux jusqu'au déploiement sur le site de Roumanie.", "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong>, I am applying for the <strong>Junior Industrialisation Engineer — Ski Boots</strong> internship at Salomon in Annecy: 6 months from February 2027, on the ski-boot traceability project, from flow analysis to deployment at the Romanian site.", "de": "", "it": ""},
+  {"fr": "Comprendre comment un produit est fabriqué et assemblé, je le fais depuis toujours : j'ai remis des moteurs à neuf, programmé et conduit un tour-fraiseur CNC, coulé une pièce en fonte en équipe, et travaillé à l'été 2026 dans l'usine Royal Canin d'Aimargues, au contact des équipes de maintenance.", "en": "Understanding how a product is made and assembled is something I have always done: I have rebuilt engines, programmed and run a CNC turn-mill, poured a cast-iron part as a team, and worked in summer 2026 at the Royal Canin plant in Aimargues, alongside the maintenance teams.", "de": "", "it": ""},
+  {"fr": "J'aime aussi mener un projet de bout en bout : j'ai participé au lancement d'une salle de sport de A à Z — devis, travaux, budget, choix du site avec GymLocator — et j'ai été trésorier d'un raid solidaire de 8 000 km. Côté montagne, je skie (alpin et randonnée), je cours (ultra-trail de 100 km) et je fais de l'alpinisme.", "en": "I also like running a project end to end: I helped launch a gym from scratch — quotes, works, budget, site selection with GymLocator — and I was treasurer of an 8,000-km charity raid. In the mountains, I ski (alpine and touring), run (100-km ultra-trail) and go mountaineering.", "de": "", "it": ""}
  ],
+ "fit": {
+  "intro": {"fr": "Le stage : <strong>le projet de traçabilité des chaussures de ski</strong>, de l'analyse des flux au déploiement sur le site de Roumanie. En face de chaque point de l'offre, ce que j'ai déjà fait.", "en": "The internship: <strong>the ski-boot traceability project</strong>, from flow analysis to deployment at the Romanian site. Next to each point of the offer, what I have already done.", "de": "", "it": ""},
+  "items": [
+   {"need": {"fr": "Analyse de flux, gammes, implantation de postes", "en": "Flow analysis, routings, workstation layout", "de": "", "it": ""},
+    "proof": {"fr": "Gamme complète d'un vilebrequin, de la FAO à la pièce sur tour-fraiseur, avec chiffrage du coût (<a href=\"usinage.html\">rapport</a>) ; procédé de fonderie mené de la simulation à la coulée (<a href=\"fonderie.html\">rapport</a>) ; aménagement d'une salle de sport de A à Z.", "en": "Complete routing of a crankshaft, from CAM to the finished part on a turn-mill, with costing (<a href=\"usinage.html\">report</a>); a foundry process taken from simulation to pouring (<a href=\"fonderie.html\">report</a>); fit-out of a gym from scratch.", "de": "", "it": ""}},
+   {"need": {"fr": "Comparer des solutions, recommander la plus adaptée", "en": "Compare options, recommend the best fit", "de": "", "it": ""},
+    "proof": {"fr": "GymLocator : un outil qui compare des emplacements à partir de données ouvertes et recommande où implanter une salle de sport, commandé et utilisé par la salle (<a href=\"python.html\">page projet</a>).", "en": "GymLocator: a tool that compares locations using open data and recommends where to open a gym, commissioned and used by the gym (<a href=\"python.html\">project page</a>).", "de": "", "it": ""}},
+   {"need": {"fr": "Gestion de projet : planning, jalons, suivi", "en": "Project management: planning, milestones, follow-up", "de": "", "it": ""},
+    "proof": {"fr": "Lancement de Hall b de A à Z : devis, suivi de travaux, choix budgétaires, plannings ; trésorier d'un raid solidaire de 8 000 km (budget et sponsoring, près de 4 000 € récoltés).", "en": "Launch of Hall b from scratch: quotes, works follow-up, budget decisions, schedules; treasurer of an 8,000-km charity raid (budget and sponsorship, nearly €4,000 raised).", "de": "", "it": ""}},
+   {"need": {"fr": "Expérience en usine, systèmes d'information industriels", "en": "Factory experience, industrial information systems", "de": "", "it": ""},
+    "proof": {"fr": "Stage chez Royal Canin à l'usine d'Aimargues (été 2026) : amélioration du logiciel de maintenance, sur le terrain avec les équipes de maintenance.", "en": "Internship at Royal Canin's Aimargues plant (summer 2026): improving the maintenance software, on the shop floor with the maintenance teams.", "de": "", "it": ""}},
+   {"need": {"fr": "Aisance en atelier, travail avec les opérateurs", "en": "At ease in the workshop, working with operators", "de": "", "it": ""},
+    "proof": {"fr": "Usinage CNC, fonderie, chaudronnerie, moteurs remis à neuf (<a href=\"projet.html?id=atelier&amp;c=content-salomon.json\">photos</a>) ; habitué au terrain : équipes de maintenance chez Royal Canin, plannings des intervenants indépendants chez Hall b.", "en": "CNC machining, foundry, metalwork, rebuilt engines (<a href=\"projet.html?id=atelier&amp;c=content-salomon.json\">photos</a>); used to the shop floor: maintenance teams at Royal Canin, schedules of the independent staff at Hall b.", "de": "", "it": ""}},
+   {"need": {"fr": "Instructions de travail claires", "en": "Clear work instructions", "de": "", "it": ""},
+    "proof": {"fr": "Gammes et rapports rédigés pour chaque projet — usinage, fonderie, calcul éléments finis (<a href=\"abaqus.html\">rapport</a>).", "en": "Routings and reports written for each project — machining, foundry, finite-element analysis (<a href=\"abaqus.html\">report</a>).", "de": "", "it": ""}},
+   {"need": {"fr": "Rigueur, autonomie, persévérance", "en": "Rigour, autonomy, perseverance", "de": "", "it": ""},
+    "proof": {"fr": "Un calcul éléments finis qui retrouve la solution analytique à ≈1 % près ; un ultra-trail de 100 km (5 000 m D+) bouclé, et l'alpinisme en autonomie.", "en": "A finite-element model matching the analytical solution within ≈1 %; a 100-km ultra-trail (5,000 m D+) completed, and self-guided mountaineering.", "de": "", "it": ""}},
+   {"need": {"fr": "Français et anglais courants, déplacements en Roumanie", "en": "Fluent French and English, travel to Romania", "de": "", "it": ""},
+    "proof": {"fr": "Français langue maternelle, anglais C1 ; mobile : raid de 8 000 km à travers l'Europe, permis B et A.", "en": "French native, English C1; mobile: an 8,000-km raid across Europe, car and motorcycle licences.", "de": "", "it": ""}},
+   {"need": {"fr": "Passion du ski", "en": "Passion for skiing", "de": "", "it": ""},
+    "proof": {"fr": "Skieur alpin et de randonnée, traileur et alpiniste (<a href=\"ski.html\">album ski</a>).", "en": "Alpine skier and ski tourer, trail runner and mountaineer (<a href=\"ski.html\">ski album</a>).", "de": "", "it": ""}}
+  ]
+ },
  "formations": [
   {
    "date": "2024 — 2027",
@@ -55,8 +80,8 @@
    "title": {"fr": "Arts et Métiers (ENSAM)", "en": "Arts et Métiers (ENSAM)", "de": "", "it": ""},
    "subtitle": {"fr": "Aix-en-Provence · Diplôme d'ingénieur Arts et Métiers (grade master)", "en": "Aix-en-Provence · Arts et Métiers engineering degree (Master's level)", "de": "", "it": ""},
    "items": [
+    {"fr": "Procédés de fabrication, conception mécanique, systèmes industriels.", "en": "Manufacturing processes, mechanical design, industrial systems.", "de": "", "it": ""},
     {"fr": "Formation généraliste, axée sur l'industrie du futur et l'innovation.", "en": "Generalist engineering programme focused on the industry of the future and innovation.", "de": "", "it": ""},
-    {"fr": "Conception mécanique, éléments finis, procédés de fabrication, modélisation, automatisation, programmation et analyse de données.", "en": "Mechanical design, finite elements, manufacturing processes, modelling, automation, programming and data analysis.", "de": "", "it": ""},
     {"fr": "Stage de fin d'études : 6 mois à partir de février 2027.", "en": "Graduation internship: 6 months from February 2027.", "de": "", "it": ""}
    ],
    "img": "images/formations/images-1-.png"
@@ -77,10 +102,10 @@
    "date": "Juin — Août 2026",
    "link": "https://www.royalcanin.com/fr",
    "title": {"fr": "Royal Canin — Stage", "en": "Royal Canin — Internship", "de": "", "it": ""},
-   "subtitle": {"fr": "Aimargues · Logiciel de maintenance de l'usine", "en": "Aimargues · Plant maintenance software", "de": "", "it": ""},
+   "subtitle": {"fr": "Usine d'Aimargues · Logiciel de maintenance", "en": "Aimargues plant · Maintenance software", "de": "", "it": ""},
    "items": [
     {"fr": "Amélioration du logiciel de maintenance de l'usine.", "en": "Improved the plant's maintenance software.", "de": "", "it": ""},
-    {"fr": "Au quotidien avec les équipes de maintenance.", "en": "Worked day to day alongside the maintenance teams.", "de": "", "it": ""}
+    {"fr": "Sur le terrain, au quotidien avec les équipes de maintenance.", "en": "On the shop floor, day to day with the maintenance teams.", "de": "", "it": ""}
    ],
    "img": "images/experiences/royalcaninlogosquarelarge.png"
   },
@@ -90,9 +115,9 @@
    "title": {"fr": "Hall b — Équipe fondatrice", "en": "Hall b — Founding team", "de": "", "it": ""},
    "subtitle": {"fr": "Saint-Dionisy · Lancement d'une salle de sport", "en": "Saint-Dionisy · Launch of a gym", "de": "", "it": ""},
    "items": [
-    {"fr": "Lancement de la salle de A à Z : aménagement, logistique, réseaux sociaux.", "en": "Launched the gym from scratch: fit-out, logistics, social media.", "de": "", "it": ""},
-    {"fr": "Choix du site avec GymLocator, un modèle développé sur mesure pour repérer les emplacements propices à une nouvelle salle.", "en": "Chose the site with GymLocator, a custom-built model to identify the best locations for a new gym.", "de": "", "it": ""},
-    {"fr": "Mise en place de la vidéosurveillance et du site web hallb.fr.", "en": "Set up the video surveillance and the hallb.fr website.", "de": "", "it": ""}
+    {"fr": "Lancement de A à Z : aménagement, logistique, choix du site (GymLocator).", "en": "Launch from scratch: fit-out, logistics, site selection (GymLocator).", "de": "", "it": ""},
+    {"fr": "Devis, suivi de travaux et choix budgétaires ; plannings des intervenants indépendants.", "en": "Quotes, works follow-up and budget decisions; schedules of the independent staff.", "de": "", "it": ""},
+    {"fr": "Mise en place du système vidéo et du site web hallb.fr.", "en": "Set up the video system and the hallb.fr website.", "de": "", "it": ""}
    ],
    "img": "images/experiences/og-image.jpg"
   },
@@ -110,11 +135,11 @@
   {
    "date": "2020 — 2021",
    "link": "https://www.funride30.fr/",
-   "title": {"fr": "Technicien polyvalent", "en": "Maintenance technician", "de": "", "it": ""},
-   "subtitle": {"fr": "Langlade · Centre de loisirs pour vélo", "en": "Langlade · Bike leisure centre", "de": "", "it": ""},
+   "title": {"fr": "FunRide — Technicien polyvalent", "en": "FunRide — Maintenance technician", "de": "", "it": ""},
+   "subtitle": {"fr": "Langlade · Base de loisirs vélo", "en": "Langlade · Bike leisure centre", "de": "", "it": ""},
    "items": [
-    {"fr": "Réparation et maintenance de vélos.", "en": "Bicycle repair and maintenance.", "de": "", "it": ""},
-    {"fr": "Accueil et conseil clients, travaux manuels et logistique.", "en": "Customer welcome and advice, manual work and logistics.", "de": "", "it": ""}
+    {"fr": "Réparation et entretien des vélos.", "en": "Bicycle repair and maintenance.", "de": "", "it": ""},
+    {"fr": "Accueil des clients.", "en": "Customer welcome.", "de": "", "it": ""}
    ],
    "img": "images/experiences/images.jpeg"
   }
@@ -122,11 +147,12 @@
  "projects": [
   {
    "img": "images/projets/vilbrequin.jpg",
-   "title": {"fr": "Vilebrequin usiné en CNC", "en": "CNC-machined crankshaft", "de": "", "it": ""},
-   "desc": {"fr": "Gamme complète en FAO sur Fusion 360 (tournage, fraisage, filetage) pour le vilebrequin d'un moteur monocylindre, puis fabrication sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC. Chaque programme était simulé sur la machine avant l'usinage ; sur place, j'ai traité les vibrations en bout de pièce et repris les trajectoires de fraisage à cause des limites d'axes de la machine. J'ai aussi chiffré le coût de la pièce (temps machine, main-d'œuvre, matière).", "en": "Full CAM workflow in Fusion 360 (turning, milling, threading) for a single-cylinder engine crankshaft, then produced on a DMG MORI CTX Gamma 1250 TC turn-mill. Every program was simulated on the machine before cutting; at the machine, I dealt with chatter at the end of the part and reworked milling paths around the machine's axis limits. I also costed the part (machining time, labour, material).", "de": "", "it": ""},
+   "title": {"fr": "Vilebrequin — de la gamme d'usinage à la pièce", "en": "Crankshaft — from machining routing to finished part", "de": "", "it": ""},
+   "desc": {"fr": "Gamme d'usinage complète en FAO sur Fusion 360 (tournage, fraisage, filetage) pour le vilebrequin d'un moteur monocylindre, puis production sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC. Chaque programme était simulé sur la machine avant l'usinage ; sur place, j'ai traité les vibrations en bout de pièce et repris les trajectoires de fraisage à cause des limites d'axes de la machine. J'ai aussi chiffré le coût de la pièce (temps machine, main-d'œuvre, matière).", "en": "Complete machining routing in Fusion 360 CAM (turning, milling, threading) for a single-cylinder engine crankshaft, then produced on a DMG MORI CTX Gamma 1250 TC turn-mill. Every program was simulated on the machine before cutting; at the machine, I dealt with chatter at the end of the part and reworked milling paths around the machine's axis limits. I also costed the part (machining time, labour, material).", "de": "", "it": ""},
    "tags": [
+    {"fr": "Gamme d'usinage", "en": "Machining routing", "de": "", "it": ""},
     {"fr": "FAO Fusion 360", "en": "Fusion 360 CAM", "de": "", "it": ""},
-    {"fr": "Tournage-fraisage CNC", "en": "CNC turn-milling", "de": "", "it": ""}
+    {"fr": "Chiffrage", "en": "Costing", "de": "", "it": ""}
    ],
    "link": "usinage.html",
    "wip": false,
@@ -134,42 +160,16 @@
   },
   {
    "img": "images/projets/fonderie-coulee.jpg",
-   "title": {"fr": "Pièce en fonte — de la simulation à la coulée", "en": "Cast-iron part — from simulation to pouring", "de": "", "it": ""},
+   "title": {"fr": "Pièce en fonte — procédé complet, en équipe de 4", "en": "Cast-iron part — complete process, team of 4", "de": "", "it": ""},
    "desc": {"fr": "Moulage au sable d'un chaînon en fonte pour la fontaine de la Rotonde, à Aix-en-Provence. Nous avons mené des simulations thermiques QuickCast pour choisir l'orientation de la pièce et localiser les retassures, dimensionné les masselottes (règles des modules, des rayons d'action et des retraits) et conçu le système de remplissage en CAO. Nous avons ensuite réalisé à la main les noyaux en sable à prise chimique et les moules en sable à vert, calculé la charge du moule et coulé de la fonte grise GG-30. L'imprimante 3D prévue pour le modèle était en panne : la coulée s'est faite avec un outillage existant, sans masselottes — une vraie leçon sur l'écart entre une conception optimisée et les contraintes de l'atelier.", "en": "Sand casting of a cast-iron chain link for the Rotonde fountain in Aix-en-Provence. We ran QuickCast thermal simulations to choose the part orientation and locate shrinkage hot spots, sized the risers (modulus, feeding-distance and shrinkage rules) and designed the gating system in CAD. We then hand-made the chemically-bonded sand cores and green-sand moulds, calculated the mould weighting and poured GG-30 grey cast iron. The 3D printer for the pattern was down, so the pour used existing tooling without risers — a real lesson in the gap between an optimised design and workshop constraints.", "de": "", "it": ""},
    "tags": [
+    {"fr": "Procédé de fonderie", "en": "Foundry process", "de": "", "it": ""},
     {"fr": "QuickCast", "en": "QuickCast", "de": "", "it": ""},
-    {"fr": "Moulage sable", "en": "Sand casting", "de": "", "it": ""},
     {"fr": "Équipe de 4", "en": "Team of 4", "de": "", "it": ""}
    ],
    "link": "fonderie.html",
    "wip": false,
    "note": {"fr": "Rapport", "en": "Report (in French)", "de": "", "it": ""}
-  },
-  {
-   "img": "images/projets/abaqus-contraintes.jpg",
-   "title": {"fr": "Mécanique de la rupture sous Abaqus", "en": "Fracture mechanics in Abaqus", "de": "", "it": ""},
-   "desc": {"fr": "Éprouvette DCT (Disc Compact Tension) dimensionnée selon l'ASTM E399-90 : modèle 2D avec maillage en toile d'araignée en fond de fissure, champs de contraintes et facteur d'intensité de contrainte K<sub>I</sub>. Le K<sub>I</sub> éléments finis concorde avec la valeur analytique à environ 1 % près, et nous en avons déduit la charge maximale avant rupture pour plusieurs matériaux.", "en": "Disc compact tension (DCT) specimen sized to ASTM E399-90: 2D model with a spider-web mesh at the crack tip, stress fields and stress-intensity factor K<sub>I</sub>. The finite-element K<sub>I</sub> matched the analytical value within about 1 %, and we derived the maximum load before fracture for several materials.", "de": "", "it": ""},
-   "tags": [
-    {"fr": "Abaqus", "en": "Abaqus", "de": "", "it": ""},
-    {"fr": "ASTM E399", "en": "ASTM E399", "de": "", "it": ""},
-    {"fr": "Équipe de 3", "en": "Team of 3", "de": "", "it": ""}
-   ],
-   "link": "abaqus.html",
-   "wip": false,
-   "note": {"fr": "Rapport", "en": "Report (in French)", "de": "", "it": ""}
-  },
-  {
-   "img": "images/projets/gymlocator.jpg",
-   "title": {"fr": "GymLocator — localisation optimale", "en": "GymLocator — optimal location", "de": "", "it": ""},
-   "desc": {"fr": "Logiciel commandé et rémunéré par une salle de sport, utilisé pour choisir son prochain site. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE de 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne sur la page projet.", "en": "Software commissioned and paid for by a gym, used to choose its next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo on the project page.", "de": "", "it": ""},
-   "tags": [
-    {"fr": "E2SFCA", "en": "E2SFCA", "de": "", "it": ""},
-    {"fr": "Géospatial", "en": "Geospatial", "de": "", "it": ""},
-    {"fr": "Open data", "en": "Open data", "de": "", "it": ""}
-   ],
-   "link": "python.html",
-   "wip": false,
-   "note": {"fr": "Page projet", "en": "Project page (in French)", "de": "", "it": ""}
   },
   {
    "img": "images/projets/projets-divers-et-varies/20240801_091309.jpg",
@@ -192,16 +192,42 @@
     {"img": "images/projets/projets-divers-et-varies/snapchat-1574939897.jpg", "caption": {"fr": "Avec un ami, essais d'ECM (usinage électrochimique) : un procédé simple et peu coûteux, que l'on peut mettre en place à la maison.", "en": "With a friend, experimenting with ECM (electrochemical machining): a simple, low-cost process that can be set up at home.", "de": "", "it": ""}},
     {"img": "images/projets/statue.jpg", "caption": {"fr": "Statue commémorative : le modèle 3D, imprimé en 3D, a servi de modèle pour la coulée en fonderie.", "en": "Commemorative statue: the 3D model was 3D-printed and used as the pattern for casting.", "de": "", "it": ""}},
     {"img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-103135.jpg", "caption": {"fr": "De nombreux petits projets réalisés avec des cartes Arduino.", "en": "Many small projects built with Arduino boards.", "de": "", "it": ""}},
-    {"img": "images/projets/projets-divers-et-varies/20230211_175603.jpg", "caption": {"fr": "Rénovation (et peinture) complète d'un vélo, de A à Z.", "en": "Complete renovation (and repaint) of a bicycle, from A to Z.", "de": "", "it": ""}},
+    {"img": "images/projets/projets-divers-et-varies/20230211_175603.jpg", "caption": {"fr": "Rénovation (et peinture) complète d'un vélo, de A à Z.", "en": "Complete renovation (and repaint) of a bicycle, from A to Z.", "de": "", "it": ""}},
     {"img": "images/projets/projets-divers-et-varies/capture-d-cran-2026-07-15-102805.jpg", "caption": {"fr": "Fabrication d'une jardinière.", "en": "Building a planter box.", "de": "", "it": ""}}
    ]
   },
   {
+   "img": "images/projets/gymlocator.jpg",
+   "title": {"fr": "GymLocator — comparer, puis recommander un site", "en": "GymLocator — compare, then recommend a site", "de": "", "it": ""},
+   "desc": {"fr": "Logiciel commandé et rémunéré par une salle de sport, utilisé pour choisir ses emplacements : il compare les sites possibles à partir de données ouvertes et recommande où s'implanter. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE de 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES). Démo en ligne sur la page projet.", "en": "Software commissioned and paid for by a gym, used to choose its locations: it compares candidate sites using open data and recommends where to open. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES). Live demo on the project page.", "de": "", "it": ""},
+   "tags": [
+    {"fr": "Aide à la décision", "en": "Decision support", "de": "", "it": ""},
+    {"fr": "Géospatial", "en": "Geospatial", "de": "", "it": ""},
+    {"fr": "Open data", "en": "Open data", "de": "", "it": ""}
+   ],
+   "link": "python.html",
+   "wip": false,
+   "note": {"fr": "Page projet", "en": "Project page (in French)", "de": "", "it": ""}
+  },
+  {
+   "img": "images/projets/abaqus-contraintes.jpg",
+   "title": {"fr": "Mécanique de la rupture sous Abaqus", "en": "Fracture mechanics in Abaqus", "de": "", "it": ""},
+   "desc": {"fr": "Éprouvette DCT (Disc Compact Tension) dimensionnée selon l'ASTM E399-90 : modèle 2D avec maillage en toile d'araignée en fond de fissure, champs de contraintes et facteur d'intensité de contrainte K<sub>I</sub>. Le K<sub>I</sub> éléments finis concorde avec la valeur analytique à environ 1 % près, et nous en avons déduit la charge maximale avant rupture pour plusieurs matériaux.", "en": "Disc compact tension (DCT) specimen sized to ASTM E399-90: 2D model with a spider-web mesh at the crack tip, stress fields and stress-intensity factor K<sub>I</sub>. The finite-element K<sub>I</sub> matched the analytical value within about 1 %, and we derived the maximum load before fracture for several materials.", "de": "", "it": ""},
+   "tags": [
+    {"fr": "Abaqus", "en": "Abaqus", "de": "", "it": ""},
+    {"fr": "ASTM E399", "en": "ASTM E399", "de": "", "it": ""},
+    {"fr": "Équipe de 3", "en": "Team of 3", "de": "", "it": ""}
+   ],
+   "link": "abaqus.html",
+   "wip": false,
+   "note": {"fr": "Rapport", "en": "Report (in French)", "de": "", "it": ""}
+  },
+  {
    "img": "images/projets/trail100k.jpg",
    "title": {"fr": "Ultra-trail — du 100 km à l'UTMB", "en": "Ultra-trail — from 100 km to the UTMB", "de": "", "it": ""},
-   "desc": {"fr": "Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif — objectif atteint, course parfaitement déroulée. Cap désormais sur l'UTMB (170 km, 10 000 m D+) : je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.", "en": "A goal built over several years: completing a 100 km race with 5,000 m of elevation gain — done, and the race went perfectly. Next up: the UTMB (170 km, 10,000 m D+). I train accordingly and am collecting the running stones needed to qualify.", "de": "", "it": ""},
+   "desc": {"fr": "Un objectif construit sur plusieurs années : boucler une course de 100 km et 5 000 m de dénivelé positif — objectif atteint, course parfaitement déroulée. Cap désormais sur l'UTMB (170 km, 10 000 m D+) : je m'entraîne en conséquence et je récolte les running stones nécessaires pour me qualifier.", "en": "A goal built over several years: completing a 100 km race with 5,000 m of elevation gain — done, and the race went perfectly. Next up: the UTMB (170 km, 10,000 m D+). I train accordingly and am collecting the running stones needed to qualify.", "de": "", "it": ""},
    "tags": [
-    {"fr": "100 km · 5 000 m D+ ✓", "en": "100 km · 5,000 m D+ ✓", "de": "", "it": ""},
+    {"fr": "100 km · 5 000 m D+ ✓", "en": "100 km · 5,000 m D+ ✓", "de": "", "it": ""},
     {"fr": "Objectif UTMB · 170 km", "en": "UTMB goal · 170 km", "de": "", "it": ""},
     {"fr": "Endurance", "en": "Endurance", "de": "", "it": ""}
    ],
@@ -211,32 +237,33 @@
  ],
  "skills": [
   {
-   "title": {"fr": "Conception & fabrication", "en": "Design & manufacturing", "de": "", "it": ""},
+   "title": {"fr": "Production & industrialisation", "en": "Production & industrialisation", "de": "", "it": ""},
+   "tags": [
+    {"label": {"fr": "Gamme d'usinage", "en": "Machining routing", "de": "", "it": ""}},
+    {"label": {"fr": "FAO (Fusion 360)", "en": "CAM (Fusion 360)", "de": "", "it": ""}, "link": "usinage.html"},
+    {"label": {"fr": "Usinage CNC", "en": "CNC machining", "de": "", "it": ""}},
+    {"label": {"fr": "Fonderie", "en": "Foundry", "de": "", "it": ""}, "link": "fonderie.html"},
+    {"label": {"fr": "Chiffrage de coûts", "en": "Cost estimation", "de": "", "it": ""}}
+   ]
+  },
+  {
+   "title": {"fr": "Gestion de projet", "en": "Project management", "de": "", "it": ""},
+   "tags": [
+    {"label": {"fr": "Planning et suivi de travaux", "en": "Planning and works follow-up", "de": "", "it": ""}},
+    {"label": {"fr": "Devis et budget", "en": "Quotes and budget", "de": "", "it": ""}},
+    {"label": {"fr": "Sponsoring", "en": "Sponsorship", "de": "", "it": ""}}
+   ]
+  },
+  {
+   "title": {"fr": "Conception & outils", "en": "Design & tools", "de": "", "it": ""},
    "tags": [
     {"label": {"fr": "CATIA V5", "en": "CATIA V5", "de": "", "it": ""}},
     {"label": {"fr": "3DEXPERIENCE", "en": "3DEXPERIENCE", "de": "", "it": ""}},
-    {"label": {"fr": "Fusion 360 (FAO)", "en": "Fusion 360 (CAM)", "de": "", "it": ""}, "link": "usinage.html"},
-    {"label": {"fr": "Usinage CNC", "en": "CNC machining", "de": "", "it": ""}},
-    {"label": {"fr": "Fonderie", "en": "Foundry", "de": "", "it": ""}},
-    {"label": {"fr": "Impression 3D", "en": "3D printing", "de": "", "it": ""}}
-   ]
-  },
-  {
-   "title": {"fr": "Simulation", "en": "Simulation", "de": "", "it": ""},
-   "tags": [
-    {"label": {"fr": "Abaqus (éléments finis)", "en": "Abaqus (FEA)", "de": "", "it": ""}, "link": "abaqus.html"},
-    {"label": {"fr": "QuickCast (fonderie)", "en": "QuickCast (casting)", "de": "", "it": ""}, "link": "fonderie.html"},
-    {"label": {"fr": "Mise en équation", "en": "Physical modelling", "de": "", "it": ""}}
-   ]
-  },
-  {
-   "title": {"fr": "Programmation & outils", "en": "Programming & tools", "de": "", "it": ""},
-   "tags": [
-    {"label": {"fr": "Python (NumPy, Matplotlib)", "en": "Python (NumPy, Matplotlib)", "de": "", "it": ""}},
-    {"label": {"fr": "MATLAB (bases)", "en": "MATLAB (basic)", "de": "", "it": ""}},
-    {"label": {"fr": "Arduino", "en": "Arduino", "de": "", "it": ""}},
-    {"label": {"fr": "Git", "en": "Git", "de": "", "it": ""}},
+    {"label": {"fr": "Abaqus", "en": "Abaqus", "de": "", "it": ""}, "link": "abaqus.html"},
+    {"label": {"fr": "Python", "en": "Python", "de": "", "it": ""}},
+    {"label": {"fr": "Docker", "en": "Docker", "de": "", "it": ""}},
     {"label": {"fr": "Linux", "en": "Linux", "de": "", "it": ""}},
+    {"label": {"fr": "Git", "en": "Git", "de": "", "it": ""}},
     {"label": {"fr": "Excel, Word, PowerPoint", "en": "Excel, Word, PowerPoint", "de": "", "it": ""}}
    ]
   },
@@ -244,7 +271,7 @@
    "title": {"fr": "Savoir-être", "en": "Soft skills", "de": "", "it": ""},
    "tags": [
     {"label": {"fr": "Pédagogie", "en": "Teaching", "de": "", "it": ""}},
-    {"label": {"fr": "Travail d'équipe", "en": "Teamwork", "de": "", "it": ""}},
+    {"label": {"fr": "Travail en équipe", "en": "Teamwork", "de": "", "it": ""}},
     {"label": {"fr": "Rigueur", "en": "Rigour", "de": "", "it": ""}},
     {"label": {"fr": "Adaptabilité", "en": "Adaptability", "de": "", "it": ""}}
    ]
@@ -255,8 +282,8 @@
   {"icon": "🇬🇧", "name": {"fr": "Anglais", "en": "English", "de": "", "it": ""}, "level": {"fr": "Niveau C1 — Courant", "en": "C1 Level — Fluent", "de": "", "it": ""}}
  ],
  "interests": [
-  {"icon": "🏃", "name": {"fr": "Ultra-trail", "en": "Ultra-trail", "de": "", "it": ""}, "detail": {"fr": "100 km · 5 000 m D+ · Album ↗", "en": "100 km · 5,000 m D+ · Album ↗", "de": "", "it": ""}, "page": "trail"},
   {"icon": "⛷️", "name": {"fr": "Ski", "en": "Skiing", "de": "", "it": ""}, "detail": {"fr": "Alpin & randonnée · Album ↗", "en": "Alpine & touring · Album ↗", "de": "", "it": ""}, "page": "ski"},
+  {"icon": "🏃", "name": {"fr": "Ultra-trail", "en": "Ultra-trail", "de": "", "it": ""}, "detail": {"fr": "100 km · 5 000 m D+ · Album ↗", "en": "100 km · 5,000 m D+ · Album ↗", "de": "", "it": ""}, "page": "trail"},
   {"icon": "🏔️", "name": {"fr": "Alpinisme", "en": "Mountaineering", "de": "", "it": ""}, "detail": {"fr": "En autonomie · Album ↗", "en": "Self-guided · Album ↗", "de": "", "it": ""}, "page": "alpinisme"},
   {"icon": "🧗", "name": {"fr": "Escalade", "en": "Climbing", "de": "", "it": ""}, "detail": {"fr": "Niveau 7B · Album ↗", "en": "Grade 7B · Album ↗", "de": "", "it": ""}, "page": "escalade"},
   {"icon": "🪁", "name": {"fr": "Kitesurf", "en": "Kitesurfing", "de": "", "it": ""}, "detail": {"fr": "Album ↗", "en": "Album ↗", "de": "", "it": ""}, "page": "kitesurf"},

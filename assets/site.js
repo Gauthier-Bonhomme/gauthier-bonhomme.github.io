@@ -46,13 +46,13 @@ const CONTACT_ICONS = {
 function renderStatics() {
   const lb = CONTENT.labels;
   // sommaire (demo : section propre à certaines pages, ex. petzl.html — absente ailleurs, donc ignorée)
-  const navMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
+  const navMap = { about: 'about', poste: 'poste', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
   for (const [sec, key] of Object.entries(navMap)) {
     const a = document.querySelector('#main-nav a[href="#' + sec + '"]');
     if (a) a.textContent = pick(lb.nav[key]);
   }
   // libellés de sections
-  const secMap = { about: 'about', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
+  const secMap = { about: 'about', poste: 'poste', formation: 'formation', experiences: 'exp', projets: 'projets', demo: 'demo', competences: 'comp', langues: 'lang', interets: 'int', contact: 'contact' };
   for (const [sec, key] of Object.entries(secMap)) {
     const el = document.querySelector('#' + sec + ' .section-label');
     if (el) el.textContent = pick(lb.sections[key]);
@@ -90,6 +90,23 @@ function renderHighlights() {
   box.innerHTML = list.map((it, i) =>
     '<div class="hl-item"><span class="hl-num">' + String(i + 1).padStart(2, '0') + '</span><p>' + pick(it) + '</p></div>'
   ).join('');
+}
+
+// LE POSTE (clé optionnelle fit) — section #poste : chaque besoin de l'offre en face de ce que j'ai déjà fait ;
+// clé absente = section et lien de sommaire masqués (pages sans section #poste : rien ne change)
+function renderFit() {
+  const box = document.getElementById('fit');
+  if (!box) return;
+  const fit = CONTENT.fit, sec = document.getElementById('poste'), nav = document.querySelector('#main-nav a[href="#poste"]');
+  const on = !!(fit && fit.items && fit.items.length);
+  if (sec) sec.style.display = on ? '' : 'none';
+  if (nav) nav.style.display = on ? '' : 'none';
+  if (!on) return;
+  const intro = pick(fit.intro);
+  box.innerHTML = (intro ? '<p class="fit-intro">' + intro + '</p>' : '') +
+    '<div class="fit-list">' + fit.items.map(it =>
+      '<div class="fit-row"><div class="fit-need">' + pick(it.need) + '</div><div class="fit-proof">' + pick(it.proof) + '</div></div>'
+    ).join('') + '</div>';
 }
 
 function renderAbout() {
@@ -186,6 +203,7 @@ function renderAll() {
   renderStatics();
   renderHighlights();
   renderAbout();
+  renderFit();
   renderDatedList('formation-list', CONTENT.formations);
   renderDatedList('exp-list', CONTENT.experiences);
   renderProjects();
