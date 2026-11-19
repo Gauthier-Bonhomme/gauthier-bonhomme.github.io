@@ -1,0 +1,130 @@
+% ══════════════════════════════════════════════════════════════════
+% Source du CV téléchargeable depuis l'accueil (français, 1 page, police Charter)
+% Orientation : bâtiment / suivi de chantier (novembre 2026), même mise en page que le CV Salomon.
+% Compiler : pdflatex CV_Gauthier_Bonhomme_FR.tex  (ou tectonic)
+% Le PDF produit remplace Gauthier_Bonhomme_CV.pdf à la racine du site.
+% L'ancien CV anglais (mécatronique / IA) reste dans CV_Gauthier_Bonhomme_EN.tex / .pdf.
+% ══════════════════════════════════════════════════════════════════
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=1.0cm,bottom=0.9cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\frenchsetup{StandardLists=true}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{qrcode}
+\definecolor{linkblue}{RGB}{21,76,155}
+\definecolor{boxblue}{RGB}{234,241,251}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,pdftitle={Gauthier Bonhomme - CV - Suivi de chantier},pdfauthor={Gauthier Bonhomme}]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1em}
+
+% titres de section : bleu, gras, filet bleu
+\titleformat{\section}{\needspace{4\baselineskip}\large\bfseries\color{linkblue}}{}{0pt}{}[\vspace{-0.75em}{\color{linkblue}\rule{\textwidth}{0.5pt}}]
+\titlespacing{\section}{0pt}{0.7em}{0.45em}
+
+\newcommand{\lk}{\,\textsuperscript{$\nearrow$}}
+\newcommand{\link}[2]{\href{#1}{#2\lk}}
+\newcommand{\sep}{\,{\scriptsize\textbullet}\,}
+% entrée : titre à gauche, date à droite
+\newcommand{\entry}[2]{\par\vspace{0.35em}#1\hfill #2\par}
+
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.05em,parsep=0pt,topsep=0.1em,label={\color{linkblue}\scriptsize\textbullet}}
+
+\begin{document}
+
+% ───── en-tête ─────
+\begin{center}
+  {\Huge\bfseries Gauthier Bonhomme}\\[0.45em]
+  Élève ingénieur en dernière année --- \textbf{Arts et Métiers (ENSAM)} --- Aix-en-Provence\\[0.15em]
+  {\color{linkblue}\bfseries Stage de fin d'études --- suivi de chantier}\sep 6 mois dès début 2027\\[0.25em]
+  {\small +33 6 08 27 62 16\sep \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com}\sep \href{https://gauthierbonhomme.com}{gauthierbonhomme.com}\sep permis B et A}
+\end{center}
+
+\vspace{0.1em}
+\begin{tcolorbox}[enhanced,colback=boxblue,frame hidden,arc=3pt,left=8pt,right=8pt,top=5pt,bottom=5pt]
+\begin{minipage}[c]{0.84\linewidth}
+\begin{itemize}[topsep=0pt,itemsep=0.25em]
+  \item \textbf{Suivi de chantier} --- construction d'une infirmerie chez Royal Canin, aménagement d'une salle de sport.
+  \item \textbf{Coordination des artisans} --- devis, planning, réception des travaux, et la main à la pâte.
+  \item \textbf{Montagnard} --- ski alpin et de randonnée, alpinisme, ultra-trail de 100 km.
+\end{itemize}
+\vspace{0.4em}
+{\color{linkblue}$\rightarrow$ \textbf{Rapports, photos et albums :\ \href{https://gauthierbonhomme.com}{gauthierbonhomme.com}}}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.13\linewidth}
+\centering
+{\color{linkblue}\qrcode[height=1.55cm]{https://gauthierbonhomme.com}}\\[0.15em]
+{\scriptsize\color{linkblue}\bfseries Portfolio}
+\end{minipage}
+\end{tcolorbox}
+
+% ───── expérience ─────
+\section{Expérience}
+
+\entry{\textbf{Royal Canin} --- stagiaire, usine d'Aimargues (Gard)}{juin -- août 2026}
+\begin{itemize}
+  \item \textbf{Suivi du chantier de construction de l'infirmerie du site}, sur le terrain avec les équipes.
+  \item Amélioration du logiciel de maintenance de l'usine, au quotidien aux côtés des équipes de maintenance.
+\end{itemize}
+
+\entry{\textbf{Hall b} --- équipe fondatrice d'une salle de sport, Saint-Dionisy (Gard)}{juin -- août 2025}
+\begin{itemize}
+  \item \textbf{Coordination des artisans} et suivi du planning des travaux d'aménagement.
+  \item Consultation et \textbf{comparaison des devis}, arbitrages budgétaires.
+  \item \textbf{Réception des travaux} ; réalisation moi-même d'une partie du chantier.
+\end{itemize}
+
+\entry{\textbf{ÉPOPÉE GADZ} --- trésorier, Europ'Raid 2026}{2025 -- 2026}
+Budget et sponsoring d'un raid solidaire de 8\,000 km à travers l'Europe : près de 4\,000 euros récoltés.
+
+\entry{\textbf{FunRide} --- technicien polyvalent, base de loisirs vélo \textnormal{; saisonnier aux vendanges}}{2020 -- 2021}
+Réparation et entretien des vélos, accueil des clients, travaux manuels et logistique.
+
+% ───── formation ─────
+\section{Formation}
+
+\entry{\textbf{Arts et Métiers (ENSAM)} --- \textit{Diplôme d'ingénieur Arts et Métiers (grade master)}}{2024 -- 2027}
+Mécanique, résistance des matériaux, calcul par éléments finis, conception, procédés de fabrication.
+
+\entry{\textbf{Classe préparatoire PT}, Lycée Mermoz, Montpellier --- \textit{maths, physique, sciences de l'ingénieur}}{2021 -- 2024}
+
+% ───── projets ─────
+\section{Projets}
+
+\entry{\textbf{Pièce en fonte pour une fontaine d'Aix-en-Provence} --- équipe de 4 \quad\link{https://gauthierbonhomme.com/fonderie.html}{rapport}}{2025 -- 2026}
+Simulation, moulage main, coulée ; imprimante en panne : adaptation à l'outillage existant.
+
+\entry{\textbf{Calcul de structure sous Abaqus} --- équipe de 3 \quad\link{https://gauthierbonhomme.com/abaqus.html}{rapport}}{}
+Modèle éléments finis d'une éprouvette fissurée : résultat à $\approx$\,1\,\% de la solution analytique.
+
+\entry{\textbf{Vilebrequin --- de la gamme d'usinage à la pièce} \quad\link{https://gauthierbonhomme.com/usinage.html}{rapport}}{2025}
+Gamme en FAO Fusion 360, production sur tour-fraiseur DMG MORI, chiffrage du coût.
+
+\entry{\textbf{Atelier \& bricolage} --- personnel \quad\link{https://gauthierbonhomme.com/projet.html?id=projets-divers-et-varies}{photos}}{}
+Moteurs remis à neuf, tables en chaudronnerie, jardinière, rénovation complète d'un vélo.
+
+% ───── compétences ─────
+\section{Compétences}
+
+\textbf{Chantier :} coordination des artisans, planning de travaux, comparaison de devis, réception de travaux, suivi budgétaire\\
+\textbf{Technique :} résistance des matériaux, calcul éléments finis (Abaqus), lecture de plans, CATIA V5, 3DEXPERIENCE\\
+\textbf{Outils :} Excel, Word, PowerPoint\\
+\textbf{Savoir-être :} travail en équipe, rigueur, autonomie, adaptabilité\\
+\textbf{Langues :} français (langue maternelle), anglais (C1)
+
+% ───── sport ─────
+\section{Sport \& montagne}
+
+\textbf{Ski :} alpin et de randonnée\sep \textbf{Montagne :} alpinisme en autonomie, escalade (7B)\\
+\textbf{Trail :} finisher d'un ultra-trail de 100 km (5\,000 m D+), prépare l'UTMB \quad\link{https://utmb.world/fr/runner/4895528.gauthier.bonhomme}{profil UTMB}\\
+\textbf{Et aussi :} kitesurf\sep judo, ceinture noire
+
+\end{document}

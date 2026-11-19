@@ -1,12 +1,12 @@
 {
- "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché.",
+ "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché. Depuis novembre 2026, l'accueil est orienté bâtiment / suivi de chantier et n'est proposé qu'en FR et EN (data-langs sur <body> d'index.html).",
  "pdf": "Gauthier_Bonhomme_CV.pdf",
  "labels": {
   "pageTitle": {
-   "fr": "Gauthier Bonhomme — Ingénieur",
-   "en": "Gauthier Bonhomme — Engineer",
-   "de": "Gauthier Bonhomme — Ingenieur",
-   "it": "Gauthier Bonhomme — Ingegnere"
+   "fr": "Gauthier Bonhomme — Élève ingénieur · Suivi de chantier",
+   "en": "Gauthier Bonhomme — Engineering student · Construction site supervision",
+   "de": "",
+   "it": ""
   },
   "nav": {
    "about": {
@@ -78,10 +78,10 @@
     "it": "Esperienze"
    },
    "projets": {
-    "fr": "Projets personnels",
-    "en": "Personal Projects",
-    "de": "Persönliche Projekte",
-    "it": "Progetti personali"
+    "fr": "Projets",
+    "en": "Projects",
+    "de": "",
+    "it": ""
    },
    "comp": {
     "fr": "Compétences",
@@ -143,42 +143,42 @@
   "badge": {
    "fr": "Stage de fin d'études — dès début 2027",
    "en": "Graduation internship — from early 2027",
-   "de": "Abschlusspraktikum — ab Anfang 2027",
-   "it": "Stage di fine studi — da inizio 2027"
+   "de": "",
+   "it": ""
   },
   "title": {
-   "fr": "Élève ingénieur · Mécatronique & Contrôle",
-   "en": "MSc Student · Mechatronics & Control",
-   "de": "Ingenieurstudent · Mechatronik & Regelungstechnik",
-   "it": "Studente ingegnere · Meccatronica & Controllo"
+   "fr": "Élève ingénieur · Travaux & suivi de chantier",
+   "en": "Engineering student · Construction & site supervision",
+   "de": "",
+   "it": ""
   },
   "tagline": {
-   "fr": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotique · Vision par ordinateur · IA appliquée",
-   "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotics · Computer Vision · Applied AI",
-   "de": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotik · Computer Vision · Angewandte KI",
-   "it": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Robotica · Visione artificiale · IA applicata"
+   "fr": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Suivi de chantier · Coordination des artisans · Montagne",
+   "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Site supervision · Coordinating trades · Mountains",
+   "de": "",
+   "it": ""
   },
   "photo": "images/photo-profil.jpg",
   "pano": ""
  },
  "about": [
   {
-   "fr": "Étudiant en cycle ingénieur à <strong>l'École Nationale Supérieure des Arts et Métiers</strong> d'Aix-en-Provence, filière <strong>Mécatronique & Contrôle</strong>, je recherche un <strong>stage de fin d'études de 6 mois</strong> en robotique, vision par ordinateur ou IA appliquée — disponible dès début 2027.",
-   "en": "Engineering student at <strong>Arts et Métiers (ENSAM)</strong> in Aix-en-Provence, <strong>Mechatronics & Control track</strong>, looking for a <strong>6-month graduation internship</strong> in robotics, computer vision or applied AI — available from early 2027.",
-   "de": "Ingenieurstudent an der <strong>Arts et Métiers (ENSAM)</strong> in Aix-en-Provence, Vertiefung <strong>Mechatronik & Regelungstechnik</strong>. Ich suche ein <strong>6-monatiges Abschlusspraktikum</strong> in Robotik, Computer Vision oder angewandter KI — verfügbar ab Anfang 2027.",
-   "it": "Studente di ingegneria all'<strong>Arts et Métiers (ENSAM)</strong> di Aix-en-Provence, indirizzo <strong>Meccatronica & Controllo</strong>. Cerco uno <strong>stage di fine studi di 6 mesi</strong> in robotica, visione artificiale o IA applicata — disponibile da inizio 2027."
+   "fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong> d'Aix-en-Provence, je recherche un <strong>stage de fin d'études de 6 mois en suivi de chantier</strong> dans le bâtiment — idéalement en montagne — disponible dès début 2027.",
+   "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong> in Aix-en-Provence, I am looking for a <strong>6-month graduation internship in construction site supervision</strong> — ideally in the mountains — available from early 2027.",
+   "de": "",
+   "it": ""
   },
   {
-   "fr": "Issu d'une classe préparatoire PT au Lycée Mermoz de Montpellier, j'aime les projets qui vont du modèle au terrain : j'ai déployé pour une salle de sport un <strong>pipeline d'analyse vidéo temps réel</strong> (Frigate, InsightFace) et un <strong>outil géospatial d'aide à l'implantation</strong> (GymLocator) — tous deux commandés et utilisés en production.",
-   "en": "Coming from the PT preparatory programme at Lycée Mermoz (Montpellier), I like projects that go from model to field: for a real gym I deployed a <strong>real-time video-analytics pipeline</strong> (Frigate, InsightFace) and a <strong>geospatial site-selection tool</strong> (GymLocator) — both commissioned and used in production.",
-   "de": "Nach der Vorbereitungsklasse PT am Lycée Mermoz (Montpellier) mag ich Projekte vom Modell bis zur Praxis: Für ein Fitnessstudio habe ich eine <strong>Echtzeit-Videoanalyse-Pipeline</strong> (Frigate, InsightFace) und ein <strong>geodatenbasiertes Standortwerkzeug</strong> (GymLocator) aufgebaut — beide beauftragt und im Produktiveinsatz.",
-   "it": "Dopo la classe preparatoria PT al Lycée Mermoz (Montpellier), amo i progetti che vanno dal modello al campo: per una palestra ho realizzato una <strong>pipeline di videoanalisi in tempo reale</strong> (Frigate, InsightFace) e uno <strong>strumento geospaziale di scelta del sito</strong> (GymLocator) — entrambi commissionati e in produzione."
+   "fr": "Le chantier, je l'ai déjà pratiqué. Chez <strong>Royal Canin</strong>, à l'usine d'Aimargues, j'ai participé au suivi du chantier de construction d'une infirmerie, aux côtés des équipes. Pour l'ouverture de la salle de sport <strong>Hall b</strong>, j'ai coordonné les artisans, comparé les devis, suivi le planning et réceptionné les travaux — et j'ai réalisé moi-même une partie du chantier.",
+   "en": "I have already worked on site. At <strong>Royal Canin</strong>'s Aimargues plant, I took part in supervising the construction of an infirmary, alongside the teams. For the opening of the <strong>Hall b</strong> gym, I coordinated the tradespeople, compared quotes, tracked the schedule and accepted the completed works — and carried out part of the work myself.",
+   "de": "",
+   "it": ""
   },
   {
-   "fr": "En dehors des études, je consacre mon temps aux sports d'endurance et de montagne — <strong>ultra trail (+100 km), alpinisme, escalade (7B)</strong> — et je suis <strong>ceinture noire de judo</strong>. J'aime passer du temps dehors et fournir des efforts physiques en extérieur. Je suis titulaire des <strong>permis B et A</strong>.",
-   "en": "Outside my studies, I devote my time to endurance and mountain sports — <strong>ultra trail (+100 km), mountaineering, climbing (7B)</strong> — and I hold a <strong>black belt in judo</strong>. I love being outdoors and pushing myself physically in the open air. I hold both <strong>car and motorcycle licences (B and A)</strong>.",
-   "de": "Neben dem Studium widme ich meine Zeit dem Ausdauer- und Bergsport — <strong>Ultra-Trail (+100 km), Alpinismus, Klettern (7B)</strong> — außerdem trage ich den <strong>schwarzen Gürtel im Judo</strong>. Ich bin gern draußen und fordere mich körperlich im Freien. Ich besitze die <strong>Führerscheine B und A</strong>.",
-   "it": "Al di fuori degli studi dedico il mio tempo agli sport di resistenza e di montagna — <strong>ultra trail (+100 km), alpinismo, arrampicata (7B)</strong> — e sono <strong>cintura nera di judo</strong>. Amo stare all'aria aperta e impegnarmi fisicamente all'esterno. Ho le <strong>patenti B e A</strong>."
+   "fr": "Bricoleur depuis toujours (usinage, fonderie, chaudronnerie, moteurs remis à neuf), j'aime le concret et le terrain. En dehors des études, je passe mon temps en montagne — <strong>ski alpin et de randonnée, alpinisme, ultra-trail (100 km), escalade (7B)</strong> — et je suis <strong>ceinture noire de judo</strong>. Titulaire des <strong>permis B et A</strong>.",
+   "en": "A lifelong tinkerer (machining, foundry, metalwork, rebuilt engines), I like hands-on, practical work. Outside my studies, I spend my time in the mountains — <strong>alpine skiing and ski touring, mountaineering, ultra-trail (100 km), climbing (7B)</strong> — and I am a <strong>judo black belt</strong>. I hold <strong>car and motorcycle licences</strong>.",
+   "de": "",
+   "it": ""
   }
  ],
  "formations": [
@@ -192,23 +192,29 @@
     "it": "École Nationale Supérieure des Arts et Métiers"
    },
    "subtitle": {
-    "fr": "Aix-en-Provence · Diplôme d'ingénieur — filière Mécatronique & Contrôle",
-    "en": "Aix-en-Provence · MSc in Engineering — Mechatronics & Control track",
-    "de": "Aix-en-Provence · Ingenieurdiplom — Vertiefung Mechatronik & Regelungstechnik",
-    "it": "Aix-en-Provence · Diploma di ingegneria — indirizzo Meccatronica & Controllo"
+    "fr": "Aix-en-Provence · Diplôme d'ingénieur Arts et Métiers (grade master)",
+    "en": "Aix-en-Provence · Arts et Métiers engineering degree (Master’s level)",
+    "de": "",
+    "it": ""
    },
    "items": [
     {
-     "fr": "Formation généraliste, axée sur l'industrie du futur et l'innovation",
-     "en": "Generalist engineering programme focused on the industry of the future and innovation",
-     "de": "Generalistisches Ingenieurstudium mit Ausrichtung auf die Industrie der Zukunft und Innovation",
-     "it": "Formazione ingegneristica generalista orientata all'industria del futuro e all'innovazione"
+     "fr": "Formation d'ingénieur généraliste : mécanique, résistance des matériaux, calcul par éléments finis, conception, procédés de fabrication.",
+     "en": "General engineering programme: mechanics, strength of materials, finite-element analysis, design, manufacturing processes.",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Conception mécanique, robotique, systèmes industriels avancés, traitement du signal, éléments finis, procédés de fabrication, modélisation, automatisation, programmation et analyse de données.",
-     "en": "Mechanical design, robotics, advanced industrial systems, signal processing, finite elements, manufacturing processes, modelling, automation, programming and data analysis.",
-     "de": "Mechanische Konstruktion, Robotik, fortgeschrittene Industriesysteme, Signalverarbeitung, Finite Elemente, Fertigungsverfahren, Modellierung, Automatisierung, Programmierung und Datenanalyse.",
-     "it": "Progettazione meccanica, robotica, sistemi industriali avanzati, elaborazione dei segnali, elementi finiti, processi di fabbricazione, modellazione, automazione, programmazione e analisi dei dati."
+     "fr": "Nombreux projets en équipe, en atelier et sur le terrain.",
+     "en": "Many team projects, in the workshop and in the field.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Stage de fin d'études : 6 mois, dès début 2027.",
+     "en": "Graduation internship: 6 months, from early 2027.",
+     "de": "",
+     "it": ""
     }
    ],
    "img": "images/formations/images-1-.png"
@@ -247,6 +253,43 @@
  ],
  "experiences": [
   {
+   "date": "Juin — Août 2026",
+   "link": "https://www.royalcanin.com/fr",
+   "title": {
+    "fr": "Royal Canin — Stage",
+    "en": "Royal Canin — Internship",
+    "de": "Royal Canin — Praktikum",
+    "it": "Royal Canin — Tirocinio"
+   },
+   "subtitle": {
+    "fr": "Usine d'Aimargues · Suivi de chantier & maintenance",
+    "en": "Aimargues plant · Site supervision & maintenance",
+    "de": "",
+    "it": ""
+   },
+   "items": [
+    {
+     "fr": "Suivi du chantier de construction de l'infirmerie du site, sur le terrain avec les équipes.",
+     "en": "Supervision of the construction of the site's infirmary, on the ground with the teams.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Amélioration du logiciel de maintenance de l'usine.",
+     "en": "Improved the plant's maintenance software.",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Au quotidien aux côtés des équipes de maintenance.",
+     "en": "Day to day alongside the maintenance teams.",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "img": "images/experiences/royalcaninlogosquarelarge.png"
+  },
+  {
    "date": "Juin — Août 2025",
    "link": "https://www.hallb.fr/",
    "title": {
@@ -256,35 +299,35 @@
     "it": "Hall b — Team fondatore"
    },
    "subtitle": {
-    "fr": "Saint-Dionisy · Lancement d'une salle de sport",
-    "en": "Saint-Dionisy · Sports facility launch",
-    "de": "Saint-Dionisy · Eröffnung eines Fitnessstudios",
-    "it": "Saint-Dionisy · Lancio di una palestra"
+    "fr": "Saint-Dionisy · Création et aménagement d'une salle de sport",
+    "en": "Saint-Dionisy · Setting up and fitting out a gym",
+    "de": "",
+    "it": ""
    },
    "items": [
     {
-     "fr": "Lancement complet d'une salle de sport, de A à Z",
-     "en": "End-to-end launch of a fitness facility, from scratch",
-     "de": "Kompletter Aufbau eines Fitnessstudios von A bis Z",
-     "it": "Lancio completo di una palestra da zero"
+     "fr": "Coordination des artisans et suivi du planning des travaux.",
+     "en": "Coordinated the tradespeople and tracked the works schedule.",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Création de l’outil GymLocator, développé sur mesure pour détecter les emplacements propices à l’implantation d’une nouvelle salle de sport.",
-     "en": "Built GymLocator, a custom-made tool to identify the best locations for opening a new gym",
-     "de": "Entwicklung von GymLocator, einem maßgeschneiderten Tool zur Ermittlung der besten Standorte für ein neues Fitnessstudio",
-     "it": "Creazione di GymLocator, uno strumento su misura per individuare le posizioni migliori dove aprire una nuova palestra"
+     "fr": "Consultation et comparaison des devis, arbitrages budgétaires.",
+     "en": "Requested and compared quotes, made budget decisions.",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Mise en place de la vidéosurveillance et du site web hallb.fr",
-     "en": "Set up the video-surveillance and web infrastructure (hallb.fr)",
-     "de": "Aufbau von Videoüberwachung und Website (hallb.fr)",
-     "it": "Messa in opera di videosorveglianza e sito web (hallb.fr)"
+     "fr": "Réception des travaux ; réalisation moi-même d'une partie du chantier.",
+     "en": "Accepted the completed works; carried out part of the work myself.",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Mise en place des réseaux sociaux, aménagement et logistique",
-     "en": "Set-up of the social-media channels, fit-out and logistics",
-     "de": "Aufbau der Social-Media-Kanäle, Einrichtung und Logistik",
-     "it": "Creazione dei canali social, allestimento e logistica"
+     "fr": "Choix de l'emplacement, logistique, système vidéo et site web.",
+     "en": "Site selection, logistics, video system and website.",
+     "de": "",
+     "it": ""
     }
    ],
    "img": "images/experiences/og-image.jpg"
@@ -324,10 +367,10 @@
    "date": "2020 — 2021",
    "link": "https://www.funride30.fr/",
    "title": {
-    "fr": "Technicien polyvalent",
-    "en": "Maintenance Technician",
-    "de": "Allround-Techniker",
-    "it": "Tecnico Polivalente"
+    "fr": "FunRide — Technicien polyvalent",
+    "en": "FunRide — Maintenance technician",
+    "de": "",
+    "it": ""
    },
    "subtitle": {
     "fr": "Langlade · Centre de loisirs pour vélo",
@@ -381,113 +424,137 @@
     }
    ],
    "img": "images/experiences/vend23-le-breuil-aj-12.jpg"
-  },
-  {
-   "date": "Juin — Août 2026",
-   "link": "https://www.royalcanin.com/fr",
-   "title": {
-    "fr": "Royal Canin — Stage",
-    "en": "Royal Canin — Internship",
-    "de": "Royal Canin — Praktikum",
-    "it": "Royal Canin — Tirocinio"
-   },
-   "subtitle": {
-    "fr": "Aimargues · Stage d'été à l'usine",
-    "en": "Aimargues · summer internship at the factory",
-    "de": "Aimargues · Sommerpraktikum im Werk",
-    "it": "Aimargues · tirocinio estivo in fabbrica"
-   },
-   "items": [
-    {
-     "fr": "Contribution à l’amélioration du logiciel de maintenance existant",
-     "en": "Contributed to improving the existing maintenance software",
-     "de": "Mitarbeit an der Verbesserung der bestehenden Wartungssoftware",
-     "it": "Contributo al miglioramento del software di manutenzione esistente"
-    },
-    {
-     "fr": "Accompagnement des équipes de maintenance au quotidien.",
-     "en": "Worked alongside and supported the maintenance teams",
-     "de": "Begleitung und Unterstützung der Wartungsteams",
-     "it": "Affiancamento e supporto alle squadre di manutenzione"
-    }
-   ],
-   "img": "images/experiences/royalcaninlogosquarelarge.png"
   }
  ],
  "projects": [
   {
-   "img": "images/projets/gymlocator.jpg",
+   "img": "images/projets/fonderie-coulee.jpg",
    "title": {
-    "fr": "GymLocator — Localisation optimale",
-    "en": "GymLocator — Optimal Location",
-    "de": "GymLocator — Optimaler Standort",
-    "it": "GymLocator — Posizione ottimale"
+    "fr": "Pièce en fonte — procédé complet, en équipe de 4",
+    "en": "Cast-iron part — complete process, team of 4",
+    "de": "",
+    "it": ""
    },
    "desc": {
-    "fr": "Logiciel commandé et rémunéré par une salle de sport — Il est actuellement utilisé pour déterminer le prochain site. La v2 calcule un modèle d'accessibilité E2SFCA (le même modèle que pour les déserts médicaux) sur le carroyage INSEE 1 km et croise la demande locale avec 12 500 salles (SIRENE, Data ES) pour cartographier les zones sous-équipées. Démo en ligne.",
-    "en": "Software commissioned and paid for by a gym — currently used to choose their next site. v2 computes an E2SFCA accessibility model (the same model used for medical deserts) on the 1-km INSEE grid, crossing local demand with 12,500 gyms (SIRENE, Data ES) to map under-served areas. Live demo online.",
-    "de": "Von einem Fitnessstudio in Auftrag gegebene und bezahlte Software — derzeit im Einsatz, um den nächsten Standort zu bestimmen. Version 2 berechnet ein E2SFCA-Erreichbarkeitsmodell (dasselbe Modell wie für medizinische Versorgungslücken) auf dem 1-km-INSEE-Raster und kreuzt die lokale Nachfrage mit 12 500 Studios (SIRENE, Data ES), um unterversorgte Gebiete zu kartieren. Live-Demo online.",
-    "it": "Software commissionato e retribuito da una palestra — attualmente utilizzato per scegliere il prossimo sito. La v2 calcola un modello di accessibilità E2SFCA (lo stesso modello usato per i deserti sanitari) sulla griglia INSEE di 1 km e incrocia la domanda locale con 12 500 palestre (SIRENE, Data ES) per mappare le zone sotto-servite. Demo online."
+    "fr": "Moulage au sable d'un chaînon en fonte pour la fontaine de la Rotonde, à Aix-en-Provence. Nous avons mené des simulations thermiques QuickCast pour choisir l'orientation de la pièce et localiser les retassures, dimensionné les masselottes (règles des modules, des rayons d'action et des retraits) et conçu le système de remplissage en CAO. Nous avons ensuite réalisé à la main les noyaux en sable à prise chimique et les moules en sable à vert, calculé la charge du moule et coulé de la fonte grise GG-30. L'imprimante 3D prévue pour le modèle était en panne : la coulée s'est faite avec un outillage existant, sans masselottes — une vraie leçon sur l'écart entre une conception optimisée et les contraintes de l'atelier.",
+    "en": "Sand casting of a cast-iron chain link for the Rotonde fountain in Aix-en-Provence. We ran QuickCast thermal simulations to choose the part orientation and locate shrinkage hot spots, sized the risers (modulus, feeding-distance and shrinkage rules) and designed the gating system in CAD. We then hand-made the chemically-bonded sand cores and green-sand moulds, calculated the mould weighting and poured GG-30 grey cast iron. The 3D printer for the pattern was down, so the pour used existing tooling without risers — a real lesson in the gap between an optimised design and workshop constraints.",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
-     "fr": "E2SFCA",
-     "en": "E2SFCA",
-     "de": "E2SFCA",
-     "it": "E2SFCA"
+     "fr": "Procédé de fonderie",
+     "en": "Foundry process",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Géospatial",
-     "en": "Geospatial",
-     "de": "Geodaten",
-     "it": "Geospaziale"
+     "fr": "QuickCast",
+     "en": "QuickCast",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Open data",
-     "en": "Open data",
-     "de": "Open Data",
-     "it": "Open data"
+     "fr": "Équipe de 4",
+     "en": "Team of 4",
+     "de": "",
+     "it": ""
     }
    ],
-   "link": "python.html",
-   "wip": false
+   "link": "fonderie.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
   },
   {
-   "img": "images/projets/learnscroll.jpg",
+   "img": "images/projets/abaqus-contraintes.jpg",
    "title": {
-    "fr": "LearnScroll — le TikTok de l'apprentissage",
-    "en": "LearnScroll — the TikTok of learning",
-    "de": "LearnScroll — das TikTok des Lernens",
-    "it": "LearnScroll — il TikTok dell'apprendimento"
+    "fr": "Calcul de structure sous Abaqus — équipe de 3",
+    "en": "Structural FEA with Abaqus — team of 3",
+    "de": "",
+    "it": ""
    },
    "desc": {
-    "fr": "Application web que j'ai conçue et mise en ligne : un fil vertical de cartes de savoir générées par un pipeline IA à partir de sources réelles (flux RSS d'actualité scientifique et technique). 100 % statique, hébergée sur ce domaine — pensée pour apprendre quelque chose à chaque scroll.",
-    "en": "Web app I designed and shipped: a vertical feed of bite-size knowledge cards generated by an AI pipeline from real sources (science and tech RSS feeds). Fully static, hosted on this domain — built so every scroll teaches you something.",
-    "de": "Web-App, die ich entworfen und veröffentlicht habe: ein vertikaler Feed aus Wissenskarten, generiert von einer KI-Pipeline aus echten Quellen (Wissenschafts- und Technik-RSS-Feeds). Komplett statisch, auf dieser Domain gehostet — bei jedem Scroll lernt man etwas Neues.",
-    "it": "Web app che ho progettato e pubblicato: un feed verticale di schede di conoscenza generate da una pipeline IA da fonti reali (feed RSS di scienza e tecnologia). Completamente statica, ospitata su questo dominio — per imparare qualcosa a ogni scroll."
+    "fr": "Éprouvette DCT (Disc Compact Tension) dimensionnée selon l'ASTM E399-90 : modèle 2D avec maillage en toile d'araignée en fond de fissure, champs de contraintes et facteur d'intensité de contrainte K_I. Le K_I éléments finis concorde avec la valeur analytique à environ 1 % près, et nous en avons déduit la charge maximale avant rupture pour plusieurs matériaux.",
+    "en": "Disc compact tension (DCT) specimen sized to ASTM E399-90: 2D model with a spider-web mesh at the crack tip, stress fields and stress-intensity factor K_I. The finite-element K_I matched the analytical value within about 1 %, and we derived the maximum load before fracture for several materials.",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
-     "fr": "IA générative",
-     "en": "Generative AI",
-     "de": "Generative KI",
-     "it": "IA generativa"
+     "fr": "Abaqus",
+     "en": "Abaqus",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "Pipeline de données",
-     "en": "Data pipeline",
-     "de": "Daten-Pipeline",
-     "it": "Pipeline di dati"
+     "fr": "Éléments finis",
+     "en": "FEA",
+     "de": "",
+     "it": ""
     },
     {
-     "fr": "En ligne sur ce domaine",
-     "en": "Live on this domain",
-     "de": "Live auf dieser Domain",
-     "it": "Online su questo dominio"
+     "fr": "ASTM E399",
+     "en": "ASTM E399",
+     "de": "",
+     "it": ""
     }
    ],
-   "link": "https://gauthierbonhomme.com/learnscroll/",
-   "wip": false
+   "link": "abaqus.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
+  },
+  {
+   "img": "images/projets/vilbrequin.jpg",
+   "title": {
+    "fr": "Vilebrequin — de la gamme d'usinage à la pièce",
+    "en": "Crankshaft — from machining routing to finished part",
+    "de": "",
+    "it": ""
+   },
+   "desc": {
+    "fr": "Gamme d'usinage complète en FAO sur Fusion 360 (tournage, fraisage, filetage) pour le vilebrequin d'un moteur monocylindre, puis production sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC. Chaque programme était simulé sur la machine avant l'usinage ; sur place, j'ai traité les vibrations en bout de pièce et repris les trajectoires de fraisage à cause des limites d'axes de la machine. J'ai aussi chiffré le coût de la pièce (temps machine, main-d'œuvre, matière).",
+    "en": "Complete machining routing in Fusion 360 CAM (turning, milling, threading) for a single-cylinder engine crankshaft, then produced on a DMG MORI CTX Gamma 1250 TC turn-mill. Every program was simulated on the machine before cutting; at the machine, I dealt with chatter at the end of the part and reworked milling paths around the machine's axis limits. I also costed the part (machining time, labour, material).",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "fr": "Gamme d'usinage",
+     "en": "Machining routing",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "FAO Fusion 360",
+     "en": "Fusion 360 CAM",
+     "de": "",
+     "it": ""
+    },
+    {
+     "fr": "Chiffrage",
+     "en": "Costing",
+     "de": "",
+     "it": ""
+    }
+   ],
+   "link": "usinage.html",
+   "wip": false,
+   "note": {
+    "fr": "Rapport",
+    "en": "Report (in French)",
+    "de": "",
+    "it": ""
+   }
   },
   {
    "img": "images/projets/trail100k.jpg",
@@ -525,43 +592,6 @@
    ],
    "link": "https://utmb.world/fr/runner/4895528.gauthier.bonhomme",
    "wip": true
-  },
-  {
-   "img": "images/projets/esp32.jpg",
-   "title": {
-    "fr": "Prototypage électronique sur ESP32",
-    "en": "Electronics prototyping on ESP32",
-    "de": "Elektronik-Prototyping mit ESP32",
-    "it": "Prototipazione elettronica su ESP32"
-   },
-   "desc": {
-    "fr": "Réalisation d'un projet autour de la carte programmable ESP32, qui m'a permis d'en comprendre le fonctionnement et d'élargir mes compétences en prototypage. J'ai intégré différents composants électroniques ainsi que des pièces conçues en impression 3D.",
-    "en": "A project built around the ESP32 programmable board, which helped me understand how it works and broaden my prototyping skills. I integrated various electronic components together with 3D-printed parts.",
-    "de": "Ein Projekt rund um das programmierbare ESP32-Board, das mir half, seine Funktionsweise zu verstehen und meine Prototyping-Kenntnisse zu erweitern. Ich habe verschiedene elektronische Bauteile mit 3D-gedruckten Teilen kombiniert.",
-    "it": "Un progetto realizzato attorno alla scheda programmabile ESP32, che mi ha permesso di capirne il funzionamento e ampliare le mie competenze in prototipazione. Ho integrato diversi componenti elettronici insieme a parti realizzate con la stampa 3D."
-   },
-   "tags": [
-    {
-     "fr": "ESP32",
-     "en": "ESP32",
-     "de": "ESP32",
-     "it": "ESP32"
-    },
-    {
-     "fr": "Électronique",
-     "en": "Electronics",
-     "de": "Elektronik",
-     "it": "Elettronica"
-    },
-    {
-     "fr": "Impression 3D",
-     "en": "3D Printing",
-     "de": "3D-Druck",
-     "it": "Stampa 3D"
-    }
-   ],
-   "link": "",
-   "wip": false
   },
   {
    "img": "images/projets/capture-d-cran-2026-07-15-103135.jpg",
@@ -664,111 +694,6 @@
    "slug": "projets-divers-et-varies"
   },
   {
-   "img": "images/projets/hallb-site.jpg",
-   "title": {
-    "fr": "Refonte du site Hall B",
-    "en": "Hall B website revamp",
-    "de": "Überarbeitung der Hall-B-Website",
-    "it": "Rinnovo del sito Hall B"
-   },
-   "desc": {
-    "fr": "Amélioration du site web d'une salle de sport. Un vrai défi : je ne maîtrisais quasiment aucun des langages concernés au départ. Je me suis formé en autonomie pour livrer une version améliorée du site.",
-    "en": "Improving the website of a gym. A real challenge: I knew almost none of the languages involved at the start. I taught myself in order to deliver an improved version of the site.",
-    "de": "Verbesserung der Website eines Fitnessstudios. Eine echte Herausforderung: Anfangs beherrschte ich kaum eine der betroffenen Sprachen. Ich habe mir alles selbst beigebracht, um eine verbesserte Version der Website zu liefern.",
-    "it": "Miglioramento del sito web di una palestra. Una vera sfida: all'inizio non conoscevo quasi nessuno dei linguaggi coinvolti. Ho imparato da autodidatta per consegnare una versione migliorata del sito."
-   },
-   "tags": [
-    {
-     "fr": "Développement web",
-     "en": "Web development",
-     "de": "Webentwicklung",
-     "it": "Sviluppo web"
-    },
-    {
-     "fr": "HTML / CSS",
-     "en": "HTML / CSS",
-     "de": "HTML / CSS",
-     "it": "HTML / CSS"
-    }
-   ],
-   "link": "https://www.hallb.fr/",
-   "wip": false
-  },
-  {
-   "img": "images/projets/reconnaissance-faciale.jpg",
-   "title": {
-    "fr": "Analyse vidéo & reconnaissance faciale",
-    "en": "Video analytics & face recognition",
-    "de": "Videoanalyse & Gesichtserkennung",
-    "it": "Videoanalisi & riconoscimento facciale"
-   },
-   "desc": {
-    "fr": "Pipeline multi-caméras de détection de personnes déployé pour la salle Hall b : Frigate NVR sous Docker/Linux, flux RTSP des caméras existantes, inférence deep-learning temps réel sur RTX 3060. En cours : reconnaissance faciale (InsightFace) contre la fraude à l'abonnement, avec l'analyse d'impact RGPD (art. 9) / CNIL menée avant tout traitement biométrique.",
-    "en": "Multi-camera person-detection pipeline deployed for the Hall b gym: Frigate NVR on Docker/Linux, RTSP streams from the existing CCTV, real-time deep-learning inference on an RTX 3060. Now adding a face-recognition stage (InsightFace) for membership-fraud detection, with the GDPR (Art. 9) / CNIL impact assessment carried out before any biometric processing.",
-    "de": "Multikamera-Personenerkennung für das Studio Hall b: Frigate NVR unter Docker/Linux, RTSP-Streams der vorhandenen Kameras, Deep-Learning-Inferenz in Echtzeit auf einer RTX 3060. In Arbeit: Gesichtserkennung (InsightFace) gegen Abo-Betrug, mit der vor jeder biometrischen Verarbeitung erforderlichen DSGVO- (Art. 9) / CNIL-Folgenabschätzung.",
-    "it": "Pipeline multi-camera di rilevamento persone per la palestra Hall b: Frigate NVR su Docker/Linux, flussi RTSP delle telecamere esistenti, inferenza deep learning in tempo reale su RTX 3060. In corso: riconoscimento facciale (InsightFace) contro le frodi sugli abbonamenti, con la valutazione d'impatto GDPR (art. 9) / CNIL richiesta prima di ogni trattamento biometrico."
-   },
-   "tags": [
-    {
-     "fr": "Frigate · Docker",
-     "en": "Frigate · Docker",
-     "de": "Frigate · Docker",
-     "it": "Frigate · Docker"
-    },
-    {
-     "fr": "Vision par ordinateur",
-     "en": "Computer vision",
-     "de": "Computer Vision",
-     "it": "Visione artificiale"
-    },
-    {
-     "fr": "RGPD · CNIL",
-     "en": "GDPR · CNIL",
-     "de": "DSGVO · CNIL",
-     "it": "GDPR · CNIL"
-    }
-   ],
-   "link": "",
-   "wip": true
-  },
-  {
-   "img": "images/projets/vilbrequin.jpg",
-   "title": {
-    "fr": "Usinage d'un vilebrequin",
-    "en": "Machining a crankshaft",
-    "de": "Zerspanung einer Kurbelwelle",
-    "it": "Lavorazione di un albero motore"
-   },
-   "desc": {
-    "fr": "Gamme complète programmée en FAO sur Fusion 360 (tournage, fraisage, filetage), validée par mes professeurs puis produite sur un tour-fraiseur DMG MORI CTX Gamma 1250 TC — en adaptant les programmes aux contraintes réelles de la machine (vibrations, limites d'axes).",
-    "en": "Full CAM workflow in Fusion 360 (turning, milling, threading), validated by my teachers and produced on a DMG MORI CTX Gamma 1250 TC turn-mill — adapting the programs to real machine constraints (vibration, axis limits).",
-    "de": "Komplette CAM-Programmierung in Fusion 360 (Drehen, Fräsen, Gewinde), von meinen Lehrern validiert und auf einem Dreh-Fräszentrum DMG MORI CTX Gamma 1250 TC gefertigt — mit Anpassung der Programme an reale Maschinengrenzen (Vibrationen, Achslimits).",
-    "it": "Ciclo CAM completo in Fusion 360 (tornitura, fresatura, filettatura), validato dai miei professori e prodotto su un tornio-fresa DMG MORI CTX Gamma 1250 TC — adattando i programmi ai vincoli reali della macchina (vibrazioni, limiti degli assi)."
-   },
-   "tags": [
-    {
-     "fr": "FAO",
-     "en": "CAM",
-     "de": "CAM",
-     "it": "CAM"
-    },
-    {
-     "fr": "Fusion 360",
-     "en": "Fusion 360",
-     "de": "Fusion 360",
-     "it": "Fusion 360"
-    },
-    {
-     "fr": "Usinage",
-     "en": "Machining",
-     "de": "Zerspanung",
-     "it": "Lavorazione"
-    }
-   ],
-   "link": "usinage.html",
-   "wip": false
-  },
-  {
    "img": "images/projets/statue.jpg",
    "title": {
     "fr": "Statue commémorative en fonderie",
@@ -815,255 +740,221 @@
  "skills": [
   {
    "title": {
-    "fr": "Programmation",
-    "en": "Programming",
-    "de": "Programmierung",
-    "it": "Programmazione"
+    "fr": "Suivi de chantier",
+    "en": "Site supervision",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
      "label": {
-      "fr": "Python",
-      "en": "Python",
-      "de": "Python",
-      "it": "Python"
+      "fr": "Coordination des artisans",
+      "en": "Coordinating tradespeople",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
-      "fr": "Git",
-      "en": "Git",
-      "de": "Git",
-      "it": "Git"
+      "fr": "Planning de travaux",
+      "en": "Works scheduling",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
-      "fr": "Docker",
-      "en": "Docker",
-      "de": "Docker",
-      "it": "Docker"
+      "fr": "Comparaison de devis",
+      "en": "Comparing quotes",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
-      "fr": "Linux",
-      "en": "Linux",
-      "de": "Linux",
-      "it": "Linux"
+      "fr": "Réception de travaux",
+      "en": "Handover of works",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
-      "fr": "HTML / CSS",
-      "en": "HTML / CSS",
-      "de": "HTML / CSS",
-      "it": "HTML / CSS"
+      "fr": "Suivi budgétaire",
+      "en": "Budget follow-up",
+      "de": "",
+      "it": ""
      }
     }
    ]
   },
   {
    "title": {
-    "fr": "IA & Vision par ordinateur",
-    "en": "AI & Computer Vision",
-    "de": "KI & Computer Vision",
-    "it": "IA & Visione artificiale"
+    "fr": "Technique",
+    "en": "Engineering",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
      "label": {
-      "fr": "InsightFace — reconnaissance faciale",
-      "en": "InsightFace — face recognition",
-      "de": "InsightFace — Gesichtserkennung",
-      "it": "InsightFace — riconoscimento facciale"
+      "fr": "Résistance des matériaux",
+      "en": "Strength of materials",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
-      "fr": "Frigate — détection d'objets",
-      "en": "Frigate — object detection",
-      "de": "Frigate — Objekterkennung",
-      "it": "Frigate — rilevamento oggetti"
-     }
-    },
-    {
-     "label": {
-      "fr": "Accélération GPU NVIDIA",
-      "en": "NVIDIA GPU acceleration",
-      "de": "NVIDIA-GPU-Beschleunigung",
-      "it": "Accelerazione GPU NVIDIA"
-     }
-    },
-    {
-     "label": {
-      "fr": "RGPD / AIPD biométrie",
-      "en": "GDPR / DPIA for biometrics",
-      "de": "DSGVO / DSFA Biometrie",
-      "it": "GDPR / DPIA biometria"
-     }
-    }
-   ]
-  },
-  {
-   "title": {
-    "fr": "Contrôle & Embarqué",
-    "en": "Control & Embedded",
-    "de": "Regelung & Embedded",
-    "it": "Controllo & Embedded"
-   },
-   "tags": [
-    {
-     "label": {
-      "fr": "Synthèse PID / RST",
-      "en": "PID / RST synthesis",
-      "de": "PID- / RST-Synthese",
-      "it": "Sintesi PID / RST"
-     }
-    },
-    {
-     "label": {
-      "fr": "Représentation d'état",
-      "en": "State-space modelling",
-      "de": "Zustandsraummodellierung",
-      "it": "Modellazione nello spazio di stato"
-     }
-    },
-    {
-     "label": {
-      "fr": "Commande discrète",
-      "en": "Discrete-time control",
-      "de": "Zeitdiskrete Regelung",
-      "it": "Controllo a tempo discreto"
-     }
-    },
-    {
-     "label": {
-      "fr": "Commande vectorielle (FOC)",
-      "en": "Field-oriented control (FOC)",
-      "de": "Feldorientierte Regelung (FOC)",
-      "it": "Controllo a orientamento di campo (FOC)"
-     }
-    },
-    {
-     "label": {
-      "fr": "ESP32",
-      "en": "ESP32",
-      "de": "ESP32",
-      "it": "ESP32"
-     }
-    }
-   ]
-  },
-  {
-   "title": {
-    "fr": "CAO & Simulation",
-    "en": "CAD & Simulation",
-    "de": "CAD & Simulation",
-    "it": "CAD & Simulazione"
-   },
-   "tags": [
-    {
-     "label": {
-      "fr": "CATIA V5",
-      "en": "CATIA V5",
-      "de": "CATIA V5",
-      "it": "CATIA V5"
-     }
-    },
-    {
-     "label": {
-      "fr": "3D Expérience",
-      "en": "3D Expérience",
-      "de": "3D Expérience",
-      "it": "3D Expérience"
-     }
-    },
-    {
-     "label": {
-      "fr": "Abaqus",
-      "en": "Abaqus",
-      "de": "Abaqus",
-      "it": "Abaqus"
+      "fr": "Calcul éléments finis (Abaqus)",
+      "en": "Finite-element analysis (Abaqus)",
+      "de": "",
+      "it": ""
      },
      "link": "abaqus.html"
     },
     {
      "label": {
-      "fr": "Impression 3D (FDM)",
-      "en": "3D printing (FDM)",
-      "de": "3D-Druck (FDM)",
-      "it": "Stampa 3D (FDM)"
+      "fr": "Lecture de plans",
+      "en": "Reading drawings",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "CATIA V5 · 3DEXPERIENCE",
+      "en": "CATIA V5 · 3DEXPERIENCE",
+      "de": "",
+      "it": ""
      }
     }
    ]
   },
   {
    "title": {
-    "fr": "Simulation procédés",
-    "en": "Process Simulation",
-    "de": "Prozesssimulation",
-    "it": "Simulazione processi"
+    "fr": "Terrain & atelier",
+    "en": "Hands-on",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
      "label": {
-      "fr": "Fusion 360 — Usinage",
-      "en": "Fusion 360 — Machining",
-      "de": "Fusion 360 — Zerspanung",
-      "it": "Fusion 360 — Lavorazione"
+      "fr": "Travaux manuels",
+      "en": "Manual work",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Usinage",
+      "en": "Machining",
+      "de": "",
+      "it": ""
      },
      "link": "usinage.html"
     },
     {
      "label": {
-      "fr": "QuickCast — Fonderie",
-      "en": "QuickCast — Foundry",
-      "de": "QuickCast — Gießerei",
-      "it": "QuickCast — Fonderia"
+      "fr": "Fonderie",
+      "en": "Foundry",
+      "de": "",
+      "it": ""
      },
      "link": "fonderie.html"
+    },
+    {
+     "label": {
+      "fr": "Chaudronnerie",
+      "en": "Metalwork",
+      "de": "",
+      "it": ""
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "fr": "Outils",
+    "en": "Tools",
+    "de": "",
+    "it": ""
+   },
+   "tags": [
+    {
+     "label": {
+      "fr": "Excel",
+      "en": "Excel",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Word",
+      "en": "Word",
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "PowerPoint",
+      "en": "PowerPoint",
+      "de": "",
+      "it": ""
+     }
     }
    ]
   },
   {
    "title": {
     "fr": "Savoir-être",
-    "en": "Soft Skills",
-    "de": "Soziale Kompetenzen",
-    "it": "Competenze trasversali"
+    "en": "Soft skills",
+    "de": "",
+    "it": ""
    },
    "tags": [
     {
      "label": {
-      "fr": "Pédagogie",
-      "en": "Teaching",
-      "de": "Pädagogik",
-      "it": "Pedagogia"
-     }
-    },
-    {
-     "label": {
       "fr": "Travail d'équipe",
       "en": "Teamwork",
-      "de": "Teamarbeit",
-      "it": "Lavoro di squadra"
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
       "fr": "Rigueur",
       "en": "Rigour",
-      "de": "Genauigkeit",
-      "it": "Rigore"
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Autonomie",
+      "en": "Autonomy",
+      "de": "",
+      "it": ""
      }
     },
     {
      "label": {
       "fr": "Adaptabilité",
       "en": "Adaptability",
-      "de": "Anpassungsfähigkeit",
-      "it": "Adattabilità"
+      "de": "",
+      "it": ""
+     }
+    },
+    {
+     "label": {
+      "fr": "Pédagogie",
+      "en": "Teaching",
+      "de": "",
+      "it": ""
      }
     }
    ]
@@ -1103,20 +994,52 @@
  ],
  "interests": [
   {
-   "icon": "🥋",
+   "icon": "⛷️",
    "name": {
-    "fr": "Judo",
-    "en": "Judo",
-    "de": "Judo",
-    "it": "Judo"
+    "fr": "Ski",
+    "en": "Skiing",
+    "de": "Ski",
+    "it": "Sci"
    },
    "detail": {
-    "fr": "Ceinture noire",
-    "en": "Black belt",
-    "de": "Schwarzer Gürtel",
-    "it": "Cintura nera"
+    "fr": "Alpin & randonnée · Album ↗",
+    "en": "Alpine & touring · Album ↗",
+    "de": "",
+    "it": ""
    },
-   "page": ""
+   "page": "ski"
+  },
+  {
+   "icon": "🏔️",
+   "name": {
+    "fr": "Alpinisme",
+    "en": "Mountaineering",
+    "de": "Alpinismus",
+    "it": "Alpinismo"
+   },
+   "detail": {
+    "fr": "En autonomie · Album ↗",
+    "en": "Self-guided · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "alpinisme"
+  },
+  {
+   "icon": "🏃",
+   "name": {
+    "fr": "Ultra Trail",
+    "en": "Ultra Trail",
+    "de": "Ultra Trail",
+    "it": "Ultra Trail"
+   },
+   "detail": {
+    "fr": "100 km · 5 000 m D+ · Album ↗",
+    "en": "100 km · 5,000 m D+ · Album ↗",
+    "de": "",
+    "it": ""
+   },
+   "page": "trail"
   },
   {
    "icon": "🧗",
@@ -1135,52 +1058,20 @@
    "page": "escalade"
   },
   {
-   "icon": "⛷️",
+   "icon": "🥋",
    "name": {
-    "fr": "Ski",
-    "en": "Skiing",
-    "de": "Ski",
-    "it": "Sci"
+    "fr": "Judo",
+    "en": "Judo",
+    "de": "Judo",
+    "it": "Judo"
    },
    "detail": {
-    "fr": "Alpin & randonnée · ↗",
-    "en": "Alpine & touring · ↗",
-    "de": "Alpin & Skitouren · ↗",
-    "it": "Alpino & scialpinismo · ↗"
+    "fr": "Ceinture noire",
+    "en": "Black belt",
+    "de": "Schwarzer Gürtel",
+    "it": "Cintura nera"
    },
-   "page": "ski"
-  },
-  {
-   "icon": "🏔️",
-   "name": {
-    "fr": "Alpinisme",
-    "en": "Mountaineering",
-    "de": "Alpinismus",
-    "it": "Alpinismo"
-   },
-   "detail": {
-    "fr": "↗",
-    "en": "↗",
-    "de": "↗",
-    "it": "↗"
-   },
-   "page": "alpinisme"
-  },
-  {
-   "icon": "🏃",
-   "name": {
-    "fr": "Ultra Trail",
-    "en": "Ultra Trail",
-    "de": "Ultra Trail",
-    "it": "Ultra Trail"
-   },
-   "detail": {
-    "fr": "+100 km · ↗",
-    "en": "+100 km · ↗",
-    "de": "+100 km · ↗",
-    "it": "+100 km · ↗"
-   },
-   "page": "trail"
+   "page": ""
   },
   {
    "icon": "🪁",
@@ -1213,22 +1104,6 @@
     "it": ""
    },
    "page": ""
-  },
-  {
-   "icon": "💻",
-   "name": {
-    "fr": "Vibecoding & Open-source",
-    "en": "Vibecoding & open source",
-    "de": "Vibecoding & Open Source",
-    "it": "Vibecoding & open source"
-   },
-   "detail": {
-    "fr": "GitHub ↗",
-    "en": "GitHub ↗",
-    "de": "GitHub ↗",
-    "it": "GitHub ↗"
-   },
-   "page": "https://github.com/Gauthier-Bonhomme"
   }
  ],
  "contacts": [
@@ -1247,22 +1122,6 @@
     "it": "gauthier.bonhomme30@gmail.com"
    },
    "href": "https://mail.google.com/mail/?view=cm&to=gauthier.bonhomme30%40gmail.com"
-  },
-  {
-   "icon": "github",
-   "label": {
-    "fr": "GitHub",
-    "en": "GitHub",
-    "de": "GitHub",
-    "it": "GitHub"
-   },
-   "value": {
-    "fr": "github.com/Gauthier-Bonhomme",
-    "en": "github.com/Gauthier-Bonhomme",
-    "de": "github.com/Gauthier-Bonhomme",
-    "it": "github.com/Gauthier-Bonhomme"
-   },
-   "href": "https://github.com/Gauthier-Bonhomme"
   },
   {
    "icon": "phone",
@@ -1564,5 +1423,25 @@
     }
    ]
   }
- }
+ },
+ "highlights": [
+  {
+   "fr": "<strong>Suivi de chantier</strong> — construction d'une infirmerie chez Royal Canin, aménagement complet d'une salle de sport.",
+   "en": "<strong>Site supervision</strong> — construction of an infirmary at Royal Canin, complete fit-out of a gym.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Coordination des artisans</strong> — devis, planning, réception des travaux, et la main à la pâte.",
+   "en": "<strong>Coordinating tradespeople</strong> — quotes, schedule, handover of the works, and hands-on work.",
+   "de": "",
+   "it": ""
+  },
+  {
+   "fr": "<strong>Montagnard</strong> — ski alpin et de randonnée, alpinisme, ultra-trail de 100 km.",
+   "en": "<strong>At home in the mountains</strong> — alpine skiing and ski touring, mountaineering, 100-km ultra-trail.",
+   "de": "",
+   "it": ""
+  }
+ ]
 }
