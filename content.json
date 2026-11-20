@@ -1,10 +1,10 @@
 {
- "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché. Depuis novembre 2026, l'accueil est orienté bâtiment / suivi de chantier et n'est proposé qu'en FR et EN (data-langs sur <body> d'index.html).",
+ "_aide": "Fichier de contenu du site — modifié par l'admin local (lancer-backend.bat) ou à la main. Chaque champ texte a 4 langues ; si une langue est vide, le français est affiché. Depuis novembre 2026, l'accueil n'est proposé qu'en FR et EN (data-langs sur <body> d'index.html).",
  "pdf": "Gauthier_Bonhomme_CV.pdf",
  "labels": {
   "pageTitle": {
-   "fr": "Gauthier Bonhomme — Élève ingénieur · Suivi de chantier",
-   "en": "Gauthier Bonhomme — Engineering student · Construction site supervision",
+   "fr": "Gauthier Bonhomme — Élève ingénieur",
+   "en": "Gauthier Bonhomme — Engineering student",
    "de": "",
    "it": ""
   },
@@ -147,14 +147,14 @@
    "it": ""
   },
   "title": {
-   "fr": "Élève ingénieur · Travaux & suivi de chantier",
-   "en": "Engineering student · Construction & site supervision",
+   "fr": "Élève ingénieur généraliste",
+   "en": "General engineering student",
    "de": "",
    "it": ""
   },
   "tagline": {
-   "fr": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Suivi de chantier · Coordination des artisans · Montagne",
-   "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Site supervision · Coordinating trades · Mountains",
+   "fr": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Gestion de projet · Terrain · Montagne",
+   "en": "<strong>Arts et Métiers</strong> · Aix-en-Provence — Project management · Hands-on · Mountains",
    "de": "",
    "it": ""
   },
@@ -163,20 +163,20 @@
  },
  "about": [
   {
-   "fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong> d'Aix-en-Provence, je recherche un <strong>stage de fin d'études de 6 mois en suivi de chantier</strong> dans le bâtiment — idéalement en montagne — disponible dès début 2027.",
-   "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong> in Aix-en-Provence, I am looking for a <strong>6-month graduation internship in construction site supervision</strong> — ideally in the mountains — available from early 2027.",
+   "fr": "Élève ingénieur en dernière année aux <strong>Arts et Métiers (ENSAM)</strong> d'Aix-en-Provence, je recherche un <strong>stage de fin d'études de 6 mois</strong>, disponible dès début 2027.",
+   "en": "Final-year engineering student at <strong>Arts et Métiers (ENSAM)</strong> in Aix-en-Provence, I am looking for a <strong>6-month graduation internship</strong>, available from early 2027.",
    "de": "",
    "it": ""
   },
   {
-   "fr": "Le chantier, je l'ai déjà pratiqué. Chez <strong>Royal Canin</strong>, à l'usine d'Aimargues, j'ai participé au suivi du chantier de construction d'une infirmerie, aux côtés des équipes. Pour l'ouverture de la salle de sport <strong>Hall b</strong>, j'ai coordonné les artisans, comparé les devis, suivi le planning et réceptionné les travaux — et j'ai réalisé moi-même une partie du chantier.",
-   "en": "I have already worked on site. At <strong>Royal Canin</strong>'s Aimargues plant, I took part in supervising the construction of an infirmary, alongside the teams. For the opening of the <strong>Hall b</strong> gym, I coordinated the tradespeople, compared quotes, tracked the schedule and accepted the completed works — and carried out part of the work myself.",
+   "fr": "J'aime le concret, le terrain et mener un projet de bout en bout. Chez <strong>Royal Canin</strong>, à l'usine d'Aimargues, j'ai participé au suivi du chantier de construction d'une infirmerie et à l'amélioration du logiciel de maintenance. Pour l'ouverture de la salle de sport <strong>Hall b</strong>, j'ai coordonné les artisans, comparé les devis, suivi le planning et réceptionné les travaux — et mis moi-même la main à la pâte.",
+   "en": "I like practical, hands-on work and running a project end to end. At <strong>Royal Canin</strong>'s Aimargues plant, I took part in supervising the construction of an infirmary and in improving the maintenance software. For the opening of the <strong>Hall b</strong> gym, I coordinated the tradespeople, compared quotes, tracked the schedule and accepted the completed works — and did part of the work myself.",
    "de": "",
    "it": ""
   },
   {
-   "fr": "Bricoleur depuis toujours (usinage, fonderie, chaudronnerie, moteurs remis à neuf), j'aime le concret et le terrain. En dehors des études, je passe mon temps en montagne — <strong>ski alpin et de randonnée, alpinisme, ultra-trail (100 km), escalade (7B)</strong> — et je suis <strong>ceinture noire de judo</strong>. Titulaire des <strong>permis B et A</strong>.",
-   "en": "A lifelong tinkerer (machining, foundry, metalwork, rebuilt engines), I like hands-on, practical work. Outside my studies, I spend my time in the mountains — <strong>alpine skiing and ski touring, mountaineering, ultra-trail (100 km), climbing (7B)</strong> — and I am a <strong>judo black belt</strong>. I hold <strong>car and motorcycle licences</strong>.",
+   "fr": "Bricoleur depuis toujours (usinage, fonderie, chaudronnerie, moteurs remis à neuf). En dehors des études, je passe mon temps en montagne — <strong>ski alpin et de randonnée, alpinisme, ultra-trail (100 km), escalade (7B)</strong> — et je suis <strong>ceinture noire de judo</strong>. Titulaire des <strong>permis B et A</strong>.",
+   "en": "A lifelong tinkerer (machining, foundry, metalwork, rebuilt engines). Outside my studies, I spend my time in the mountains — <strong>alpine skiing and ski touring, mountaineering, ultra-trail (100 km), climbing (7B)</strong> — and I am a <strong>judo black belt</strong>. I hold <strong>car and motorcycle licences</strong>.",
    "de": "",
    "it": ""
   }
@@ -262,8 +262,8 @@
     "it": "Royal Canin — Tirocinio"
    },
    "subtitle": {
-    "fr": "Usine d'Aimargues · Suivi de chantier & maintenance",
-    "en": "Aimargues plant · Site supervision & maintenance",
+    "fr": "Usine d'Aimargues · Stage d'été",
+    "en": "Aimargues plant · Summer internship",
     "de": "",
     "it": ""
    },
@@ -740,8 +740,8 @@
  "skills": [
   {
    "title": {
-    "fr": "Suivi de chantier",
-    "en": "Site supervision",
+    "fr": "Gestion de projet",
+    "en": "Project management",
     "de": "",
     "it": ""
    },
@@ -1423,25 +1423,5 @@
     }
    ]
   }
- },
- "highlights": [
-  {
-   "fr": "<strong>Suivi de chantier</strong> — construction d'une infirmerie chez Royal Canin, aménagement complet d'une salle de sport.",
-   "en": "<strong>Site supervision</strong> — construction of an infirmary at Royal Canin, complete fit-out of a gym.",
-   "de": "",
-   "it": ""
-  },
-  {
-   "fr": "<strong>Coordination des artisans</strong> — devis, planning, réception des travaux, et la main à la pâte.",
-   "en": "<strong>Coordinating tradespeople</strong> — quotes, schedule, handover of the works, and hands-on work.",
-   "de": "",
-   "it": ""
-  },
-  {
-   "fr": "<strong>Montagnard</strong> — ski alpin et de randonnée, alpinisme, ultra-trail de 100 km.",
-   "en": "<strong>At home in the mountains</strong> — alpine skiing and ski touring, mountaineering, 100-km ultra-trail.",
-   "de": "",
-   "it": ""
-  }
- ]
+ }
 }

@@ -1,6 +1,6 @@
 % ══════════════════════════════════════════════════════════════════
 % Source du CV téléchargeable depuis l'accueil (français, 1 page, police Charter)
-% Orientation : bâtiment / suivi de chantier (novembre 2026), même mise en page que le CV Salomon.
+% Version française généraliste (novembre 2026), même mise en page que le CV Salomon.
 % Compiler : pdflatex CV_Gauthier_Bonhomme_FR.tex  (ou tectonic)
 % Le PDF produit remplace Gauthier_Bonhomme_CV.pdf à la racine du site.
 % L'ancien CV anglais (mécatronique / IA) reste dans CV_Gauthier_Bonhomme_EN.tex / .pdf.
@@ -16,11 +16,9 @@
 \usepackage{needspace}
 \usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage[most]{tcolorbox}
 \usepackage{qrcode}
 \definecolor{linkblue}{RGB}{21,76,155}
-\definecolor{boxblue}{RGB}{234,241,251}
-\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,pdftitle={Gauthier Bonhomme - CV - Suivi de chantier},pdfauthor={Gauthier Bonhomme}]{hyperref}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,pdftitle={Gauthier Bonhomme - CV},pdfauthor={Gauthier Bonhomme}]{hyperref}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -28,58 +26,48 @@
 
 % titres de section : bleu, gras, filet bleu
 \titleformat{\section}{\needspace{4\baselineskip}\large\bfseries\color{linkblue}}{}{0pt}{}[\vspace{-0.75em}{\color{linkblue}\rule{\textwidth}{0.5pt}}]
-\titlespacing{\section}{0pt}{0.7em}{0.45em}
+\titlespacing{\section}{0pt}{1.0em}{0.55em}
 
 \newcommand{\lk}{\,\textsuperscript{$\nearrow$}}
 \newcommand{\link}[2]{\href{#1}{#2\lk}}
 \newcommand{\sep}{\,{\scriptsize\textbullet}\,}
 % entrée : titre à gauche, date à droite
-\newcommand{\entry}[2]{\par\vspace{0.35em}#1\hfill #2\par}
+\newcommand{\entry}[2]{\par\vspace{0.5em}#1\hfill #2\par}
 
 \setlist[itemize]{leftmargin=1.2em,itemsep=0.05em,parsep=0pt,topsep=0.1em,label={\color{linkblue}\scriptsize\textbullet}}
 
 \begin{document}
 
-% ───── en-tête ─────
-\begin{center}
+% ───── en-tête (QR code vers le portfolio à droite) ─────
+\begin{minipage}[c]{0.13\linewidth}\hfill\end{minipage}%
+\begin{minipage}[c]{0.74\linewidth}
+\centering
   {\Huge\bfseries Gauthier Bonhomme}\\[0.45em]
   Élève ingénieur en dernière année --- \textbf{Arts et Métiers (ENSAM)} --- Aix-en-Provence\\[0.15em]
-  {\color{linkblue}\bfseries Stage de fin d'études --- suivi de chantier}\sep 6 mois dès début 2027\\[0.25em]
-  {\small +33 6 08 27 62 16\sep \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com}\sep \href{https://gauthierbonhomme.com}{gauthierbonhomme.com}\sep permis B et A}
-\end{center}
-
-\vspace{0.1em}
-\begin{tcolorbox}[enhanced,colback=boxblue,frame hidden,arc=3pt,left=8pt,right=8pt,top=5pt,bottom=5pt]
-\begin{minipage}[c]{0.84\linewidth}
-\begin{itemize}[topsep=0pt,itemsep=0.25em]
-  \item \textbf{Suivi de chantier} --- construction d'une infirmerie chez Royal Canin, aménagement d'une salle de sport.
-  \item \textbf{Coordination des artisans} --- devis, planning, réception des travaux, et la main à la pâte.
-  \item \textbf{Montagnard} --- ski alpin et de randonnée, alpinisme, ultra-trail de 100 km.
-\end{itemize}
-\vspace{0.4em}
-{\color{linkblue}$\rightarrow$ \textbf{Rapports, photos et albums :\ \href{https://gauthierbonhomme.com}{gauthierbonhomme.com}}}
-\end{minipage}\hfill
+  {\color{linkblue}\bfseries Stage de fin d'études}\sep 6 mois dès début 2027\\[0.25em]
+  {\small +33 6 08 27 62 16\sep \href{mailto:gauthier.bonhomme30@gmail.com}{gauthier.bonhomme30@gmail.com}\sep permis B et A}\\[0.1em]
+  {\small\color{linkblue}$\rightarrow$ Rapports, photos et albums :\ \textbf{\href{https://gauthierbonhomme.com}{gauthierbonhomme.com}}}
+\end{minipage}%
 \begin{minipage}[c]{0.13\linewidth}
-\centering
+\raggedleft
 {\color{linkblue}\qrcode[height=1.55cm]{https://gauthierbonhomme.com}}\\[0.15em]
-{\scriptsize\color{linkblue}\bfseries Portfolio}
+{\scriptsize\color{linkblue}\bfseries Portfolio\hspace{0.32cm}}
 \end{minipage}
-\end{tcolorbox}
 
 % ───── expérience ─────
 \section{Expérience}
 
 \entry{\textbf{Royal Canin} --- stagiaire, usine d'Aimargues (Gard)}{juin -- août 2026}
 \begin{itemize}
-  \item \textbf{Suivi du chantier de construction de l'infirmerie du site}, sur le terrain avec les équipes.
+  \item Suivi du chantier de construction de l'infirmerie du site, sur le terrain avec les équipes.
   \item Amélioration du logiciel de maintenance de l'usine, au quotidien aux côtés des équipes de maintenance.
 \end{itemize}
 
 \entry{\textbf{Hall b} --- équipe fondatrice d'une salle de sport, Saint-Dionisy (Gard)}{juin -- août 2025}
 \begin{itemize}
-  \item \textbf{Coordination des artisans} et suivi du planning des travaux d'aménagement.
-  \item Consultation et \textbf{comparaison des devis}, arbitrages budgétaires.
-  \item \textbf{Réception des travaux} ; réalisation moi-même d'une partie du chantier.
+  \item Lancement de A à Z : coordination des artisans et suivi du planning des travaux d'aménagement.
+  \item Consultation et comparaison des devis, arbitrages budgétaires.
+  \item Réception des travaux ; réalisation moi-même d'une partie du chantier ; système vidéo et site web.
 \end{itemize}
 
 \entry{\textbf{ÉPOPÉE GADZ} --- trésorier, Europ'Raid 2026}{2025 -- 2026}
@@ -114,7 +102,7 @@ Moteurs remis à neuf, tables en chaudronnerie, jardinière, rénovation complè
 % ───── compétences ─────
 \section{Compétences}
 
-\textbf{Chantier :} coordination des artisans, planning de travaux, comparaison de devis, réception de travaux, suivi budgétaire\\
+\textbf{Gestion de projet :} coordination des artisans, planning, comparaison de devis, réception de travaux, budget\\
 \textbf{Technique :} résistance des matériaux, calcul éléments finis (Abaqus), lecture de plans, CATIA V5, 3DEXPERIENCE\\
 \textbf{Outils :} Excel, Word, PowerPoint\\
 \textbf{Savoir-être :} travail en équipe, rigueur, autonomie, adaptabilité\\
